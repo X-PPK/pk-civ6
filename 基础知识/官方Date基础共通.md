@@ -19,12 +19,8 @@
 	Hash="散列值"		值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
 />
 ```
-Kinds表具体有哪些实际类型，这些是我们可以用到（值类型均="TEXT"）
-<details><summary>
-|       Kind                   | 介绍           |     注释
-| ---------------------------- | -------------- | -----------
-</summary>	
-
+Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
+<details><summary>Kinds表</summary>	
 |       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
 | KIND_TRAIT                   | 特性            | 
@@ -66,7 +62,8 @@ Kinds表具体有哪些实际类型，这些是我们可以用到（值类型均
 | KIND_REQUIREMENT             | 需求限制        | 
 | KIND_REQUIREMENTSET          | 需求设置        | 
 </details>
-<details><summary>Kinds表</summary>
+<details><summary></summary>
+| ---------------------------- | -------------- | -----------
 | KIND_DEAL_ITEM               | 交易项目        | 
 | KIND_DIFFICULTY              | 游戏难度        | 
 | KIND_DIPLOMATIC_ACTION       | 外交行动        | 
