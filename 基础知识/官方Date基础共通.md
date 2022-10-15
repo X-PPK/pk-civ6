@@ -63,7 +63,60 @@ Kinds表具体有哪些实际类型，这些是我们可以用到（值类型均
 | KIND_REQUIREMENT             | 需求限制        | 
 | KIND_REQUIREMENTSET          | 需求设置        | 
 </details>
-
+<details><summary>Kinds表</summary>
+| KIND_DEAL_ITEM               | 交易项目        | 
+| KIND_DIFFICULTY              | 游戏难度        | 
+| KIND_DIPLOMATIC_ACTION       | 外交行动        | 
+| KIND_DIPLOMATIC_STATE        | 外交状态        | 
+| KIND_BARBARIAN_TRIBE         | 蛮族营地类型    | 
+| KIND_ERA                     | 时代            | 
+| KIND_FEATURE                 | 地貌            | 
+| KIND_CAPABILITY              | 能力??          | 
+| KIND_GAMESPEED               | 游戏速度        | 
+| KIND_GAMESPEED_SCALING       | 游戏速度缩放?    | 
+| KIND_GOODY_HUT               | 部落村庄奖励     | 
+| KIND_GREATWORK               | 著作            | 
+| KIND_HAPPINESS               | 宜居度等级?      | 
+| KIND_CONTINENT               | 大陆            | 
+| KIND_MAPSIZE                 | 地图大小        | 
+| KIND_NOTIFICATION            | 通知            | 
+| KIND_SLOT                    | 槽位            | 
+| KIND_QUEST                   | 任务            | 
+| KIND_ROUTE                   | 道路            | 铁路等
+| KIND_SCORING_CATEGORY        | 评分类别?       | 
+| KIND_SCORING_LINE_ITEM       | 评分行项目?     | 
+| KIND_TERRAIN                 | 地形            |
+| KIND_TERRAIN_CLASS           | 地形大类        |
+| KIND_GAMEMODE                | 游戏模式        |
+| KIND_TURNPHASE               | ?              | 这四个貌似与时间设置有关
+| KIND_TURNMODE                | ?              | 没兴趣研究
+| KIND_TURNSEGMENT             | ?              |
+| KIND_TURNTIMER               | ?              |
+| KIND_DEFEAT                  | 失败类型        | 例如失败和时间耗尽
+| KIND_VICTORY                 | 胜利类型        |
+| KIND_VICTORY_STRATEGY        | 胜利战略        | 与AI获取胜利有关
+| KIND_WAR                     | 战争类型        |
+| KIND_YIELD                   | 产量类型        |
+| KIND_PSEUDOYIELD             | 伪产量          | 用于AI
+| KIND_DIPLOMACY_ALLIANCE      | 外交联盟类型    | RF&GS
+| KIND_DIPLOMACY_EMERGENCY     | 外交紧急情况    | RF&GS
+| KIND_GOVERNMENT              | 政体            |
+| KIND_LOYALTY_LEVEL           | 忠诚度级别      | RF&GS
+| KIND_MOMENT                  | 历史时刻        | RF&GS
+| KIND_MOMENT_DATA             | 历史时刻数据    | RF&GS和历史时刻记录有关
+| KIND_MOMENT_OUTCOME          | 历史时刻的成果  | RF&GS
+| KIND_MOMENT_ILLUSTRATION     | 历史时刻插图    | RF&GS
+| KIND_RESOLUTION              | 决议           | GS
+| KIND_DISCUSSION              | 世界大会       | GS世界紧急情况，诺贝尔奖
+| KIND_PROPOSAL_TYPE           | 世界提案类型    | GS
+| KIND_VOTING_BLOCKER          | 投票类型        | GS例如你是目标文明无法投票
+| KIND_PROPOSAL_BLOCKER        | 提案拦截        | GS当处于非议程时间打开世界议会效果
+| KIND_MINORCIVBONUS           | 次要奖金类型    | GS城邦的奖励
+| KIND_COASTAL_LOWLAND         | 沿海低地        | GS
+| KIND_RANDOM_EVENT            | 随机事件        | GS随机灾害
+| KIND_REALISM_SETTING         | 灾害级别设置    | GS
+| KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
+</details>
 - Types：
 ```
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
