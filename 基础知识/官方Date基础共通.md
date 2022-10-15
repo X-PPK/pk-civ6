@@ -121,6 +121,7 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
 
 </details>
+
 - Types：
 ```
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
