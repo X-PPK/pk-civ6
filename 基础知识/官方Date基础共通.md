@@ -153,13 +153,13 @@
 <Modifiers
 	ModifierId="修改器ID"							X值类型="TEXT"		默认值="NULL"
 	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
-	RunOnce="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
+	RunOnce="生效的对象集合"						    值类型="BOOLEAN"	默认值="false"
 	NewOnly="效果接口"	        					值类型="BOOLEAN"	默认值="false"
 	Permanent="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
 	Repeatable="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
 	OwnerRequirementSetId="生效对象要满足条件"		值类型="TEXT"		默认值="NULL"
 	SubjectRequirementSetId="修改器生效要达到条件"	值类型="TEXT"		默认值="NULL"
-	OwnerStackLimit="生效对象堆栈限制??"			值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
-	SubjectStackLimit="修改器堆栈限制??"			值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
+	OwnerStackLimit="生效对象堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
+	SubjectStackLimit="修改器堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 ```
