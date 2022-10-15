@@ -31,7 +31,7 @@
 />
 ```
 
-- Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
+**Kinds表**以及**Types**具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
 
 |       Kind                   | 介绍           |     注释
