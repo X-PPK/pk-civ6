@@ -41,7 +41,7 @@
 2.  xxxx
 3.  xxxx
 
-#### 皮凯的文明6UImod教程
+#### 皮凯UImod教程
 咕咕咕
 1.  xxxx
 2.  xxxx
