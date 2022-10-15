@@ -53,3 +53,5 @@
 - [文明6手游常见问题教程](https://docs.qq.com/sheet/DSnFtZU5JYUtHQm5S)
 - 然后就是文明6mod的手游兼容方面待整理更新，先咕咕咕
 
+## 俺的mod项目
+- 先把上面的mod教程部分整理好在考虑这个部分把
