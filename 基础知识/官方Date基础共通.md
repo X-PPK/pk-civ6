@@ -47,6 +47,8 @@ Kinds表具体有哪些实际类型，这些是我们可以用到（值类型均
 	Kind="实际类型"		值类型="NULL"		默认值="false"	注释="官方例子明治维新"
 />
 ```
+|       Kind                   |
+| ---------------------------- |
 | KIND_TRAIT                   |
 | KIND_BARBARIAN_TRIBE           |
 | KIND_BELIEF                   |
