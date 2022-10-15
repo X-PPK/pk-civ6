@@ -57,7 +57,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 
 ### 选择性加载 Criteria（二级节点）
 - Criteria有很多，你可以针对整个DLC，亦或者只是DLC里的一个模式，或者一个MOD，当然只是MOD里的一个模式也一样可以，一个Criteria针对也可以选择多个，例如GS和RF任意一个启动我们Criteria就启动
-- 下面是我的一些例子
+#### 下面是我的一些例子
 ```
     	<ActionCriteria>
 		<Criteria id="PPKHAGI_mod"><!-- 这个是针对mod活跃才加载的文件，这里填入mod的ID -->
@@ -91,7 +91,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 		</Criteria>
 	</ActionCriteria>
 ```
-- 关于领袖的Criteria（这个的用处主要避免一些情景模式加载这个领袖文件导致的BUG）
+#### 关于领袖的Criteria（这个的用处主要避免一些情景模式加载这个领袖文件导致的BUG）
 ```
     	<ActionCriteria>
 		<Criteria id="Expansion2AndBeyond" any="1"><!-- 这个是针对官方GS下领袖LEADER_XX或LEADER_XX2活跃才加载的文件-->
@@ -111,7 +111,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 		</Criteria>
 	</ActionCriteria>
 ```
-- 额外扩展 ，官方GS和RF的Criteria还可以用GameCoreInUse，但这个没有对应官方标准版的值，这是官方后面更新添加内容
+#### 额外扩展 ，官方GS和RF的Criteria还可以用GameCoreInUse，但这个没有对应官方标准版的值，这是官方后面更新添加内容
 ```
     	<ActionCriteria>
 		<Criteria id="Expansion_1"><!-- 这个是针对官方RF活跃才加载的文件 -->
