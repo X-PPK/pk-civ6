@@ -10,7 +10,7 @@
 ## 必需要了解的表
 - 这些表可以算是我们在数据库实现其他能力的基石
 
-### **核心开始**
+### **一. 核心开始**
 - 所有的各种Type变量都需要先在这里定义的**实际类型**也就是KING
 #### **Kinds**
 ```
@@ -69,11 +69,11 @@
 | KIND_NAMED_LAKE              | 湖泊名称        | GS
 | KIND_NAMED_SEA               | 海洋名称        | GS
 | KIND_NAMED_OCEAN             | 大洋名称        | GS
-| KIND_COLLECTION              | 集合            | 
-| KIND_EFFECT                  | 效果类型        | 
+| KIND_COLLECTION              | 集合            | 对象合集,与下面两个在DynamicModifiers表定义修改器
+| KIND_EFFECT                  | 效果类型        | 官方修改器真正的接口
 | KIND_MODIFIER                | 修改器类型      | 由上面两个构成MODIFIER
-| KIND_REQUIREMENT             | 需求限制        | 
-| KIND_REQUIREMENTSET          | 需求设置        | 
+| KIND_REQUIREMENTSET          | 需求设置        | 对需求设置进行整理关系约束与非和关系
+| KIND_REQUIREMENT             | 需求限制        | 最底层的限制，来约束修改器生效范围
 
 </details><details><summary>较少涉及部分</summary>
 
@@ -134,3 +134,7 @@
 
 </details>
 
+### **二. 修改器**
+- 各种能力主要就是修改器来实现的在通过各个XXXModifiers表来绑定到XXX上
+- 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
+#### **DynamicModifiers**
