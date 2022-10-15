@@ -162,6 +162,9 @@
 	OwnerStackLimit="生效对象堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
 	SubjectStackLimit="修改器堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
+```
+#### ModifierArguments
+```
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
 <ModifierArguments
