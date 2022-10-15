@@ -20,7 +20,18 @@
 	Hash="散列值"		值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
 />
 ```
-Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
+
+#### **Types**
+```
+<!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
+<Types
+	Type="各种Type变量"	X值类型="TEXT"		默认值="NULL"
+	Hash="散列值"		X值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
+	Kind="实际类型"		值类型="NULL"		默认值="false"	注释="官方例子明治维新"
+/>
+```
+
+- Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
 
 |       Kind                   | 介绍           |     注释
@@ -122,12 +133,4 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
 
 </details>
-#### **Types**
-```
-<!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
-<Types
-	Type="各种Type变量"	X值类型="TEXT"		默认值="NULL"
-	Hash="散列值"		X值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
-	Kind="实际类型"		值类型="NULL"		默认值="false"	注释="官方例子明治维新"
-/>
-```
+
