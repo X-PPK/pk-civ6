@@ -90,7 +90,26 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 			</ConfigurationValueMatches>
 		</Criteria>
 	</ActionCriteria>
-
+```
+- 关于领袖的Criteria（这个的用处主要避免一些情景模式加载这个领袖文件导致的BUG）
+```
+    	<ActionCriteria>
+		<Criteria id="Expansion2AndBeyond" any="1"><!-- 这个是针对官方GS下领袖LEADER_XX或LEADER_XX2活跃才加载的文件-->
+			<GameCoreInUse>Expansion2</GameCoreInUse>
+			<LeaderPlayable>Players:Expansion2_Players::LEADER_XX,Players:Expansion2_Players::LEADER_XX2</LeaderPlayable>
+		</Criteria>
+		<Criteria id="Australia_Expansion1" any="1"><!-- 这个是针对官方RF下领袖LEADER_JOHN_CURTIN活跃才加载的文件-->
+			<LeaderPlayable>Players:Expansion1_Players::LEADER_JOHN_CURTIN</LeaderPlayable>
+			<RuleSetInUse>RULESET_EXPANSION_1</RuleSetInUse>
+		</Criteria>
+		<Criteria id="Expansion2AndBeyond" any="1"><!-- 这个是针对官方GS下领袖LEADER_XX或LEADER_XX2活跃才加载的文件-->
+			<LeaderPlayable>Players:Expansion2_Players::LEADER_XX,Players:Expansion2_Players::LEADER_XX2</LeaderPlayable>
+		</Criteria>
+		<Criteria id="Australia" any="1"><!-- 这个是针对官方GS或RF或标准下领袖LEADER_JOHN_CURTIN活跃才加载的文件-->
+			<LeaderPlayable>Players:StandardPlayers::LEADER_JOHN_CURTIN,StandardPlayers::LEADER_JOHN_CURTIN,Players:Expansion1_Players::LEADER_JOHN_CURTIN,Players:Expansion2_Players::LEADER_JOHN_CURTIN</LeaderPlayable>
+			<RuleSetInUse>RULESET_STANDARD,RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+		</Criteria>
+	</ActionCriteria>
 ```
 - 额外扩展 ，官方GS和RF的Criteria还可以用GameCoreInUse，但这个没有对应官方标准版的值，这是官方后面更新添加内容
 ```
