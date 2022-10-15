@@ -63,9 +63,9 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_REQUIREMENT             | 需求限制        | 
 | KIND_REQUIREMENTSET          | 需求设置        | 
 
-</details>
-<details><summary></summary>
+</details><details><summary>较少涉及部分</summary>
 
+|       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
 | KIND_DEAL_ITEM               | 交易项目        | 
 | KIND_DIFFICULTY              | 游戏难度        | 
