@@ -71,7 +71,7 @@
 | KIND_NAMED_OCEAN             | 大洋名称        | GS
 | KIND_COLLECTION              | 集合            | 对象合集,与下面两个在DynamicModifiers表定义修改器
 | KIND_EFFECT                  | 效果类型        | 官方修改器真正的接口
-| KIND_MODIFIER                | 修改器类型      | 由上面两个构成MODIFIER
+| KIND_MODIFIER                | 修改器效果类型   | 由上面两个构成MODIFIER
 | KIND_REQUIREMENTSET          | 需求设置        | 对需求设置进行整理关系约束与非和关系
 | KIND_REQUIREMENT             | 需求限制        | 最底层的限制，来约束修改器生效范围
 
@@ -135,6 +135,32 @@
 </details>
 
 ### **二. 修改器**
-- 各种能力主要就是修改器来实现的在通过各个XXXModifiers表来绑定到XXX上
+- 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
 #### **DynamicModifiers**
+```
+<!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
+<DynamicModifiers
+	ModifierType="修改器效果类型"	X值类型="TEXT"	默认值="NULL"
+	CollectionType="生效的对象集合"	X值类型="TEXT"	默认值="NULL"
+	EffectType="效果接口"	        X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
+/>
+```
+
+#### **Modifiers**
+```
+<!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
+<!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
+<Modifiers
+	ModifierId="修改器ID"							X值类型="TEXT"		默认值="NULL"
+	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
+	RunOnce="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
+	NewOnly="效果接口"	        					值类型="BOOLEAN"	默认值="false"
+	Permanent="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
+	Repeatable="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
+	OwnerRequirementSetId="生效对象要满足条件"		值类型="TEXT"		默认值="NULL"
+	SubjectRequirementSetId="修改器生效要达到条件"	值类型="TEXT"		默认值="NULL"
+	OwnerStackLimit="生效对象堆栈限制??"			值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
+	SubjectStackLimit="修改器堆栈限制??"			值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
+/>
+```
