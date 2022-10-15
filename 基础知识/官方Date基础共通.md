@@ -49,7 +49,7 @@ Kinds表具体有哪些实际类型，这些是我们可以用到（值类型均
 | KIND_GREAT_PERSON_CLASS      | 伟人类型        | 
 | KIND_GREAT_PERSON_INDIVIDUAL | 伟人个体        | 
 | KIND_GREATWORK               | 著作            | 
-| KIND_HAPPINESS               | 宜居度等级?      | 
+| KIND_HAPPINESS               | 宜居度等级      | 欣喜若狂,厌恶这些
 | KIND_IMPROVEMENT             | 改良            | 
 | KIND_LEADER                  | 领袖            | 
 | KIND_CONTINENT               | 大陆            | 
