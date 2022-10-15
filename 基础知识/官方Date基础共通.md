@@ -12,6 +12,7 @@
 
 ### **核心开始**
 - 所有的各种Type变量都需要先在这里定义的**实际类型**也就是KING
+#### **Kinds**
 ```
 <!-- PS：Kinds 定义的 ‘实际类型’ 也就是KING 这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’ -->
 <Kinds
@@ -121,8 +122,7 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
 
 </details>
-
-- Types：
+#### **Types**
 ```
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
 <Types
