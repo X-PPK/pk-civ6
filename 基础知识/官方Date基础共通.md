@@ -20,7 +20,8 @@
 />
 ```
 Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
-<details><summary>Kinds表</summary>	
+<details><summary>Kinds表</summary>
+
 |       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
 | KIND_TRAIT                   | 特性            | 
@@ -61,8 +62,10 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_MODIFIER                | 修改器类型      | 由上面两个构成MODIFIER
 | KIND_REQUIREMENT             | 需求限制        | 
 | KIND_REQUIREMENTSET          | 需求设置        | 
+
 </details>
 <details><summary></summary>
+
 | ---------------------------- | -------------- | -----------
 | KIND_DEAL_ITEM               | 交易项目        | 
 | KIND_DIFFICULTY              | 游戏难度        | 
@@ -116,6 +119,7 @@ Kinds表具体有哪些实际类型，这些是我的整理（值类型均="TEXT
 | KIND_RANDOM_EVENT            | 随机事件        | GS随机灾害
 | KIND_REALISM_SETTING         | 灾害级别设置    | GS
 | KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
+
 </details>
 - Types：
 ```
