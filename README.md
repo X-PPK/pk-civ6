@@ -21,7 +21,7 @@ PS:	①萌新特别是不怎么懂编程的萌新建议先学会XML写mod，因�
 	- [H佬教程的视频](https://space.bilibili.com/28399130)
 	- [H佬的文明6笔记](https://gitee.com/Hemmelfort/Civ6ModdingNotes)
 2.  月佬的mod模板，一个超级工整完善的领袖文明mod案例（包括专门的音乐整理）
-  - [优妮mod项目]https://github.com/dwughjsd/LandsolYuni_civ6mod
+  - [优妮mod项目](https://github.com/dwughjsd/LandsolYuni_civ6mod)
   
 #### 数据库各表详情整理
 咕咕咕
