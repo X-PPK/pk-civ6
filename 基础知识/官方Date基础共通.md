@@ -255,10 +255,12 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
 <ModifierArguments
 	ModifierId="修改器ID"	X值类型="TEXT"	默认值="NULL"
-	Name="参数类型"			X值类型="TEXT"	默认值="NULL"
-	Value="参数值"			X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
-	Extra="额外的"			值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
-	SecondExtra="第二额外"	值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
+	Name="名称"						X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
+	Value="参数值"					X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
+	Extra="额外的"					值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
+	SecondExtra="第二额外"			值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
+	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
+	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
 ## ModifierStrings
@@ -331,6 +333,18 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 ```
 PS: RequirementType太多了暂没精力整理
 ## RequirementArguments
+PS: 这个表和ModifierArguments差不多，实际他们的单位以及与对应其他表关系差不多
+```
+<!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
+<RequirementArguments
+	RequirementId="限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
+	Name="名称"						X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
+	Value="参数值"					X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
+	Extra="额外的"					值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
+	SecondExtra="第二额外"			值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
+	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
+/>
+```
 
 ## RequirementStrings
 
