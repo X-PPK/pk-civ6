@@ -330,7 +330,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	Persistent="持久的?"				值类型="BOOLEAN"	默认值="false"	注释="官方仅在部分涉及AI胜利的修改器有用这个"
 	ProgressWeight="进度权重?"			值类型="INTEGER"	默认值="0"		注释="官方仅在部分涉及AI胜利的修改器有用这个"
 	Triggered="已触发?"					值类型="BOOLEAN"	默认值="false"	注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
-	Reverse="颠倒?反转?"				    值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
+	Reverse="颠倒?反转?"				值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
 />
 ```
 PS: RequirementType太多了暂没精力整理
