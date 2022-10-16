@@ -238,8 +238,8 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 	ModifierId="修改器ID"							X值类型="TEXT"		默认值=NULL
 	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
 	RunOnce="只对当前的对象有效"					    值类型="BOOLEAN"	默认值="false"
-	NewOnly="只对之后的对象有效"	        		值类型="BOOLEAN"	默认值="false"
-	Permanent="执行一次永久有效"					值类型="BOOLEAN"	默认值="false"
+	NewOnly="只对之后的对象有效"	        		    值类型="BOOLEAN"	默认值="false"
+	Permanent="执行一次永久有效"					    值类型="BOOLEAN"	默认值="false"
 	OwnerRequirementSetId="生效对象要满足条件"		值类型="TEXT"		默认值="NULL"
 	SubjectRequirementSetId="修改器生效要达到条件"	值类型="TEXT"		默认值="NULL"
 	Repeatable="可重复?"							值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
