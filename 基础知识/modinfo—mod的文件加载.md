@@ -162,7 +162,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 ```
 
 ### UImod添加（3级节点）
-- 一个UI需要同名的xmL和lua文件组成，用AddUserInterfaces添加
+- 一个UI需要同名的xmL和lua文件组成，用AddUserInterfaces(游戏内加载项)添加
 ```
 <AddUserInterfaces id="xx">
   <Properties>
@@ -185,6 +185,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
   <File>xxxxUI.lua</File>
 </ImportFiles>
 ```
+- UI的lua脚本替换ReplaceUIScript(游戏内加载项)，这个常常与UImod兼容有关，我会在UI兼容教程讲述
 
 ### 添加地图（3级节点）
 - 好吧这个我也懂得不多，没有深入研究过地图相关的这里分享一段我以前写的总结记得当时是给一个制作地图的朋友发的，我现在已经忘记这些了，有可能有错。还有一个相关的AddMap我没用过
@@ -215,3 +216,19 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
     </Files>
 </Mod>
 ```
+### 其他（3级节点）
+UpdateDatabase：更新数据库
+
+UpdateIcons：更新/加入图标库
+
+UpdateText：更新/加入文本库
+
+UpdateColors：更新/加入颜色库
+
+UpdateArt：更新/加入艺术文件
+
+AddGameplayScripts：添加游戏脚本(游戏内加载项)
+
+UpdateAudio 更新/加入音频(游戏内加载项)
+
+ps：一定要区分游戏脚本和UI脚本，在游戏内加载方法不一样（官方的lua有两个环境要区分开，他们的官方接口很多不一样，你不能在其中一个环境调用另一个环境接口）
