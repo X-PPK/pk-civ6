@@ -162,6 +162,7 @@
 | ModifierType| 修改器的Type变量
 
 </details>
+
 ## **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
