@@ -91,7 +91,7 @@
 | KIND_GAMESPEED_SCALING       | 游戏速度缩放?    | 
 | KIND_GOODY_HUT               | 部落村庄奖励     | 
 | KIND_GREATWORK               | 著作            | 
-| KIND_HAPPINESS               | 宜居度等级?      | 
+| KIND_HAPPINESS               | 宜居度等级      | 例如欣喜若狂，厌恶等等
 | KIND_CONTINENT               | 大陆            | 
 | KIND_MAPSIZE                 | 地图大小        | 
 | KIND_NOTIFICATION            | 通知            | 
