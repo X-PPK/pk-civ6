@@ -232,17 +232,18 @@ PS：CollectionType 官方共设定41个值
 PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，ModifierType和EffectType太多了暂没精力整理
 
 ## **Modifiers**
+- ps：我OwnerRequirementSetId没用过不确定理解是否到位
 ```
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
-	ModifierId="修改器ID"							X值类型="TEXT"		默认值=NULL
-	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
+	ModifierId="修改器ID"						X值类型="TEXT"		默认值=NULL
+	ModifierType="修改器效果类型"				X值类型="TEXT"		默认值="NULL"
 	RunOnce="只对当前的对象有效"					值类型="BOOLEAN"	默认值="false"
 	NewOnly="只对之后的对象有效"	        		值类型="BOOLEAN"	默认值="false"
 	Permanent="执行一次永久有效"					值类型="BOOLEAN"	默认值="false"
 	OwnerRequirementSetId="所有者要满足条件"		值类型="TEXT"		默认值="NULL"	注释="例如修改器本身生效时机"
-	SubjectRequirementSetId="被影响着达到条件"		值类型="TEXT"		默认值="NULL"	注释="被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效"
-	Repeatable="可重复?"							值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
+	SubjectRequirementSetId="被影响着达到条件"	值类型="TEXT"		默认值="NULL"	注释="被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效"
+	Repeatable="可重复?"						值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
 	OwnerStackLimit="生效对象堆栈限定??"			值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
 	SubjectStackLimit="修改器堆栈限定??"			值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
