@@ -314,7 +314,21 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 - 这个是对修改器效果进行约束，在我们需要的时候生效，不需要的时候无效，确定一个生效范围
 
 ## Requirements
-
+```
+<!-- PS: Requirements表是定义底层限定的地方， -->
+<Requirements
+	RequirementId="限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
+	RequirementType="限定类型Type"	X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
+	Likeliness="可能性??"			值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到限定的生效条件后还需要这里的给予概率?"
+	Impact="影响??"					值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
+	Inverse="反转"					值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
+	Reverse="颠倒?反转?"			值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
+	Persistent="持久的"				值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，"
+	ProgressWeight="限定ID自己定义"	值类型="INTEGER"	默认值="0"
+	Triggered="限定ID自己定义"		值类型="BOOLEAN"	默认值="false"
+/>
+```
+PS: RequirementType太多了暂没精力整理
 ## RequirementArguments
 
 ## RequirementStrings
