@@ -349,7 +349,7 @@ PS: RequirementType太多了暂没精力整理
 ```
 
 ## RequirementStrings
-- 这个我们基本用不到，了一下好了
+- 这个我们基本用不到，了解一下好了
 ```
 <!--PS：RequirementStrings 是定义RequirementId文本的地方，大部分RequirementId是不需要这个的，但在一些地方还是需要的
 		官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
@@ -365,9 +365,20 @@ PS: RequirementType太多了暂没精力整理
 <!-- PS: RequirementSets表是对定义RequirementSetId限定集合内各个子限定之间处于什么状态，修改器就生效 -->
 <RequirementSets
 	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
-	RequirementSetType="限定集合类型"		X值类型="TEXT"	默认值="NULL"	注释="确定限定集合的子限定关系"
+	RequirementSetType="限定集合类型"		X值类型="TEXT"	默认值="NULL"	注释="确定限定集合的子限定关系，共三种关系"
 />
 ```
+</details><details><summary>RequirementSetType的三种类型</summary>
+PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
+
+| RequirementSetType | 对子限定要求
+| ---------------- | ------------------------------- 
+| REQUIREMENTSET_TEST_ALL | 全部子限定符合，这个限定集合才符合，修改器生效
+| REQUIREMENTSET_TEST_ANY | 任意子限定符合，这个限定集合才符合，修改器生效
+| REQUIREMENTSET_TEST_NONE| 子限定全不符合，这个限定集合才符合，修改器生效
+
+</details>
+
 ## RequirementSetRequirements
 - 这里是将RequirementId集合到RequirementSetId
 ```
