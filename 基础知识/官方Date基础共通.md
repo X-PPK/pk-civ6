@@ -33,6 +33,7 @@
 
 **Kinds表**以及**Types**具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
+PS：Kind 官方共设定90个值
 
 |       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
@@ -178,7 +179,7 @@
 ```
 <details><summary>CollectionType对象集合整理</summary>
 
-DynamicModifiers表我暂未进行过深入研究，暂时没有注释
+PS：CollectionType 官方共设定41个值
 
 |       CollectionType                | 注释
 | ----------------------------------- | --------------
@@ -225,7 +226,7 @@ DynamicModifiers表我暂未进行过深入研究，暂时没有注释
 | COLLECTION_UNIT_NEAREST_OWNER_CITY  |
 
 </details>
-PS：ModifierType和EffectType太多了暂没精力整理
+PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，ModifierType和EffectType太多了暂没精力整理
 
 ### **Modifiers**
 ```
