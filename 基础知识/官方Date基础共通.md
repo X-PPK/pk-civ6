@@ -134,10 +134,29 @@
 
 </details>
 
+### **Tags**
+```
+<!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
+		 例如对多个单位增加一个陆军tag标签，赋予相同的AI行为逻辑 -->
+<Tags
+	Tag="标签ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	Vocabulary="散列值"	值类型="TEXT"	默认值="NULL"	注释="官方这里都有赋予值，这里就是抄官方"
+/>
+```
+- **TypeTags**（定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表）
+```
+<!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
+<TypeTags
+	Type="各种Type变量"	X值类型="TEXT"	默认值="NULL"
+	Tag="标签ID自己定义"	X值类型="TEXT"	默认值="NULL"
+/>
+```
+
 ## **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
 ### **DynamicModifiers**
+- 一般用官方已经定义好的几百个ModifierType就够用了
 ```
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
 <DynamicModifiers
@@ -146,6 +165,13 @@
 	EffectType="效果接口"	        X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
 />
 ```
+<details><summary>CollectionType对象集合整理</summary>
+|       CollectionType         | 注释
+| ---------------------------- | --------------
+
+
+<details>
+PS：ModifierType和EffectType太多了暂没精力整理
 
 ### **Modifiers**
 ```
@@ -190,8 +216,8 @@
 - 将修改器效果赋予对象的表
 <details><summary>较为常规"XXModifier"表</summary>
 
-|        表                               | 被绑对象                                 | 注释
-| --------------------------------------- | --------------------------------------- |------------------------
+|        表                            | 被绑对象                                 | 注释
+| ------------------------------------ | --------------------------------------- |------------------------
 | TraitModifiers                       | TraitType="特性Type变量"                 | 将修改器与特性绑定，在通特性绑文明或领袖
 | BeliefModifiers                      | BeliefType="信条特性Type变量"            | 将修改器与信条绑定
 | BuildingModifiers·                   | BuildingType="建筑/奇观Type变量"         | 将修改器与信条绑定
@@ -217,8 +243,8 @@
 
 </details><details><summary>其他可直接绑修改器ID的表</summary>
 
-|        表                               | 被绑对象                                 | 注释
-| --------------------------------------- | --------------------------------------- |------------------------
+|        表        | 被绑对象                         | 注释
+| ---------------- | ------------------------------- |------------------------
 | EmergencyRewards | EmergencyType="突发事件Type变量" | RF&GS 这个是定义突发事件奖励的表有多个需要定义的量，其中就可以直接绑定修改器ModifierId
 | GoodyHutSubTypes | SubTypeGoodyHut="村庄Type变量"   | 定义村庄效果类型的表，有待研究，可直接绑修改器ModifierId
 | esolutionEffects | ResolutionType="决议的Type变量"  | GS 决议效果的表，有待研究，可直接绑修改器ModifierId
