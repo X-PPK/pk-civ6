@@ -160,6 +160,7 @@ PS：Kind 官方共设定90个值
 />
 ```
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
+PS：官方的例子就这四个，不排除涉及还可以绑其他Type变量类型
 
 |       Type         | 注释
 | ------------------ | --------------
