@@ -27,7 +27,7 @@
 <Types
 	Type="各种Type变量"	X值类型="TEXT"		默认值="NULL"
 	Hash="散列值"		X值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
-	Kind="实际类型"		值类型="NULL"		默认值="false"	注释="官方例子明治维新"
+	Kind="实际类型"		X值类型="TEXT"		默认值="NULL"
 />
 ```
 
