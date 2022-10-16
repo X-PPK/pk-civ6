@@ -235,16 +235,16 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 ```
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
-	ModifierId="修改器ID"							X值类型="TEXT"		默认值="NULL"
+	ModifierId="修改器ID"							X值类型="TEXT"		默认值=NULL
 	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
-	RunOnce="生效的对象集合"						    值类型="BOOLEAN"	默认值="false"
-	NewOnly="效果接口"	        					值类型="BOOLEAN"	默认值="false"
-	Permanent="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
-	Repeatable="生效的对象集合"						值类型="BOOLEAN"	默认值="false"
+	RunOnce="只对当前的对象有效"					    值类型="BOOLEAN"	默认值="false"
+	NewOnly="只对之后的对象有效"	        		值类型="BOOLEAN"	默认值="false"
+	Permanent="执行一次永久有效"					值类型="BOOLEAN"	默认值="false"
 	OwnerRequirementSetId="生效对象要满足条件"		值类型="TEXT"		默认值="NULL"
 	SubjectRequirementSetId="修改器生效要达到条件"	值类型="TEXT"		默认值="NULL"
-	OwnerStackLimit="生效对象堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
-	SubjectStackLimit="修改器堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
+	Repeatable="可重复?"							值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
+	OwnerStackLimit="生效对象堆栈限定??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
+	SubjectStackLimit="修改器堆栈限定??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSetId，当然他们非必填值
 ```
