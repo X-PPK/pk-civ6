@@ -409,3 +409,22 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 
 ### Leader或Civilization——Traits
 - 虽然实际一个**TraitType**可以同时绑多个文明和领袖，但是这样会导致问题，例如一个文明和这个文明的领袖都绑了一个特殊能力，会导致文明的这个特性生效一次，领袖又生效一次对于像特殊能力很可能是效果直接叠加翻倍，所以我们应当做出选择，策划好这个特性到底是**文明特性还是领袖特性**，而这里就要用到给**文明**和**领袖**绑特性的表**LeaderTraits**表和**CivilizationTraits**表
+####  CivilizationTraits
+```
+<!-- PS：CivilizationTraits 表是将TraitType绑到CivilizationType领袖的，
+		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为文明特殊单位/建筑等等 -->
+<CivilizationTraits
+	TraitType="特性Type变量"	X值类型="TEXT"			默认值="NULL"
+	CivilizationType="文明Type变量"	X值类型="TEXT"		默认值="NULL"
+/>
+```
+
+####  LeaderTraits
+```
+<!-- PS：LeaderTraits 表是将TraitType帮到LeaderType领袖的，
+		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为领袖特殊单位/建筑等等 -->
+<LeaderTraitsX
+	TraitType="特性Type变量"	X值类型="TEXT"			默认值="NULL"
+	LeaderType="领袖Type变量"		X值类型="TEXT"		默认值="NULL"
+/>
+```
