@@ -152,7 +152,16 @@
 	Tag="标签ID自己定义"	X值类型="TEXT"	默认值="NULL"
 />
 ```
+<details><summary>官方TypeTags表绑定Type变量类型：</summary>
 
+|       Type         | 注释
+| ------------------ | --------------
+| UnitType| 单位Type变量
+| UnitAbilityType| 单位能力的Type变量
+| ResourceType | 资源的Type变量
+| ModifierType| 修改器的Type变量
+
+</details>
 ## **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
