@@ -488,3 +488,16 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 	GreatPersonClassType="伟人类型Type变量"	X值类型="TEXT"		默认值="NULL"
 />
 ```
+### 特殊的TraitType
+- 部分特殊的TraitType能非常有效帮助我们修改游戏，我们很有必要了解一些
+- 非常希望有带佬补充
+#### TRAIT_LEADER_MAJOR_CIV
+- 这个是modder用的非常多的官方TraitType
+- 这个TraitType字面意思是主要文明，但实测貌似对所有文明有效，通过这个TraitType我们可以把修改器自己绑它身上从而达到一次性绑所有文明上
+- 如果是增加单位什么的就没必要绑这里，以为非特性单位等就是全文明都有可建造的
+
+#### TRAIT_LEADER_BARBARIAN
+- 这个是野蛮人的TraitType，可以把一些修改器，甚至单位等等绑这里增强野蛮人，当然也可以削弱
+
+#### TRAIT_LEADER_FREE_CITIES
+- 这个是自由城邦的TraitType，和野蛮人同理
