@@ -456,7 +456,35 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 | Improvements               | 改良表          | 特色改良诞生
 | Units                      | 单位表          | 特色单位诞生
 | TraitModifiers             | 特色绑修改器ID表 | 特色能力诞生
-| Governors                  | 总督表          | 特色总督
+| Governors                  | 总督表          | RF&GS特色总督
 | DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
-
 </details>
+
+## 其他的
+### ExcludedDistricts
+```
+<!-- PS：ExcludedDistricts 表是让TraitType增加一个不能造某区域的能力，
+		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能造这个区域 -->
+<ExcludedDistricts
+	TraitType="特性Type变量"	X值类型="TEXT"		默认值="NULL"
+	DistrictType="区域Type变量"	X值类型="TEXT"		默认值="NULL"
+/>
+```
+### ExcludedAdjacencies
+```
+<!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，
+		在通过CivilizationTraits或LeaderTraits，让领袖/文明这个相邻加成无效 -->
+<ExcludedAdjacencies
+	TraitType="特性Type变量"	X值类型="TEXT"	默认值="NULL"
+	YieldChangeId="相邻加成ID"	X值类型="TEXT"	默认值="NULL"	注释="这个是自己在Adjacency_YieldChanges表设定起名并定义的加成关系的ID"
+/>
+```
+### ExcludedGreatPersonClasses
+```
+<!-- PS：ExcludedGreatPersonClasses 表是让TraitType增加一个不能获得这个类型伟人点数和招募这个类型伟人的能力，
+		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能招获得这个类型伟人点数和招募这个类型伟人 -->
+<ExcludedGreatPersonClasses
+	TraitType="特性Type变量"				X值类型="TEXT"		默认值="NULL"
+	GreatPersonClassType="伟人类型Type变量"	X值类型="TEXT"		默认值="NULL"
+/>
+```
