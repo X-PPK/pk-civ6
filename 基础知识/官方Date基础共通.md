@@ -237,14 +237,14 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 <Modifiers
 	ModifierId="修改器ID"							X值类型="TEXT"		默认值=NULL
 	ModifierType="修改器效果类型"					X值类型="TEXT"		默认值="NULL"
-	RunOnce="只对当前的对象有效"					    值类型="BOOLEAN"	默认值="false"
-	NewOnly="只对之后的对象有效"	        		    值类型="BOOLEAN"	默认值="false"
-	Permanent="执行一次永久有效"					    值类型="BOOLEAN"	默认值="false"
-	OwnerRequirementSetId="生效对象要满足条件"		值类型="TEXT"		默认值="NULL"
-	SubjectRequirementSetId="修改器生效要达到条件"	值类型="TEXT"		默认值="NULL"
+	RunOnce="只对当前的对象有效"					值类型="BOOLEAN"	默认值="false"
+	NewOnly="只对之后的对象有效"	        		值类型="BOOLEAN"	默认值="false"
+	Permanent="执行一次永久有效"					值类型="BOOLEAN"	默认值="false"
+	OwnerRequirementSetId="所有者要满足条件"		值类型="TEXT"		默认值="NULL"	注释="例如修改器本身生效时机"
+	SubjectRequirementSetId="被影响着达到条件"		值类型="TEXT"		默认值="NULL"	注释="被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效"
 	Repeatable="可重复?"							值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
-	OwnerStackLimit="生效对象堆栈限定??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
-	SubjectStackLimit="修改器堆栈限定??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
+	OwnerStackLimit="生效对象堆栈限定??"			值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
+	SubjectStackLimit="修改器堆栈限定??"			值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSetId，当然他们非必填值
 ```
@@ -322,7 +322,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	Likeliness="可能性??"			值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到限定的生效条件后还需要这里的给予概率?"
 	Impact="影响??"					值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
 	Inverse="反转"					值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
-	Reverse="颠倒?反转?"			值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
+	Reverse="颠倒?反转?"			    值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
 	Persistent="持久的"				值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，"
 	ProgressWeight="限定ID自己定义"	值类型="INTEGER"	默认值="0"
 	Triggered="限定ID自己定义"		值类型="BOOLEAN"	默认值="false"
