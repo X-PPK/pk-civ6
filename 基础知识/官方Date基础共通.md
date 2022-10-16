@@ -443,3 +443,20 @@ PS: 议程相关的我暂时未深入研究，有待研究
 	CivilizationType="文明Type变量"	值类型="TEXT"		默认值="NULL"
 />
 ```
+
+## 可直接绑TraitType成为特性的对象
+- 常规的特殊XX都是直接绑TraitType在通过TraitType绑领袖或文明来属性的那么都有那些呢
+</details><details><summary>我的整理：</summary>
+PS:这些表都是可以直接填的TraitType的，直接绑TraitType
+
+|        表                  | 特色的对象      | 通过TraitType中间这样一绑
+| -------------------------- | -------------- |-----------
+| Buildings                  | 建筑/奇观表     | 特色建筑就这样诞生
+| Districts                  | 区域            | 专有区域诞生
+| Improvements               | 改良表          | 特色改良诞生
+| Units                      | 单位表          | 特色单位诞生
+| TraitModifiers             | 特色绑修改器ID表 | 特色能力诞生
+| Governors                  | 总督表          | 特色总督
+| DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
+
+</details>
