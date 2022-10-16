@@ -135,6 +135,7 @@
 </details>
 
 ### **Tags**
+- 区分开文本文件里文本变量用到的那个Tag，完全和这里的Tag是两码事情
 ```
 <!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
 		 例如对多个单位增加一个陆军tag标签，赋予相同的AI行为逻辑 -->
@@ -166,11 +167,11 @@
 />
 ```
 <details><summary>CollectionType对象集合整理</summary>
+
 |       CollectionType         | 注释
 | ---------------------------- | --------------
 
-
-<details>
+</details>
 PS：ModifierType和EffectType太多了暂没精力整理
 
 ### **Modifiers**
