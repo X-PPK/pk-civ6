@@ -322,7 +322,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 ```
 <!-- PS: Requirements表是定义底层限定的地方， -->
 <Requirements
-	RequirementId="子限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
+	RequirementId="子限定ID自己定义"	    X值类型="TEXT"		默认值="NULL"
 	RequirementType="限定类型Type"		X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
 	Likeliness="可能性??"				值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
 	Impact="影响??"						值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
@@ -330,7 +330,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	Persistent="持久的?"				值类型="BOOLEAN"	默认值="false"	注释="官方仅在部分涉及AI胜利的修改器有用这个"
 	ProgressWeight="进度权重?"			值类型="INTEGER"	默认值="0"		注释="官方仅在部分涉及AI胜利的修改器有用这个"
 	Triggered="已触发?"					值类型="BOOLEAN"	默认值="false"	注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
-	Reverse="颠倒?反转?"				值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
+	Reverse="颠倒?反转?"				    值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
 />
 ```
 PS: RequirementType太多了暂没精力整理
@@ -339,7 +339,7 @@ PS: RequirementType太多了暂没精力整理
 ```
 <!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
 <RequirementArguments
-	RequirementId="子限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	RequirementId="子限定ID自己定义"	    X值类型="TEXT"	默认值="NULL"
 	Name="名称"							X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
 	Value="参数值"						X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
 	Extra="额外的"						值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
@@ -374,6 +374,6 @@ PS: RequirementType太多了暂没精力整理
 <!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
 <RequirementSetRequirements
 	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
-	RequirementId="子限定ID自己定义"		X值类型="TEXT"	默认值="NULL"
+	RequirementId="子限定ID自己定义"		    X值类型="TEXT"	默认值="NULL"
 />
 ```
