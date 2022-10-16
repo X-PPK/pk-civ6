@@ -160,7 +160,6 @@ PS：Kind 官方共设定90个值
 />
 ```
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
-PS：官方的例子就这四个，不排除涉及还可以绑其他Type变量类型
 
 |       Type         | 注释
 | ------------------ | --------------
@@ -300,9 +299,9 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 | UnitPromotionModifiers               | UnitPromotionType="单位晋升Type变量"      | 单位晋升拥有的修改器效果
 | GameModifiers                        |                  /                       | 这个表只需要ModifierId，应该是是直接把修改器效果绑全局的?(待测试研究)
 | CommemorationModifiers               | CommemorationType="时代着力点Type变量"    | RF&GS 时代着力点的修改器效果
+| ~~ComplimentModifiers~~              | ~~CommemorationType="时代着力点Type变量"~~ | ~~RF&GS 与CommemorationModifiers的表内容一样，官方应该弃用了，数据库内为空~~
 | GovernorModifiers                    | GovernorType="总督Type变量"               | RF&GS 将修改器与总督绑定--总督初始能力
 | GovernorPromotionModifiers           | GovernorPromotionType="总督晋升Type变量"  | RF&GS 将修改器与总晋升能力绑定
-| ComplimentModifiers                  | CommemorationType="时代着力点Type变量"    | RF&GS 与CommemorationModifiers的表内容一样，官方应该弃用了，数据库内为空
 | AllianceEffects                      | AllianceType="同盟关系Type变量"           | RF&GS 将修改器与同盟关系绑定，它还有一个LevelRequirement确认修改器生效级别要求
 | EmergencyBuffs                       | EmergencyType="突发事件Type变量"          | RF&GS 紧急缓冲表 给突发事件在缓冲阶段给予修改器，它还有一个Description是文本讲述突发事件缓存情况效果
 
