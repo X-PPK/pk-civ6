@@ -186,3 +186,31 @@
 	Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
 />
 ```
+### 各类Modifier
+- 将修改器效果赋予对象的表
+<details><summary>常规"XXModifier"表</summary>
+
+|        表                               | 被绑对象                                 | 注释
+| --------------------------------------- | --------------------------------------- |------------------------
+|    TraitModifiers                       | TraitType="特性Type变量"                 | 将修改器与特性绑定，在通特性绑文明或领袖
+|    BeliefModifiers                      | BeliefType="信条特性Type变量"            | 将修改器与信条绑定
+|    BuildingModifiers·                   | BuildingType="建筑/奇观Type变量"         | 将修改器与信条绑定
+|    CivicModifiers                       | CivicType="市政Type变量"                 | 将修改器与信条绑定
+|    TechnologyModifiers                  | TechnologyType="科技Type变量"            | 将修改器与信条绑定
+|    DistrictModifiers                    | DistrictType="区域Type变量"              | 将修改器与信条绑定v
+|    GovernmentModifiers                  | GovernmentType="政体Type变量"            | 将修改器与信条绑定
+|    GreatPersonIndividualBirthModifiers  | GreatPersonIndividualType="伟人Type变量" | 将修改器与伟人绑定
+|    GreatPersonIndividualActionModifiers | GreatPersonIndividualType="伟人Type变量" | 将修改器与伟人激活能力绑定，它还有一个AttachmentTargetType来确认能力激活修改器生效对象
+|    GreatWorkModifiers                   | GreatWorkType="著作,遗物Type变量"        | 将修改器与著作/遗物绑定
+|    ImprovementModifiers                 | ImprovementType="改良Type变量"           | 将修改器与改良绑定
+|    PolicyModifiers                      | PolicyType="政策Type变量"                | 将修改器与政策卡绑定
+|    ProjectCompletionModifiers           | ProjectType="项目Type变量"               | 项目完成的修改器效果
+|    UnitAbilityModifiers                 | UnitAbilityType="单位能力Type变量"        | 单位能力拥有的修改器效果
+|    UnitPromotionModifiers               | UnitPromotionType="单位晋升Type变量"      | 单位晋升拥有的修改器效果
+|    CommemorationModifiers               | CommemorationType="时代着力点Type变量"    | RF&GS 时代着力点的修改器效果
+|    GovernorModifiers                    | GovernorType="总督Type变量"               | RF&GS 将修改器与总督绑定--总督初始能力
+|    GovernorPromotionModifiers           | GovernorPromotionType="总督晋升Type变量"  | RF&GS 将修改器与总晋升能力绑定
+|    ComplimentModifiers                  | CommemorationType="时代着力点Type变量"    | RF&GS 与CommemorationModifiers的表内容一样，官方应该弃用了，数据库内为空
+|    GameModifiers                        |                     /                    | 这个表只需要ModifierId，应该是是直接把修改器效果绑全局的?(待测试研究)
+
+</details>
