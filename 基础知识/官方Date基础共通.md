@@ -12,9 +12,9 @@
 
 下面开始内容
 
-## **一. 核心开始**
+# **一. 核心开始**
 - **所有的各种Type变量**都需要先在这里定义的**实际类型**也就是KING
-### **Kinds**
+## **Kinds**
 ```
 <!-- PS：Kinds 定义的 ‘实际类型’ 也就是KING 这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’ -->
 <Kinds
@@ -23,7 +23,7 @@
 />
 ```
 
-### **Types**
+## **Types**
 ```
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
 <Types
@@ -137,7 +137,7 @@ PS：Kind 官方共设定90个值
 
 </details>
 
-### **Tags**
+## **Tags**
 - 区分开文本文件里文本变量用到的那个Tag，完全和这里的Tag是两码事情
 ```
 <!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
@@ -147,7 +147,7 @@ PS：Kind 官方共设定90个值
 	Vocabulary="散列值"	值类型="TEXT"	默认值="NULL"	注释="官方这里都有赋予值，这里就是抄官方"
 />
 ```
-### **TypeTags**
+## **TypeTags**
 - 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
 ```
 <!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
@@ -167,10 +167,10 @@ PS：Kind 官方共设定90个值
 
 </details>
 
-## **二. 修改器**
+# **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
-### **DynamicModifiers**
+## **DynamicModifiers**
 - 一般用官方已经定义好的几百个ModifierType就够用了
 ```
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
@@ -231,7 +231,7 @@ PS：CollectionType 官方共设定41个值
 </details>
 PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，ModifierType和EffectType太多了暂没精力整理
 
-### **Modifiers**
+## **Modifiers**
 ```
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
@@ -248,7 +248,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 />
 PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSetId，当然他们非必填值
 ```
-### ModifierArguments
+## ModifierArguments
 ```
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
@@ -260,7 +260,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	SecondExtra="第二额外"	值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
 />
 ```
-### ModifierStrings
+## ModifierStrings
 ```
 <!--PS：ModifierStrings是定义ModifierId文本的地方，大部分ModifierId是不需要这个的，但在一些地方还是需要的
 		例如，在给单位的修改器上，由于修改器改变了单位属性，而这种改变是满足了生效条件（例如某种地形加战斗力）临时拥有的
@@ -271,7 +271,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
 />
 ```
-### 怎么将修改器赋予到需要的对象
+## 怎么将修改器赋予到需要的对象
 - 将修改器效果赋予对象的表
 <details><summary>较为常规"XXModifier"表</summary>
 
@@ -310,15 +310,15 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 
 </details>
 
-## 三. REQ修改器限制
+# 三. REQ修改器限制
 - 这个是对修改器效果进行约束限制，在我们需要的时候生效，不需要的时候无效
 
-### Requirements
+## Requirements
 
-### RequirementArguments
+## RequirementArguments
 
-### RequirementStrings
+## RequirementStrings
 
-### RequirementSets
+## RequirementSets
 
-### RequirementSetRequirements
+## RequirementSetRequirements
