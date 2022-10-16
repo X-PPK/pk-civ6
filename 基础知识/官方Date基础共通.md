@@ -243,6 +243,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 	OwnerStackLimit="生效对象堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
 	SubjectStackLimit="修改器堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
+PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSetId，当然他们非必填值
 ```
 ### ModifierArguments
 ```
@@ -296,12 +297,14 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 | AllianceEffects                      | AllianceType="同盟关系Type变量"           | RF&GS 将修改器与同盟关系绑定，它还有一个LevelRequirement确认修改器生效级别要求
 | EmergencyBuffs                       | EmergencyType="突发事件Type变量"          | RF&GS 紧急缓冲表 给突发事件在缓冲阶段给予修改器，它还有一个Description是文本讲述突发事件缓存情况效果
 
-</details><details><summary>其他可直接绑修改器ID的表</summary>
+<details><summary>其他可直接绑修改器ID的表</summary>
 
 |        表        | 被绑对象                         | 注释
 | ---------------- | ------------------------------- |------------------------
 | EmergencyRewards | EmergencyType="突发事件Type变量" | RF&GS 这个是定义突发事件奖励的表有多个需要定义的量，其中就可以直接绑定修改器ModifierId
 | GoodyHutSubTypes | SubTypeGoodyHut="村庄Type变量"   | 定义村庄效果类型的表，有待研究，可直接绑修改器ModifierId
 | esolutionEffects | ResolutionType="决议的Type变量"  | GS 决议效果的表，有待研究，可直接绑修改器ModifierId
+
+</details>
 
 ## 三. REQ修改器限制
