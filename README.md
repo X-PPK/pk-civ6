@@ -17,6 +17,17 @@
 2. 新建分支
 3. 提交代码
 - 联系我的方式，除了上面的添加QQ群/频道联系外还可以[哔哩联系俺](https://space.bilibili.com/1440305287)
+
+### 推荐相关教程
+
+1.  适合文明6mod新手教程——Hemmelfort带佬的文明6教程(教程很小部分内容因为官方后面更新导致不适用)
+	- [H佬教程的视频](https://space.bilibili.com/28399130)
+	- [H佬的文明6笔记](https://gitee.com/Hemmelfort/Civ6ModdingNotes)
+2.  月佬的mod模板，一个超级工整完善的领袖文明mod案例（包括专门的音乐整理）
+	- [优妮mod项目](https://github.com/dwughjsd/LandsolYuni_civ6mod)
+
+## 皮凯的文明6教程或者说更多是总结
+
 ### 基础知识
 
 ①萌新特别是不怎么懂编程的萌新建议先学会XML写mod，因为官方文件主要是XML方便学习
@@ -28,14 +39,6 @@
 1.  [modinfo——mod的必备身份证](基础知识/modinfo—mod的文件加载.md)
 2.  [官方数据库的基础相通部分](基础知识/官方Date基础共通.md)
 3.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
-
-### 推荐教程
-
-1.  适合文明6mod新手教程——Hemmelfort带佬的文明6教程(教程很小部分内容因为官方后面更新导致不适用)
-	- [H佬教程的视频](https://space.bilibili.com/28399130)
-	- [H佬的文明6笔记](https://gitee.com/Hemmelfort/Civ6ModdingNotes)
-2.  月佬的mod模板，一个超级工整完善的领袖文明mod案例（包括专门的音乐整理）
-	- [优妮mod项目](https://github.com/dwughjsd/LandsolYuni_civ6mod)
 
 ### 数据库各表详情整理
 咕咕咕
