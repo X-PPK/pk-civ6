@@ -5,6 +5,8 @@
 
 这里是我认为非常有**必要了解的表**，这些表可以算是我们在数据库实现其他能力的基石
 
+各个元素在表里大都是互相可绑的不是一对一关系
+
 **注意：**
 - **默认值="NULL"** 表示默认值为**空**,不是文本
 - 在“**值类型**”前面加了**X**则表示为必填的值
@@ -320,15 +322,15 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 ```
 <!-- PS: Requirements表是定义底层限定的地方， -->
 <Requirements
-	RequirementId="限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
-	RequirementType="限定类型Type"	X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
-	Likeliness="可能性??"			值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到限定的生效条件后还需要这里的给予概率?"
-	Impact="影响??"					值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
-	Inverse="反转"					值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
-	Reverse="颠倒?反转?"			    值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
-	Persistent="持久的"				值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，"
-	ProgressWeight="限定ID自己定义"	值类型="INTEGER"	默认值="0"
-	Triggered="限定ID自己定义"		值类型="BOOLEAN"	默认值="false"
+	RequirementId="子限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
+	RequirementType="限定类型Type"		X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
+	Likeliness="可能性??"				值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
+	Impact="影响??"						值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
+	Inverse="反转"						值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，子限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
+	Persistent="持久的?"				值类型="BOOLEAN"	默认值="false"	注释="官方仅在部分涉及AI胜利的修改器有用这个"
+	ProgressWeight="进度权重?"			值类型="INTEGER"	默认值="0"		注释="官方仅在部分涉及AI胜利的修改器有用这个"
+	Triggered="已触发?"					值类型="BOOLEAN"	默认值="false"	注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
+	Reverse="颠倒?反转?"				值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
 />
 ```
 PS: RequirementType太多了暂没精力整理
@@ -337,12 +339,12 @@ PS: RequirementType太多了暂没精力整理
 ```
 <!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
 <RequirementArguments
-	RequirementId="限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
-	Name="名称"						X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
-	Value="参数值"					X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
-	Extra="额外的"					值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
-	SecondExtra="第二额外"			值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
-	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
+	RequirementId="子限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	Name="名称"							X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
+	Value="参数值"						X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
+	Extra="额外的"						值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
+	SecondExtra="第二额外"				值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
+	Type="类型"							值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
 
@@ -352,12 +354,26 @@ PS: RequirementType太多了暂没精力整理
 <!--PS：RequirementStrings 是定义RequirementId文本的地方，大部分RequirementId是不需要这个的，但在一些地方还是需要的
 		官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
 <RequirementStrings
-	RequirementId="限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	RequirementId="子限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
 	Context="(事情发生的)背景?上下文"	X值类型="TEXT"	默认值="NULL"	注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
 	Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
 />
 ```
 
 ## RequirementSets
-
+```
+<!-- PS: RequirementSets表是对定义RequirementSetId限定集合内各个子限定之间处于什么状态，修改器就生效 -->
+<RequirementSets
+	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	RequirementSetType="限定集合类型"		X值类型="TEXT"	默认值="NULL"	注释="确定限定集合的子限定关系"
+/>
+```
 ## RequirementSetRequirements
+- 这里是将RequirementId集合到RequirementSetId
+```
+<!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
+<RequirementSetRequirements
+	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
+	RequirementId="子限定ID自己定义"		X值类型="TEXT"	默认值="NULL"
+/>
+```
