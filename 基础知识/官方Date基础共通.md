@@ -308,3 +308,14 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 </details>
 
 ## 三. REQ修改器限制
+- 这个是对修改器效果进行约束限制，在我们需要的时候生效，不需要的时候无效
+
+### Requirements
+
+### RequirementArguments
+
+### RequirementStrings
+
+### RequirementSets
+
+### RequirementSetRequirements
