@@ -145,7 +145,8 @@ PS：Kind 官方共设定90个值
 	Vocabulary="散列值"	值类型="TEXT"	默认值="NULL"	注释="官方这里都有赋予值，这里就是抄官方"
 />
 ```
-### **TypeTags**（定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表）
+### **TypeTags**
+- 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
 ```
 <!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
 <TypeTags
