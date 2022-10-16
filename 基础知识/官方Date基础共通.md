@@ -186,7 +186,7 @@
 	Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
 />
 ```
-### 各类Modifier
+### 怎么将修改器赋予到需要的对象
 - 将修改器效果赋予对象的表
 <details><summary>较为常规"XXModifier"表</summary>
 
