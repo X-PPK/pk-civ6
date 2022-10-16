@@ -297,7 +297,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 | AllianceEffects                      | AllianceType="同盟关系Type变量"           | RF&GS 将修改器与同盟关系绑定，它还有一个LevelRequirement确认修改器生效级别要求
 | EmergencyBuffs                       | EmergencyType="突发事件Type变量"          | RF&GS 紧急缓冲表 给突发事件在缓冲阶段给予修改器，它还有一个Description是文本讲述突发事件缓存情况效果
 
-<details><summary>其他可直接绑修改器ID的表</summary>
+</details><details><summary>其他可直接绑修改器ID的表</summary>
 
 |        表        | 被绑对象                         | 注释
 | ---------------- | ------------------------------- |------------------------
