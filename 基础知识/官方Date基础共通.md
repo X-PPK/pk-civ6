@@ -178,7 +178,7 @@ PS：Kind 官方共设定90个值
 ```
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
 <DynamicModifiers
-	ModifierType="修改器效果类型"	X值类型="TEXT"	默认值="NULL"
+	ModifierType="修改器效果"	X值类型="TEXT"	默认值="NULL"
 	CollectionType="生效的对象集合"	X值类型="TEXT"	默认值="NULL"
 	EffectType="效果接口"	        X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
 />
@@ -240,7 +240,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
 	ModifierId="修改器ID"						X值类型="TEXT"		默认值=NULL
-	ModifierType="修改器效果类型"				X值类型="TEXT"		默认值="NULL"
+	ModifierType="修改器Type变量"				X值类型="TEXT"		默认值="NULL"
 	RunOnce="只对当前的对象有效"					值类型="BOOLEAN"	默认值="false"
 	NewOnly="只对之后的对象有效"	        		值类型="BOOLEAN"	默认值="false"
 	Permanent="执行一次永久有效"					值类型="BOOLEAN"	默认值="false"
@@ -323,7 +323,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 <!-- PS: Requirements表是定义底层限定的地方， -->
 <Requirements
 	RequirementId="子限定ID自己定义"	    X值类型="TEXT"		默认值="NULL"
-	RequirementType="限定类型Type"		X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
+	RequirementType="限定Type变量"		X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
 	Likeliness="可能性??"				值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
 	Impact="影响??"						值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
 	Inverse="反转"						值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，子限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
@@ -388,3 +388,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 	RequirementId="子限定ID自己定义"		    X值类型="TEXT"	默认值="NULL"
 />
 ```
+
+# 四. Trait相通的特性
+- 文明6的一个重要的游戏内容————每个文明/领袖的特色(包括特性特殊能力，特殊专有单位，特殊专有区域，特殊专有改良，特殊专有总督等等)，而他们的共同核心就是类型是**KIND_TRAIT**的特性Type变量-**TraitType**
+** 文明特性&领袖特性
