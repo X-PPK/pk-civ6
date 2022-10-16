@@ -7,12 +7,11 @@
 
 下面开始内容
 
-## 必需要了解的表
-- 这些表可以算是我们在数据库实现其他能力的基石
+- **必需要了解的表**，这些表可以算是我们在数据库实现其他能力的基石
 
-### **一. 核心开始**
+## **一. 核心开始**
 - 所有的各种Type变量都需要先在这里定义的**实际类型**也就是KING
-#### **Kinds**
+### **Kinds**
 ```
 <!-- PS：Kinds 定义的 ‘实际类型’ 也就是KING 这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’ -->
 <Kinds
@@ -21,7 +20,7 @@
 />
 ```
 
-#### **Types**
+### **Types**
 ```
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
 <Types
@@ -134,10 +133,10 @@
 
 </details>
 
-### **二. 修改器**
+## **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
-#### **DynamicModifiers**
+### **DynamicModifiers**
 ```
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
 <DynamicModifiers
@@ -147,7 +146,7 @@
 />
 ```
 
-#### **Modifiers**
+### **Modifiers**
 ```
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
@@ -163,7 +162,7 @@
 	SubjectStackLimit="修改器堆栈限制??"			    值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 ```
-#### ModifierArguments
+### ModifierArguments
 ```
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
