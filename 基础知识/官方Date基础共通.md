@@ -174,3 +174,14 @@
 	SecondExtra="第二额外"	值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
 />
 ```
+### ModifierStrings
+```
+<!--PS：ModifierStrings是定义ModifierId文本的地方，大部分ModifierId是不需要这个的，但在一些地方还是需要的
+		例如，在给单位的修改器上，由于修改器改变了单位属性，而这种改变是满足了生效条件（例如某种地形加战斗力）临时拥有的
+		所以给告诉玩家这个临时效果怎么来的，就需要用到这里的文本 -->
+<ModifierStrings
+	ModifierId="修改器ID"		X值类型="TEXT"	默认值="NULL"
+	Context="(事情发生的)背景"	X值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
+	Text="文本或文本变量"		X值类型="TEXT"	默认值="NULL"
+/>
+```
