@@ -260,7 +260,6 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 	Extra="额外的"					值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
 	SecondExtra="第二额外"			值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
 	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
-	Type="类型"						值类型="TEXT"	默认值="ARGTYPE_IDENTITY"	注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
 ## ModifierStrings
