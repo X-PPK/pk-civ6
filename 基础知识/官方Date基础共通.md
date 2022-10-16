@@ -72,7 +72,7 @@
 | KIND_COLLECTION              | 集合            | 对象合集,与下面两个在DynamicModifiers表定义修改器
 | KIND_EFFECT                  | 效果类型        | 官方修改器真正的接口
 | KIND_MODIFIER                | 修改器效果类型   | 由上面两个构成MODIFIER
-| KIND_REQUIREMENTSET          | 需求设置        | 对需求设置进行整理关系约束与非和关系
+| KIND_REQUIREMENTSET          | 需求设置        | 对需求限制进行整理关系进行约束(与非和关系)也就是构建一个限制集合
 | KIND_REQUIREMENT             | 需求限制        | 最底层的限制，来约束修改器生效范围
 
 </details><details><summary>较少涉及部分</summary>
@@ -178,8 +178,51 @@
 ```
 <details><summary>CollectionType对象集合整理</summary>
 
-|       CollectionType         | 注释
-| ---------------------------- | --------------
+DynamicModifiers表我暂未进行过深入研究，暂时没有注释
+
+|       CollectionType                | 注释
+| ----------------------------------- | --------------
+| COLLECTION_ALLIANCE_CITIES          |
+| COLLECTION_ALLIANCE_COMBATS         |
+| COLLECTION_ALLIANCE_DISTRICTS       |
+| COLLECTION_ALLIANCE_PLAYERS         |
+| COLLECTION_ALLIANCE_TRADEROUTES     |
+| COLLECTION_ALLIANCE_TRAINED_UNITS   |
+| COLLECTION_ALLIANCE_UNITS           |
+| COLLECTION_ALL_CITIES               |
+| COLLECTION_ALL_DISTRICTS            |
+| COLLECTION_ALL_PLAYERS              |
+| COLLECTION_ALL_PLOT_YIELDS          |
+| COLLECTION_ALL_UNITS                |
+| COLLECTION_CITY_DISTRICTS           |
+| COLLECTION_CITY_PLOT_YIELDS         |
+| COLLECTION_CITY_TRAINED_UNITS       |
+| COLLECTION_COMBAT_RESULTS           |
+| COLLECTION_EMERGENCY_CAPITAL_CITIES |
+| COLLECTION_EMERGENCY_CITIES         |
+| COLLECTION_EMERGENCY_COMBATS        |
+| COLLECTION_EMERGENCY_DISTRICTS      |
+| COLLECTION_EMERGENCY_PLAYERS        |
+| COLLECTION_EMERGENCY_TRADE_ROUTES   |
+| COLLECTION_EMERGENCY_UNITS          |
+| COLLECTION_MAJOR_PLAYERS            |
+| COLLECTION_OWNER                    |
+| COLLECTION_OWNER_CITY               |
+| COLLECTION_PLAYER_ALLIANCES         |
+| COLLECTION_PLAYER_BUILT_CITIES      |
+| COLLECTION_PLAYER_CAPITAL_CITY      |
+| COLLECTION_PLAYER_CAPTURED_CITIES   |
+| COLLECTION_PLAYER_CITIES            |
+| COLLECTION_PLAYER_CITY_STATE_UNITS  |
+| COLLECTION_PLAYER_COMBAT            |
+| COLLECTION_PLAYER_DISTRICTS         |
+| COLLECTION_PLAYER_GOVERNORS         |
+| COLLECTION_PLAYER_PLOT_YIELDS       |
+| COLLECTION_PLAYER_TRAINED_UNITS     |
+| COLLECTION_PLAYER_UNITS             |
+| COLLECTION_SINGLE_PLOT_YIELDS       |
+| COLLECTION_UNIT_COMBAT              |
+| COLLECTION_UNIT_NEAREST_OWNER_CITY  |
 
 </details>
 PS：ModifierType和EffectType太多了暂没精力整理
@@ -259,3 +302,5 @@ PS：ModifierType和EffectType太多了暂没精力整理
 | EmergencyRewards | EmergencyType="突发事件Type变量" | RF&GS 这个是定义突发事件奖励的表有多个需要定义的量，其中就可以直接绑定修改器ModifierId
 | GoodyHutSubTypes | SubTypeGoodyHut="村庄Type变量"   | 定义村庄效果类型的表，有待研究，可直接绑修改器ModifierId
 | esolutionEffects | ResolutionType="决议的Type变量"  | GS 决议效果的表，有待研究，可直接绑修改器ModifierId
+
+## 三. REQ修改器限制
