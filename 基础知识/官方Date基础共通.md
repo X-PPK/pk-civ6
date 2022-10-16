@@ -181,7 +181,7 @@
 		所以给告诉玩家这个临时效果怎么来的，就需要用到这里的文本 -->
 <ModifierStrings
 	ModifierId="修改器ID"				X值类型="TEXT"	默认值="NULL"
-	Context="(事情发生的)背景?上下文"	X值类型="TEXT"	默认值="NULL"	注释="抄官方，俺也不懂"
+	Context="(事情发生的)背景?上下文"	X值类型="TEXT"	默认值="NULL"	注释="抄官方，俺也不懂，猜测和其他不同Context的文本顺序有关"
 	Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
 />
 ```
