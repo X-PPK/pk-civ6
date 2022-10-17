@@ -180,7 +180,7 @@ PS：Kind 官方共设定90个值
 <DynamicModifiers
   ModifierType="修改器Type变量"  	X值类型="TEXT"	默认值="NULL"
   CollectionType="生效的对象集合"	X值类型="TEXT"	默认值="NULL"
-  EffectType="效果接口"           	X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
+  EffectType="效果接口"                  X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
 />
 ```
 <details><summary>CollectionType对象集合整理</summary>
