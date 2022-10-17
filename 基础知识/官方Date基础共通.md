@@ -326,17 +326,6 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 ## Requirements
 ```xml
 <!-- PS: Requirements表是定义底层限定的地方， -->
-<Requirements
-  RequirementId="子限定ID自己定义"  X值类型="TEXT"     默认值="NULL"
-  RequirementType="限定Type变量"    X值类型="TEXT"     默认值="NULL"   注释="官方给我们修改器限定接口"
-  Likeliness="可能性??"              值类型="INTEGER"  默认值="0"      注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
-  Impact="影响??"                    值类型="INTEGER"  默认值="0"      注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
-  Inverse="反转"                     值类型="BOOLEAN"  默认值="false"  注释="当这个为true时，子限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
-  Persistent="持久的?"               值类型="BOOLEAN"  默认值="false"  注释="官方仅在部分涉及AI胜利的修改器有用这个"
-  ProgressWeight="进度权重?"         值类型="INTEGER"  默认值="0"      注释="官方仅在部分涉及AI胜利的修改器有用这个"
-  Triggered="已触发?"                值类型="BOOLEAN"  默认值="false"  注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
-  Reverse="颠倒?反转?"               值类型="BOOLEAN"  默认值="false"  注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -356,14 +345,6 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 - 这个表和ModifierArguments差不多，实际他们的表里元素以及与对应其他表关系差不多
 ```xml
 <!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
-<RequirementArguments
-  RequirementId="子限定ID自己定义"  X值类型="TEXT"  默认值="NULL"
-  Name="名称"                       X值类型="TEXT"  默认值="NULL"  注释="这里的实际填参数值类型"
-  Value="参数值"                    X值类型="TEXT"  默认值="NULL"  注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
-  Extra="额外的"                     值类型="TEXT"  默认值="NULL"  注释="额外的参数值1"
-  SecondExtra="第二额外"             值类型="TEXT"  默认值="NULL"  注释="额外的参数值2"
-  Type="类型"                        值类型="TEXT"  默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -379,12 +360,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 - 这个我们基本用不到，了解一下好了
 ```xml
 <!--PS：RequirementStrings 是定义RequirementId文本的地方，大部分RequirementId是不需要这个的，但在一些地方还是需要的
-		官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
-<RequirementStrings
-  RequirementId="子限定ID自己定义"   X值类型="TEXT"  默认值="NULL"
-  Context="(事情发生的)背景?上下文"  X值类型="TEXT"  默认值="NULL"  注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
-  Text="文本或文本变量"              X值类型="TEXT"  默认值="NULL"
-/>
+	官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -396,10 +372,6 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 ## RequirementSets
 ```xml
 <!-- PS: RequirementSets表是对定义RequirementSetId限定集合内各个子限定之间处于什么状态，修改器就生效 -->
-<RequirementSets
-  RequirementSetId="限定集合ID自己定义"  X值类型="TEXT"  默认值="NULL"
-  RequirementSetType="限定集合类型"      X值类型="TEXT"  默认值="NULL"  注释="确定限定集合的子限定关系"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -420,11 +392,8 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ## RequirementSetRequirements
 - 这里是将RequirementId集合到RequirementSetId
 ```xml
-<!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
-<RequirementSetRequirements
-  RequirementSetId="限定集合ID自己定义"  X值类型="TEXT"  默认值="NULL"
-  RequirementId="子限定ID自己定义"       X值类型="TEXT"  默认值="NULL"
-/>
+<!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，
+         组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -453,7 +422,13 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
   InternalOnly="仅限内部?"		 值类型="BOOLEAN"		默认值="false"	注释="看下面"
 />
 ```
-
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| Name="标题文本变量" | LocalizedText | NULL | 特性的标题
+| Description="说明文本变量" | LocalizedText | NULL | 特性的文本介绍
+| InternalOnly="仅限内部?" | BOOLEAN | false |看下面
+- **InternalOnly**：仅游戏内部计算使用的特性，官方例子太空竞赛项目里的大 ，中，小3个火箭建筑个就是internal only的建筑，在太空项目时火箭建筑也在一步一步建造美术素材明显可以看到这个过程（本人这个未深入研究，了解有限）或许我们可以研究一下这个用这个来整点什么
 ### Leader或Civilization亦或者Agenda——Traits
 - 虽然实际一个**TraitType**可以同时绑多个文明和领袖，但是这样会导致问题，例如一个文明和这个文明的领袖都绑了一个特殊能力，会导致文明的这个特性生效一次，领袖又生效一次对于像特殊能力很可能是效果直接叠加翻倍，所以我们应当做出选择，策划好这个特性到底是**文明特性还是领袖特性**，而这里就要用到给**文明**和**领袖**绑特性的表**LeaderTraits**表和**CivilizationTraits**表
 ####  CivilizationTraits
@@ -462,9 +437,13 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为文明特殊单位/建筑等等 -->
 <CivilizationTraits
   TraitType="特性Type变量"			X值类型="TEXT"	默认值="NULL"
-  CivilizationType="文明Type变量"	 值类型="TEXT"	默认值="NULL"
+  CivilizationType="文明Type变量"	 X值类型="TEXT"	默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| CivilizationType="文明Type变量" | TEXT:star: | NULL | 
 
 ####  LeaderTraits
 ```xml
@@ -472,9 +451,13 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为领袖特殊单位/建筑等等 -->
 <LeaderTraits
   TraitType="特性Type变量"	X值类型="TEXT"			默认值="NULL"
-  LeaderType="领袖Type变量"	 值类型="TEXT"		默认值="NULL"
+  LeaderType="领袖Type变量"	X值类型="TEXT"		默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| LeaderType="领袖Type变量" | TEXT:star: | NULL | 
 
 ####  AgendaTraits
 PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
@@ -482,9 +465,13 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 <!-- PS：AgendaTraits 表是将TraitType绑到AgendaType议程上 -->
 <AgendaTraits
   TraitType="特性Type变量"	X值类型="TEXT"	默认值="NULL"
-  AgendaType="文明Type变量"	 值类型="TEXT"	默认值="NULL"
+  AgendaType="文明Type变量"	X值类型="TEXT"	默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| AgendaType="文明Type变量" | TEXT:star: | NULL | 
 
 ## 可直接绑TraitType成为特性的对象
 - 常规的特殊XX都是直接绑TraitType在通过TraitType绑领袖或文明来属性的那么都有那些呢
@@ -512,6 +499,11 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
   DistrictType="区域Type变量"	X值类型="TEXT"	默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| DistrictType="区域Type变量" | TEXT:star: | NULL | 
+
 ### ExcludedAdjacencies
 ```xml
 <!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，
@@ -521,6 +513,11 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
   YieldChangeId="相邻加成ID"	X值类型="TEXT"	默认值="NULL"	注释="这个是自己在Adjacency_YieldChanges表设定起名并定义的加成关系的ID"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| YieldChangeId="相邻加成ID" | TEXT:star: | NULL | 
+
 ### ExcludedGreatPersonClasses
 ```xml
 <!-- PS：ExcludedGreatPersonClasses 表是让TraitType增加一个不能获得这个类型伟人点数和招募这个类型伟人的能力，
@@ -530,6 +527,11 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
   GreatPersonClassType="伟人类型Type变量"	X值类型="TEXT"		默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| TraitType="特性Type变量" | TEXT:star: | NULL |
+| GreatPersonClassType="伟人类型Type变量" | TEXT:star: | NULL | 
+
 ### 特殊的TraitType
 - 部分特殊的TraitType能非常有效帮助我们修改游戏，我们很有必要了解一些
 - 非常希望有带佬补充
