@@ -458,8 +458,9 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 ## 可直接绑TraitType成为特性的对象
 - 常规的特殊XX(单位/建筑/改良等等)都是直接在定义自己的时候绑定TraitType
 - 例如如特殊单位就是在单位的核心定义表Units可直接绑TraitType
-### 具体的表
-</details><details><summary>这里是我的整理：</summary>
+### 常规特色相关表的表
+
+<details><summary>这里是我的整理：</summary>
 PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 
 |        表                  | 特色的对象      | 通过TraitType中间这样一绑
@@ -472,9 +473,12 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 | Governors                  | 总督表          | RF&GS特色总督
 | DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
 </details>
-PS: 然后除了中心常规的可以通过绑表实现“特色”的外，实际还可以通过LUA来实现一些“特色”
-## 其他的
-### ExcludedDistricts
+PS: 然后除了这里常规的可以通过绑表实现“特色”的外，实际还可以通过LUA来实现一些“特色”，例如特色政策卡
+
+### 特殊的
+- 这个官仅在**刚果-姆本巴·恩津加**领袖的特性：“**宗教转换**” 有使用过
+    -具体特性效果：无法建造圣地区、获得大预言家，或创建宗教。从已成为多数刚果城市信仰的宗教中获得信仰值。每次完成一个姆班赞或剧院广场区时获得一位（城市主流宗教的）使徒。
+#### ExcludedDistricts
 ```xml
 <!-- PS：ExcludedDistricts 表是让TraitType增加一个不能造某区域的能力，在通过CivilizationTraits或LeaderTraits，让领袖/文明不能造这个区域 -->
 ```
@@ -483,7 +487,7 @@ PS: 然后除了中心常规的可以通过绑表实现“特色”的外，实�
 | TraitType="特性Type变量" | TEXT:star: | NULL |
 | DistrictType="区域Type变量" | TEXT:star: | NULL | 
 
-### ExcludedAdjacencies
+#### ExcludedAdjacencies
 ```xml
 <!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，在通过CivilizationTraits或LeaderTraits，让领袖/文明这个相邻加成无效 -->
 
@@ -493,7 +497,7 @@ PS: 然后除了中心常规的可以通过绑表实现“特色”的外，实�
 | TraitType="特性Type变量" | TEXT:star: | NULL |
 | YieldChangeId="相邻加成ID" | TEXT:star: | NULL | 这个是自己在Adjacency_YieldChanges表设定起名并定义的加成关系的ID
 
-### ExcludedGreatPersonClasses
+#### ExcludedGreatPersonClasses
 ```xml
 <!-- PS：ExcludedGreatPersonClasses 表是让TraitType增加一个不能获得这个类型伟人点数和招募这个类型伟人的能力，
 	在通过CivilizationTraits或LeaderTraits，让领袖/文明不能招获得这个类型伟人点数和招募这个类型伟人 -->
@@ -503,16 +507,16 @@ PS: 然后除了中心常规的可以通过绑表实现“特色”的外，实�
 | TraitType="特性Type变量" | TEXT:star: | NULL |
 | GreatPersonClassType="伟人类型Type变量" | TEXT:star: | NULL | 
 
-### 特殊的TraitType
+#### 特殊的TraitType
 - 部分特殊的TraitType能非常有效帮助我们修改游戏，我们很有必要了解一些
 - 非常希望有带佬补充
-#### TRAIT_LEADER_MAJOR_CIV
+1) TRAIT_LEADER_MAJOR_CIV
 - 这个是modder用的非常多的官方TraitType
 - 这个TraitType字面意思是主要文明，但实测貌似对所有文明有效，通过这个TraitType我们可以把修改器自己绑它身上从而达到一次性绑所有文明上
 - 如果是增加单位什么的就没必要绑这里，以为非特性单位等就是全文明都有可建造的
 
-#### TRAIT_LEADER_BARBARIAN
+2) TRAIT_LEADER_BARBARIAN
 - 这个是野蛮人的TraitType，可以把一些修改器，甚至单位等等绑这里增强野蛮人，当然也可以削弱
 
-#### TRAIT_LEADER_FREE_CITIES
+3) TRAIT_LEADER_FREE_CITIES
 - 这个是自由城邦的TraitType，和野蛮人同理
