@@ -21,8 +21,8 @@
 ```xml
 <!-- PS：Kinds 定义的 ‘实际类型’ 也就是KING 这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’ -->
 <Kinds
-  Kind="实际类型"	X值类型="TEXT"		默认值="NULL"
-  Hash="散列值"		 值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
+  Kind="实际类型"  X值类型="TEXT"     默认值="NULL"
+  Hash="散列值"     值类型="INTEGER"  默认值="0"      注释="不用填，自动生成"
 />
 ```
 
@@ -30,9 +30,9 @@
 ```xml
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
 <Types
-  Type="各种Type变量"	X值类型="TEXT"		默认值="NULL"
-  Kind="实际类型"		X值类型="TEXT"		默认值="NULL"
-  Hash="散列值"			 值类型="INTEGER"	默认值="0"		注释="不用填，自动生成"
+  Type="各种Type变量"  X值类型="TEXT"    默认值="NULL"
+  Kind="实际类型"      X值类型="TEXT"    默认值="NULL"
+  Hash="散列值"        值类型="INTEGER"  默认值="0"     注释="不用填，自动生成"
 />
 ```
 
@@ -146,8 +146,8 @@ PS：Kind 官方共设定90个值
 <!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
 		 例如对多个单位增加一个陆军tag标签，赋予相同的AI行为逻辑 -->
 <Tags
-  Tag="标签ID自己定义"	X值类型="TEXT"	默认值="NULL"
-  Vocabulary="散列值"	 值类型="TEXT"	默认值="NULL"	注释="官方这里都有赋予值，这里就是抄官方"
+  Tag="标签ID自己定义"  X值类型="TEXT"  默认值="NULL"
+  Vocabulary="词汇表"    值类型="TEXT"  默认值="NULL"  注释="官方这里都有赋予值，这里就是抄官方"
 />
 ```
 ## **TypeTags**
@@ -155,8 +155,8 @@ PS：Kind 官方共设定90个值
 ```xml
 <!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
 <TypeTags
-  Type="各种Type变量"	X值类型="TEXT"	默认值="NULL"
-  Tag="标签ID自己定义"	X值类型="TEXT"	默认值="NULL"
+  Type="各种Type变量"   X值类型="TEXT"  默认值="NULL"
+  Tag="标签ID自己定义"  X值类型="TEXT"  默认值="NULL"
 />
 ```
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
@@ -178,9 +178,9 @@ PS：Kind 官方共设定90个值
 ```xml
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
 <DynamicModifiers
-  ModifierType="修改器Type变量"  	X值类型="TEXT"	默认值="NULL"
-  CollectionType="生效的对象集合"	X值类型="TEXT"	默认值="NULL"
-  EffectType="效果接口"				X值类型="TEXT"	默认值="NULL"	注释="官方给我们真正的数据库修改接口"
+  ModifierType="修改器Type变量"    X值类型="TEXT"  默认值="NULL"
+  CollectionType="生效的对象集合"  X值类型="TEXT"  默认值="NULL"
+  EffectType="效果接口"            X值类型="TEXT"  默认值="NULL"  注释="官方给我们真正的数据库修改接口"
 />
 ```
 <details><summary>CollectionType对象集合整理</summary>
@@ -240,16 +240,16 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 ```xml
 <!-- PS：Modifiers 这个是定义修改器的表，自己设定一个修改器ID 并给予对应修改器效果，以及设定修改器生效时机和限定范围-->
 <Modifiers
-  ModifierId="修改器ID"                     	X值类型="TEXT"		默认值=NULL
-  ModifierType="修改器Type变量"              	X值类型="TEXT"		默认值="NULL"
-  RunOnce="只对当前的对象有效"              	 值类型="BOOLEAN"	默认值="false"
-  NewOnly="只对之后的对象有效"              	 值类型="BOOLEAN"	默认值="false"
-  Permanent="执行一次永久有效"              	 值类型="BOOLEAN"	默认值="false"
-  OwnerRequirementSetId="所有者要满足条件"  	 值类型="TEXT"		默认值="NULL"	注释="例如修改器本身生效时机"
-  SubjectRequirementSetId="被影响着达到条件"	 值类型="TEXT"		默认值="NULL"	注释="被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效"
-  Repeatable="可重复?"                      	 值类型="BOOLEAN"	默认值="false"	注释="官方就一个地方有用到它,有待研究"
-  OwnerStackLimit="生效对象堆栈限定??"      	 值类型="INTEGER"	默认值="NULL"	注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
-  SubjectStackLimit="修改器堆栈限定??"      	 值类型="INTEGER"	默认值="NULL"	注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
+  ModifierId="修改器ID"                       X值类型="TEXT"     默认值=NULL
+  ModifierType="修改器Type变量"               X值类型="TEXT"     默认值="NULL"
+  RunOnce="只对当前的对象有效"                 值类型="BOOLEAN"  默认值="false"
+  NewOnly="只对之后的对象有效"                 值类型="BOOLEAN"  默认值="false"
+  Permanent="执行一次永久有效"                 值类型="BOOLEAN"  默认值="false"
+  OwnerRequirementSetId="所有者要满足条件"     值类型="TEXT"     默认值="NULL"   注释="例如修改器本身生效时机"
+  SubjectRequirementSetId="被影响着达到条件"   值类型="TEXT"     默认值="NULL"   注释="被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效"
+  Repeatable="可重复?"                         值类型="BOOLEAN"  默认值="false"  注释="官方就一个地方有用到它,有待研究"
+  OwnerStackLimit="生效对象堆栈限定??"         值类型="INTEGER"  默认值="NULL"   注释="官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么"
+  SubjectStackLimit="修改器堆栈限定??"         值类型="INTEGER"  默认值="NULL"   注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 ```
 ## ModifierArguments
@@ -257,12 +257,12 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
 <ModifierArguments
-  ModifierId="修改器ID"		X值类型="TEXT"	默认值="NULL"
-  Name="名称"				X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
-  Value="参数值"			X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
-  Extra="额外的"			 值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
-  SecondExtra="第二额外"	 值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
-  Type="类型"				 值类型="TEXT"	默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
+  ModifierId="修改器ID"  X值类型="TEXT"  默认值="NULL"
+  Name="名称"            X值类型="TEXT"  默认值="NULL"  注释="这里的实际填参数值类型"
+  Value="参数值"         X值类型="TEXT"  默认值="NULL"  注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
+  Extra="额外的"          值类型="TEXT"  默认值="NULL"  注释="额外的参数值1"
+  SecondExtra="第二额外"  值类型="TEXT"  默认值="NULL"  注释="额外的参数值2"
+  Type="类型"             值类型="TEXT"  默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
 ## ModifierStrings
@@ -271,9 +271,9 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 		例如，在给单位的修改器上，由于修改器改变了单位属性，而这种改变是满足了生效条件（例如某种地形加战斗力）临时拥有的
 		所以给告诉玩家这个临时效果怎么来的，就需要用到这里的文本 -->
 <ModifierStrings
-  ModifierId="修改器ID"				X值类型="TEXT"	默认值="NULL"
-  Context="(事情发生的)背景?上下文"	X值类型="TEXT"	默认值="NULL"	注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
-  Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
+  ModifierId="修改器ID"              X值类型="TEXT"  默认值="NULL"
+  Context="(事情发生的)背景?上下文"  X值类型="TEXT"  默认值="NULL"  注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
+  Text="文本或文本变量"              X值类型="TEXT"  默认值="NULL"
 />
 ```
 ## 怎么将修改器赋予到需要的对象
@@ -322,15 +322,15 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 ```xml
 <!-- PS: Requirements表是定义底层限定的地方， -->
 <Requirements
-  RequirementId="子限定ID自己定义"	X值类型="TEXT"		默认值="NULL"
-  RequirementType="限定Type变量"	X值类型="TEXT"		默认值="NULL"	注释="官方给我们修改器限定接口"
-  Likeliness="可能性??"				 值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
-  Impact="影响??"					 值类型="INTEGER"	默认值="0"		注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
-  Inverse="反转"					 值类型="BOOLEAN"	默认值="false"	注释="当这个为true时，子限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
-  Persistent="持久的?"				 值类型="BOOLEAN"	默认值="false"	注释="官方仅在部分涉及AI胜利的修改器有用这个"
-  ProgressWeight="进度权重?"		 值类型="INTEGER"	默认值="0"		注释="官方仅在部分涉及AI胜利的修改器有用这个"
-  Triggered="已触发?"				 值类型="BOOLEAN"	默认值="false"	注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
-  Reverse="颠倒?反转?"				 值类型="BOOLEAN"	默认值="false"	注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
+  RequirementId="子限定ID自己定义"  X值类型="TEXT"     默认值="NULL"
+  RequirementType="限定Type变量"    X值类型="TEXT"     默认值="NULL"   注释="官方给我们修改器限定接口"
+  Likeliness="可能性??"              值类型="INTEGER"  默认值="0"      注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器达到子限定的生效条件后还需要这里的给予概率?"
+  Impact="影响??"                    值类型="INTEGER"  默认值="0"      注释="官方最后这里貌似弃用全为默认数值0，有待我们测试具体定义什么,个人猜测有可能是修改器被影响范围??"
+  Inverse="反转"                     值类型="BOOLEAN"  默认值="false"  注释="当这个为true时，子限定的范围反转，例如一个REQ原本限定生效范围是城市人口达到7人有效，结果加了一个Inverse为true,那么就变成不达到7人口有效，达到7入口无效"
+  Persistent="持久的?"               值类型="BOOLEAN"  默认值="false"  注释="官方仅在部分涉及AI胜利的修改器有用这个"
+  ProgressWeight="进度权重?"         值类型="INTEGER"  默认值="0"      注释="官方仅在部分涉及AI胜利的修改器有用这个"
+  Triggered="已触发?"                值类型="BOOLEAN"  默认值="false"  注释="官方这个仅在战争状态下的修改器有关，有待深入研究"
+  Reverse="颠倒?反转?"               值类型="BOOLEAN"  默认值="false"  注释="官方最后这里貌似弃用全为默认数值false，有待我们测试具体定义什么"
 />
 ```
 PS: RequirementType太多了暂没精力整理
@@ -339,12 +339,12 @@ PS: RequirementType太多了暂没精力整理
 ```xml
 <!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
 <RequirementArguments
-  RequirementId="子限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
-  Name="名称"						X值类型="TEXT"	默认值="NULL"	注释="这里的实际填参数值类型"
-  Value="参数值"					X值类型="TEXT"	默认值="NULL"	注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
-  Extra="额外的"					 值类型="TEXT"	默认值="NULL"	注释="额外的参数值1"
-  SecondExtra="第二额外"			 值类型="TEXT"	默认值="NULL"	注释="额外的参数值2"
-  Type="类型"						 值类型="TEXT"	默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
+  RequirementId="子限定ID自己定义"  X值类型="TEXT"  默认值="NULL"
+  Name="名称"                       X值类型="TEXT"  默认值="NULL"  注释="这里的实际填参数值类型"
+  Value="参数值"                    X值类型="TEXT"  默认值="NULL"  注释="这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值"
+  Extra="额外的"                     值类型="TEXT"  默认值="NULL"  注释="额外的参数值1"
+  SecondExtra="第二额外"             值类型="TEXT"  默认值="NULL"  注释="额外的参数值2"
+  Type="类型"                        值类型="TEXT"  默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
 
@@ -354,9 +354,9 @@ PS: RequirementType太多了暂没精力整理
 <!--PS：RequirementStrings 是定义RequirementId文本的地方，大部分RequirementId是不需要这个的，但在一些地方还是需要的
 		官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
 <RequirementStrings
-  RequirementId="子限定ID自己定义"	X值类型="TEXT"	默认值="NULL"
-  Context="(事情发生的)背景?上下文"	X值类型="TEXT"	默认值="NULL"	注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
-  Text="文本或文本变量"				X值类型="TEXT"	默认值="NULL"
+  RequirementId="子限定ID自己定义"   X值类型="TEXT"  默认值="NULL"
+  Context="(事情发生的)背景?上下文"  X值类型="TEXT"  默认值="NULL"  注释="抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关"
+  Text="文本或文本变量"              X值类型="TEXT"  默认值="NULL"
 />
 ```
 
@@ -364,8 +364,8 @@ PS: RequirementType太多了暂没精力整理
 ```xml
 <!-- PS: RequirementSets表是对定义RequirementSetId限定集合内各个子限定之间处于什么状态，修改器就生效 -->
 <RequirementSets
-  RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
-  RequirementSetType="限定集合类型"		X值类型="TEXT"	默认值="NULL"	注释="确定限定集合的子限定关系"
+  RequirementSetId="限定集合ID自己定义"  X值类型="TEXT"  默认值="NULL"
+  RequirementSetType="限定集合类型"      X值类型="TEXT"  默认值="NULL"  注释="确定限定集合的子限定关系"
 />
 ```
 </details><details><summary>RequirementSetType的三种类型</summary>
@@ -384,8 +384,8 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ```xml
 <!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
 <RequirementSetRequirements
-  RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
-  RequirementId="子限定ID自己定义"		X值类型="TEXT"	默认值="NULL"
+  RequirementSetId="限定集合ID自己定义"  X值类型="TEXT"  默认值="NULL"
+  RequirementId="子限定ID自己定义"       X值类型="TEXT"  默认值="NULL"
 />
 ```
 
