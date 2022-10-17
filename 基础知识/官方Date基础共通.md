@@ -19,6 +19,9 @@
 # **一. 核心开始**
 - **所有的各种Type变量**都需要先在这里定义的**实际类型**也就是KING
 ## **Kinds**
+```xml
+<!--PS：Kinds定义的‘实际类型’也就是KING这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’-->
+```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
 | Kind="实际类型" | TEXT:star: | NULL |
@@ -27,11 +30,6 @@
 ## **Types**
 ```xml
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
-<Types
-  Type="各种Type变量"  X值类型="TEXT"    默认值="NULL"
-  Kind="实际类型"      X值类型="TEXT"    默认值="NULL"
-  Hash="散列值"        值类型="INTEGER"  默认值="0"     注释="不用填，自动生成"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -148,10 +146,6 @@ PS：Kind 官方共设定90个值
 ```xml
 <!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
 		 例如对多个单位增加一个陆军tag标签，赋予相同的AI行为逻辑 -->
-<Tags
-  Tag="标签ID自己定义"  X值类型="TEXT"  默认值="NULL"
-  Vocabulary="词汇表"    值类型="TEXT"  默认值="NULL"  注释="官方这里都有赋予值，这里就是抄官方"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -162,16 +156,11 @@ PS：Kind 官方共设定90个值
 - 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
 ```xml
 <!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
-<TypeTags
-  Type="各种Type变量"   X值类型="TEXT"  默认值="NULL"
-  Tag="标签ID自己定义"  X值类型="TEXT"  默认值="NULL"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
 | Type="各种Type变量" | TEXT:star: | NULL |
 | Tag="标签ID自己定义" | TEXT:star: | NULL | 指向Vocabularies表，暂未深入研究，这里我就是抄官方。
-
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
 
 |       Type         | 注释
@@ -180,7 +169,6 @@ PS：Kind 官方共设定90个值
 | UnitAbilityType| 单位能力的Type变量
 | ResourceType | 资源的Type变量
 | ModifierType| 修改器的Type变量
-
 </details>
 
 # **二. 修改器**
@@ -190,11 +178,6 @@ PS：Kind 官方共设定90个值
 - 一般用官方已经定义好的几百个ModifierType就够用了
 ```xml
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
-<DynamicModifiers
-  ModifierType="修改器Type变量"    X值类型="TEXT"  默认值="NULL"
-  CollectionType="生效的对象集合"  X值类型="TEXT"  默认值="NULL"
-  EffectType="效果接口"            X值类型="TEXT"  默认值="NULL"  注释="官方给我们真正的数据库修改接口"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -279,7 +262,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 | NewOnly="只对之后的对象有效" | BOOLEAN | false |
 | Permanent="执行一次永久有效" | BOOLEAN | false |
 | OwnerRequirementSetId="所有者要满足条件" | TEXT | NULL | 例如修改器本身生效时机
-| SubjectRequirementSetId="被影响着达到条件" | TEXT | NULL | 被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效
+| SubjectRequirementSetId="被影响者要满足条件" | TEXT | NULL | 被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效
 | Repeatable="可重复?" | BOOLEAN | false | 官方就一个地方有用到它,有待研究
 | OwnerStackLimit="生效对象堆栈限定??" | INTEGER | NULL | 官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么
 | SubjectStackLimit="修改器堆栈限定??" | INTEGER | NULL | 根据我的翻译和理解，貌似是这个修改器的叠加数量上限
@@ -297,6 +280,15 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
   Type="类型"             值类型="TEXT"  默认值="ARGTYPE_IDENTITY" 注释="这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| ModifierId="修改器ID" | TEXT:star: | NULL |
+| Name="名称" | TEXT:star: | NULL | 这里的实际填参数值类型
+| Value="参数值" | TEXT:star:| NULL | 这里的参数值类型实际看Name的值，例如如果是BOOLEAN类那么Value就要填BOOLEAN值
+| Extra="额外的" | TEXT | NULL | 额外的参数值1
+| SecondExtra="第二额外" | TEXT | NULL | 额外的参数值2
+| Type="类型" | TEXT | ARGTYPE_IDENTITY| 这里的官方均保持默认值ARGTYPE_IDENTITY，完全可以无视这个存在，这个俺没研究过
+
 ## ModifierStrings
 ```xml
 <!--PS：ModifierStrings是定义ModifierId文本的地方，大部分ModifierId是不需要这个的，但在一些地方还是需要的
@@ -308,6 +300,12 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
   Text="文本或文本变量"              X值类型="TEXT"  默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| ModifierId="修改器ID" | TEXT:star: | NULL |
+| Context="(事情发生的)背景?上下文" | TEXT:star: | NULL | 抄官方，俺也不太懂，猜测和其他不同Context的文本顺序有关
+| Text="文本或文本变量" | TEXT:star: | NULL |
+
 ## 怎么将修改器赋予到需要的对象
 - 将修改器效果赋予对象的表
 <details><summary>较为常规"XXModifier"表</summary>
