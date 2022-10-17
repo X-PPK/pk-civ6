@@ -27,7 +27,7 @@
 ```
 
 ## **Types**
-```
+```xml
 <!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
 <Types
 	Type="各种Type变量"  X值类型="TEXT"     默认值="NULL"
@@ -142,7 +142,7 @@ PS：Kind 官方共设定90个值
 
 ## **Tags**
 - 区分开文本文件里文本变量用到的那个Tag，完全和这里的Tag是两码事情
-```
+```xml
 <!-- PS: Tags表是一个定义标签的表，拥有给其他各种Type变量进行标签，用于对拥有相同标签的Type变量对象进行统一的操作，
 		 例如对多个单位增加一个陆军tag标签，赋予相同的AI行为逻辑 -->
 <Tags
@@ -152,7 +152,7 @@ PS：Kind 官方共设定90个值
 ```
 ## **TypeTags**
 - 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
-```
+```xml
 <!-- PS: TypeTags表是对Type变量赋予标签Tag，注意这不是必须的，Type变量可不标记标签 -->
 <TypeTags
 	Type="各种Type变量"    X值类型="TEXT"    默认值="NULL"
@@ -175,7 +175,7 @@ PS：Kind 官方共设定90个值
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
 ## **DynamicModifiers**
 - 一般用官方已经定义好的几百个ModifierType就够用了
-```
+```xml
 <!-- PS：这个是定义修改器效果类型的表，官方已经写了很多很多修改器效果，能实现很多效果，但我们有时还是需要来自己定义一些修改器效果类型 -->
 <DynamicModifiers
 	ModifierType="修改器效果"        X值类型="TEXT"    默认值="NULL"
@@ -253,7 +253,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSetId，当然他们非必填值
 ```
 ## ModifierArguments
-```
+```xml
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
 		举个例子总不可这个修改器效果是加文化，不给它加多少的参数。但也有部分ModifierType不用参数，只用Modifiers表绑定就能生效 -->
 <ModifierArguments
@@ -266,7 +266,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 />
 ```
 ## ModifierStrings
-```
+```xml
 <!--PS：ModifierStrings是定义ModifierId文本的地方，大部分ModifierId是不需要这个的，但在一些地方还是需要的
 		例如，在给单位的修改器上，由于修改器改变了单位属性，而这种改变是满足了生效条件（例如某种地形加战斗力）临时拥有的
 		所以给告诉玩家这个临时效果怎么来的，就需要用到这里的文本 -->
@@ -319,7 +319,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 - 这个是对修改器效果进行约束，在我们需要的时候生效，不需要的时候无效，确定一个生效范围
 - **与Modifiers的关系**：先Requirements表开始，在这里定义好底层限制后再指向RequirementSets表，再在RequirementSets表被整理汇集构成完整的限定集合最后在递交到Modifiers表关联绑定修改器ModifierId确定修改器的生效范围
 ## Requirements
-```
+```xml
 <!-- PS: Requirements表是定义底层限定的地方， -->
 <Requirements
 	RequirementId="子限定ID自己定义"	    X值类型="TEXT"		默认值="NULL"
@@ -336,7 +336,7 @@ PS：OwnerRequirementSetId和SubjectRequirementSetId填入的都是RequirementSe
 PS: RequirementType太多了暂没精力整理
 ## RequirementArguments
 - 这个表和ModifierArguments差不多，实际他们的表里元素以及与对应其他表关系差不多
-```
+```xml
 <!-- PS：RequirementArguments表是定义RequirementId参数的地方，当然部分限制RequirementType是不需要定义参数，不用写RequirementArguments表 -->
 <RequirementArguments
 	RequirementId="子限定ID自己定义"	    X值类型="TEXT"	默认值="NULL"
@@ -350,7 +350,7 @@ PS: RequirementType太多了暂没精力整理
 
 ## RequirementStrings
 - 这个我们基本用不到，了解一下好了
-```
+```xml
 <!--PS：RequirementStrings 是定义RequirementId文本的地方，大部分RequirementId是不需要这个的，但在一些地方还是需要的
 		官方的例子貌似都与胜利有关，由于胜利是达到一定的“限定”要求（也就是REQ）就生效的，所以需要一些文本来描述 -->
 <RequirementStrings
@@ -361,7 +361,7 @@ PS: RequirementType太多了暂没精力整理
 ```
 
 ## RequirementSets
-```
+```xml
 <!-- PS: RequirementSets表是对定义RequirementSetId限定集合内各个子限定之间处于什么状态，修改器就生效 -->
 <RequirementSets
 	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
@@ -381,7 +381,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 
 ## RequirementSetRequirements
 - 这里是将RequirementId集合到RequirementSetId
-```
+```xml
 <!-- PS: RequirementSetRequirements表是对RequirementId底层限制在RequirementSetId进行绑定，组成一个大的集合，注意RequirementSetId可以绑一个也可以多个RequirementSetType -->
 <RequirementSetRequirements
 	RequirementSetId="限定集合ID自己定义"	X值类型="TEXT"	默认值="NULL"
@@ -401,7 +401,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ## 核心表
 ### Traits
 - 直接定义特性的表，哪怕没有文本也需要定义的必须表
-```
+```xml
 <!-- PS：Traits 表是定义一个特性名称和介绍的，当然也可以不定义名称和介绍，而是作为一个隐形的特性修改，我们更多是
 			亦或者多个特性绑一个文明/领袖时，为了显得更加精简，只有一个特性有文本介绍但将多个特性的能力全简述出来了 -->
 <Traits
@@ -415,7 +415,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ### Leader或Civilization亦或者Agenda——Traits
 - 虽然实际一个**TraitType**可以同时绑多个文明和领袖，但是这样会导致问题，例如一个文明和这个文明的领袖都绑了一个特殊能力，会导致文明的这个特性生效一次，领袖又生效一次对于像特殊能力很可能是效果直接叠加翻倍，所以我们应当做出选择，策划好这个特性到底是**文明特性还是领袖特性**，而这里就要用到给**文明**和**领袖**绑特性的表**LeaderTraits**表和**CivilizationTraits**表
 ####  CivilizationTraits
-```
+```xml
 <!-- PS：CivilizationTraits 表是将TraitType绑到CivilizationType领袖的，
 		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为文明特殊单位/建筑等等 -->
 <CivilizationTraits
@@ -425,7 +425,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ```
 
 ####  LeaderTraits
-```
+```xml
 <!-- PS：LeaderTraits 表是将TraitType帮到LeaderType领袖的，
 		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为领袖特殊单位/建筑等等 -->
 <LeaderTraitsX
@@ -436,7 +436,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 
 ####  AgendaType
 PS: 议程相关的我暂时未深入研究，有待研究
-```
+```xml
 <!-- PS：AgendaType 表是将TraitType绑到AgendaType议程上 -->
 <AgendaType
 	TraitType="特性Type变量"	X值类型="TEXT"			默认值="NULL"
@@ -462,7 +462,7 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 
 ## 其他的
 ### ExcludedDistricts
-```
+```xml
 <!-- PS：ExcludedDistricts 表是让TraitType增加一个不能造某区域的能力，
 		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能造这个区域 -->
 <ExcludedDistricts
@@ -471,7 +471,7 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 />
 ```
 ### ExcludedAdjacencies
-```
+```xml
 <!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，
 		在通过CivilizationTraits或LeaderTraits，让领袖/文明这个相邻加成无效 -->
 <ExcludedAdjacencies
@@ -480,7 +480,7 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 />
 ```
 ### ExcludedGreatPersonClasses
-```
+```xml
 <!-- PS：ExcludedGreatPersonClasses 表是让TraitType增加一个不能获得这个类型伟人点数和招募这个类型伟人的能力，
 		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能招获得这个类型伟人点数和招募这个类型伟人 -->
 <ExcludedGreatPersonClasses
