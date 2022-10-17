@@ -9,27 +9,20 @@
 
 **注意：**
 - **默认值="NULL"** 表示默认值为**空**,不是文本
-- 在“**值类型**”前面加了**X**则表示为必填的值
-- 在“**值类型**”后面加了:star:则表示为必填的值，注意你要么不在这个表增加新的值，要么建立这些必填的就必须进行定义
+- 在“**值类型**”后面加了“:star:”则表示为必填的值，注意你要么不在这个表增加新的值，要么建立这些必填的就必须进行定义
 - 注释前面有**GS**表示是风云变幻内容，**RF**是迭起兴衰内容
 - **RequirementType** 和 **EffectType** 与 **COLLECTION_UNIT_COMBAT** 是官方在游戏数据库主要的“底层接口”，我们是无法自己建立定义的，除非官方开放底层代码DLL
+- 我各个表具体介绍中**表可填参数**会顺带中文讲一下大体是什么，然后如果有补充则是在**注释**
 
 下面开始内容
 
 # **一. 核心开始**
 - **所有的各种Type变量**都需要先在这里定义的**实际类型**也就是KING
 ## **Kinds**
-```xml
-<!-- PS：Kinds 定义的 ‘实际类型’ 也就是KING 这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’ -->
-<Kinds
-  Kind="实际类型"  X值类型="TEXT"     默认值="NULL"
-  Hash="散列值"     值类型="INTEGER"  默认值="0"      注释="不用填，自动生成"
-/>
-```
-|       表可填参数    | 值类型          |     默认值    |    注释
-| ------------------ | -------------- | :-------------: | --------
-| Kind="实际类型" | TEXT: | NULL |
-| Hash="散列值" | INTEGER | 0|不用填，自动生成
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| Kind="实际类型" | TEXT:star: | NULL |
+| Hash="散列值" | INTEGER | 0 |不用填，自动生成
 
 ## **Types**
 ```xml
@@ -40,6 +33,11 @@
   Hash="散列值"        值类型="INTEGER"  默认值="0"     注释="不用填，自动生成"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| Type="各种Type变量" | TEXT:star: | NULL |
+| Kind="实际类型" | TEXT:star: | NULL |
+| Hash="散列值" | INTEGER | 0 |不用填，自动生成
 
 **Kinds表**以及**Types**具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
@@ -155,6 +153,11 @@ PS：Kind 官方共设定90个值
   Vocabulary="词汇表"    值类型="TEXT"  默认值="NULL"  注释="官方这里都有赋予值，这里就是抄官方"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| Tag="标签ID自己定义" | TEXT:star: | NULL |
+| Vocabulary="词汇表" | TEXT | NULL | 指向Vocabularies表，暂未深入研究，这里我就是抄官方。
+
 ## **TypeTags**
 - 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
 ```xml
@@ -164,6 +167,11 @@ PS：Kind 官方共设定90个值
   Tag="标签ID自己定义"  X值类型="TEXT"  默认值="NULL"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| Type="各种Type变量" | TEXT:star: | NULL |
+| Tag="标签ID自己定义" | TEXT:star: | NULL | 指向Vocabularies表，暂未深入研究，这里我就是抄官方。
+
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
 
 |       Type         | 注释
@@ -188,6 +196,12 @@ PS：Kind 官方共设定90个值
   EffectType="效果接口"            X值类型="TEXT"  默认值="NULL"  注释="官方给我们真正的数据库修改接口"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| ModifierType="修改器Type变量" | TEXT:star: | NULL |
+| CollectionType="生效的对象集合" | TEXT:star: | NULL |
+| EffectType="效果接口" | TEXT:star: | NULL | 官方给我们真正的数据库修改接口
+
 <details><summary>CollectionType对象集合整理</summary>
 
 PS：CollectionType 官方共设定41个值
@@ -257,6 +271,19 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
   SubjectStackLimit="修改器堆栈限定??"         值类型="INTEGER"  默认值="NULL"   注释="根据我的翻译和理解，貌似是这个修改器的叠加数量上限"
 />
 ```
+| 表可填参数 | 值类型 | 默认值 | 注释
+| -- | -- | :--: | --
+| ModifierId="修改器ID" | TEXT:star: | NULL |
+| ModifierType="修改器Type变量" | TEXT:star: | NULL |
+| RunOnce="只对当前的对象有效" | BOOLEAN | false |
+| NewOnly="只对之后的对象有效" | BOOLEAN | false |
+| Permanent="执行一次永久有效" | BOOLEAN | false |
+| OwnerRequirementSetId="所有者要满足条件" | TEXT | NULL | 例如修改器本身生效时机
+| SubjectRequirementSetId="被影响着达到条件" | TEXT | NULL | 被修改器修改对象要满足条件，例如是限定丘陵生效，如果是修改器是绑单位上，就需要单位移动到丘陵才有效
+| Repeatable="可重复?" | BOOLEAN | false | 官方就一个地方有用到它,有待研究
+| OwnerStackLimit="生效对象堆栈限定??" | INTEGER | NULL | 官方最后这里貌似弃用全为默认数值NULL，有待我们测试具体定义什么
+| SubjectStackLimit="修改器堆栈限定??" | INTEGER | NULL | 根据我的翻译和理解，貌似是这个修改器的叠加数量上限
+
 ## ModifierArguments
 ```xml
 <!--PS：ModifierArguments是定义ModifierId参数的地方，大部分修改器效果ModifierType都需要定义参数，
