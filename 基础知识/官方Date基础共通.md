@@ -456,8 +456,10 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 | AgendaType="文明Type变量" | TEXT:star: | NULL | 
 
 ## 可直接绑TraitType成为特性的对象
-- 常规的特殊XX都是直接绑TraitType在通过TraitType绑领袖或文明来属性的那么都有那些呢
-</details><details><summary>我的整理：</summary>
+- 常规的特殊XX(单位/建筑/改良等等)都是直接在定义自己的时候绑定TraitType
+- 例如如特殊单位就是在单位的核心定义表Units可直接绑TraitType
+### 具体的表
+</details><details><summary>这里是我的整理：</summary>
 PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 
 |        表                  | 特色的对象      | 通过TraitType中间这样一绑
@@ -470,7 +472,7 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 | Governors                  | 总督表          | RF&GS特色总督
 | DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
 </details>
-
+PS: 然后除了中心常规的可以通过绑表实现“特色”的外，实际还可以通过LUA来实现一些“特色”
 ## 其他的
 ### ExcludedDistricts
 ```xml
