@@ -459,10 +459,7 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 - 常规的特殊XX(单位/建筑/改良等等)都是直接在定义自己的时候绑定TraitType
 - 例如如特殊单位就是在单位的核心定义表Units可直接绑TraitType
 ### 常规特色相关表的表
-
-<details><summary>这里是我的整理：</summary>
-PS:这些表都是可以直接填的TraitType的，直接绑TraitType
-
+- 这些表都是可以直接填的TraitType的，直接绑TraitType
 |        表                  | 特色的对象      | 通过TraitType中间这样一绑
 | -------------------------- | -------------- |-----------
 | Buildings                  | 建筑/奇观表     | 特色建筑就这样诞生
@@ -472,7 +469,6 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 | TraitModifiers             | 特色绑修改器ID表 | 特色能力诞生
 | Governors                  | 总督表          | RF&GS特色总督
 | DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
-</details>
 PS: 然后除了这里常规的可以通过绑表实现“特色”的外，实际还可以通过LUA来实现一些“特色”，例如特色政策卡
 
 ### 特殊的
@@ -510,13 +506,13 @@ PS: 然后除了这里常规的可以通过绑表实现“特色”的外，实�
 #### 特殊的TraitType
 - 部分特殊的TraitType能非常有效帮助我们修改游戏，我们很有必要了解一些
 - 非常希望有带佬补充
-1) TRAIT_LEADER_MAJOR_CIV
-- 这个是modder用的非常多的官方TraitType
-- 这个TraitType字面意思是主要文明，但实测貌似对所有文明有效，通过这个TraitType我们可以把修改器自己绑它身上从而达到一次性绑所有文明上
-- 如果是增加单位什么的就没必要绑这里，以为非特性单位等就是全文明都有可建造的
+1) **TRAIT_LEADER_MAJOR_CIV**
+    - 这个是modder用的非常多的官方TraitType
+    - 这个TraitType字面意思是主要文明，但实测貌似对所有文明有效，通过这个TraitType我们可以把修改器自己绑它身上从而达到一次性绑所有文明上
+    - 如果是增加单位什么的就没必要绑这里，以为非特性单位等就是全文明都有可建造的
 
-2) TRAIT_LEADER_BARBARIAN
-- 这个是野蛮人的TraitType，可以把一些修改器，甚至单位等等绑这里增强野蛮人，当然也可以削弱
+2) **TRAIT_LEADER_BARBARIAN**
+    - 这个是野蛮人的TraitType，可以把一些修改器，甚至单位等等绑这里增强野蛮人，当然也可以削弱
 
-3) TRAIT_LEADER_FREE_CITIES
-- 这个是自由城邦的TraitType，和野蛮人同理
+3) **TRAIT_LEADER_FREE_CITIES**
+    - 这个是自由城邦的TraitType，和野蛮人同理
