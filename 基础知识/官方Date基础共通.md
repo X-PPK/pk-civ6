@@ -15,7 +15,7 @@
 - 我各个表具体介绍中**表可填参数**会顺带中文讲一下大体是什么，然后如果有补充则是在**注释**
 
 下面开始内容
-
+---
 # **一. 核心开始**
 - **所有的各种Type变量**都需要先在这里定义的**实际类型**也就是KING
 ## **Kinds**
@@ -170,7 +170,7 @@ PS：Kind 官方共设定90个值
 | ResourceType | 资源的Type变量
 | ModifierType| 修改器的Type变量
 </details>
-
+---
 # **二. 修改器**
 - 各种能力主要就是修改器
 - 关于修改器这里推荐使用H佬的文明6辅助工具来写，同时这里是以H佬[修改器教程](https://www.bilibili.com/video/BV1zt41167qA/)打底的
@@ -319,7 +319,7 @@ PS：DynamicModifiers表我暂未进行过深入研究，暂时没有注释，Mo
 | esolutionEffects | ResolutionType="决议的Type变量"  | GS 决议效果的表，有待研究，可直接绑修改器ModifierId
 
 </details>
-
+---
 # 三. REQ修改器限定
 - 这个是对修改器效果进行约束，在我们需要的时候生效，不需要的时候无效，确定一个生效范围
 - **与Modifiers的关系**：先Requirements表开始，在这里定义好底层限制后再指向RequirementSets表，再在RequirementSets表被整理汇集构成完整的限定集合最后在递交到Modifiers表关联绑定修改器ModifierId确定修改器的生效范围
@@ -400,6 +400,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 | RequirementSetId="限定集合ID自己定义" | TEXT:star: | NULL |
 | RequirementId="子限定ID自己定义" | TEXT:star: | NULL | 
 
+---
 # 四. Trait相通的特性
 - 文明6的一个重要的游戏内容————每个文明/领袖的特色(包括特性特殊能力，特殊专有单位，特殊专有区域，特殊专有改良，特殊专有总督等等)，而他们的共同核心就是类型是
 - Trait具体是特殊能力，还是特殊专有单位，又或者是特殊专有区域等等由它绑定的具体内容有关
@@ -470,6 +471,7 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 | TraitModifiers             | 特色绑修改器ID表 | 特色能力诞生
 | Governors                  | 总督表          | RF&GS特色总督
 | DiplomaticVisibilitySources| 外交可见性来源?? | 未涉足，待研究，记得可以设定文明/领袖特色外交可见性，或许与这个有关
+
 PS: 然后除了这里常规的可以通过绑表实现“特色”的外，实际还可以通过LUA来实现一些“特色”，例如特色政策卡
 
 ### 特殊的
