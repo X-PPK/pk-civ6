@@ -414,13 +414,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 - 直接定义特性的表，哪怕没有文本也需要定义的必须表
 ```xml
 <!-- PS：Traits 表是定义一个特性名称和介绍的，当然也可以不定义名称和介绍，而是作为一个隐形的特性修改，我们更多是
-			亦或者多个特性绑一个文明/领袖时，为了显得更加精简，只有一个特性有文本介绍但将多个特性的能力全简述出来了 -->
-<Traits
-  TraitType="特性Type变量"		X值类型="TEXT"			默认值="NULL"
-  Name="标题文本变量"			 值类型="LocalizedText"	默认值="NULL"	注释="特性的标题"
-  Description="说明文本变量"	 值类型="LocalizedText"	默认值="NULL"	注释="特性的文本介绍"
-  InternalOnly="仅限内部?"		 值类型="BOOLEAN"		默认值="false"	注释="看下面"
-/>
+	 亦或者多个特性绑一个文明/领袖时，为了显得更加精简，只有一个特性有文本介绍但将多个特性的能力全简述出来了 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -434,11 +428,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ####  CivilizationTraits
 ```xml
 <!-- PS：CivilizationTraits 表是将TraitType绑到CivilizationType领袖的，
-		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为文明特殊单位/建筑等等 -->
-<CivilizationTraits
-  TraitType="特性Type变量"			X值类型="TEXT"	默认值="NULL"
-  CivilizationType="文明Type变量"	 X值类型="TEXT"	默认值="NULL"
-/>
+	 让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为文明特殊单位/建筑等等 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -448,11 +438,7 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 ####  LeaderTraits
 ```xml
 <!-- PS：LeaderTraits 表是将TraitType帮到LeaderType领袖的，
-		让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为领袖特殊单位/建筑等等 -->
-<LeaderTraits
-  TraitType="特性Type变量"	X值类型="TEXT"			默认值="NULL"
-  LeaderType="领袖Type变量"	X值类型="TEXT"		默认值="NULL"
-/>
+	让TraitType成为了领袖特性，或是TraitType绑定的单位/建筑等等成为领袖特殊单位/建筑等等 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -463,10 +449,6 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 ```xml
 <!-- PS：AgendaTraits 表是将TraitType绑到AgendaType议程上 -->
-<AgendaTraits
-  TraitType="特性Type变量"	X值类型="TEXT"	默认值="NULL"
-  AgendaType="文明Type变量"	X值类型="TEXT"	默认值="NULL"
-/>
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -492,12 +474,7 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 ## 其他的
 ### ExcludedDistricts
 ```xml
-<!-- PS：ExcludedDistricts 表是让TraitType增加一个不能造某区域的能力，
-		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能造这个区域 -->
-<ExcludedDistricts
-  TraitType="特性Type变量"		X值类型="TEXT"	默认值="NULL"
-  DistrictType="区域Type变量"	X值类型="TEXT"	默认值="NULL"
-/>
+<!-- PS：ExcludedDistricts 表是让TraitType增加一个不能造某区域的能力，在通过CivilizationTraits或LeaderTraits，让领袖/文明不能造这个区域 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -506,26 +483,18 @@ PS:这些表都是可以直接填的TraitType的，直接绑TraitType
 
 ### ExcludedAdjacencies
 ```xml
-<!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，
-		在通过CivilizationTraits或LeaderTraits，让领袖/文明这个相邻加成无效 -->
-<ExcludedAdjacencies
-  TraitType="特性Type变量"		X值类型="TEXT"	默认值="NULL"
-  YieldChangeId="相邻加成ID"	X值类型="TEXT"	默认值="NULL"	注释="这个是自己在Adjacency_YieldChanges表设定起名并定义的加成关系的ID"
-/>
+<!-- PS：ExcludedAdjacencies 表是让TraitType增加一个相邻加成无效的能力，在通过CivilizationTraits或LeaderTraits，让领袖/文明这个相邻加成无效 -->
+
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
 | TraitType="特性Type变量" | TEXT:star: | NULL |
-| YieldChangeId="相邻加成ID" | TEXT:star: | NULL | 
+| YieldChangeId="相邻加成ID" | TEXT:star: | NULL | 这个是自己在Adjacency_YieldChanges表设定起名并定义的加成关系的ID
 
 ### ExcludedGreatPersonClasses
 ```xml
 <!-- PS：ExcludedGreatPersonClasses 表是让TraitType增加一个不能获得这个类型伟人点数和招募这个类型伟人的能力，
-		在通过CivilizationTraits或LeaderTraits，让领袖/文明不能招获得这个类型伟人点数和招募这个类型伟人 -->
-<ExcludedGreatPersonClasses
-  TraitType="特性Type变量"					X值类型="TEXT"		默认值="NULL"
-  GreatPersonClassType="伟人类型Type变量"	X值类型="TEXT"		默认值="NULL"
-/>
+	在通过CivilizationTraits或LeaderTraits，让领袖/文明不能招获得这个类型伟人点数和招募这个类型伟人 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
