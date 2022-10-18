@@ -169,7 +169,7 @@ PS：Kind 官方共设定90个值
 | Tag="标签ID自己定义" | TEXT:star: | NULL | 指向Tags表
 <details><summary>官方TypeTags表绑定Type变量类型：</summary>
 
-PS:其他Type变量是否可以帮绑Tag有待测试
+PS:其他Type变量是否可以绑Tag有待测试
 
 |       Type         | 注释
 | ------------------ | --------------
