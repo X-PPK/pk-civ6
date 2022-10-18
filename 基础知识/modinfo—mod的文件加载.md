@@ -20,7 +20,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 - 可以直接上文本，不中间增加文本变量，但这样只支持一种语言
 - modinfo的文本想支持多种语言就只能通过LocalizedText定义文本变量在不同语言的文本，我们无法通过UpdateText来增加，官方的方法是直接游戏本体添加对应文本这个我门做不到
 - 注意中文字符在游戏英文等部分拉丁语言状态下是无法显示字体的，所以建议和俺一样爱写中文的最好写一个对应英文，不然他们看到你的mod是一片乱码，就包括作者名
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Mod id="这里是mod的id" version="1">
   <Properties>
@@ -58,7 +58,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 # 选择性加载 Criteria（二级节点）
 - Criteria有很多，你可以针对整个DLC，亦或者只是DLC里的一个模式，或者一个MOD，当然只是MOD里的一个模式也一样可以，一个Criteria针对也可以选择多个，例如GS和RF任意一个启动我们Criteria就启动
 ## 下面是我的一些例子
-```
+```xml
     	<ActionCriteria>
 		<Criteria id="PPKHAGI_mod"><!-- 这个是针对mod活跃才加载的文件，这里填入mod的ID -->
 			<ModInUse>fba4a935-06f0-414b-973d-5ffcd80c6d0e</ModInUse>
@@ -92,7 +92,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 	</ActionCriteria>
 ```
 ## 关于领袖的Criteria（这个的用处主要避免一些情景模式加载这个领袖文件导致的BUG）
-```
+```xml
     	<ActionCriteria>
 		<Criteria id="Expansion2AndBeyond" any="1"><!-- 这个是针对官方GS下领袖LEADER_XX或LEADER_XX2活跃才加载的文件-->
 			<GameCoreInUse>Expansion2</GameCoreInUse>
@@ -112,7 +112,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 	</ActionCriteria>
 ```
 ## 额外扩展 ，官方GS和RF的Criteria还可以用GameCoreInUse，但这个没有对应官方标准版的值，这是官方后面更新添加内容
-```
+```xml
     	<ActionCriteria>
 		<Criteria id="Expansion_1"><!-- 这个是针对官方RF活跃才加载的文件 -->
 			<GameCoreInUse>Expansion1</GameCoreInUse>
@@ -121,13 +121,12 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 			<GameCoreInUse>Expansion2</GameCoreInUse>
 		</Criteria>
 	</ActionCriteria>
-
 ```
 
 
 # 加载顺序（4级节点）
 - 几乎各个文件加载都可以写它例如UpdateText等等
-```
+```xml
 <UpdateText id="xx">
   <Properties>
      <LoadOrder>100</LoadOrder>
@@ -142,7 +141,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 - 它可以用于直接的添加DDS美术素材，调用这个素材时的素材调用名就是这个DDS素材的文件名加后缀（可以去看我的mod PPK's UI 就是这样，因为需要的素材太少直接这样添加反而比专门导入官方工具方便多了，亦或者你需要测试素材也可以用这个方法，本人实战ICON.xml可调用和UI可调用）
 ## 普通文件覆盖
 - 会根据加载顺序自动覆盖同名文件
-```
+```xml
 <ImportFilesid="xx">
   <Properties>
      <LoadOrder>100</LoadOrder>
@@ -152,7 +151,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 ```
 ## 给予Criteria
 - 表示只有在GS活跃的情况下才加载这个mod（不是GS这个DLC启动，是GS活跃）--这个适用与其他mod或DLC
-```
+```xml
 <ImportFilesid="xx" criteria="Expansion_2 ">
   <Properties>
      <LoadOrder>100</LoadOrder>
@@ -163,7 +162,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 
 # UImod添加（3级节点）
 - 一个UI需要同名的xmL和lua文件组成，用AddUserInterfaces(游戏内加载项)添加
-```
+```xml
 <AddUserInterfaces id="xx">
   <Properties>
      <LoadOrder>100</LoadOrder>
@@ -176,7 +175,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 </Files>
 ```
 实际效果如上就能将UI添加成功了，但个人建议在增加一步，具体是为了可能的UI兼容，后面UI教程会讲
-```
+```xml
 <ImportFiles id="xx">
   <Properties>
      <LoadOrder>100</LoadOrder>
@@ -189,7 +188,7 @@ modinfo是所有mod必备的(除非是那种替换官方文件的“mod”)
 
 # 添加地图（3级节点）
 - 好吧这个我也懂得不多，没有深入研究过地图相关的这里分享一段我以前写的总结记得当时是给一个制作地图的朋友发的，我现在已经忘记这些了，有可能有错。还有一个相关的AddMap我没用过
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Mod id="XWK_0000_0000_0000">（这里是mod的id每个mod的id要不同自己改数字，一样会冲突使其中一个无法启动或是只有一个生效，括号里的是说明，看完删除）
 	<Properties>
