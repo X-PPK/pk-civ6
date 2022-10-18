@@ -463,7 +463,11 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 | TraitType="特性Type变量" | TEXT:star: | NULL |
 | AgendaType="文明Type变量" | TEXT:star: | NULL | 
 
-<details><summary>:sparkles:LeaderTraits&AgendaTraits扩展</summary>
+####  补充 AiLists表
+- 这里了解就好，后面教程会有专门讲述，知道还有这个地方要用到TraitType，实际上这个AI倾向也可以不定义，只是那样这个领袖modAI下可能会很菜
+- AiLists表 也可以直接绑TraitType，但TraitType是代替领袖/议程Type进行绑定
+
+<details><summary>:sparkles:我的理解</summary>
 - 首先议程AgendaType也可以理解成一种领袖特色东西，他是直接通过HistoricalAgendas表将两者绑在一起而不是TraitType
 - AgendaType更像是为了区分其他特色能力而专门增加的具有独立的文本名称和介绍
 - 同时这里讲述一个相关的也要用到TraitType的地方——AiLists表
@@ -472,6 +476,7 @@ PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 
 PS: 我的理解通过对领袖/议程的不同特性Type来绑AI倾向，做到领袖/议程是多元倾向（也就是官方框架结构就是这样设计）
 </details>
+
 ## 可直接绑TraitType成为特性的对象
 - 常规的特殊XX(单位/建筑/改良等等)都是直接在定义自己的时候绑定TraitType
 - 例如如特殊单位就是在单位的核心定义表Units可直接绑TraitType
