@@ -39,24 +39,23 @@
 
 1.  [modinfo——mod的必备身份证](基础知识/modinfo—mod的文件加载.md)
 2.  [官方数据库的基础相通部分](基础知识/官方Date基础共通.md)
-3.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
+3.  待续
 
 ### 数据库相关教程
 1.  [官方数据库整理](Gameplay数据库/官方数据库整理.md)
-2.  [实战xml/sql](Gameplay数据库/实战整理.md)
+2.  [实战XML/SQL](Gameplay数据库/实战整理.md)
 3.  待续
 
 ### lua相关教程
-咕咕咕
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  [官方lua接口整理](Gameplay数据库/官方数据库整理.md)
+3.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
+3.  [实战Game环境lUA](Gameplay数据库/官方数据库整理.md)
 
 ### 皮凯UImod教程
-咕咕咕
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 需要lua知识
+1.  [UI-XML]
+2.  [UI-LUA]
+3.  咕咕咕
 
 ### 文明6手游教程
 
