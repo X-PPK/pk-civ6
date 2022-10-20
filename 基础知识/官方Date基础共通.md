@@ -474,11 +474,11 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 | AgendaType="议程Type变量" | TEXT:star: | NULL | 
 
 ####  AiLists表
-- 这里了解就好，后面教程会有专门讲述，知道还有这个地方要用到TraitType就好，实际上这个AI倾向也可以不定义，只是那样这个领袖modAI下可能会很菜
 - 注意AiLists表 绑TraitType有点不一样
     - AiLists表，不一样的地方是参数“LeaderType”和“AgendaType”它们填的不是领袖Type变量和议程Type变量，而实际填的是TraitType特性Type变量
     - 具体将AiLists表的LeaderType填的是绑定了领袖的TraitType特性Type变量
     - 具体将AiLists表的AgendaType填的是绑定了议程的TraitType特性Type变量
+    - 这个表与AI的行为倾向逻辑有关(这游戏AI逻辑我们可调控的接口属实少)
 
 <details><summary>:sparkles:我的理解</summary>
 
