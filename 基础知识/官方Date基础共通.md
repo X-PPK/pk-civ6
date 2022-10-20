@@ -465,29 +465,25 @@ PS：REQUIREMENTSET_TEST_NONE这个我查表官方实际没有用到
 | LeaderType="领袖Type变量" | TEXT:star: | NULL | 
 
 ####  AgendaTraits
-PS: 议程相关的是我感兴趣但暂时未深入研究的，有待研究
 ```xml
 <!-- PS：AgendaTraits 表是将TraitType绑到AgendaType议程上 -->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
 | TraitType="特性Type变量" | TEXT:star: | NULL |
-| AgendaType="文明Type变量" | TEXT:star: | NULL | 
+| AgendaType="议程Type变量" | TEXT:star: | NULL | 
 
-####  补充 AiLists表
+####  AiLists表
 - 这里了解就好，后面教程会有专门讲述，知道还有这个地方要用到TraitType就好，实际上这个AI倾向也可以不定义，只是那样这个领袖modAI下可能会很菜
-- AiLists表 也可以直接绑TraitType，但TraitType是代替领袖/议程Type进行绑定
+- 注意AiLists表 绑TraitType有点不一样
+    - AiLists表，不一样的地方是参数“LeaderType”和“AgendaType”它们填的不是领袖Type变量和议程Type变量，而实际填的是TraitType特性Type变量
+    - 具体将AiLists表的LeaderType填的是绑定了领袖的TraitType特性Type变量
+    - 具体将AiLists表的AgendaType填的是绑定了议程的TraitType特性Type变量
 
 <details><summary>:sparkles:我的理解</summary>
 
-- 首先议程AgendaType也可以理解成一种领袖特色东西，他是直接通过HistoricalAgendas表将两者绑在一起而不是TraitType
-- AgendaType更像是为了区分其他特色能力而专门增加的具有独立的文本名称和介绍
-- 同时这里讲述一个相关的也要用到TraitType的地方——AiLists表
-    - 这个表与AI的行为倾向逻辑有关(这游戏AI逻辑我们可调控的属实少，或者说官方AI是智障)
-
-在这个表中我们可以把我们定义的AI倾向绑定到领袖或者议程上，而这里绑定不是直接绑领袖/议程Type上，而是绑TraitType在通过TraitType绑领袖/特性
-
-PS: 我的理解通过对领袖/议程的不同特性Type来绑AI倾向，做到领袖/议程是多元倾向（也就是官方框架结构就是这样设计）
+- 首先议程AgendaType也可以理解成一种领袖特色东西，他是直接通过HistoricalAgendas表或AgendaPreferredLeaders表将议程和领袖绑在一起而不是TraitType
+- AgendaType更像是一种隐形的特殊行为偏向或外交偏向
 </details>
 
 ## 可直接绑TraitType成为特性的对象
