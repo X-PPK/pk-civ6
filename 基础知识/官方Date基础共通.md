@@ -8,6 +8,7 @@
 各个元素在表里大都是互相可绑的不是一对一关系
 
 **注意：**
+- 我是在官方所有模式加GS下生成的数据库进行统计的
 - **默认值**为“NULL”表示默认值为**空**,不是文本
 - 在“**值类型**”后面加了“:star:”则表示为必填的值，注意你要么不在这个表增加新的值，要么建立这些必填的就必须进行定义
 - 注释前面有**GS**表示是风云变幻内容，**RF**是迭起兴衰内容
@@ -46,7 +47,7 @@
 
 **Kinds表**以及**Types**具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
-PS：Kind 官方共设定90个值
+PS：Kind 官方貌似共设定93个值（我是在官方所有模式加GS下生成的数据库进行统计的）
 
 |       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
@@ -159,6 +160,20 @@ PS：Kind 官方共设定90个值
 | -- | -- | :--: | --
 | Tag="标签ID自己定义" | TEXT:star: | NULL |
 | Vocabulary="词汇表" | TEXT | NULL | 指向Vocabularies表，暂未深入研究，这里我就是抄官方。
+
+<details><summary>官方Vocabulary统计：</summary>
+
+PS:官方我共统计到5种
+
+|  Vocabulary   | 注释
+| ------------- | --------------
+| ABILITY_CLASS | 官方单位能力先绑这个Vocabulary的Tag标签在用这个Tag标签绑单位，赋予有这个标签单位相同能力
+| RESOURCE_CLASS | 官方用于资源标签Tag
+| FEATURE_CLASS | 官方用于地貌标签Tag
+| POWER_CONVERSION_CLASS | 官方用于电源转换大类标签Tag,官方唯一例子铀发电
+| TAG_MODIFIER | 官方用于修改器标签Tag
+| TAG_REQUIREMENT | 官方用REQ限制标签Tag
+</details>
 
 ## **TypeTags**
 - 定义了Tag后就需要给Type变量赋予标签，而这就要用到TypeTags表
