@@ -16,6 +16,7 @@
     - 分享总是令人愉快
 
 - 英语不是我的母语，且我的英语也满差的，所以我不考虑英语版本，当然如果你愿意对我的教程进行英文翻译，我也会全力支持以及开心的
+
 English is not my native language, and my English is very poor, so I do not consider the English version. Of course, if you are willing to translate my tutorial in English, I will also give my full support and be happy
 ### 热烈欢迎各路带佬参与到俺的项目里
 1. 可以Fork 本项目
