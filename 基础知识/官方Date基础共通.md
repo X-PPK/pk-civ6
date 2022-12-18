@@ -28,7 +28,7 @@
 - **所有的各种Type变量**都需要先在这里定义的**实际类型**也就是KING
 ## **Kinds**
 ```xml
-<!--PS：Kinds定义的‘实际类型’也就是KING这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’-->
+<!--PS：Kinds定义的‘实际类型’也就是KIND这个表我们正常情况不需要定义，但我们需要了解这些表有哪些‘实际类型’-->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -37,7 +37,7 @@
 
 ## **Types**
 ```xml
-<!-- PS：各种Type变量都需要先在Types这里定义的KING，KING指向Kinds表-->
+<!-- PS：各种Type变量都需要先在Types这里定义的KIND，KIND指向Kinds表-->
 ```
 | 表可填参数 | 值类型 | 默认值 | 注释
 | -- | -- | :--: | --
@@ -47,7 +47,7 @@
 
 **Kinds表**以及**Types**具体有哪些实际类型，这些是我的整理（值类型均="TEXT"）
 <details><summary>Kinds表</summary>
-PS：Kind 官方貌似共设定93个值（我是在官方所有模式加GS下生成的数据库进行统计的）
+PS：Kind 官方貌似共设定94个值（我是在官方所有模式加GS下生成的数据库进行统计的，如果有误希望给予反馈）
 
 |       Kind                   | 介绍           |     注释
 | ---------------------------- | -------------- | -----------
@@ -118,7 +118,7 @@ PS：Kind 官方貌似共设定93个值（我是在官方所有模式加GS下生
 | KIND_TERRAIN                 | 地形            |
 | KIND_TERRAIN_CLASS           | 地形大类        |
 | KIND_GAMEMODE                | 游戏模式        |
-| KIND_TURNPHASE               | ?              | 这四个貌似与时间设置有关
+| KIND_TURNPHASE               | ?              | 这四个貌似与每回合一些设顶有关
 | KIND_TURNMODE                | ?              | 没兴趣研究
 | KIND_TURNSEGMENT             | ?              |
 | KIND_TURNTIMER               | ?              |
@@ -146,6 +146,7 @@ PS：Kind 官方貌似共设定93个值（我是在官方所有模式加GS下生
 | KIND_RANDOM_EVENT            | 随机事件        | GS随机灾害
 | KIND_REALISM_SETTING         | 灾害级别设置    | GS
 | KIND_ROCKBAND_RESULT         | 乐队演奏结果    | GS
+| KIND_HEROCLASS               | 英雄职业        | 英雄模式增加的Kind
 
 </details>
 
