@@ -25,3 +25,19 @@ Game.GetRandNum(n)，产生[0, n-1]之间的整数。
 Game.GetRandNum(m, n)，产生[m-1, n-1]之间的整数
 
 也就是说一般使用Game.GetRandNum要加1（他属于game环境的lua）
+
+- 使战例子
+
+local n = math.random(3);
+
+n的随机范围1，2，3
+
+local m = Game.GetRandNum(3);
+
+m的随机范围0，1，3
+
+所以如果我这里是从1开始随机数生成那么使用
+
+local n = Game.GetRandNum(3) + 1;
+
+（如果不是从1开始肯定要修改，关键看你自己随机范围喽）
