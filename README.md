@@ -53,7 +53,8 @@ English is not my native language, and my English is very poor, so I do not cons
 
 ### lua相关教程
 1.  [官方lua接口整理](Gameplay数据库/官方数据库整理.md)
-3.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
+    （- 包含GameplayLua和UILua知识）
+2.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
 3.  [实战Game环境lUA](Gameplay数据库/官方数据库整理.md)
 
 ### 皮凯UImod教程
@@ -61,6 +62,7 @@ English is not my native language, and my English is very poor, so I do not cons
 1.  [UI-XML部分基础](UI教程/UI-XML.md)
 2.  [UI-LUA部分基础](UI教程/UI-LUA.md)
 3.  [UI教程](UI教程/UI教程.md)
+4.  [UI实战](UI教程/实战例子/前言&目录说明.md)
 
 ### 文明6手游教程
 
