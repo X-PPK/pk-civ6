@@ -41,3 +41,46 @@ m的随机范围0，1，3
 local n = Game.GetRandNum(3) + 1;
 
 （如果不是从1开始肯定要修改，关键看你自己随机范围喽）
+
+#### lua查询游戏数据库方法
+- 是的你可以直接在lua获得游戏数据库内容，有两种方法
+##### 常规简单方法
+##### 复杂高级方法
+- 使用官方lua一个接口：DB.Query，它执行一个查询语句
+- 你可以用它来直接在lua里面建立一个更为复杂的表，而不是专门跑到数据库去专门建立一个表，我个人认为这个方法值得推广
+- 下面是示范：
+```lua
+local results = DB.Query([[
+	select UnitAbilityType, Value
+	from UnitAbilityModifiers as uam, ModifierArguments as ma
+	where uam.ModifierId = ma.ModifierId and ma.Name = 'Amount' and
+	uam.ModifierId in (
+		select ModifierId
+		from Modifiers as m
+		where m.ModifierType in (
+			select dm.ModifierType
+			from DynamicModifiers as dm
+			where dm.EffectType = 'EFFECT_ADJUST_UNIT_EXPERIENCE_MODIFIER'))
+]]);
+-- 下面我来详细说明一下，如果你对sql熟悉的话————没错这里用的就是sql的语言
+-- local results = DB.Query([[执行一个查询语句，将查询结果存储在本地变量results中。
+-- 注意到该语句使用了两个方括号"[["来引用查询语句，是为了避免在语句中有特殊字符需要转义。
+-- 下面的逗号可以看成分开但同步进行的操作
+-- select UnitAbilityType, Value
+-- 这里是要获得两个参数的UnitAbilityType, Value
+--    from UnitAbilityModifiers as uam, ModifierArguments as ma
+-- 这部分是查询语句的核心部分，指定了查询的目标列UnitAbilityType, Value 所分别对应查询的表 UnitAbilityModifiers, ModifierArguments。
+-- 其中as相当于加了一个中间变量名（别名），也就是后面用uam代替UnitAbilityModifiers，用ma代替ModifierArguments
+--[[ --这段就是需要满足的条件通过and将前面两者联系起来 ，这里用and联系各个关系表示需要同时满足
+	where uam.ModifierId = ma.ModifierId and ma.Name = 'Amount' and
+	uam.ModifierId in (
+		select ModifierId
+		from Modifiers as m
+		where m.ModifierType in (
+			select dm.ModifierType
+			from DynamicModifiers as dm
+			where dm.EffectType = 'EFFECT_ADJUST_UNIT_EXPERIENCE_MODIFIER'))));
+]] --条件1 uam.ModifierId = ma.ModifierId，也就是ModifierArguments 和UnitAbilityModifiers 表的参数ModifierId相同时的UnitAbilityType和Value
+-- 条件2 ma.Name = 'Amount' 也就是ModifierArguments的参数Name要为Amount
+-- 条件3 uam.ModifierId要满足 in (条件）这是继续套娃，到这里就懒得解释那么清楚，还不懂就去好好学习sql
+```
