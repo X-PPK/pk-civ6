@@ -1,6 +1,6 @@
 # 皮凯文明6总结(PK-CIV6)
-- [Githp链接](https://https://github.com/X-PPK/pk-civ6)
-- [Gitee链接](https://https://gitee.com/XPPK/pk-civ6)
+- [Githp链接](https://github.com/X-PPK/pk-civ6)
+- [Gitee链接](https://gitee.com/XPPK/pk-civ6)
 ## 介绍
 1. 皮凯的文明6mod制作代码整理
     - 全是个人经验所得，不排除有错误的地方，欢迎带佬指正
