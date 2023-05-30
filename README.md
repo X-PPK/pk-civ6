@@ -44,25 +44,25 @@ English is not my native language, and my English is very poor, so I do not cons
 
 1.  [modinfo——mod的必备身份证](基础知识/modinfo—mod的文件加载.md)
 2.  [官方数据库的基础相通部分](基础知识/官方Date基础共通.md)
-3.  [LUA基础知识](基础知识/lua基础共通.md)
+3.  [LUA基础知识](基础知识/lua基础共通.md)（暂未开工）
 
 ### 数据库相关教程
 1.  [官方数据库整理](Gameplay数据库/官方数据库整理.md)
-2.  [实战XML/SQL](Gameplay数据库/实战整理.md)
+2.  [实战XML/SQL](Gameplay数据库/实战整理.md)（暂未开工）
 3.  待续
 
 ### lua相关教程
-1.  [官方lua接口整理](Gameplay数据库/官方数据库整理.md)
+1.  [官方lua接口整理](Gameplay数据库/官方数据库整理.md)（暂未开工）
     （- 包含GameplayLua和UILua知识）
-2.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)
-3.  [实战Game环境lUA](Gameplay数据库/官方数据库整理.md)
+2.  [官方lua一些基础相通部分](基础知识/lua基础共通.md)（暂未开工）
+3.  [实战Game环境lUA](Gameplay数据库/官方数据库整理.md)（暂未开工）
 
 ### 皮凯UImod教程
 - 需要lua知识
-1.  [UI-XML部分基础](UI教程/UI-XML.md)
-2.  [UI-LUA部分基础](UI教程/UI-LUA.md)
-3.  [UI教程](UI教程/UI教程.md)
-4.  [UI实战](UI教程/实战例子/前言&目录说明.md)
+1.  [UI-XML部分基础](UI教程/UI-XML.md)（暂未开工）
+2.  [UI-LUA部分基础](UI教程/UI-LUA.md)（暂未开工）
+3.  [UI教程](UI教程/UI教程.md)（暂未开工）
+4.  [UI实战](UI教程/实战例子/前言&目录说明.md)（暂未开工）
 
 ### 文明6手游教程
 
