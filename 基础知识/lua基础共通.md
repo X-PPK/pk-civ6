@@ -84,3 +84,58 @@ local results = DB.Query([[
 -- 条件2 ma.Name = 'Amount' 也就是ModifierArguments的参数Name要为Amount
 -- 条件3 uam.ModifierId要满足 in (条件）这是继续套娃，到这里就懒得解释那么清楚，还不懂就去好好学习sql
 ```
+
+#### LUA数据可视化方法
+使用 `print()` 函数来打印 table，但是它只会输出 table 的地址。为了更好地可视化 table 数据，你可以使用 Lua 内置的 `table` 库中的一些函数来实现。
+
+下面是一个示例，展示了如何使用 `table` 库的一些函数来格式化输出 table 数据：
+- 通过递归地遍历 table 中的每个键值对，并根据值的类型进行判断，我们可以将 table 的内容格式化输出得更加清晰可读。你可以根据需要对 `printTable()` 函数进行扩展和自定义，以适应不同的数据结构和输出格式。
+```lua
+local function printTable(t, indent)
+    indent = indent or 0
+
+    for k, v in pairs(t) do
+        if type(v) == "table" then
+            print(string.rep(" ", indent) .. k .. ": {")
+            printTable(v, indent + 4)
+            print(string.rep(" ", indent) .. "}")
+        else
+            print(string.rep(" ", indent) .. k .. ": " .. tostring(v))
+        end
+    end
+end
+
+-- 示例数据
+local data = {
+    name = "皮凯",
+    age = 120,
+    address = {
+        star = "皮皮星",
+        state = "幻想国",
+        city = "滑稽乡",
+        street = "皮稽街K号"
+    },
+    hobbies = {"吃饭", "睡觉", "打豆豆"}
+}
+
+printTable(data)
+```
+
+运行这段代码将会输出以下结果：
+
+```
+name: 皮凯
+age: 120
+address: {
+    star: 皮皮星
+    state: 幻想国
+    city: 滑稽乡
+    street: 皮稽街K号
+}
+hobbies: {
+    1: 吃饭
+    2: 睡觉
+    3: 打豆豆
+}
+```
+
