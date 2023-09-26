@@ -1,0 +1,286 @@
+<h1>Hall of Fame (Back-end)</h1>
+<h1>Hall of Fame (Front-End)</h1>
+<p>名人堂 (后端)</p>
+<h1>对象与类型(Objects vs Types)</h1>
+<p>在深入前端和后端之前，我想解释一下对象引用和类型引用。有很多情况下，数据需要与游戏、甚至玩家之外的更多内容关联。有时它需要与城市、宗教或某个任意的游戏概念相关联。这些就是“对象”。对象是一块元数据，其他数据点和数据集可以引用它。对象包含名称、描述、所属玩家、地块索引、类型、图标等信息。然后，我们可以使用简单的整数引用该对象，并将数据与之关联。例如，如果我们想要跟踪玩家训练的单位数量，我们会传入类似于“PlayerUnitsTrained”的内容，一个对象ID（假设为5），以及训练的单位数量（假设为100）。</p>
+<p>然而，有些情况下，对象并不像我们希望的那样抽象。例如，如果我们要跟踪玩家按单位类型训练的单位数量。在这种情况下，我们既需要玩家的对象ID，又需要特定的单位类型，比如UNIT_WARRIOR。我们可以创建一个额外的表示这一情况的对象，或者只需指定玩家对象和额外的“Type”字段，这样可以简化事情。因此，我们的“PlayerUnitsTrainedByType”将包含玩家的对象ID（5）以及类型（UNIT_WARRIOR）。</p>
+<h1>Back-End（后端）</h1>
+<p>目前，名人堂存储的数据主要有两种类型：数据点和数据集。</p>
+<h2>Data points（数据点）</h2>
+<p>数据点是名称-值对，可以与规则集、游戏或特定对象相关联。数据点通过字符串进行标识，并与可以是数字、字符串、对象引用或类型的值相关联。数据点通常通过统计或报告进行可视化。</p>
+<p>以下是一些示例：</p>
+<table>
+  <thead>
+    <tr>
+      <th>数据点</th>
+      <th>对象ID</th>
+      <th>数值</th>
+      <th>类型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PlayerUnitsTrained</td>
+      <td>5</td>
+      <td>100</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>PlayerUnitsTrainedByType</td>
+      <td>5</td>
+      <td>30</td>
+      <td>UNIT_WARRIOR</td>
+    </tr>
+    <tr>
+      <td>FavoriteUnit</td>
+      <td>5</td>
+      <td></td>
+      <td>UNIT_WARRIOR</td>
+    </tr>
+    <tr>
+      <td>CityProduction</td>
+      <td>12</td>
+      <td>500</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Data Sets（数据集）</h2>
+<p>数据集与数据点类似，但不同之处在于它们的值是X、Y的整数对。这些通常用于跟踪每回合的值或每个时代等。与数据点一样，数据集可以任意命名，并与游戏、对象或类型相关联。然而，与数据点不同的是，只能使用数字值。数据集通常通过图表进行可视化。</p>
+<table>
+	<thead>
+	  <tr>
+		<th>数据集</th>
+		<th>对象ID</th>
+		<th>X</th>
+		<th>Y</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td>CityProductionPerTurn</td>
+		<td>12</td>
+		<td>1</td>
+		<td>20</td>
+	  </tr>
+	  <tr>
+		<td>CityProductionPerTurn</td>
+		<td>12</td>
+		<td>2</td>
+		<td>25</td>
+	  </tr>
+	  <tr>
+		<td>CityProductionPerTurn</td>
+		<td>12</td>
+		<td>3</td>
+		<td>30</td>
+	  </tr>
+	</tbody>
+</table>
+  
+<h1>Modding / 向后端提供数据（Modding / Providing Data to the back-end）</h1>
+<h2>Game Database（游戏数据库）</h2>
+<p>目前，在为名人堂提供/记录额外数据时，游戏数据库不需要额外的数据。然而，当记录引用类型的数据时，还需要提供该类型，以便前端了解该类型的名称、图标和其他元数据。</p>
+<h2>Lua</h2>
+<p>可以通过Lua以游戏脚本的形式记录数据。大部分功能通过全局的'HallofFame' API暴露出来。虽然该API可能会发生变化，但以下是它的当前形式。</p>
+<h3>Ruleset Types（规则集类型）</h3>
+<p><strong>HallofFame.GetRulesetTypes() -&gt; ruleset_types:array</strong>
+返回一个包含所有记录的规则集类型的数组。结构如下：</p>
+<table>
+	<thead>
+	  <tr>
+		<th>字段</th>
+		<th>类型</th>
+		<th>描述</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td>Type</td>
+		<td>string</td>
+		<td>项目的类型（例如UNIT_WARRIOR）</td>
+	  </tr>
+	  <tr>
+		<td>Kind</td>
+		<td>string</td>
+		<td>项目的种类（例如KIND_UNIT）</td>
+	  </tr>
+	  <tr>
+		<td>Name</td>
+		<td>string</td>
+		<td>项目的名称</td>
+	  </tr>
+	  <tr>
+		<td>Icon</td>
+		<td>[string]</td>
+		<td>项目的图标标签</td>
+	  </tr>
+	</tbody>
+</table>
+<p><strong>HallofFame.SetRulesetType(type:string, kind:string, name:string, [icon:string])</strong>
+记录规则集类型的元数据。
+如果类型已存在，将用新数据替换它。</p>
+<h3>Objects（对象）</h3>
+<p><strong>HallofFame.CreateObject(type:string, [player_id:int], [name:string], [plot_index:int], [extra_data:string], [icon:string]) -&gt; object_id:int</strong>
+创建一个带有指定数据的新对象，并返回对象ID。</p>
+<p><strong>HallofFame.GetObjects([type:string]) -&gt; objects:array</strong>
+返回一个表示对象ID的整数数组。
+表结构与 HallofFame.GetObject(objectId) 相同。</p>
+<p><strong>HallofFame.GetCityObject([type:string]) -&gt; objects:array</strong>
+返回一个表示城市对象ID的整数数组。
+表结构与 HallofFame.GetObject(objectId) 相同。</p>
+<p><strong>HallofFame.GetPlayerObject(playerId:int) -&gt; objects:array</strong>
+返回一个表示玩家对象ID的整数数组。
+表结构与 HallofFame.GetObject(objectId) 相同。</p>
+<h3>Data Points(数据点)</h3>
+<p><strong>HallofFame.FindDataPoint(data_point:string, [object_id:int], [type:string]) -&gt; result:int</strong>
+尝试查找数据点。
+结果是数据点的查找ID，如果不存在则为nil。</p>
+<p><strong>HallofFame.GetOrCreateDataPoint(data_point:string, [object_id:int], [type:string]) -&gt; result:int</strong>
+尝试查找数据点，如果不存在则创建一个新的数据点。
+结果是数据点的查找ID。</p>
+<p><strong>HallofFame.GetDataPoints([object_id:int],[type:string]) -&gt; data_points:int_array</strong>
+返回与指定条件匹配的所有数据点查找ID的数组。</p>
+<p><strong>HallofFame.SetDataPoint(data_point:string, [object_id:int], [type:string], value:table) -&gt; result:bool</strong>创建或更新具有指定值的数据点。'value' 的结构如下：</p>
+<table>
+  <thead>
+    <tr>
+      <th>字段</th>
+      <th>类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ValueNumeric</td>
+      <td>[int]</td>
+      <td>与数据点关联的数值。</td>
+    </tr>
+    <tr>
+      <td>ValueString</td>
+      <td>[string]</td>
+      <td>与数据点关联的字符串值。</td>
+    </tr>
+    <tr>
+      <td>ValueObjectId</td>
+      <td>[int]</td>
+      <td>与数据点关联的对象ID。</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>HallofFame.UpdateDataPoint(lookup_id:int, value:table) -&gt; result:bool</strong>使用指定的值更新数据点。'value' 的结构如下：</p>
+<table>
+  <thead>
+    <tr>
+      <th>字段</th>
+      <th>类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ValueNumeric</td>
+      <td>[int]</td>
+      <td>与数据点关联的数值。</td>
+    </tr>
+    <tr>
+      <td>ValueString</td>
+      <td>[string]</td>
+      <td>与数据点关联的字符串值。</td>
+    </tr>
+    <tr>
+      <td>ValueObjectId</td>
+      <td>[int]</td>
+      <td>与数据点关联的对象ID。</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>HallofFame.LookupDataPoint(lookup_id:int) -&gt; result:int</strong>尝试查找数据点，如果找不到则返回nil。'result' 的结构如下：</p>
+<table>
+  <thead>
+    <tr>
+      <th>字段</th>
+      <th>类型</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DataPoint</td>
+      <td>string</td>
+      <td>数据点的标识符。</td>
+    </tr>
+    <tr>
+      <td>ObjectId</td>
+      <td>[int]</td>
+      <td>与数据点关联的对象ID。</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>[string]</td>
+      <td>与数据点关联的类型。</td>
+    </tr>
+    <tr>
+      <td>ValueNumeric</td>
+      <td>[int]</td>
+      <td>与数据点关联的数值。</td>
+    </tr>
+    <tr>
+      <td>ValueString</td>
+      <td>[string]</td>
+      <td>与数据点关联的字符串值。</td>
+    </tr>
+    <tr>
+      <td>ValueObjectId</td>
+      <td>[int]</td>
+      <td>与数据点关联的对象ID。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Data Sets(数据集)</h3>
+<p><strong>HallofFame.FindDataSet(data_set:string, [object_id:int], [type:string]) -&gt; result:int</strong>
+尝试查找特定的数据集。
+结果可以是整数查找ID或nil。</p>
+<p><strong>HallofFame.GetOrCreateDataSet(data_set:string, [object_id:int], [type:string]) -&gt; result:int</strong>
+尝试查找特定的数据集，如果不存在则创建一个新的数据集。
+结果是整数查找ID。</p>
+<p><strong>HallofFame.GetDataSets([object_id:int], [type:string]) -&gt; result:int_array</strong>
+返回游戏或给定对象ID的所有数据集查找ID。</p>
+<p><strong>HallofFame.GetDataSetValue(lookup_id:int, x:int) -&gt; Y:int</strong>
+返回表示Y值的单个整数，如果不存在则返回nil。</p>
+<p><strong>HallofFame.GetLastDataSetValue(lookup_id:int) -&gt; X:int,Y:int</strong>
+返回表示X值和Y值的两个整数，如果数据集无效或为空，则返回nil。</p>
+<p><strong>HallofFame.SetDataSetValue(lookup_id:int, x:int, y:int)</strong>
+设置数据集的X和Y值。</p>
+<p><strong>HallofFame.AdjustDataSetValue(lookup_id:int, x:int, y:int) -&gt; value:int</strong>
+为数据集中给定X值的Y值进行调整或偏移。
+返回调整后的值。</p>
+<p><strong>HallofFame.LookupDataSet(lookup_id:int) -&gt; result:table_array</strong>尝试查找特定的数据集，如果不存在则创建一个新的数据集。结果是一个组合的表/数组。结果的数组包含按X排序的X和Y值。表的结构如下：</p>
+<table>
+	<thead>
+	  <tr>
+		<th>字段</th>
+		<th>类型</th>
+		<th>描述</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td>DataSet</td>
+		<td>string</td>
+		<td>数据集ID</td>
+	  </tr>
+	  <tr>
+		<td>ObjectId</td>
+		<td>[int]</td>
+		<td>与数据集关联的对象ID</td>
+	  </tr>
+	  <tr>
+		<td>Type</td>
+		<td>[string]</td>
+		<td>与数据集关联的类型</td>
+	  </tr>
+	</tbody>
+</table>

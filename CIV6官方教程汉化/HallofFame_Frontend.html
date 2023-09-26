@@ -1,0 +1,676 @@
+<h1>Hall of Fame (Front-End)</h1>
+<p>名人堂 (前端)</p>
+<h1>对象与类型(Objects vs Types)</h1>
+<p>在深入研究前端和后端之前，我想解释一下对象引用和类型引用。有很多情况下，数据需要与游戏或甚至玩家以外的其他内容关联。有时它需要与城市、宗教或某个任意的游戏概念关联起来。这些就是“objects”（对象）。对象是一块元数据，其他数据点和数据集可以引用它。对象包含诸如名称、描述、所属玩家、情节索引、类型、图标等信息。然后，我们可以使用一个简单的整数引用该对象，并与数据关联起来。例如，如果我们想要跟踪玩家训练的单位数量，我们会传入类似于“PlayerUnitsTrained”的内容，一个对象ID（假设为'5'），以及训练的单位数量（假设为'100'）。</p>
+<p>然而，有些情况下，对象并不像我们希望的那样抽象。例如，如果我们要跟踪玩家按单位类型训练的单位数量。在这种情况下，我们既需要玩家的对象ID，又需要特定的单位类型，比如UNIT_WARRIOR。我们可以创建一个额外的表示这个关系的对象，或者我们可以同时指定玩家对象和额外的“类型”字段，这样可以简化很多事情。因此，例如我们的“PlayerUnitsTrainedByType”将包含玩家的对象ID（5）以及类型（UNIT_WARRIOR）。</p>
+<h1>名人堂 (前端)</h1>
+<p>前端负责所有数据的呈现。由于数据之间松散耦合，可以以多种不同的方式进行可视化，并且这些方式可以被修改/扩展。</p>
+<h2>配置数据库</h2>
+<p>名人堂的前端细节存储在配置数据库中，而不是名人堂数据库中。这进一步强调了数据和可视化之间的松散耦合，并且允许修改者轻松访问以改变可视化细节，而无需将其固定在更持久的名人堂数据库中。</p>
+<p>相关文件：</p>
+
+<h3>覆盖规则集类型引用</h3>
+<p>有时，数据点可能引用了持久数据中不存在的规则集类型。或者，数据可能需要进行调整。在配置数据库中，有一个名为RulesetTypes的表。该表中的任何信息都将覆盖名人堂数据库中的信息。这对于提供额外的本地化或图标引用非常有用，这些引用可能没有被写入。</p>
+<h2>统计数据</h2>
+<p>统计数据是按类别分类的值，用于呈现数据点。统计数据通常具有标题以及可选的图标。它们根据显示的数据以及使用的“提示”进行值的显示方式可能会有所不同，稍后将对此进行描述。</p>
+<h3>数据库详细信息</h3>
+<p>统计数据在数据库中通过表'Statistics'进行指定，具有以下列：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DataPoint（数据点）</td>
+      <td>用于统计数据的数据点。</td>
+    </tr>
+    <tr>
+      <td>名称</td>
+      <td>统计数据的本地化名称（不包括尾随的“:”）。</td>
+    </tr>
+    <tr>
+      <td>Icon（图标）</td>
+      <td>显示在统计数据名称旁边的图标。</td>
+    </tr>
+    <tr>
+      <td>ValueIconDefault（值图标默认）</td>
+      <td>显示在统计数据值旁边的默认图标。</td>
+    </tr>
+    <tr>
+      <td>ValueIconOverride（值图标覆盖）</td>
+      <td>始终显示的图标，即使值是对象或类型。</td>
+    </tr>
+    <tr>
+      <td>Annotation（注释）</td>
+      <td>本地化注释，用于显示统计数据的附加详细信息。</td>
+    </tr>
+    <tr>
+      <td>Direction（方向）</td>
+      <td>介于-1和1之间的整数，表示较大值或较小值哪个“更好”。1表示较大值更好，0表示无差别，-1表示较小值更好。</td>
+    </tr>
+    <tr>
+      <td>Category（类别）</td>
+      <td>统计数据所属的类别ID。</td>
+    </tr>
+    <tr>
+      <td>Importance（重要性）</td>
+      <td>表示统计数据的重要性的整数值。这既用于排序，也用于选择“亮点”。</td>
+    </tr>
+  </tbody>
+</table>
+<p>类别由表'StatisticCategories'指定，具有以下列：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Category（类别）</td>
+      <td>类别的ID。</td>
+    </tr>
+    <tr>
+      <td>名称</td>
+      <td>类别的本地化名称。</td>
+    </tr>
+    <tr>
+      <td>是IsHidden否（隐藏）</td>
+      <td>类别是否显示。</td>
+    </tr>
+    <tr>
+      <td>SortOrder（排序顺序）</td>
+      <td>类别的排序方式（较低的值首先显示，相等的值按名称排序）。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>展示逻辑</h3>
+<p>默认情况下，使用以下逻辑来显示数据点的值：
+数据点是否引用类型？显示类型名称。
+数据点是否引用对象？显示对象名称。
+数据点是否引用字符串？显示字符串。
+否则，显示数值。</p>
+<p>用于确定使用哪个图标的层次结构如下：</p>
+<ul>
+<li>值图标覆盖（ValueIconOverride）</li>
+<li>对象图标</li>
+<li>类型图标</li>
+<li>值图标默认（ValueIconDefault）</li>
+</ul>
+<p>在显示图标时，名人堂将尝试使用值指定的任何覆盖图标，然后回退到使用统计数据的“ValueIcon”属性。</p>
+<p>还可以提供本地化字符串键的注释。该字符串将接收命名参数（"Name"和"Value"），并在显示值的同时显示该注释。</p>
+<p>例如：</p>
+<pre><code>Favorite Unit: [ICON_WARRIOR] Warrior (Trained 50 units.);
+</code></pre>
+<p>这里的注释是"Trained {Value} units."。</p>
+<p>正如前面提到的，统计数据按类别进行分区，并在每个类别内首先按重要性排序，然后按名称排序。</p>
+<h2>报告</h2>
+<p>报告也利用数据点，但与显示单个值不同，它们展示了值的电子表格视图。一个示例报告可能是显示游戏中所有宗教的报告，其中列指定它们的圣城、追随者数量等等。</p>
+<h3>数据库详细信息</h3>
+<p>报告使用最多3个表来进行指定：报告（Reports）、报告列（ReportColumns）和报告查询（ReportQueries）。在许多情况下，不需要报告查询（ReportQueries），因为预定义的查询已经足够好。</p>
+<p>以下是每个表的详细信息：</p>
+<h4>报告（Reports）</h4>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Report（报告）</td>
+      <td>报告的字符串标识符。</td>
+    </tr>
+    <tr>
+      <td>Scope（范围）</td>
+      <td>报告的“范围”。有关范围工作原理的描述，请参见下文。</td>
+    </tr>
+    <tr>
+      <td>名称</td>
+      <td>报告的本地化名称。</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>报告的可选本地化描述。</td>
+    </tr>
+    <tr>
+      <td>InitialColumnName（初始列名称）</td>
+      <td>初始列的本地化名称。</td>
+    </tr>
+    <tr>
+      <td>InitialColumnDescription（初始列描述）</td>
+      <td>鼠标悬停在初始列上时显示的可选本地化描述。</td>
+    </tr>
+    <tr>
+      <td>InitialColumnUxHint（初始列UX提示）</td>
+      <td>提示UI调整初始列的呈现方式。</td>
+    </tr>
+    <tr>
+      <td>InitialColumnValueIconDefault（初始列值图标默认）</td>
+      <td>初始列显示的默认图标。</td>
+    </tr>
+    <tr>
+      <td>InitialColumnValueIconOverride（初始列值图标覆盖）</td>
+      <td>始终显示的初始列图标。</td>
+    </tr>
+    <tr>
+      <td>ShowEmptyRows显（示空行）</td>
+      <td>描述是否显示没有任何主要列具有值的行的布尔字段。</td>
+    </tr>
+    <tr>
+      <td>Query（查询）</td>
+      <td>用于确定将表示列中的行的对象集的查询。</td>
+    </tr>
+    <tr>
+      <td>ExtraData（额外数据）</td>
+      <td>提供给查询的额外数据。</td>
+    </tr>
+    <tr>
+      <td>Importance（重要性）</td>
+      <td>表示报告重要性的整数值。通常用于调整排序顺序。</td>
+    </tr>
+  </tbody>
+</table>
+<h4>报告列（ReportColumns）</h4>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>报告（Report）</td>
+      <td>此列所属的报告。</td>
+    </tr>
+    <tr>
+      <td>名称</td>
+      <td>列的本地化名称。</td>
+    </tr>
+    <tr>
+      <td>描述</td>
+      <td>鼠标悬停时显示的可选本地化描述。</td>
+    </tr>
+    <tr>
+      <td>SortOrder（排序顺序）</td>
+      <td>报告中列的排序顺序，从左到右是从低到高。</td>
+    </tr>
+    <tr>
+      <td>DataPoint（数据点）</td>
+      <td>要可视化的数据点标识符。</td>
+    </tr>
+    <tr>
+      <td>UxHintUX（提示）</td>
+      <td>提示UI调整数据的呈现方式。</td>
+    </tr>
+    <tr>
+      <td>Minor（次要）</td>
+      <td>描述列是否为“次要”的布尔字段。只有在存在实际具有值的非次要列时，才会显示报告中的行。</td>
+    </tr>
+    <tr>
+      <td>AlwaysShow（始终显示）</td>
+      <td>描述是否显示列，即使没有行实际上具有值。</td>
+    </tr>
+    <tr>
+      <td>ValueIconDefault（值图标默认）</td>
+      <td>如果单元格的值不包含任何图标，则显示的默认图标。</td>
+    </tr>
+    <tr>
+      <td>ValueIconOverride（值图标覆盖）</td>
+      <td>始终显示的图标。</td>
+    </tr>
+  </tbody>
+</table>
+<h4>报告查询（ReportQueries）</h4>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Query（查询）</td>
+      <td>ReportColumns.Query使用的查询的标识符。</td>
+    </tr>
+    <tr>
+      <td>SQL</td>
+      <td>查询的实际SQL语句。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>有相当多的预定义查询涵盖了大部分情况。</p>
+<p>查询是针对名人堂数据库执行的SQL语句，并需要了解名人堂模式。</p>
+<p>查询应返回以下列：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ObjectId</td>
+      <td>用于行的对象ID。如果指定了Type，则可以是可选的。</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>用于行的规则集类型。如果指定了ObjectId，则可以是可选的。</td>
+    </tr>
+  </tbody>
+</table>
+<p>以下参数将传递给查询：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>@ObjectId</td>
+      <td>对象ID（通常是玩家对象）</td>
+    </tr>
+    <tr>
+      <td>@GameId</td>
+      <td>游戏ID。</td>
+    </tr>
+    <tr>
+      <td>@Ruleset</td>
+      <td>规则集。</td>
+    </tr>
+    <tr>
+      <td>@ExtraData</td>
+      <td>由'Reports.ExtraData'指定的额外字段。</td>
+    </tr>
+  </tbody>
+</table>
+<h3>范围</h3>
+<p>范围详细说明了报告的覆盖范围以及如何查询其数据。范围通常是以下3个值之一：“Ruleset”(规则集)、“Game”(游戏)或“Player”(玩家)。对于“Player”(玩家)范围的报告，将遍历游戏中的每个玩家并生成报告。查询将使用玩家的对象ID作为指定的@ObjectId。与此同时，“Game”(游戏)范围的报告将为每个游戏生成一次，其中“@GameId”是游戏的ID，但“@ObjectId”将为null。</p>
+<p>例如，“Player”(玩家)报告的示例是“Player Cities”(玩家城市)，列出给定玩家的所有城市。而“Game”(游戏)报告则是“Religions”(宗教)，显示游戏中的所有宗教。</p>
+<h2>图表</h2>
+<p>图表是名人堂中可视化数据集的主要方式。截至本文撰写时，只有一种类型的图表，即基本折线图。然而，将来可能会提供其他样式的图表。</p>
+<p>图表与报告类似，它们使用查询来枚举对象集并使用范围进一步指定如何调用这些查询。</p>
+<h2>数据库详细信息</h2>
+<p>图表使用最多两个表进行指定：Graphs（图表）和GraphQueries（图表查询）。在许多情况下，GraphQueries不是必需的，因为预定义的查询已经足够好。</p>
+<p>以下是每个表的详细信息：</p>
+<h4>Graphs（图表）</h4>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Graph（图表）</td>
+      <td>图表的标识符。</td>
+    </tr>
+    <tr>
+      <td>Scope（范围）</td>
+      <td>图表的“范围”。有关范围如何工作的描述，请参见下文。</td>
+    </tr>
+    <tr>
+      <td>Name（名称）</td>
+      <td>图表的本地化名称。</td>
+    </tr>
+    <tr>
+      <td>Description（描述）</td>
+      <td>图表的可选本地化描述。</td>
+    </tr>
+    <tr>
+      <td>Direction（方向）</td>
+      <td>表示较低或较高更好的整数值。-1表示较低，0表示不关心，1表示较高。</td>
+    </tr>
+    <tr>
+      <td>XLabel（X轴标签）</td>
+      <td>X轴标签的可选本地化字符串。</td>
+    </tr>
+    <tr>
+      <td>YLabel（Y轴标签）</td>
+      <td>Y轴标签的可选本地化字符串。</td>
+    </tr>
+    <tr>
+      <td>Query（查询）</td>
+      <td>用于确定要显示的数据集的查询。</td>
+    </tr>
+    <tr>
+      <td>DataSet（数据集）</td>
+      <td>传递给查询的表示所需数据集标识符的变量。</td>
+    </tr>
+    <tr>
+      <td>ExtraData（额外数据）</td>
+      <td>可以传递给查询的额外数据变量。</td>
+    </tr>
+    <tr>
+      <td>Importance（重要性）</td>
+      <td>表示图表的重要性的整数值。通常用于排序。</td>
+    </tr>
+    <tr>
+      <td>UxHint（用户界面提示）</td>
+      <td>当前未使用的值，提示用户界面如何可视化图表。</td>
+    </tr>
+  </tbody>
+</table>
+<h4>GraphQueries（图表查询）</h4>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Query（查询）</td>
+      <td>由Graphs.Query使用的查询的标识符。</td>
+    </tr>
+    <tr>
+      <td>SQL（SQL语句）</td>
+      <td>查询的实际SQL语句。</td>
+    </tr>
+  </tbody>
+</table>
+<p>有相当多的预定义查询涵盖了大部分情况。</p>
+<p>查询是针对名人堂数据库执行的SQL语句，需要了解名人堂模式。</p>
+<p>查询应返回以下列：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ObjectId（对象ID）</td>
+      <td>对象ID引用。如果指定了Type（类型），可以选择省略。</td>
+    </tr>
+    <tr>
+      <td>Type（类型）</td>
+      <td>行的规则集类型。如果指定了ObjectId（对象ID），可以选择省略。</td>
+    </tr>
+    <tr>
+      <td>DataSetId（数据集ID）</td>
+      <td>对DataSets.DataSetId的引用。</td>
+    </tr>
+  </tbody>
+</table>
+<p>以下参数将传递给查询：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>@ObjectId（对象ID）</td>
+      <td>对象ID（通常是玩家对象）</td>
+    </tr>
+    <tr>
+      <td>@GameId（游戏ID）</td>
+      <td>游戏ID。</td>
+    </tr>
+    <tr>
+      <td>@Ruleset（规则集）</td>
+      <td>规则集。</td>
+    </tr>
+    <tr>
+      <td>@DataSet（数据集）</td>
+      <td>由'Graphs.DataSet'指定的字段。</td>
+    </tr>
+    <tr>
+      <td>@ExtraData（额外数据）</td>
+      <td>由'Graphs.ExtraData'指定的额外字段。</td>
+    </tr>
+  </tbody>
+</table>
+<h2>聚合更新(Aggregate Updates)</h2>
+<p>在后端记录的数据有时不足或无法在记录时正确计算。一个很好的例子是计算各种统计数据的平均值，例如平均城市人口。这就是聚合更新发挥作用的地方。聚合更新用于在后端数据库上执行处理，以便可以派生出附加数据。这些数据被记录到数据库中，但通常在名人堂用户界面可见时刷新。</p>
+<p>聚合更新通过使用查询来枚举给定范围的一组数据点，然后执行指定的操作（例如求和、最小值、最大值、计数等）来工作。</p>
+<h3>数据库详细信息</h3>
+<p>聚合更新使用了4个表，其中两个用于数据点，另外两个用于数据集。</p>
+<h4>DataPointAggregateUpdates（数据点聚合更新）</h4>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>AggregateDataPoint（聚合数据点）</td>
+    <td>要写入的数据点的标识符。</td>
+  </tr>
+  <tr>
+    <td>Scope（范围）</td>
+    <td>处理的范围。</td>
+  </tr>
+  <tr>
+    <td>Operation（操作）</td>
+    <td>要使用的操作。有关可用操作的详细信息，请参见下文。</td>
+  </tr>
+  <tr>
+    <td>Query（查询）</td>
+    <td>要使用的查询。</td>
+  </tr>
+  <tr>
+    <td>DataPoint（数据点）</td>
+    <td>源数据点，也是传递给查询的变量。</td>
+  </tr>
+  <tr>
+    <td>ExtraData（额外数据）</td>
+    <td>传递给查询的额外数据值。</td>
+  </tr>
+  <tr>
+    <td>SortIndex（排序索引）</td>
+    <td>指定执行过程的顺序的排序索引。</td>
+  </tr>
+</table>
+<h4>DataPointAggregateQueries（数据点聚合查询）</h4>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>Query（查询）</td>
+    <td>由DataPointAggregateUpdates.Query使用的查询的标识符。</td>
+  </tr>
+  <tr>
+    <td>SQL（SQL语句）</td>
+    <td>查询的实际SQL语句。</td>
+  </tr>
+</table>
+<p>查询应返回以下列：</p>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+    <th> </th>
+    <th> </th>
+  </tr>
+</table>
+<p>以下参数将传递给查询：</p>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>@ObjectId（对象ID）</td>
+    <td>对象ID（通常是玩家对象）</td>
+  </tr>
+  <tr>
+    <td>@GameId（游戏ID）</td>
+    <td>游戏ID。</td>
+  </tr>
+  <tr>
+    <td>@Ruleset（规则集）</td>
+    <td>规则集。</td>
+  </tr>
+  <tr>
+    <td>@DataPoint（数据点）</td>
+    <td>由'DataPointAggregateQueries.DataPoint'指定的字段。</td>
+  </tr>
+  <tr>
+    <td>@ExtraData（额外数据）</td>
+    <td>由'DataPointAggregateQueries.ExtraData'指定的额外字段。</td>
+  </tr>
+</table>
+<h4>DatasetAggregateUpdates（数据集聚合更新）</h4>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>AggregateDataPoint（聚合数据点）</td>
+    <td>要写入的数据点的标识符。</td>
+  </tr>
+  <tr>
+    <td>Scope（范围）</td>
+    <td>处理的范围。</td>
+  </tr>
+  <tr>
+    <td>Operation（操作）</td>
+    <td>要使用的操作。有关可用操作的详细信息，请参见下文。</td>
+  </tr>
+  <tr>
+    <td>Query（查询）</td>
+    <td>要使用的查询。</td>
+  </tr>
+  <tr>
+    <td>Dataset（数据集）</td>
+    <td>源数据集，也是传递给查询的变量。</td>
+  </tr>
+  <tr>
+    <td>ExtraData（额外数据）</td>
+    <td>传递给查询的额外数据值。</td>
+  </tr>
+  <tr>
+    <td>SortIndex（排序索引）</td>
+    <td>指定执行过程的顺序的排序索引。</td>
+  </tr>
+</table>
+<h4>DatasetAggregateQueries（数据集聚合查询）</h4>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>Query（查询）</td>
+    <td>由DatasetAggregateUpdates.Query使用的查询的标识符。</td>
+  </tr>
+  <tr>
+    <td>SQL（SQL语句）</td>
+    <td>查询的实际SQL语句。</td>
+  </tr>
+</table>
+<p>查询应返回以下列：</p>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+<p>以下参数将传递给查询：</p>
+<table>
+  <tr>
+    <th>Name（名称）</th>
+    <th>Description（描述）</th>
+  </tr>
+  <tr>
+    <td>@ObjectId（对象ID）</td>
+    <td>对象ID（通常是玩家对象）</td>
+  </tr>
+  <tr>
+    <td>@GameId（游戏ID）</td>
+    <td>游戏ID。</td>
+  </tr>
+  <tr>
+    <td>@Ruleset（规则集）</td>
+    <td>规则集。</td>
+  </tr>
+  <tr>
+    <td>@Dataset（数据集）</td>
+    <td>由'DatasetAggregateUpdates.Dataset'指定的字段。</td>
+  </tr>
+  <tr>
+    <td>@ExtraData（额外数据）</td>
+    <td>由'DatasetAggregateUpdates.ExtraData'指定的额外字段。</td>
+  </tr>
+</table>
+<h3>工作流程</h3>
+<p>聚合更新按照明确定义的顺序执行，以便可以在后续的聚合中使用从聚合计算出的值。</p>
+<p>首先进行数据集聚合更新。这是因为它们不依赖于任何现有的数据点，只依赖于数据集，而目前无法通过聚合更新来更新数据集。</p>
+<p>数据集聚合更新遵循与其他所有内容相同的范围顺序，即玩家、游戏、规则集。</p>
+<p>之后，按照相同的范围顺序处理数据点聚合更新。</p>
+<h3>操作</h3>
+<p>可以使用以下操作：</p>
+<table>
+  <thead>
+    <tr>
+		<th>Name（名称）</th>
+		<th>Description（描述）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sum（求和）</td>
+      <td>累积所有数值并返回总和。</td>
+    </tr>
+    <tr>
+      <td>Min（最小值）</td>
+      <td>找到具有最小值的行，并返回该值的对象ID和/或类型。</td>
+    </tr>
+    <tr>
+      <td>MinSum（最小值总和）</td>
+      <td>找到具有累积最小值的对象ID和/或类型。</td>
+    </tr>
+    <tr>
+      <td>Max（最大值）</td>
+      <td>找到具有最大值的行，并返回该值的对象ID和/或类型。</td>
+    </tr>
+    <tr>
+      <td>MaxSum（最大值总和）</td>
+      <td>找到具有累积最大值的对象ID和/或类型。</td>
+    </tr>
+    <tr>
+      <td>First（第一行）</td>
+      <td>写入第一行的值。</td>
+    </tr>
+    <tr>
+      <td>Last（最后一行）</td>
+      <td>写入最后一行的值。</td>
+    </tr>
+    <tr>
+      <td>Count（计数）</td>
+      <td>计算行数。</td>
+    <tr>
+      <td>Average（平均值）</td>
+      <td>计算每行的数值的平均值。</td>
+    </tr>
+    <tr>
+      <td>Median（中位数）</td>
+      <td>找到每行的中位数。</td>
+    </tr>
+  </tbody>
+</table>

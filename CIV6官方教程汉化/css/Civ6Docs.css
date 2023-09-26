@@ -1,0 +1,38 @@
+blockquote
+{
+                border-left: 0px;
+                font-size: inherit;
+                padding: 0px;
+                margin: 0px;
+}
+
+.firaxis-sidenav
+{
+                margin-bottom: 20px;
+                margin-top: 20px;
+}
+
+.firaxis-sidenav>li>a
+{
+                color: #767676;
+                display: block;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 4px 20px;
+}
+
+.firaxis-sidenav>li>a:hover
+{
+                color: #463265;
+                background-color: #f9f9f9;
+}
+
+.firaxis-sidenav>li>a:focus,
+.firaxis-sidenav>li>a:hover
+{
+                background-color: transparent;
+                border-left: 1px solid #563d7c;
+                color: #563d7c;
+                padding-left: 19px;
+                text-decoration: none;
+}
