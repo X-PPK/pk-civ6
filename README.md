@@ -32,7 +32,9 @@ English is not my native language, and my English is very poor, so I do not cons
 	- [H佬的文明6笔记](https://gitee.com/Hemmelfort/Civ6ModdingNotes)
 2.  月佬的mod模板，一个超级工整完善的领袖文明mod案例（包括专门的音乐整理）
 	- [优妮mod项目](https://github.com/dwughjsd/LandsolYuni_civ6mod)
-
+3.  官方教程（有皮凯汉化版）
+        - [官方教程说明汉化](CIV6官方教程汉化/(CIV6官方教程)README.md)
+        - [官方教程汉化.md版传送门](CIV6官方教程汉化/Civ6Docs.md)
 ## 皮凯的文明6教程或者说更多是总结
 
 ### 基础知识
