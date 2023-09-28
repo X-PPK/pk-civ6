@@ -1,10 +1,13 @@
 # 文明VI 内容创作
-- 如果这里有错误或者不对翻译一，一切以官方英文html原版本为准，md是我直接html转md转来的，然后修整来的，UI方面应该是比官方html更好，因为我没有修正英文原版，官方原版后面很多表格格式用的是md格式html无法正常显示，同时很多地方示例代码时没有采用代码块格式，以至于HTML上显示的很不好看，无代码高亮，我在汉化的html是有对此优化，这里md更是优化过
+- 如果这里有错误或者不对翻译一，一切以官方英文html原版本为准
+- md是我直接html转md转来的，然后修整来的，UI方面应该是比官方html更好，md汉版教程示例的代码有高亮显示
 -（皮凯使用chatGpt辅助翻译完成，还行吧，绝大部分没问题）
 
 * * *
-## 目录
-* ### Content Creation（内容创建）
+<details>
+  <summary>目录</summary>
+  
+  * ### Content Creation（内容创建）
 - [Animation（动画）](#animation%E5%8A%A8%E7%94%BB)
 - [ArtDefFiles（艺术定义文件）](#artdeffiles%E8%89%BA%E6%9C%AF%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6)
 - [BuildingsProcess（建筑流程）](#buildingsprocess%E5%BB%BA%E7%AD%91%E6%B5%81%E7%A8%8B)
@@ -98,6 +101,8 @@
 - [Texture System Mods（纹理系统修改）](#texture-system-mods%E7%BA%B9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9)
 - [Understanding modinfo files（理解modinfo文件）](#understanding-modinfo-files%E7%90%86%E8%A7%A3modinfo%E6%96%87%E4%BB%B6)
 - [Unit Mods（单位修改）](#unit-mods%E5%8D%95%E4%BD%8D%E4%BF%AE%E6%94%B9)
+
+</details>
 
 ***
 
