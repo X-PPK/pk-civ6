@@ -4,6 +4,107 @@
 
 * * *
 
+* ### Content Creation（内容创建）
+- [Animation（动画）](#animation%E5%8A%A8%E7%94%BB)
+- [ArtDefFiles（艺术定义文件）](#artdeffiles%E8%89%BA%E6%9C%AF%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6)
+- [BuildingsProcess（建筑流程）](#buildingsprocess%E5%BB%BA%E7%AD%91%E6%B5%81%E7%A8%8B)
+- [ColorKey（颜色键）](#colorkey%E9%A2%9C%E8%89%B2%E9%94%AE)
+- [DataDocumentation（数据文档）](#datadocumentation%E6%95%B0%E6%8D%AE%E6%96%87%E6%A1%A3)
+- [Geometry（几何体）](#geometry%E5%87%A0%E4%BD%95%E4%BD%93)
+- [IconXML（图标XML）](#iconxml%E5%9B%BE%E6%A0%87xml)
+- [Iteration（迭代）](#iteration%E8%BF%AD%E4%BB%A3)
+- [MappingToGameCore（映射到游戏核心）](#mappingtogamecore%E6%98%A0%E5%B0%84%E5%88%B0%E6%B8%B8%E6%88%8F%E6%A0%B8%E5%BF%83)
+- [PackagingAssets（打包资产）](#packagingassets%E6%89%93%E5%8C%85%E8%B5%84%E4%BA%A7)
+- [ParticleEffects（粒子效果）](#particleeffects%E7%B2%92%E5%AD%90%E6%95%88%E6%9E%9C)
+- [ParticleEffectsWorkflow（粒子效果工作流程）](#particleeffectsworkflow%E7%B2%92%E5%AD%90%E6%95%88%E6%9E%9C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B)
+- [TerrainBounceLighting（地形反射光照）](#terrainbouncelighting%E5%9C%B0%E5%BD%A2%E5%8F%8D%E5%B0%84%E5%85%89%E7%85%A7)
+- [TerrainOverview（地形概述）](#terrainoverview%E5%9C%B0%E5%BD%A2%E6%A6%82%E8%BF%B0)
+- [纹理（Texture）](#%E7%BA%B9%E7%90%86texture)
+- [TextureExportSettings（纹理导出设置）](#textureexportsettings%E7%BA%B9%E7%90%86%E5%AF%BC%E5%87%BA%E8%AE%BE%E7%BD%AE)
+- [The Life of a Leader（领导者的生命？）](#the-life-of-a-leader%E9%A2%86%E5%AF%BC%E8%80%85%E7%9A%84%E7%94%9F%E5%91%BD)
+- [TileBase（瓷砖基础）](#tilebase%E7%93%B7%E7%A0%96%E5%9F%BA%E7%A1%80)
+- [UnitPreviewingScript（单位预览脚本）](#unitpreviewingscript%E5%8D%95%E4%BD%8D%E9%A2%84%E8%A7%88%E8%84%9A%E6%9C%AC)
+- [World Builder（世界构建器）](#world-builder%E4%B8%96%E7%95%8C%E6%9E%84%E5%BB%BA%E5%99%A8)
+
+* ### FireFX（火焰特效）
+- [Emitter Properties（发射器属性）](#emitter-properties%E5%8F%91%E5%B0%84%E5%99%A8%E5%B1%9E%E6%80%A7)
+- [FireFX UI Backend（火焰特效后端）](#firefx-ui-backend%E7%81%AB%E7%84%B0%E7%89%B9%E6%95%88%E5%90%8E%E7%AB%AF)
+- [Understanding FireFX Scripts（理解 火焰特效 脚本）](#understanding-firefx-scripts%E7%90%86%E8%A7%A3-%E7%81%AB%E7%84%B0%E7%89%B9%E6%95%88-%E8%84%9A%E6%9C%AC)
+
+* ### Forge UI（制作UI）
+- [Debug Features（调试功能）](#debug-features%E8%B0%83%E8%AF%95%E5%8A%9F%E8%83%BD)
+- [LUA Conventions（LUA公约,约定俗成）](#lua-conventionslua%E5%85%AC%E7%BA%A6%E7%BA%A6%E5%AE%9A%E4%BF%97%E6%88%90)
+- [LUA Input（LUA输入）](#lua-inputlua%E8%BE%93%E5%85%A5)
+- [LUA Reference（LUA参考）](#lua-referencelua%E5%8F%82%E8%80%83)
+- [Reference Guide（参考指南）](#reference-guide%E5%8F%82%E8%80%83%E6%8C%87%E5%8D%97)
+
+* ### Forge UI Controls（制作UI/控件）
+- [AlphaAnim（透明度动画控件）](#alphaanim%E9%80%8F%E6%98%8E%E5%BA%A6%E5%8A%A8%E7%94%BB%E6%8E%A7%E4%BB%B6)
+- [Bar（进度条控件）](#bar%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6)
+- [Box（方框控件）](#box%E6%96%B9%E6%A1%86%E6%8E%A7%E4%BB%B6)
+- [BoxButton（方框按钮）](#boxbutton%E6%96%B9%E6%A1%86%E6%8C%89%E9%92%AE)
+- [Button（按钮）](#button%E6%8C%89%E9%92%AE)
+- [CheckBox（复选框）](#checkbox%E5%A4%8D%E9%80%89%E6%A1%86)
+- [Container（容器）](#container%E5%AE%B9%E5%99%A8)
+- [Context（上下文）](#context%E4%B8%8A%E4%B8%8B%E6%96%87)
+- [DragPanel（拖动面板）](#dragpanel%E6%8B%96%E5%8A%A8%E9%9D%A2%E6%9D%BF)
+- [EditBox（编辑框控件）](#editbox%E7%BC%96%E8%BE%91%E6%A1%86%E6%8E%A7%E4%BB%B6)
+- [FlipAnim（翻转动画控件）](#flipanim%E7%BF%BB%E8%BD%AC%E5%8A%A8%E7%94%BB%E6%8E%A7%E4%BB%B6)
+- [Grid（网格控件）](#grid%E7%BD%91%E6%A0%BC%E6%8E%A7%E4%BB%B6)
+- [GridButton（网格按钮控件）](#gridbutton%E7%BD%91%E6%A0%BC%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6)
+- [Image（图像控件）](#image%E5%9B%BE%E5%83%8F%E6%8E%A7%E4%BB%B6)
+- [Include（包含）](#include%E5%8C%85%E5%90%AB)
+- [Instance（实例控件）](#instance%E5%AE%9E%E4%BE%8B%E6%8E%A7%E4%BB%B6)
+- [Label（标签控件）](#label%E6%A0%87%E7%AD%BE%E6%8E%A7%E4%BB%B6)
+- [Line（线段控件）](#line%E7%BA%BF%E6%AE%B5%E6%8E%A7%E4%BB%B6)
+- [LuaContext（Lua上下文）](#luacontextlua%E4%B8%8A%E4%B8%8B%E6%96%87)
+- [MakeInstance（生成实例）](#makeinstance%E7%94%9F%E6%88%90%E5%AE%9E%E4%BE%8B)
+- [Meter（进度表控件）](#meter%E8%BF%9B%E5%BA%A6%E8%A1%A8%E6%8E%A7%E4%BB%B6)
+- [Movie（电影控件）](#movie%E7%94%B5%E5%BD%B1%E6%8E%A7%E4%BB%B6)
+- [PullDown（下拉菜单控件）](#pulldown%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E6%8E%A7%E4%BB%B6)
+- [RadioButton（单选按钮控件）](#radiobutton%E5%8D%95%E9%80%89%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6)
+- [ScrollAnim（滚动动画控件）](#scrollanim%E6%BB%9A%E5%8A%A8%E5%8A%A8%E7%94%BB%E6%8E%A7%E4%BB%B6)
+- [ScrollPanel（滚动面板控件）](#scrollpanel%E6%BB%9A%E5%8A%A8%E9%9D%A2%E6%9D%BF%E6%8E%A7%E4%BB%B6)
+- [SimplePullDown（简易下拉框控件）](#simplepulldown%E7%AE%80%E6%98%93%E4%B8%8B%E6%8B%89%E6%A1%86%E6%8E%A7%E4%BB%B6)
+- [SlideAnim（滑动动画控件）](#slideanim%E6%BB%91%E5%8A%A8%E5%8A%A8%E7%94%BB%E6%8E%A7%E4%BB%B6)
+- [Slider（滑块控件）](#slider%E6%BB%91%E5%9D%97%E6%8E%A7%E4%BB%B6)
+- [Stack（堆栈控件）](#stack%E5%A0%86%E6%A0%88%E6%8E%A7%E4%BB%B6)
+- [TabControl（选项卡控件）](#tabcontrol%E9%80%89%E9%A1%B9%E5%8D%A1%E6%8E%A7%E4%BB%B6)
+- [TextButton（文本按钮控件）](#textbutton%E6%96%87%E6%9C%AC%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6)
+- [TextureBar（纹理进度条控件）](#texturebar%E7%BA%B9%E7%90%86%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6)
+- [ToolTipType（工具提示控件）](#tooltiptype%E5%B7%A5%E5%85%B7%E6%8F%90%E7%A4%BA%E6%8E%A7%E4%BB%B6)
+- [Tutorial（教程控件）](#tutorial%E6%95%99%E7%A8%8B%E6%8E%A7%E4%BB%B6)
+
+* ### Modding（修改）
+- [D Leader Background Mods（2D 领导者背景修改）](#d-leader-background-mods2d-%E9%A2%86%E5%AF%BC%E8%80%85%E8%83%8C%E6%99%AF%E4%BF%AE%E6%94%B9)
+- [Add and Update Consumers in Mod Art File（在 Mod 艺术文件中添加和更新美术配置文件）](#add-and-update-consumers-in-mod-art-file%E5%9C%A8-mod-%E8%89%BA%E6%9C%AF%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%92%8C%E6%9B%B4%E6%96%B0%E7%BE%8E%E6%9C%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+- [Add and Update Libraries in Mod Art File （在 Mod 艺术文件中添加和更新库）](#add-and-update-libraries-in-mod-art-file-%E5%9C%A8-mod-%E8%89%BA%E6%9C%AF%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%92%8C%E6%9B%B4%E6%96%B0%E5%BA%93)
+- [Adding New Screens（添加新界面）](#adding-new-screens%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%95%8C%E9%9D%A2)
+- [Adding or Modifying Icons（添加或修改图标）](#adding-or-modifying-icons%E6%B7%BB%E5%8A%A0%E6%88%96%E4%BF%AE%E6%94%B9%E5%9B%BE%E6%A0%87)
+- [ColorKey Mods（颜色键修改）](#colorkey-mods%E9%A2%9C%E8%89%B2%E9%94%AE%E4%BF%AE%E6%94%B9)
+- [Cooking Art Files（封装艺术文件）](#cooking-art-files%E5%B0%81%E8%A3%85%E8%89%BA%E6%9C%AF%E6%96%87%E4%BB%B6)
+- [FireFX Built-In Functions（火焰特效内置函数）](#firefx-built-in-functions%E7%81%AB%E7%84%B0%E7%89%B9%E6%95%88%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0)
+- [Fog of War Overview（迷雾效果概述）](#fog-of-war-overview%E8%BF%B7%E9%9B%BE%E6%95%88%E6%9E%9C%E6%A6%82%E8%BF%B0)
+- [FoW Hatch Texture Mod（迷雾图案填充纹理修改）](#fow-hatch-texture-mod%E8%BF%B7%E9%9B%BE%E5%9B%BE%E6%A1%88%E5%A1%AB%E5%85%85%E7%BA%B9%E7%90%86%E4%BF%AE%E6%94%B9)
+- [FoW Parchment Texture Mods（迷雾羊皮纹理修改）](#fow-parchment-texture-mods%E8%BF%B7%E9%9B%BE%E7%BE%8A%E7%9A%AE%E7%BA%B9%E7%90%86%E4%BF%AE%E6%94%B9)
+- [FoW Sprite Texture Mods（迷雾贴花纹理修改）](#fow-sprite-texture-mods%E8%BF%B7%E9%9B%BE%E8%B4%B4%E8%8A%B1%E7%BA%B9%E7%90%86%E4%BF%AE%E6%94%B9)
+- [HallofFame\_Backend（名人堂后端）](#halloffame%5C_backend%E5%90%8D%E4%BA%BA%E5%A0%82%E5%90%8E%E7%AB%AF)
+- [HallofFame\_Frontend（名人堂前端）](#halloffame%5C_frontend%E5%90%8D%E4%BA%BA%E5%A0%82%E5%89%8D%E7%AB%AF)
+- [HotLoading（热加载）](#hotloading%E7%83%AD%E5%8A%A0%E8%BD%BD)
+- [LoadOrder（加载顺序）](#loadorder%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F)
+- [Modifying Existing Screens（修改现有界面）](#modifying-existing-screens%E4%BF%AE%E6%94%B9%E7%8E%B0%E6%9C%89%E7%95%8C%E9%9D%A2)
+- [Notes shorthand（笔记速记）](#notes-shorthand%E7%AC%94%E8%AE%B0%E9%80%9F%E8%AE%B0)
+- [SkyBox Overview（天空盒概述）](#skybox-overview%E5%A4%A9%E7%A9%BA%E7%9B%92%E6%A6%82%E8%BF%B0)
+- [SkyBox Texture Mods（天空盒纹理修改）](#skybox-texture-mods%E5%A4%A9%E7%A9%BA%E7%9B%92%E7%BA%B9%E7%90%86%E4%BF%AE%E6%94%B9)
+- [StrategicView Building Sprite Mods（战略视图建筑贴花修改）](#strategicview-building-sprite-mods%E6%88%98%E7%95%A5%E8%A7%86%E5%9B%BE%E5%BB%BA%E7%AD%91%E8%B4%B4%E8%8A%B1%E4%BF%AE%E6%94%B9)
+- [StrategicView Natural Wonder Sprite Mods（战略视图自然奇观贴花修改）](#strategicview-natural-wonder-sprite-mods%E6%88%98%E7%95%A5%E8%A7%86%E5%9B%BE%E8%87%AA%E7%84%B6%E5%A5%87%E8%A7%82%E8%B4%B4%E8%8A%B1%E4%BF%AE%E6%94%B9)
+- [StrategicView Overview（战略视图概述）](#strategicview-overview%E6%88%98%E7%95%A5%E8%A7%86%E5%9B%BE%E6%A6%82%E8%BF%B0)
+- [Texture System Mods（纹理系统修改）](#texture-system-mods%E7%BA%B9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9)
+- [Understanding modinfo files（理解modinfo文件）](#understanding-modinfo-files%E7%90%86%E8%A7%A3modinfo%E6%96%87%E4%BB%B6)
+- [Unit Mods（单位修改）](#unit-mods%E5%8D%95%E4%BD%8D%E4%BF%AE%E6%94%B9)
+
+***
+
 # Animation（动画）
 
 Animation（.anm）
@@ -137,7 +238,7 @@ _\- 在你的视觉选择背后的原因是什么？_
 
 **概念阶段和时间框架：**
 
-当一件作品被发送以便进行批评时，概念艺术家应该努力清楚地说明任务的**阶段**和他们对**时间框架**的最佳估计（如果有的话）。例如，“这些是我对X的早期探索性草图**（阶段）**，所以我正在探索一些非常奇特的想法。然而，在我们希望着手确定X的最终设计之前，我还有大约一周的时间**（时间框架）**”，或者“这是我对Y的最终设计**（阶段）**。我们的目标是今天下午将其发送给建模团队**（时间框架）**”。
+当一件作品被发送以便进行批评时，概念艺术家应该努力清楚地说明任务的**阶段**和他们对**时间框架**的最佳估计（如果有的话）。例如，“这些是我对X的早期探索性草图**（阶段）**，所以我正在探索一些非常奇特的想法。然而，在我们希望着手确定X的最终设计之前，我还有大约一周的时间**（时间框架）** ”，或者“这是我对Y的最终设计**（阶段）**。我们的目标是今天下午将其发送给建模团队**（时间框架）** ”。
 
 尽量不要让要求反馈的电子邮件被无视。即使只是简单地说“看起来很棒！继续努力！”也比保持沉默要好。如果你认为作品达到了所有需要达到的标准，那么就这样说。如果你有想法或反馈，但需要一些时间来整理后再发送给他们，那么也要说出来。“嘿，贝丝，我现在自己的绘画工作已经很忙了，但我对你的吸血帝国悬浮艇任务有一些想法。我们稍后讨论一下怎么样？”
 
@@ -153,7 +254,7 @@ _文档_
 
 所有的概念从早期阶段到完成都有一个故事。在某个地方记录下这个故事！可以是非正式的电子邮件，也可以是通过One Note、Discourse或团队为项目约定的任何文档平台进行正式记录，但**一定要在某个地方写下来，并且对每个作品都要保持一致**，随着故事的展开进行记录。当几个月后你早已忘记为什么那个紫色的海豚直升机经历了这么多次修改时，这将非常有用。我们One Note中的一个很好的例子是约翰·柯廷的领导人概念页面：（链接）Concept
 
-“**首先**，我开始收集参考图像（链接到参考图像文件夹）。**然后**，我画了几页粗略草图（链接到粗略草图）。**之后**，我与我的主管和艺术总监进行了交流，他们都认为第16个草图是最好的。 **接下来**，我对那个草图进行了修改（链接到草图），并再次展示了出来。我的艺术总监喜欢它的发展方向，但决定设计需要更多的激光炮。 **接下来**，我修改了设计，增加了更多的激光炮（链接到修改后的设计），**然后**将其制作成最终阶段（链接到最终概念）”。
+“ **首先**，我开始收集参考图像（链接到参考图像文件夹）。**然后**，我画了几页粗略草图（链接到粗略草图）。**之后**，我与我的主管和艺术总监进行了交流，他们都认为第16个草图是最好的。 **接下来**，我对那个草图进行了修改（链接到草图），并再次展示了出来。我的艺术总监喜欢它的发展方向，但决定设计需要更多的激光炮。 **接下来**，我修改了设计，增加了更多的激光炮（链接到修改后的设计），**然后**将其制作成最终阶段（链接到最终概念）”。
 
 **保存参考图像：**
 
@@ -188,15 +289,15 @@ _始终_将你使用的所有参考图像保存在一个与概念相关的小文
 
 ![机器生成的替代文本：](BuildingsProcess/media/image5.png)
 
-_**_形状：_**_  
-将形式分为_**大形状**_、_**中等形状**_和_**细节**_，比例为3:2:1。你的_**大形状**_可以是整个房屋的主体或整个屋顶。你的_**中等形状**_可以是遮阳篷、非常大的梁、阳台或烟囱。你的_**细节**_可以是微小的木板、单个砖块或一堆茅草。  
+**形状：**  
+将形式分为**大形状**、**中等形状**和**细节**，比例为3:2:1。你的**大形状**可以是整个房屋的主体或整个屋顶。你的**中等形状**可以是遮阳篷、非常大的梁、阳台或烟囱。你的**细节**可以是微小的木板、单个砖块或一堆茅草。  
   
 示例：  
  
 
 ![机器生成的替代文本：A—大形状 B：中等形状 C：细节](BuildingsProcess/media/image6.png)
 
-**大形状**和**中等形状**应该是影响建筑物轮廓的唯一元素。不要过于关注细节。首先考虑建筑物的_**大形状**_。  
+**大形状**和**中等形状**应该是影响建筑物轮廓的唯一元素。不要过于关注细节。首先考虑建筑物的**大形状**。  
   
  
 
@@ -305,7 +406,7 @@ Ndo工作流程顺序
 
 在设置区域和改进时，通常涉及以下7个元素：
 
-1.  **_Tilebases（TB）_** - 这些是包含附件和英雄建筑的基础资产，通常与相匹配的贴花配对使用。
+1.  **Tilebases（TB）** - 这些是包含附件和英雄建筑的基础资产，通常与相匹配的贴花配对使用。
     
 2.  **Attachments（附件）** - 单独的资产，由tilebase引用。具有地形跟随和裁剪功能。
     
@@ -422,7 +523,7 @@ Tilebases（基础资产）在添加各种资源时有些不同。
 
 作为之前提醒，以下是您通常在区域或改进中找到的元素：
 
-1.  **_基础资产（Tilebases）_（TB）** - 这些是包含任何附件和主建筑的基础资产，通常与相应的贴花配对使用。
+1.  **基础资产（Tilebases）_（TB）** - 这些是包含任何附件和主建筑的基础资产，通常与相应的贴花配对使用。
     
 2.  **附件（Attachments）** - 由基础资产引用的单独资产。具有地形跟随和剔除功能。
     
@@ -453,7 +554,7 @@ Tilebases（基础资产）在添加各种资源时有些不同。
 
 接下来的对话框将显示一个类别列表供您选择。Tilebase附件（用于区域、改进和奇观）始终是Tilebase类别。然后，您将被要求选择一个Max文件以及您想要从该Max文件中制作附件的资产。选择您想要的资产（作为地标）并进行导入。导入所需的时间取决于您导入的资产数量。
 
-导入后，它将提示您将资产放入.xlp文件中。Tilebases应放入Tilebase.xlp文件中。如果该.xlp文件在资产编辑器(Asset Editor)中打开，它将自动添加而无需提示。始终确保在将新资产添加到.xlp文件之前，_**_确保您拥有最新的.xlp文件_**_。
+导入后，它将提示您将资产放入.xlp文件中。Tilebases应放入Tilebase.xlp文件中。如果该.xlp文件在资产编辑器(Asset Editor)中打开，它将自动添加而无需提示。始终确保在将新资产添加到.xlp文件之前，**确保您拥有最新的.xlp文件**。
 
 **导入基础资产（Tilebases）**
 
@@ -481,15 +582,15 @@ Tilebases（基础资产）在添加各种资源时有些不同。
 
 红色圆圈表示如何导入新的或现有的几何体。您可以使用此功能向资产添加贴花（基础资产贴花、被掠夺贴花等）或PIL或CON状态（如区域/改进设置中所述）。
 
-**网格（Mesh）**指的是Max文件中几何体的名称。
+**网格（Mesh）** 指的是Max文件中几何体的名称。
 
-**组（Group）**是分配给Max文件中资产的材质的名称。
+**组（Group）** 是分配给Max文件中资产的材质的名称。
 
-**状态（State）**用于控制资产的可见性。在这种情况下，我们的未被破坏版本在已工作/未工作/未建造状态下可见。PIL几何体将在被掠夺和建造状态下设置为True。这可能因资产而异。例如，改进项目具有特定的已工作和未工作状态，并且在这些状态下可能会打开和关闭资产。
+**状态（State）** 用于控制资产的可见性。在这种情况下，我们的未被破坏版本在已工作/未工作/未建造状态下可见。PIL几何体将在被掠夺和建造状态下设置为True。这可能因资产而异。例如，改进项目具有特定的已工作和未工作状态，并且在这些状态下可能会打开和关闭资产。
 
-**FOW材质（FOWMaterial）**通常可以保持默认设置。如果资产具有透明边缘，则有一个“无线条”版本的材质，可以关闭透明几何体的边缘。
+**FOW材质（FOWMaterial）** 通常可以保持默认设置。如果资产具有透明边缘，则有一个“无线条”版本的材质，可以关闭透明几何体的边缘。
 
-**燃烧材质（BurnMaterial）**默认应用于被掠夺状态。它会以编程方式将烧毁着色器应用于资产的被掠夺版本。
+**燃烧材质（BurnMaterial）** 默认应用于被掠夺状态。它会以编程方式将烧毁着色器应用于资产的被掠夺版本。
 
 **添加附件和参数**
 
@@ -505,27 +606,27 @@ Tilebases（基础资产）在添加各种资源时有些不同。
 
 让我们来看看参数。
 
-**附件点名称（Attachment Point Name）**是Max中资产的名称。您可以更改此名称而不会对任何内容产生影响，但默认情况下会使用Max中的名称。
+**附件点名称（Attachment Point Name）** 是Max中资产的名称。您可以更改此名称而不会对任何内容产生影响，但默认情况下会使用Max中的名称。
 
-**模型实例（Model Instance）**是附件点所属的父级的名称。
+**模型实例（Model Instance）** 是附件点所属的父级的名称。
 
-**骨骼名称（BoneName）**是在Max中创建骨骼的字面资产名称。如果您想将资产放置在其他位置，可以将其分配给其他骨骼，但默认情况下通常保持不变。
+**骨骼名称（BoneName）** 是在Max中创建骨骼的字面资产名称。如果您想将资产放置在其他位置，可以将其分配给其他骨骼，但默认情况下通常保持不变。
 
-**位置（Position）、旋转（Rotation）、缩放（Scale）**允许在编辑器中对附件进行手动变换。这可能会导致Max文件不同步，因此请谨慎使用。
+**位置（Position）、旋转（Rotation）、缩放（Scale）** 允许在编辑器中对附件进行手动变换。这可能会导致Max文件不同步，因此请谨慎使用。
 
-**资产（Asset）**是附加到附件点的资产的名称。请注意，如区域/改进设置中所讨论的，数字已被移除。如果是特效，这里不应该有任何内容。
+**资产（Asset）** 是附加到附件点的资产的名称。请注意，如区域/改进设置中所讨论的，数字已被移除。如果是特效，这里不应该有任何内容。
 
-**连接类型（Connection Type）**指的是道路连接。如果您在Max中的辅助对象命名为_Road\_CP_，它将默认为_Road_。
+**连接类型（Connection Type）** 指的是道路连接。如果您在Max中的辅助对象命名为_Road\_CP_，它将默认为_Road_。
 
-**资源类型（ResourceType）**用于具有特定资源六边形上特定资产的资源类型，例如矿井和采石场。
+**资源类型（ResourceType）** 用于具有特定资源六边形上特定资产的资源类型，例如矿井和采石场。
 
-**地形跟随模式（TerrainFollowMode）**默认为Pivot，通常是您想要的选项。Average和Maximum都会对边界框进行采样，并相应地放置资产。None表示不进行地形跟随。
+**地形跟随模式（TerrainFollowMode）** 默认为Pivot，通常是您想要的选项。Average和Maximum都会对边界框进行采样，并相应地放置资产。None表示不进行地形跟随。
 
 **剔除模式（CullMode）** _可选_（默认）- 资产会被城市建筑物、道路和水域移除。 _重要_ - 只会从水域中剔除。 _永久_ - 永远不会被移除。
 
-**地形类型（TerrainType）**将资产设置为仅在特定地形类型上渲染。
+**地形类型（TerrainType）** 将资产设置为仅在特定地形类型上渲染。
 
-**随机动画（RandomizeAnims）**在给定的附件上偏移动画，从而在相同的重复附件之间创建变化。
+**随机动画（RandomizeAnims）** 在给定的附件上偏移动画，从而在相同的重复附件之间创建变化。
 
 **特效（FX）**
 
@@ -567,7 +668,7 @@ OBs是在瓦片基础或附件的Cook参数中添加的。
 
 ![Machine generated alternative text: DIS CTY Properties Name Class Name Desc ri pticn MGG Block LG SQ01.ast DIS CTY AWW Tile Base Landmark WaterMiII DIS CTY AWW.ast Asset Previewer Last Refreshed At: 10: 19: 14 am Time Of Day: Day Text Text (2 items) HeroBuiIding Tile Base Categorization Tags Cook Pa rams Value 3urnEdge31end Bu rn Height CastAO CastSh adows GradientScaIe Obstruction Animations Particles Behaviors Geometries Attachments DIS CTY Watermill_ 0 23 Obstruction Profile AutcGenera... ](BuildingsProcess/media/image41.png)
 
-**Obstruction Profile AutoGenerate（自动生成遮挡配置文件）**是默认设置，如果没有手动添加遮挡块的话。 **Obstruction Profile（遮挡配置文件）**是您可以为资产添加新的或现有的配置文件，以便更好地进行控制。
+**Obstruction Profile AutoGenerate（自动生成遮挡配置文件）** 是默认设置，如果没有手动添加遮挡块的话。<br> **Obstruction Profile（遮挡配置文件）** 是您可以为资产添加新的或现有的配置文件，以便更好地进行控制。</br>
 
 **Artdef 设置**
 
@@ -641,7 +742,7 @@ OBs是在瓦片基础或附件的Cook参数中添加的。
 
 填充物建筑的枢轴点应该居中 - 枢轴点将位于 Z 轴（0），所以确保将建筑物向下延伸超过该点，以适应山丘的高度。
 
-_**在实际开始之前，请确保阅读以下其他有用的链接！**_
+**在实际开始之前，请确保阅读以下其他有用的链接！**
 
 填充物建筑的命名约定可以在此处找到 - 建筑命名约定和尺寸
 
@@ -695,7 +796,7 @@ _**在实际开始之前，请确保阅读以下其他有用的链接！**_
 
 ![Machine generated alternative text: THIS ARTOEF IS INCOMPLETE MAY CHANG Generator DEFAULT Gen CityCenter Block G rcmthStage C:' EraOistribution C:' Gen GenericOistrict PriorityTag GroundingMateriaIs Filter: Name Block001 Block002 Block003 Block004 Block005 Block006 Block007 Block008 Block009 Block010 Block011 Tag Culture Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth Ancient Earth v I Tag_Era ARTERA ANCIENT ARTERA ANCIENT ARTERA ANCIENT ARTERA ANCIENT ARTERA ANCIENT ARTERA ANCIENT ARTERA ANCIENT Asset City310ck MD B 02 MD B 01 SM B 02 SM B 01 Cabana B 01 XSM B 02 XSM B 01 SM B 03 Tower B 01 Cabana A 01 SM A 03 DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE CTY AE Bid Bid Bid Bid Bid Bid Bid Bid Bid Bid Bid ARTERA ARTERA ARTERA ARTERA ANCIENT ANCIENT ANCIENT ANCIENT ](BuildingsProcess/media/image53.png)
 
-Cooking the（封装？载入吗？）_CityGenerators.artdef_和_city\_buildings.xlp_应该使您能够在游戏中看到您的新资产。
+Cooking the（封装）_CityGenerators.artdef_和_city\_buildings.xlp_应该使您能够在游戏中看到您的新资产。
 
 城市填充物 ID
 
@@ -729,11 +830,7 @@ N:\\2KGBAL\\Users\\tbergantz\\Todd Tools Maxscripts\\TranslatedBoundingBox\_EDIT
 
 将这些边界框移到一边，并为它们创建一个名为“BB”的图层。
 
-确保使用“取消关联选择”（
-
-![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image061.png](BuildingsProcess/media/image55.png)
-
-）按钮，以解除与导出模型的任何关联，并从文明6模型管理器中删除边界框模型（它们的前缀都以“UBX\_”开头）。
+确保使用“取消关联选择”（![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image061.png](BuildingsProcess/media/image55.png)）按钮，以解除与导出模型的任何关联，并从文明6模型管理器中删除边界框模型（它们的前缀都以“UBX\_”开头）。
 
 评估所有的边界框，并注意其中主轴与大多数边界框不一致的情况。给定城市设置中的所有填充物都需要将其长轴与其他填充物保持相同的方向。如果有任何不一致的情况，旋转填充物建筑（以及其贴花），确保任何受影响的部分都进行 Xforms 重置，并重复该过程以捕获边界框。
 
@@ -775,743 +872,168 @@ __常见问题解答__
 
 与此同时，以下是基础游戏的分配供参考：
 
-DIS\_CTY\_AB\_Base
+| **DIS_CTY_AB_Base** | **Filler_0:**      | **Filler_1:**     | **Filler_2:**      | **Filler_4 (skipped 3):** |
+|---------------------|--------------------|-------------------|--------------------|---------------------------|
+|                     | DIS_CTY_AB_Bld_01* | DIS_CTY_AB_Bld_12 | DIS_CTY_AB_Bld_02  | DIS_CTY_AB_Bld_06         |
+|                     | DIS_CTY_AB_Bld_03  | DIS_CTY_AB_Bld_13 | DIS_CTY_AB_Bld_09* | DIS_CTY_AB_Bld_10         |
+|                     | DIS_CTY_AB_Bld_04* | DIS_CTY_AB_Bld_14 | DIS_CTY_AB_Bld_07  | DIS_CTY_AB_Bld_17         |
+|                     | DIS_CTY_AB_Bld_05  | DIS_CTY_AB_Bld_15 |                    |                           |
+|                     | DIS_CTY_AB_Bld_08  | DIS_CTY_AB_Bld_16 |                    |                           |
+|                     | DIS_CTY_AB_Bld_11  | DIS_CTY_AB_Bld_19 |                    |                           |
+|                     | DIS_CTY_AB_Bld_18  |                   |                    |                           |
+
+
+| **DIS_CTY_AE_CityLayout - 21** | **Filler_0:**              | **Filler_1:**             | **Filler_2:**          | **Filler_3:**          |
+|--------------------------------|----------------------------|---------------------------|------------------------|-------------------------|
+|                                | DIS_CTY_AE_Bld_Cabana_A_01 | DIS_CTY_AE_Bld_SM_A_01    | DIS_CTY_AE_Bld_MD_A_01 | DIS_CTY_AE_Bld_LG_A_01  |
+|                                | DIS_CTY_AE_Bld_Cabana_B_01 | DIS_CTY_AE_Bld_SM_A_02    | DIS_CTY_AE_Bld_MD_B_01 | DIS_CTY_AE_Bld_LG_B_01  |
+|                                | DIS_CTY_AE_Bld_SM_A_03     | DIS_CTY_AE_Bld_SM_B_01    |                        | DIS_CTY_AE_Bld_MD_A_02  |
+|                                | DIS_CTY_AE_Bld_SM_B_03     | DIS_CTY_AE_Bld_SM_B_02    |                        | DIS_CTY_AE_Bld_MD_B_02  |
+|                                | DIS_CTY_AE_Bld_Well_01     | DIS_CTY_AE_Bld_Tower_A_01 |                        |                         |
+|                                | DIS_CTY_AE_Bld_XSM_A_01    | DIS_CTY_AE_Bld_Tower_B_01 |                        |                         |
+|                                | DIS_CTY_AE_Bld_XSM_A_02    |                           |                        |                         |
+|                                | DIS_CTY_AE_Bld_XSM_B_01    |                           |                        |                         |
+|                                | DIS_CTY_AE_Bld_XSM_B_02    |                           |                        |                         |
+
+
+| **DIS_CTY_AW_Base - 22** | **Filler_0:**       | **Filler_1:**       | **Filler_2:**       | **Filler_3:**       |
+|--------------------------|---------------------|---------------------|---------------------|----------------------|
+|                          | DIS_CTY_AW_Bld_A_11 | DIS_CTY_AW_Bld_A_02 | DIS_CTY_AW_Bld_A_01 | DIS_CTY_AW_Bld_A_04  |
+|                          | DIS_CTY_AW_Bld_B_07 | DIS_CTY_AW_Bld_A_05 | DIS_CTY_AW_Bld_A_03 | DIS_CTY_AW_Bld_A_08  |
+|                          |                     | DIS_CTY_AW_Bld_A_06 | DIS_CTY_AW_Bld_A_09 | DIS_CTY_AW_Bld_B_03  |
+|                          |                     | DIS_CTY_AW_Bld_A_07 | DIS_CTY_AW_Bld_B_08 | DIS_CTY_AW_Bld_B_04  |
+|                          |                     | DIS_CTY_AW_Bld_A_10 | DIS_CTY_AW_Bld_B_10 |                      |
+|                          |                     | DIS_CTY_AW_Bld_B_01 | DIS_CTY_AW_Bld_B_11 |                      |
+|                          |                     | DIS_CTY_AW_Bld_B_02 |                     |                      |
+|                          |                     | DIS_CTY_AW_Bld_B_05 |                     |                      |
+|                          |                     | DIS_CTY_AW_Bld_B_06 |                     |                      |
+|                          |                     | DIS_CTY_AW_Bld_B_09 |                     |                      |
+
+
+| **DIS_CTY_RNA_Base - 12** | **Filler_0:**      | **Filler_1:**      | **Filler_2:**      | **Filler_3:**      |
+|---------------------------|--------------------|--------------------|--------------------|---------------------|
+|                           | DIS_CTY_RNA_Bld_01 | DIS_CTY_RNA_Bld_11 | DIS_CTY_RNA_Bld_23 | DIS_CTY_RNA_Bld_13  |
+|                           | DIS_CTY_RNA_Bld_09 | DIS_CTY_RNA_Bld_12 | DIS_CTY_RNA_Bld_24 | DIS_CTY_RNA_Bld_21  |
+|                           | DIS_CTY_RNA_Bld_10 |                    |                    | DIS_CTY_RNA_Bld_22  |
+|                           | DIS_CTY_RNA_Bld_17 |                    |                    | DIS_CTY_RNA_Bld_25  |
+
+
+| **DIS_CTY_RMED_Base - 16** | **Filler_0:**       | **Filler_1:**        | **Filler_2:**        | **Filler_3:**        |
+|----------------------------|---------------------|----------------------|----------------------|-----------------------|
+|                            | DIS_CTY_RMED_Bld_01 | DIS_CTY_RMED_Bld_04  | DIS_CTY_RMED_Bld_03  | DIS_CTY_RMED_Bld_06   |
+|                            | DIS_CTY_RMED_Bld_02 | DIS_CTY_RMED_Bld_07  | DIS_CTY_RMED_Bld_05  | DIS_CTY_RMED_Bld_08   |
+|                            | DIS_CTY_RMED_Bld_09 | DIS_CTY_RMED_Bld_013 | DIS_CTY_RMED_Bld_010 | DIS_CTY_RMED_Bld_011  |
+|                            |                     | DIS_CTY_RMED_Bld_014 | DIS_CTY_RMED_Bld_012 |                       |
+|                            |                     | DIS_CTY_RMED_Bld_016 | DIS_CTY_RMED_Bld_015 |                       |
+
+
+| **DIS_CTY_RM_Pieces - 22** | **Filler_0:**      | **Filler_1:**      | **Filler_2:**      | **Filler_3:**      |
+|----------------------------|--------------------|--------------------|--------------------|---------------------|
+|                            | DIS_CTY_RMUG_Bld03 | DIS_CTY_RMUG_Bld01 | DIS_CTY_RMUG_Bld06 | DIS_CTY_RMUG_Bld07  |
+|                            | DIS_CTY_RMUG_Bld09 | DIS_CTY_RMUG_Bld02 | DIS_CTY_RMUG_Bld08 | DIS_CTY_RMUG_Bld22  |
+|                            | DIS_CTY_RMUG_Bld10 | DIS_CTY_RMUG_Bld04 | DIS_CTY_RMUG_Bld11 |                     |
+|                            | DIS_CTY_RMUG_Bld13 | DIS_CTY_RMUG_Bld05 | DIS_CTY_RMUG_Bld16 |                     |
+|                            | DIS_CTY_RMUG_Bld14 | DIS_CTY_RMUG_Bld12 |                    |                     |
+|                            | DIS_CTY_RMUG_Bld17 | DIS_CTY_RMUG_Bld15 |                    |                     |
+|                            | DIS_CTY_RMUG_Bld18 | DIS_CTY_RMUG_Bld19 |                    |                     |
+|                            |                    | DIS_CTY_RMUG_Bld20 |                    |                     |
+|                            |                    | DIS_CTY_RMUG_Bld21 |                    |                     |
+
+
+| **DIS_CTY_RSA_Base - 23** | **Filler_0:**      | **Filler_1:**      | **Filler_2:**      | **Filler_3:**      | **Filler_4:**      | **Filler_5:**      |
+|---------------------------|--------------------|--------------------|--------------------|--------------------|--------------------|---------------------|
+|                           | DIS_CTY_RSA_Bld_04 | DIS_CTY_RSA_Bld_03 | DIS_CTY_RSA_Bld_01 | DIS_CTY_RSA_Bld_02 | DIS_CTY_RSA_Bld_07 | DIS_CTY_RSA_Bld_08  |
+|                           | DIS_CTY_RSA_Bld_22 | DIS_CTY_RSA_Bld_05 | DIS_CTY_RSA_Bld_06 | DIS_CTY_RSA_Bld_09 | DIS_CTY_RSA_Bld_10 | DIS_CTY_RSA_Bld_12  |
+|                           |                    | DIS_CTY_RSA_Bld_11 | DIS_CTY_RSA_Bld_13 | DIS_CTY_RSA_Bld_14 | DIS_CTY_RSA_Bld_15 | DIS_CTY_RSA_Bld_17  |
+|                           |                    | DIS_CTY_RSA_Bld_19 | DIS_CTY_RSA_Bld_18 |                    | DIS_CTY_RSA_Bld_16 |                     |
+|                           |                    |                    | DIS_CTY_RSA_Bld_21 |                    | DIS_CTY_RSA_Bld_20 |                     |
+|                           |                    |                    | DIS_CTY_RSA_Bld_23 |                    |                    |                     |
+
+
+| **DIS_CTY_RE_Base - 42** | **Filler_0:**                   | **Filler_1:**                  | **Filler_2:**           | **Filler_3:**          |
+|--------------------------|---------------------------------|--------------------------------|-------------------------|-------------------------|
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_01 | DIS_CTY_RE_Bld_Brick_Tower_B_7 | DIS_CTY_RE_Bld_MD_A_03  | DIS_CTY_RE_Bld_LG_A_01  |
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_02 | DIS_CTY_RE_Bld_Brick_Tower_B_8 | DIS_CTY_RE_Bld_MD_A_04  | DIS_CTY_RE_Bld_LG_A_02  |
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_03 | DIS_CTY_RE_Bld_MD_A_01         | DIS_CTY_RE_Bld_MD_A_011 | DIS_CTY_RE_Bld_LG_A_03  |
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_04 | DIS_CTY_RE_Bld_MD_A_02         | DIS_CTY_RE_Bld_MD_A_024 | DIS_CTY_RE_Bld_LG_A_04  |
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_05 | DIS_CTY_RE_Bld_MD_B_03         | DIS_CTY_RE_Bld_MD_B_01  | DIS_CTY_RE_Bld_LG_A_05  |
+|                          | DIS_CTY_RE_Bld_Brick_Tower_B_06 | DIS_CTY_RE_Bld_MD_B_04         | DIS_CTY_RE_Bld_MD_B_02  | DIS_CTY_RE_Bld_LG_A_06  |
+|                          | DIS_CTY_RE_Bld_Tower_B_01       | DIS_CTY_RE_Bld_Tower_B_04      | DIS_CTY_RE_Bld_SM_A_01  | DIS_CTY_RE_Bld_LG_B_01  |
+|                          | DIS_CTY_RE_Bld_Tower_B_02       |                                | DIS_CTY_RE_Bld_SM_A_02  | DIS_CTY_RE_Bld_LG_B_02  |
+|                          | DIS_CTY_RE_Bld_Tower_B_03       |                                | DIS_CTY_RE_Bld_SM_B_01  | DIS_CTY_RE_Bld_LG_B_03  |
+|                          | DIS_CTY_RE_Bld_XSM_A_01         |                                | DIS_CTY_RE_Bld_SM_B_02  | DIS_CTY_RE_Bld_LG_B_04  |
+|                          | DIS_CTY_RE_Bld_XSM_A_02         |                                |                         | DIS_CTY_RE_Bld_LG_B_05  |
+|                          | DIS_CTY_RE_Bld_XSM_B_01         |                                |                         | DIS_CTY_RE_Bld_LG_B_06  |
+|                          | DIS_CTY_RE_Bld_XSM_B_02         |                                |                         |                         |
+
+
+| **DIS_CTY_RJ_Base - 16** | **Filler_0:**     | **Filler_1:**     | **Filler_2:**     | **Filler_3:**     |
+|--------------------------|-------------------|-------------------|-------------------|--------------------|
+|                          | DIS_CTY_RJ_Bld_01 | DIS_CTY_RJ_Bld_06 | DIS_CTY_RJ_Bld_05 | DIS_CTY_RJ_Bld_03  |
+|                          | DIS_CTY_RJ_Bld_02 | DIS_CTY_RJ_Bld_10 | DIS_CTY_RJ_Bld_09 | DIS_CTY_RJ_Bld_07  |
+|                          | DIS_CTY_RJ_Bld_04 | DIS_CTY_RJ_Bld_11 | DIS_CTY_RJ_Bld_15 | DIS_CTY_RJ_Bld_08  |
+|                          | DIS_CTY_RJ_Bld_12 | DIS_CTY_RJ_Bld_14 |                   | DIS_CTY_RJ_Bld_13  |
+|                          | DIS_CTY_RJ_Bld_16 |                   |                   |                    |
+
+
+| **DIS_CTY_RC_Base - 16** | **Filler_0:**     | **Filler_1:**     | **Filler_3 (skipped 2):** | **Filler_4:**      |
+|--------------------------|-------------------|-------------------|---------------------------|---------------------|
+|                          | DIS_CTY_RC_Bld_04 | DIS_CTY_RC_Bld_01 | DIS_CTY_RC_Bld_05         | DIS_CTY_RC_Bld_06   |
+|                          | DIS_CTY_RC_Bld_07 | DIS_CTY_RC_Bld_03 | DIS_CTY_RC_Bld_15         | DIS_CTY_RC_Bld_08   |
+|                          | DIS_CTY_RC_Bld_12 | DIS_CTY_RC_Bld_11 | DIS_CTY_RC_Bld_02         | DIS_CTY_RC_Bld_09   |
+|                          | DIS_CTY_RC_Bld_13 | DIS_CTY_RC_Bld_14 |                           | DIS_CTY_RC_Bld_10*  |
+|                          | DIS_CTY_RC_Bld_16 |                   |                           |                     |
+
+
+| **DIS_CTY_RSS_CityLayout - 27** | **Filler_0:**      | **Filler_1:**      | **Filler_2:**      | **Filler_3:**      |
+|---------------------------------|--------------------|--------------------|--------------------|---------------------|
+|                                 | DIS_CTY_RSS_Bld_01 | DIS_CTY_RSS_Bld_04 | DIS_CTY_RSS_Bld_03 | DIS_CTY_RSS_Bld_05  |
+|                                 | DIS_CTY_RSS_Bld_02 | DIS_CTY_RSS_Bld_07 | DIS_CTY_RSS_Bld_06 | DIS_CTY_RSS_Bld_11  |
+|                                 | DIS_CTY_RSS_Bld_12 | DIS_CTY_RSS_Bld_08 | DIS_CTY_RSS_Bld_09 | DIS_CTY_RSS_Bld_16  |
+|                                 | DIS_CTY_RSS_Bld_13 | DIS_CTY_RSS_Bld_10 | DIS_CTY_RSS_Bld_15 | DIS_CTY_RSS_Bld_22  |
+|                                 | DIS_CTY_RSS_Bld_14 | DIS_CTY_RSS_Bld_18 | DIS_CTY_RSS_Bld_17 |                     |
+|                                 | DIS_CTY_RSS_Bld_23 | DIS_CTY_RSS_Bld_19 | DIS_CTY_RSS_Bld_20 |                     |
+|                                 | DIS_CTY_RSS_Bld_24 | DIS_CTY_RSS_Bld_21 | DIS_CTY_RSS_Bld_25 |                     |
+|                                 | DIS_CTY_RSS_Bld_26 |                    | DIS_CTY_RSS_Bld_27 |                     |
+
+
+| **DIS_CTY_INDCL_Base - 9** | **Filler_0:**        | **Filler_1:**        | **Filler_2:**        |
+|----------------------------|----------------------|----------------------|-----------------------|
+|                            | DIS_CTY_INDCL_Bld_07 | DIS_CTY_INDCL_Bld_01 | DIS_CTY_INDCL_Bld_02  |
+|                            |                      | DIS_CTY_INDCL_Bld_04 | DIS_CTY_INDCL_Bld_03  |
+|                            |                      | DIS_CTY_INDCL_Bld_05 | DIS_CTY_INDCL_Bld_08  |
+|                            |                      | DIS_CTY_INDCL_Bld_06 |                       |
+|                            |                      | DIS_CTY_INDCL_Bld_09 |                       |
+
+
+| **DIS_CTY_IC_Base - 18** | **Filler_0:**          | **Filler_1:**          | **Filler_2:**          | **Filler_3:**          |
+|--------------------------|------------------------|------------------------|------------------------|-------------------------|
+|                          | DIS_CTY_IU_Bld_Tall_04 | DIS_CTY_IU_Bld_Tall_01 | DIS_CTY_IU_Bld_Tall_10 | DIS_CTY_IU_Bld_Tall_02  |
+|                          | DIS_CTY_IU_Bld_Tall_06 | DIS_CTY_IU_Bld_Tall_03 | DIS_CTY_IU_Bld_Tall_17 |                         |
+|                          | DIS_CTY_IU_Bld_Tall_07 | DIS_CTY_IU_Bld_Tall_05 |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_08 | DIS_CTY_IU_Bld_Tall_11 |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_09 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_12 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_13 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_14 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_15 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_16 |                        |                        |                         |
+|                          | DIS_CTY_IU_Bld_Tall_18 |                        |                        |                         |
+
+
+| **DIS_CTY_MG_Base - 19** | **Filler_0:**      | **Filler_1:**      | **Filler_2:**      | **Filler_3:**      |
+|--------------------------|--------------------|--------------------|--------------------|---------------------|
+|                          | DIS_CTY_MG_Bld_01  | DIS_CTY_MG_Bld_04  | DIS_CTY_MG_Bld_02  | DIS_CTY_MG_Bld_12   |
+|                          | DIS_CTY_MG_Bld_03  | DIS_CTY_MG_Bld_07  | DIS_CTY_MG_Bld_09  | DIS_CTY_MGG_Bld_01  |
+|                          | DIS_CTY_MG_Bld_05  | DIS_CTY_MG_Bld_08  | DIS_CTY_MGG_Bld_05 |                     |
+|                          | DIS_CTY_MG_Bld_06  | DIS_CTY_MGG_Bld_02 |                    |                     |
+|                          | DIS_CTY_MG_Bld_10  |                    |                    |                     |
+|                          | DIS_CTY_MG_Bld_11  |                    |                    |                     |
+|                          | DIS_CTY_MGG_Bld_03 |                    |                    |                     |
+|                          | DIS_CTY_MGG_Bld_04 |                    |                    |                     |
+|                          | DIS_CTY_MGG_Bld_07 |                    |                    |                     |
+|                          | DIS_CTY_MGG_Bld_08 |                    |                    |                     |
 
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_4 (skipped 3):
-
- 
-
-DIS\_CTY\_AB\_Bld\_01\*
-
-DIS\_CTY\_AB\_Bld\_03
-
-DIS\_CTY\_AB\_Bld\_04\*
-
-DIS\_CTY\_AB\_Bld\_05
-
-DIS\_CTY\_AB\_Bld\_08
-
-DIS\_CTY\_AB\_Bld\_11
-
-DIS\_CTY\_AB\_Bld\_18
-
-DIS\_CTY\_AB\_Bld\_12
-
-DIS\_CTY\_AB\_Bld\_13
-
-DIS\_CTY\_AB\_Bld\_14
-
-DIS\_CTY\_AB\_Bld\_15
-
-DIS\_CTY\_AB\_Bld\_16
-
-DIS\_CTY\_AB\_Bld\_19
-
-DIS\_CTY\_AB\_Bld\_02
-
-DIS\_CTY\_AB\_Bld\_09\*
-
-DIS\_CTY\_AB\_Bld\_07
-
-DIS\_CTY\_AB\_Bld\_06
-
-DIS\_CTY\_AB\_Bld\_10
-
-DIS\_CTY\_AB\_Bld\_17
-
-DIS\_CTY\_AE\_CityLayout - 21
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_AE\_Bld\_Cabana\_A\_01
-
-DIS\_CTY\_AE\_Bld\_Cabana\_B\_01
-
-DIS\_CTY\_AE\_Bld\_SM\_A\_03
-
-DIS\_CTY\_AE\_Bld\_SM\_B\_03
-
-DIS\_CTY\_AE\_Bld\_Well\_01
-
-DIS\_CTY\_AE\_Bld\_XSM\_A\_01
-
-DIS\_CTY\_AE\_Bld\_XSM\_A\_02
-
-DIS\_CTY\_AE\_Bld\_XSM\_B\_01
-
-DIS\_CTY\_AE\_Bld\_XSM\_B\_02
-
-DIS\_CTY\_AE\_Bld\_SM\_A\_01
-
-DIS\_CTY\_AE\_Bld\_SM\_A\_02
-
-DIS\_CTY\_AE\_Bld\_SM\_B\_01
-
-DIS\_CTY\_AE\_Bld\_SM\_B\_02
-
-DIS\_CTY\_AE\_Bld\_Tower\_A\_01
-
-DIS\_CTY\_AE\_Bld\_Tower\_B\_01
-
-DIS\_CTY\_AE\_Bld\_MD\_A\_01
-
-DIS\_CTY\_AE\_Bld\_MD\_B\_01
-
-DIS\_CTY\_AE\_Bld\_LG\_A\_01
-
-DIS\_CTY\_AE\_Bld\_LG\_B\_01
-
-DIS\_CTY\_AE\_Bld\_MD\_A\_02
-
-DIS\_CTY\_AE\_Bld\_MD\_B\_02
-
-DIS\_CTY\_AW\_Base - 22
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_AW\_Bld\_A\_11
-
-DIS\_CTY\_AW\_Bld\_B\_07
-
-DIS\_CTY\_AW\_Bld\_A\_02
-
-DIS\_CTY\_AW\_Bld\_A\_05
-
-DIS\_CTY\_AW\_Bld\_A\_06
-
-DIS\_CTY\_AW\_Bld\_A\_07
-
-DIS\_CTY\_AW\_Bld\_A\_10
-
-DIS\_CTY\_AW\_Bld\_B\_01
-
-DIS\_CTY\_AW\_Bld\_B\_02
-
-DIS\_CTY\_AW\_Bld\_B\_05
-
-DIS\_CTY\_AW\_Bld\_B\_06
-
-DIS\_CTY\_AW\_Bld\_B\_09
-
-DIS\_CTY\_AW\_Bld\_A\_01
-
-DIS\_CTY\_AW\_Bld\_A\_03
-
-DIS\_CTY\_AW\_Bld\_A\_09
-
-DIS\_CTY\_AW\_Bld\_B\_08
-
-DIS\_CTY\_AW\_Bld\_B\_10
-
-DIS\_CTY\_AW\_Bld\_B\_11
-
-DIS\_CTY\_AW\_Bld\_A\_04
-
-DIS\_CTY\_AW\_Bld\_A\_08
-
-DIS\_CTY\_AW\_Bld\_B\_03
-
-DIS\_CTY\_AW\_Bld\_B\_04
-
-DIS\_CTY\_RNA\_Base - 12
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RNA\_Bld\_01
-
-DIS\_CTY\_RNA\_Bld\_09
-
-DIS\_CTY\_RNA\_Bld\_10
-
-DIS\_CTY\_RNA\_Bld\_17
-
-DIS\_CTY\_RNA\_Bld\_11
-
-DIS\_CTY\_RNA\_Bld\_12
-
-DIS\_CTY\_RNA\_Bld\_23
-
-DIS\_CTY\_RNA\_Bld\_24
-
-DIS\_CTY\_RNA\_Bld\_13
-
-DIS\_CTY\_RNA\_Bld\_21
-
-DIS\_CTY\_RNA\_Bld\_22
-
-DIS\_CTY\_RNA\_Bld\_25
-
-DIS\_CTY\_RMED\_Base - 16
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RMED\_Bld\_01
-
-DIS\_CTY\_RMED\_Bld\_02
-
-DIS\_CTY\_RMED\_Bld\_09
-
-DIS\_CTY\_RMED\_Bld\_04
-
-DIS\_CTY\_RMED\_Bld\_07
-
-DIS\_CTY\_RMED\_Bld\_013
-
-DIS\_CTY\_RMED\_Bld\_014
-
-DIS\_CTY\_RMED\_Bld\_016
-
-DIS\_CTY\_RMED\_Bld\_03
-
-DIS\_CTY\_RMED\_Bld\_05
-
-DIS\_CTY\_RMED\_Bld\_010
-
-DIS\_CTY\_RMED\_Bld\_012
-
-DIS\_CTY\_RMED\_Bld\_015
-
-DIS\_CTY\_RMED\_Bld\_06
-
-DIS\_CTY\_RMED\_Bld\_08
-
-DIS\_CTY\_RMED\_Bld\_011
-
-DIS\_CTY\_RM\_Pieces - 22
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RMUG\_Bld03
-
-DIS\_CTY\_RMUG\_Bld09
-
-DIS\_CTY\_RMUG\_Bld10
-
-DIS\_CTY\_RMUG\_Bld13
-
-DIS\_CTY\_RMUG\_Bld14
-
-DIS\_CTY\_RMUG\_Bld17
-
-DIS\_CTY\_RMUG\_Bld18
-
-DIS\_CTY\_RMUG\_Bld01
-
-DIS\_CTY\_RMUG\_Bld02
-
-DIS\_CTY\_RMUG\_Bld04
-
-DIS\_CTY\_RMUG\_Bld05
-
-DIS\_CTY\_RMUG\_Bld12
-
-DIS\_CTY\_RMUG\_Bld15
-
-DIS\_CTY\_RMUG\_Bld19
-
-DIS\_CTY\_RMUG\_Bld20
-
-DIS\_CTY\_RMUG\_Bld21
-
-DIS\_CTY\_RMUG\_Bld06
-
-DIS\_CTY\_RMUG\_Bld08
-
-DIS\_CTY\_RMUG\_Bld11
-
-DIS\_CTY\_RMUG\_Bld16
-
-DIS\_CTY\_RMUG\_Bld07
-
-DIS\_CTY\_RMUG\_Bld22
-
-DIS\_CTY\_RSA\_Base - 23
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
-Filler\_4:
-
-Filler\_5:
-
- 
-
-DIS\_CTY\_RSA\_Bld\_04
-
-DIS\_CTY\_RSA\_Bld\_22
-
-DIS\_CTY\_RSA\_Bld\_03
-
-DIS\_CTY\_RSA\_Bld\_05
-
-DIS\_CTY\_RSA\_Bld\_11
-
-DIS\_CTY\_RSA\_Bld\_19
-
-DIS\_CTY\_RSA\_Bld\_01
-
-DIS\_CTY\_RSA\_Bld\_06
-
-DIS\_CTY\_RSA\_Bld\_13
-
-DIS\_CTY\_RSA\_Bld\_18
-
-DIS\_CTY\_RSA\_Bld\_21
-
-DIS\_CTY\_RSA\_Bld\_23
-
-DIS\_CTY\_RSA\_Bld\_02
-
-DIS\_CTY\_RSA\_Bld\_09
-
-DIS\_CTY\_RSA\_Bld\_14
-
-DIS\_CTY\_RSA\_Bld\_07
-
-DIS\_CTY\_RSA\_Bld\_10
-
-DIS\_CTY\_RSA\_Bld\_15
-
-DIS\_CTY\_RSA\_Bld\_16
-
-DIS\_CTY\_RSA\_Bld\_20
-
-DIS\_CTY\_RSA\_Bld\_08
-
-DIS\_CTY\_RSA\_Bld\_12
-
-DIS\_CTY\_RSA\_Bld\_17
-
-DIS\_CTY\_RE\_Base - 42
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_01
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_02
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_03
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_04
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_05
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_06
-
-DIS\_CTY\_RE\_Bld\_Tower\_B\_01
-
-DIS\_CTY\_RE\_Bld\_Tower\_B\_02
-
-DIS\_CTY\_RE\_Bld\_Tower\_B\_03
-
-DIS\_CTY\_RE\_Bld\_XSM\_A\_01
-
-DIS\_CTY\_RE\_Bld\_XSM\_A\_02
-
-DIS\_CTY\_RE\_Bld\_XSM\_B\_01
-
-DIS\_CTY\_RE\_Bld\_XSM\_B\_02
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_7
-
-DIS\_CTY\_RE\_Bld\_Brick\_Tower\_B\_8
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_01
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_02
-
-DIS\_CTY\_RE\_Bld\_MD\_B\_03
-
-DIS\_CTY\_RE\_Bld\_MD\_B\_04
-
-DIS\_CTY\_RE\_Bld\_Tower\_B\_04
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_03
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_04
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_011
-
-DIS\_CTY\_RE\_Bld\_MD\_A\_024
-
-DIS\_CTY\_RE\_Bld\_MD\_B\_01
-
-DIS\_CTY\_RE\_Bld\_MD\_B\_02
-
-DIS\_CTY\_RE\_Bld\_SM\_A\_01
-
-DIS\_CTY\_RE\_Bld\_SM\_A\_02
-
-DIS\_CTY\_RE\_Bld\_SM\_B\_01
-
-DIS\_CTY\_RE\_Bld\_SM\_B\_02
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_01
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_02
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_03
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_04
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_05
-
-DIS\_CTY\_RE\_Bld\_LG\_A\_06
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_01
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_02
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_03
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_04
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_05
-
-DIS\_CTY\_RE\_Bld\_LG\_B\_06
-
-DIS\_CTY\_RJ\_Base - 16
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RJ\_Bld\_01
-
-DIS\_CTY\_RJ\_Bld\_02
-
-DIS\_CTY\_RJ\_Bld\_04
-
-DIS\_CTY\_RJ\_Bld\_12
-
-DIS\_CTY\_RJ\_Bld\_16
-
-DIS\_CTY\_RJ\_Bld\_06
-
-DIS\_CTY\_RJ\_Bld\_10
-
-DIS\_CTY\_RJ\_Bld\_11
-
-DIS\_CTY\_RJ\_Bld\_14
-
-DIS\_CTY\_RJ\_Bld\_05
-
-DIS\_CTY\_RJ\_Bld\_09
-
-DIS\_CTY\_RJ\_Bld\_15
-
-DIS\_CTY\_RJ\_Bld\_03
-
-DIS\_CTY\_RJ\_Bld\_07
-
-DIS\_CTY\_RJ\_Bld\_08
-
-DIS\_CTY\_RJ\_Bld\_13
-
-DIS\_CTY\_RC\_Base - 16
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_3 (skipped 2):
-
-Filler\_4:
-
- 
-
-DIS\_CTY\_RC\_Bld\_04
-
-DIS\_CTY\_RC\_Bld\_07
-
-DIS\_CTY\_RC\_Bld\_12
-
-DIS\_CTY\_RC\_Bld\_13
-
-DIS\_CTY\_RC\_Bld\_16
-
-DIS\_CTY\_RC\_Bld\_01
-
-DIS\_CTY\_RC\_Bld\_03
-
-DIS\_CTY\_RC\_Bld\_11
-
-DIS\_CTY\_RC\_Bld\_14
-
-DIS\_CTY\_RC\_Bld\_05
-
-DIS\_CTY\_RC\_Bld\_15
-
-DIS\_CTY\_RC\_Bld\_02
-
-DIS\_CTY\_RC\_Bld\_06
-
-DIS\_CTY\_RC\_Bld\_08
-
-DIS\_CTY\_RC\_Bld\_09
-
-DIS\_CTY\_RC\_Bld\_10\*
-
-DIS\_CTY\_RSS\_CityLayout - 27
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_RSS\_Bld\_01
-
-DIS\_CTY\_RSS\_Bld\_02
-
-DIS\_CTY\_RSS\_Bld\_12
-
-DIS\_CTY\_RSS\_Bld\_13
-
-DIS\_CTY\_RSS\_Bld\_14
-
-DIS\_CTY\_RSS\_Bld\_23
-
-DIS\_CTY\_RSS\_Bld\_24
-
-DIS\_CTY\_RSS\_Bld\_26
-
-DIS\_CTY\_RSS\_Bld\_04
-
-DIS\_CTY\_RSS\_Bld\_07
-
-DIS\_CTY\_RSS\_Bld\_08
-
-DIS\_CTY\_RSS\_Bld\_10
-
-DIS\_CTY\_RSS\_Bld\_18
-
-DIS\_CTY\_RSS\_Bld\_19
-
-DIS\_CTY\_RSS\_Bld\_21
-
-DIS\_CTY\_RSS\_Bld\_03
-
-DIS\_CTY\_RSS\_Bld\_06
-
-DIS\_CTY\_RSS\_Bld\_09
-
-DIS\_CTY\_RSS\_Bld\_15
-
-DIS\_CTY\_RSS\_Bld\_17
-
-DIS\_CTY\_RSS\_Bld\_20
-
-DIS\_CTY\_RSS\_Bld\_25
-
-DIS\_CTY\_RSS\_Bld\_27
-
-DIS\_CTY\_RSS\_Bld\_05
-
-DIS\_CTY\_RSS\_Bld\_11
-
-DIS\_CTY\_RSS\_Bld\_16
-
-DIS\_CTY\_RSS\_Bld\_22
-
-DIS\_CTY\_INDCL\_Base - 9
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
- 
-
- 
-
-DIS\_CTY\_INDCL\_Bld\_07
-
-DIS\_CTY\_INDCL\_Bld\_01
-
-DIS\_CTY\_INDCL\_Bld\_04
-
-DIS\_CTY\_INDCL\_Bld\_05
-
-DIS\_CTY\_INDCL\_Bld\_06
-
-DIS\_CTY\_INDCL\_Bld\_09
-
-DIS\_CTY\_INDCL\_Bld\_02
-
-DIS\_CTY\_INDCL\_Bld\_03
-
-DIS\_CTY\_INDCL\_Bld\_08
-
- 
-
-DIS\_CTY\_IC\_Base - 18
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_IU\_Bld\_Tall\_04
-
-DIS\_CTY\_IU\_Bld\_Tall\_06
-
-DIS\_CTY\_IU\_Bld\_Tall\_07
-
-DIS\_CTY\_IU\_Bld\_Tall\_08
-
-DIS\_CTY\_IU\_Bld\_Tall\_09
-
-DIS\_CTY\_IU\_Bld\_Tall\_12
-
-DIS\_CTY\_IU\_Bld\_Tall\_13
-
-DIS\_CTY\_IU\_Bld\_Tall\_14
-
-DIS\_CTY\_IU\_Bld\_Tall\_15
-
-DIS\_CTY\_IU\_Bld\_Tall\_16
-
-DIS\_CTY\_IU\_Bld\_Tall\_18
-
-DIS\_CTY\_IU\_Bld\_Tall\_01
-
-DIS\_CTY\_IU\_Bld\_Tall\_03
-
-DIS\_CTY\_IU\_Bld\_Tall\_05
-
-DIS\_CTY\_IU\_Bld\_Tall\_11
-
-DIS\_CTY\_IU\_Bld\_Tall\_10
-
-DIS\_CTY\_IU\_Bld\_Tall\_17
-
-DIS\_CTY\_IU\_Bld\_Tall\_02
-
-DIS\_CTY\_MG\_Base - 19
-
-Filler\_0:
-
-Filler\_1:
-
-Filler\_2:
-
-Filler\_3:
-
- 
-
-DIS\_CTY\_MG\_Bld\_01
-
-DIS\_CTY\_MG\_Bld\_03
-
-DIS\_CTY\_MG\_Bld\_05
-
-DIS\_CTY\_MG\_Bld\_06
-
-DIS\_CTY\_MG\_Bld\_10
-
-DIS\_CTY\_MG\_Bld\_11
-
-DIS\_CTY\_MGG\_Bld\_03
-
-DIS\_CTY\_MGG\_Bld\_04
-
-DIS\_CTY\_MGG\_Bld\_07
-
-DIS\_CTY\_MGG\_Bld\_08
-
-DIS\_CTY\_MG\_Bld\_04
-
-DIS\_CTY\_MG\_Bld\_07
-
-DIS\_CTY\_MG\_Bld\_08
-
-DIS\_CTY\_MGG\_Bld\_02
-
-DIS\_CTY\_MG\_Bld\_02
-
-DIS\_CTY\_MG\_Bld\_09
-
-DIS\_CTY\_MGG\_Bld\_05
-
-DIS\_CTY\_MG\_Bld\_12
-
-DIS\_CTY\_MGG\_Bld\_01
 
 建筑命名规范和尺寸
 
@@ -1523,9 +1045,9 @@ _命名规范_
 
 适用于所有区域和城市：
 
-DIS\_CTY\_XX\_Base 是用于 max 文件、max 文件材质设置、游戏内材质和纹理的基础，其中 XX 对应时代和文化（例如，DIS\_CTY\_AW\_Base 代表古代木材，DIS\_CTY\_RE\_Base 代表文艺复兴欧洲）
+DIS_CTY_XX_Base 是用于 max 文件、max 文件材质设置、游戏内材质和纹理的基础，其中 XX 对应时代和文化（例如，DIS_CTY_AW_Base 代表古代木材，DIS_CTY_RE_Base 代表文艺复兴欧洲）
 
-Max 文件应命名为 DIS\_CTY\_XX\_Base.max
+Max 文件应命名为 DIS_CTY_XX_Base.max
 
 模型可以去掉“base”，因为它们更具体。
 
@@ -1533,75 +1055,75 @@ Max 文件应命名为 DIS\_CTY\_XX\_Base.max
 
 _Rectangular_
 
-DIS\_CTY\_XX\_Block\_REC\_01
+DIS_CTY_XX_Block_REC_01
 
-DIS\_CTY\_XX\_Block\_REC\_02
+DIS_CTY_XX_Block_REC_02
 
-DIS\_CTY\_XX\_Block\_REC\_03
+DIS_CTY_XX_Block_REC_03
 
 _Large Square_
 
-DIS\_CTY\_XX\_Block\_LG\_SQ\_01
+DIS_CTY_XX_Block_LG_SQ_01
 
-DIS\_CTY\_XX\_Block\_LG\_SQ\_02
+DIS_CTY_XX_Block_LG_SQ_02
 
-DIS\_CTY\_XX\_Block\_LG\_SQ\_03
+DIS_CTY_XX_Block_LG_SQ_03
 
 _Small Square_
 
-DIS\_CTY\_XX\_Block\_SQ\_01
+DIS_CTY_XX_Block_SQ_01
 
-DIS\_CTY\_XX\_Block\_SQ\_02
+DIS_CTY_XX_Block_SQ_02
 
-DIS\_CTY\_XX\_Block\_SQ\_03
+DIS_CTY_XX_Block_SQ_03
 
 _Wedge Right_
 
-DIS\_CTY\_XX\_Block\_WR\_01
+DIS_CTY_XX_Block_WR_01
 
-DIS\_CTY\_XX\_Block\_WR\_02
+DIS_CTY_XX_Block_WR_02
 
-DIS\_CTY\_XX\_Block\_WR\_03
+DIS_CTY_XX_Block_WR_03
 
 _Triangle Right_
 
-DIS\_CTY\_XX\_Block\_TR\_01
+DIS_CTY_XX_Block_TR_01
 
-DIS\_CTY\_XX\_Block\_TR\_02
+DIS_CTY_XX_Block_TR_02
 
-DIS\_CTY\_XX\_Block\_TR\_03
+DIS_CTY_XX_Block_TR_03
 
 Individual meshes (examples) should be named:
 
-_DIS\_CTY\_AE\_Bld\_01_
+_DIS_CTY_AE_Bld_01_
 
-_DIS\_CTY\_AE\_Bld\_02_
+_DIS_CTY_AE_Bld_02_
 
-_DIS\_CTY\_AE\_Bld\_03_
+_DIS_CTY_AE_Bld_03_
 
 Main Textures would be:
 
-DIS\_CTY\_XX\_Base\_B (basecolor)
+DIS_CTY_XX_Base_B (basecolor)
 
-DIS\_CTY\_XX\_Base\_A (ambient occulsion)\*
+DIS_CTY_XX_Base_A (ambient occulsion)*
 
-DIS\_CTY\_XX\_Base\_O (opacity)
+DIS_CTY_XX_Base_O (opacity)
 
-DIS\_CTY\_XX\_Base\_N (normal)
+DIS_CTY_XX_Base_N (normal)
 
-DIS\_CTY\_XX\_Base\_G (gloss)
+DIS_CTY_XX_Base_G (gloss)
 
-DIS\_CTY\_XX\_Base\_M (metalness)
+DIS_CTY_XX_Base_M (metalness)
 
-DIS\_CTY\_XX\_Base\_E (emissive)
+DIS_CTY_XX_Base_E (emissive)
 
-DIS\_CTY\_XX\_Base\_L (lightmaps)
+DIS_CTY_XX_Base_L (lightmaps)
 
-DIS\_CTY\_XX\_Base\_T (tintmaps)
+DIS_CTY_XX_Base_T (tintmaps)
 
-\*环境光遮蔽可以应用于单个材质级别或资产级别。对于任何使用多个材质的资产（例如城市区块），您将希望在资产的封装参数级别使用环境光遮蔽，它会覆盖材质的环境光遮蔽。
+*环境光遮蔽可以应用于单个材质级别或资产级别。对于任何使用多个材质的资产（例如城市区块），您将希望在资产的封装参数级别使用环境光遮蔽，它会覆盖材质的环境光遮蔽。
 
-请注意，在单个建筑物（仅有一个材质）的 _DIS\_CTY\_RMED\_Base_ 材质中使用了 AO 贴图。
+请注意，在单个建筑物（仅有一个材质）的 _DIS_CTY_RMED_Base_ 材质中使用了 AO 贴图。
 
 ![Machine generated alternative text: Cook Parameters Value 3aseCcIcr Emissive Emissive Minimum Weight Gloss LightMap LightMap Minimum Weight Metal ness Normal Opac ity TintMask ScrollRate DIS CTY DIS CTY DIS CTY DIS CTY RMED RME RMED RMED M N ](BuildingsProcess/media/image58.png)
 
@@ -1609,21 +1131,21 @@ DIS\_CTY\_XX\_Base\_T (tintmaps)
 
 ![Machine generated alternative text: 310ckShape SQUARE Bu rn Edges lend 3urnHeight had cws GradientScaIe ](BuildingsProcess/media/image59.png)
 
-奇观和改进应遵循类似的规则，只需更换 DIS\_CTY 部分。例如，WON\_Great\_Library.\*
+奇观和改进应遵循类似的规则，只需更换 DIS_CTY 部分。例如，WON_Great_Library.*
 
-\*奇观还有一个用于动画状态的附加文件，应命名类似于在末尾添加“Wonder\_Movie”。例如，WON\_Great\_Library\_Wonder\_Movie.max
+*奇观还有一个用于动画状态的附加文件，应命名类似于在末尾添加“Wonder_Movie”。例如，WON_Great_Library_Wonder_Movie.max
 
 区域使用 DIS，然后是一个三个字母的命名规范，用于标识实际区域。例如：
 
-DIS\_CMP（校园）
+DIS_CMP（校园）
 
-DIS\_ENC（营地）
+DIS_ENC（营地）
 
 _纹理尺寸_
 
 这些是基本的纹理尺寸，根据烘焙的资产数量可能会有所变化。
 
-**_城市_**
+**城市**
 
 1024x512 – 基础颜色、法线、金属度、光泽度、不透明度
 
@@ -1639,7 +1161,7 @@ _纹理尺寸_
 
 256x256 – 宫殿环境光遮蔽
 
-**_区域_**
+**区域**
 
 1024x1024 – 基础颜色、法线、金属度、光泽度、不透明度
 
@@ -1649,7 +1171,7 @@ _纹理尺寸_
 
 256x256 – 自发光
 
-**_改进_**
+**改进**
 
 1024x512 – 基础颜色、法线、金属度、光泽度、不透明度
 
@@ -1659,7 +1181,7 @@ _纹理尺寸_
 
 256x256 – 自发光
 
-**_奇观_**
+**奇观**
 
 1024x1024 – 基础颜色、法线、金属度、光泽度、不透明度
 
@@ -1677,23 +1199,23 @@ P4 文件夹结构
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image066.jpg](BuildingsProcess/media/image60.jpg)
 
-**01\_Concept（概念）**
+**01_Concept（概念）**
 
 •         根文件夹是最终（经批准的）概念的存放位置。
 
-•         还有一个**“InProgress（进行中）”**子文件夹，用于存放PSD文件、概念性的死胡同、缩略图等。
+•         还有一个 **“InProgress（进行中）”** 子文件夹，用于存放PSD文件、概念性的死胡同、缩略图等。
 
 •         这个文件夹还可以展示反馈模型、情绪板和外部承包商启动信息。
 
-**02\_Model（模型）**
+**02_Model（模型）**
 
 •         根文件夹是最终版本或最新版本的max文件的存放位置。
 
-•         还有一个**“InProgress（进行中）”**子文件夹，您可以将所有工作文件或其他与建模相关的文件放在其中。
+•         还有一个 **“InProgress（进行中）”** 子文件夹，您可以将所有工作文件或其他与建模相关的文件放在其中。
 
-**03\_Texture（纹理）**
+**03_Texture（纹理）**
 
-•         **“PSDs（PSD文件）”**文件夹是您可以存储主要PSD文件的位置。
+•         **“PSDs（PSD文件）”** 文件夹是您可以存储主要PSD文件的位置。
 
 •         根文件夹将包含导出的最终.tga文件。
 
@@ -1715,45 +1237,18 @@ _资产UV的结构_
 
 _游戏中的Chateau资产，应用了自发光和动态光照_
 
-UV通道1 - 这是处理基础颜色、金属度、光泽度、法线等的基础艺术通道。
+| **UV通道1 - 这是处理基础颜色、金属度、<br>光泽度、法线等的基础艺术通道。** | **UV通道2 - 这个通道主要用于环境遮挡（AO），<br>但如果资产需要光照贴图，光照贴图也会使用UV2。** | **UV通道3 - 这个通道仅用于自发光贴图。<br>如果模型需要使用自发光进行照明，它才应该具有UV3。** |
+|------------------------------------------|-------------------------------------------------------|--------------------------------------------------------|
+| Chateau - 在Basecolor纹理上的UV1              | Chateau - 在AO纹理上的UV2                                  | Chateau - 在自发光纹理上的UV3                                  |
+| ![Machine generated alternative text: ](BuildingsProcess/media/image62.png) | ![Machine generated alternative text: ](BuildingsProcess/media/image63.png) | ![Machine generated alternative text: ](BuildingsProcess/media/image64.png) |
+| Chateau - 编辑视图：正常的白天                     | Chateau - 编辑视图：AO白天                                   | Chateau - 编辑视图：启用自发光的夜晚                                |
+| ![Machine generated alternative text: ](BuildingsProcess/media/image65.png) | ![Machine generated alternative text: ](BuildingsProcess/media/image66.png) | ![Machine generated alternative text: ](BuildingsProcess/media/image67.png) |
 
-UV通道2 - 这个通道主要用于环境遮挡（AO），但如果资产需要光照贴图，光照贴图也会使用UV2。
-
-UV通道3 - 这个通道仅用于自发光贴图。
-
-如果模型需要使用自发光进行照明，它才应该具有UV3。
-
-。
-
-_Chateau - 在Basecolor纹理上的UV1_
-
-_Chateau - 在AO纹理上的UV2_
-
-_Chateau - 在自发光纹理上的UV3_
-
-![Machine generated alternative text: ](BuildingsProcess/media/image62.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image63.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image64.png)
-
-_Chateau - 编辑视图：正常的白天_
-
-_Chateau - 编辑视图：AO白天_
-
-_Chateau - 编辑视图：启用自发光的夜晚_
-
-![Machine generated alternative text: ](BuildingsProcess/media/image65.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image66.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image67.png)
-
-在3DS Max中，您可以通过"工具" > "通道信息"来查看模型或模型组的通道信息。
+在3DS Max中，您可以通过Tools>Channel Info("工具" > "通道信息")来查看模型或模型组的通道信息。
 
 ![Machine generated alternative text: Map Channel Info COP/ Buffer Info: Object Name Subcomp Channel Name -none - -none- Lock Update Num Verts 1401 1401 Num Faces Dead Verts Size(KE) 67kb poly -2:AIpha -1:111um O:vc I:map 2:map 3:map Main Main Main Main Main Main Main Main IMP IMP IMP IMP IMP IMP IMP IMP Chateau Chateau Chateau Chateau Chateau Chateau Chateau Chateau ](BuildingsProcess/media/image68.png)
 
-_IMP\_Chateau\_Main的Map通道信息对话框_
+_IMP_Chateau_Main的Map通道信息对话框_
 
 为了使游戏中的资产显示自发光效果，几何体必须具有三个UV通道。我们的编辑器不理解UV通道的编号，只理解数量。如果一个资产只有UV1和UV3，自发光将无法在编辑器或游戏中正常工作，因为它会被解释为UV1和UV2。
 
@@ -1761,7 +1256,7 @@ _IMP\_Chateau\_Main的Map通道信息对话框_
 
 ![Machine generated alternative text: ](BuildingsProcess/media/image69.png)
 
-_显示IMP\_Chateau\_Main默认UV3的图像_
+_显示IMP_Chateau_Main默认UV3的图像_
 
 如果您遇到一个不应该具有材质照明的资产，您可以通过上述对话框右键单击通道并选择"清除"来清除第3个Map通道：
 
@@ -1769,15 +1264,11 @@ _显示IMP\_Chateau\_Main默认UV3的图像_
 
 _显示Map通道信息右键单击选项的图像_
 
-这样做后，将在修改器堆栈中添加一个_**UVW映射清除**_修改器。折叠堆栈以解决此问题，或删除修改器以恢复通道信息。
+这样做后，将在修改器堆栈中添加一个 **UVW映射清除** 修改器(**UVW Mapping Clear** modifier)。折叠堆栈以解决此问题，或删除修改器以恢复通道信息。
 
 _自发光Emissive_
 
-![机器生成的替代文本：](BuildingsProcess/media/image71.png)
-
-![机器生成的替代文本：](BuildingsProcess/media/image72.png)
-
-![机器生成的替代文本：20 14 BALTI](BuildingsProcess/media/image73.png)
+![机器生成的替代文本：](BuildingsProcess/media/image71.png)![机器生成的替代文本：](BuildingsProcess/media/image72.png)![机器生成的替代文本：20 14 BALTI](BuildingsProcess/media/image73.png)
 
 _仅使用自发光照明的资产示例_
 
@@ -1800,27 +1291,21 @@ _仅使用自发光照明的资产示例_
 
 资产的类型将在很大程度上决定自发光纹理的焦点：
 
-**改进和区域：**在Max文件中选择应该接受自发光处理的模型或模型。隔离这些模型，并在Max和资产编辑器(Asset Editor)中评估它们的材质使用情况。理想情况下，它们都应该共享相同的材质，但在区域中，从一个文件共享模型到另一个文件是常见的。您需要确保自发光纹理仅应用于给定场景中使用的材质，否则其他资产上可能会发生意外的照明。
+**改进和区域：** 在Max文件中选择应该接受自发光处理的模型或模型。隔离这些模型，并在Max和资产编辑器(Asset Editor)中评估它们的材质使用情况。理想情况下，它们都应该共享相同的材质，但在区域中，从一个文件共享模型到另一个文件是常见的。您需要确保自发光纹理仅应用于给定场景中使用的材质，否则其他资产上可能会发生意外的照明。
 
-![Machine generated alternative text: ](BuildingsProcess/media/image74.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image75.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image74.png)![Machine generated alternative text: ](BuildingsProcess/media/image75.png)
 
 _示例：娱乐区的自发光模型集。尽管在.max文件中有18种不同的瓷砖基础布局和近3000个零件，但只有这12个模型需要共享自发光UV布局。_
 
-**城市：**城市要求所有建筑部件（不包括基础或地板板块）、填充建筑和相关的宫殿都包含在共享的UV3布局中。即使宫殿使用了独特的纹理集，这一点也是正确的。由于使用了大量的几何体，尤其是在古代建筑中，有时需要分组处理UV。这最容易分解为自发光纹理布局的四个象限。
+**城市：** 城市要求所有建筑部件（不包括基础或地板板块）、填充建筑和相关的宫殿都包含在共享的UV3布局中。即使宫殿使用了独特的纹理集，这一点也是正确的。由于使用了大量的几何体，尤其是在古代建筑中，有时需要分组处理UV。这最容易分解为自发光纹理布局的四个象限。
 
-![Machine generated alternative text: ](BuildingsProcess/media/image76.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image77.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image76.png)![Machine generated alternative text: ](BuildingsProcess/media/image77.png)
 
 _示例：文艺复兴/中国人口建筑集 - 所有显示的部件，包括宫殿，共享一个自发光纹理和UV布局。_
 
-**奇迹：**奇迹通常只需要处理一个模型的自发光。这个模型不是从单独的模型目录中提取的，而是从奇迹电影的最后一帧中提取的。这是因为奇迹模型在剪辑电影的过程中经常发生变化，因此需要不同的UV1/UV2变化来适应这些剪辑。需要与奇迹电影的艺术家（目前是Rambo）合作，确保通过该奇迹电影文件提供一个单独的、优化的模型（或带附件的主模型）。一旦选择了最终的电影组件，创建自发光的过程是相同的，但通常不会进行更多的面共享（见下文），因为奇迹是在游戏中近距离展示的模型。
+**奇迹：** 奇迹通常只需要处理一个模型的自发光。这个模型不是从单独的模型目录中提取的，而是从奇迹电影的最后一帧中提取的。这是因为奇迹模型在剪辑电影的过程中经常发生变化，因此需要不同的UV1/UV2变化来适应这些剪辑。需要与奇迹电影的艺术家（目前是Rambo）合作，确保通过该奇迹电影文件提供一个单独的、优化的模型（或带附件的主模型）。一旦选择了最终的电影组件，创建自发光的过程是相同的，但通常不会进行更多的面共享（见下文），因为奇迹是在游戏中近距离展示的模型。
 
-![Machine generated alternative text: ](BuildingsProcess/media/image78.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image79.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image78.png)![Machine generated alternative text: ](BuildingsProcess/media/image79.png)
 
 _示例：莫斯科大剧院的最终帧模型和自发光纹理布局_
 
@@ -1830,11 +1315,11 @@ __选择需要自发光并共享材质的给定文件中的模型__
 
 如上所述，第一步是确定你正在处理的.max文件中哪些模型需要接收自发光。除了古代建筑外，这通常是一个直接的选择，因为你要寻找的是窗户、敞开的门以及模型中代表光源（灯柱、灯笼等）的部分。开放的拱门、显著的嵌入细节，甚至是在不使用光照贴图的情况下添加投射光的机会也是可选的。后者尤其重要，因为自发光贴图往往比光照贴图更便宜，应该节约使用。最昂贵的设置是同时具有自发光和光照贴图的模型，仅保留给少数必要的区域和奇迹。
 
-我们以DIS\_AQD\_Base\_Bath模型为例，逐步介绍整个过程。该模型的最终结果具有窗户细节、凹陷的拱门和虚拟的投射效果：
+我们以DIS_AQD_Base_Bath模型为例，逐步介绍整个过程。该模型的最终结果具有窗户细节、凹陷的拱门和虚拟的投射效果：
 
 ![机器生成的替代文本：](BuildingsProcess/media/image80.png)
 
-_启用3DS Max中DIS\_AQD\_Base\_Bath模型的复合自发光网格_
+_启用3DS Max中DIS_AQD_Base_Bath模型的复合自发光网格_
 
 __在这些模型上设置UV通道3，将需要自发光照明的面隔离，将非照明面隔离到左上角像素__
 
@@ -1862,7 +1347,7 @@ _选择了具有小拱窗的墙壁的三个部分之一，显示了该部分UV�
 
 确定了给定模型所需的组数后，按照正常方式打包UV，确保在角落留有一些缓冲空间。在某些情况下，特别是当模型具有塔楼，窗户仅位于矩形UV元素的顶部时，可以重叠UV岛以节省空间。对于计划伪造投射光的区域，你可能会发现将其离散地展开以便在纹理中叠加漫反射细节效果更好。
 
-\*所有未接收自发光照明的面都缩小到一个像素的大小（可能有一些偏差），并放置在UV布局的左上角。在下面的屏幕截图中，左上角的小绿色像素代表了两个模型的所有未选择面。不要跳过这一步，并确保在UV布局的每个角落都有足够的空隙。
+*所有未接收自发光照明的面都缩小到一个像素的大小（可能有一些偏差），并放置在UV布局的左上角。在下面的屏幕截图中，左上角的小绿色像素代表了两个模型的所有未选择面。不要跳过这一步，并确保在UV布局的每个角落都有足够的空隙。
 
 完成UV布局后，将所有受影响的模型合并。
 
@@ -1872,7 +1357,7 @@ _展示了水渠区模型的最终UV3展开图。请注意，开放的拱门和�
 
 _将结果UV3通道的基础颜色烘焙为参考图像。_
 
-完成UV3布局后，选择所有受影响的模型并克隆它们，将生成的副本移动到一侧。将这些复制的网格合并为一个模型。将结果模型重命名为"\[资产名称\]\_Emissive"（例如DIS\_AQD\_Emissive）。将新模型添加到名为"Emissive"的单独图层中。
+完成UV3布局后，选择所有受影响的模型并克隆它们，将生成的副本移动到一侧。将这些复制的网格合并为一个模型。将结果模型重命名为"[资产名称]_Emissive"（例如DIS_AQD_Emissive）。将新模型添加到名为"Emissive"的单独图层中。
 
 ![Machine generated alternative text: Decal Classical Decal Industrial Decal Modern Emissive DIS AQD ENC Ha and PIL FINAL ](BuildingsProcess/media/image85.png)
 
@@ -1892,7 +1377,7 @@ Once this complete, select the combined Emissive model and use Render to Texture
 
 ![Machine generated alternative text: Render To Texture Output Path: D: Skip Existing Files Render Settings Netnork Render File Name DIS AQD Emissi... Output Element Name DiffrseMap 512x512 Dele te General Se tnngs AL W -TBERGANTZ2 Civ6-main t V Rendered Fr ame Window Setup... Sub-Object Channel Edge Padding Selected Element Common Settings V Enable Name: DiffseMa File Name and Type: DIS A D EmissiveDiffuseMa 0000 Target Map Slot: Elemen t Type: diffuseMap Elemen t Backgr ound: Use Automabc Map Size Objects to Bake Object and Output Settngs Preset: Name Name DIS AQD Emissive Selected Object Se tings V Enabled Projection Mapping Object Channel Obje... Padding: sub-o. Pick... Width: 512 Height: 512 128K 128 256x256 512x512 768768 1024x1024 2048x2048 Selected Element Linique Settings Ligh ting Shado Baked Ma terial Baked Material Settings • Output Into Source Save Source (Create Shell) Projection Modifier Object L Options... @ Put to Baked Material Put to Baked Material Ful Size Pr opor tonal Mapping Coor dina tes Update Baked Materials Render to Files Only ObJect: Sub-objects: • Use Existing Channel Use Automabc Unwrap use Existing Channel use Automatic unwrap Clear Unwrappers • All Selected Clear Shell Materials Keep Source Ma terials Keep Baked Ma terials Au toma tic Mapping Views Render Unwrap Only Close Original: Baked: All Prepared Render ](BuildingsProcess/media/image87.png)
 
-1.  选择目标目录 - 这通常应该是与资产相关的03\_Texture\\PSDs文件夹。
+1.  选择目标目录 - 这通常应该是与资产相关的03_TexturePSDs文件夹。
     
 2.  添加一个漫反射贴图到输出。
     
@@ -1905,7 +1390,7 @@ Once this complete, select the combined Emissive model and use Render to Texture
 
 ![机器生成的替代文本：IC11211nII@ 'EDIÉII@I ](BuildingsProcess/media/image88.png)
 
-_DIS\_AQD\_EmissiveDiffuseMap.tga_
+_DIS_AQD_EmissiveDiffuseMap.tga_
 
 __选择合适尺寸的发光模板文件，并添加参考图像__
 
@@ -1962,17 +1447,11 @@ __在3DS Max中显示发光纹理__
 
 如果使用现有材质，请在保存文件供其他用户使用之前关闭复合图层（见下文）。
 
-![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ DIS CTY AB Base Shader Basic Parameters Wir e Face Map alinn Basic Parameters Sel f-lllumina bon Color Opacity: 100 Standard 2-sided Face ted Ambient: Specular Highlights Specular Level: GIO ssiness: Soften: 0.1 Extended Paramete ; Super Sampling Amount Ambient Color . . 100 V Diffise Color . . 75 (DIS CTY AE aase_a.tga) . 100 Specular Color . 100 Specular Level . 100 Glossiness Self-Illumina bon . 100 ](BuildingsProcess/media/image92.png)
+| ![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ DIS CTY AB Base Shader Basic Parameters Wir e Face Map alinn Basic Parameters Sel f-lllumina bon Color Opacity: 100 Standard 2-sided Face ted Ambient: Specular Highlights Specular Level: GIO ssiness: Soften: 0.1 Extended Paramete ; Super Sampling Amount Ambient Color . . 100 V Diffise Color . . 75 (DIS CTY AE aase_a.tga) . 100 Specular Color . 100 Specular Level . 100 Glossiness Self-Illumina bon . 100 ](BuildingsProcess/media/image92.png) | ![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ Diffise Color: Map #1075 Coordina tes Bitmap icit Map Channel Texture Environ Mapping: Show Map on Back Llse Real-World Scale Offset -riling U: 0.0 v: 0.0 • vw Map Channel : Mirror Vile w: Angle 0.0 0.0 Rotate Blur: 1.0 Bitmap: Blur offset: 0.0 Bitmap Parameters AncientErickIP3 TextureVIS CTY AE aase_a.tga Cropping Placemen t Apply View Image • Crop v: 0.0 Jitter Placement: I O Alpha Source RGB Intensity None (Opaque) Fil tering • pyramidal Summed Area Mono Channel Output: • RGB Intensity RGE Channel Output: • RGE ](BuildingsProcess/media/image93.png) | ![Machine generated alternative text: Material/Map Browser Search by Name - 16Grids.mat Diffuse Color: Map #1078 (16grid 1024x512.tga) Diffuse Color: Map #1077 (16grid 512x2 Topaottom.tga) Diffuse Color: Map #1077 (16grid 1024x2.tga) - Maps - Standard Camera Map Per Pixel Cellular Checker IorCorrection mbustion mposite Dent Falloff Flat Mirror Gradient G radient Ramp Map Output Selector Marble . Mask Noise . N ormal Bump . O utput article Age article MBIur Perlin Marble Refl ect/Refract . RG3MuItipIy . RGa Tint Smoke . Speckle . Splat ](BuildingsProcess/media/image94.png)  |
+| -- | -- | -- |
+| ![Machine generated alternative text: Replace Map Discard old map? Keep old map as sub -map? ](BuildingsProcess/media/image95.png)                                                                                                                                                                                                                                                                                                                                                                                                                                              | ![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ Diffise Color: Map #1075 Composite Layers Composite Total Layers: Layer 2 opacity: 73.0 None None Addition Layer I Opacity: 100 0 aarmel ](BuildingsProcess/media/image96.png)                                                                                                                                                                                                                                                                                                                                                                                                | ![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities Diffise Color: Map #1075 Composite Layers Composite Total Layers: Layer 2 opacity: 73.0 None Addition Layer I Opacity: 100 0 None rac.rmel ](BuildingsProcess/media/image97.png)                                                                                                                                                                                                                                                                                                      |
 
-![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ Diffise Color: Map #1075 Coordina tes Bitmap icit Map Channel Texture Environ Mapping: Show Map on Back Llse Real-World Scale Offset -riling U: 0.0 v: 0.0 • vw Map Channel : Mirror Vile w: Angle 0.0 0.0 Rotate Blur: 1.0 Bitmap: Blur offset: 0.0 Bitmap Parameters AncientErickIP3 TextureVIS CTY AE aase_a.tga Cropping Placemen t Apply View Image • Crop v: 0.0 Jitter Placement: I O Alpha Source RGB Intensity None (Opaque) Fil tering • pyramidal Summed Area Mono Channel Output: • RGB Intensity RGE Channel Output: • RGE ](BuildingsProcess/media/image93.png)
 
-![Machine generated alternative text: Material/Map Browser Search by Name - 16Grids.mat Diffuse Color: Map #1078 (16grid 1024x512.tga) Diffuse Color: Map #1077 (16grid 512x2 Topaottom.tga) Diffuse Color: Map #1077 (16grid 1024x2.tga) - Maps - Standard Camera Map Per Pixel Cellular Checker IorCorrection mbustion mposite Dent Falloff Flat Mirror Gradient G radient Ramp Map Output Selector Marble . Mask Noise . N ormal Bump . O utput article Age article MBIur Perlin Marble Refl ect/Refract . RG3MuItipIy . RGa Tint Smoke . Speckle . Splat ](BuildingsProcess/media/image94.png)
-
-![Machine generated alternative text: Replace Map Discard old map? Keep old map as sub -map? ](BuildingsProcess/media/image95.png)
-
-![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities ÜQQQQ Diffise Color: Map #1075 Composite Layers Composite Total Layers: Layer 2 opacity: 73.0 None None Addition Layer I Opacity: 100 0 aarmel ](BuildingsProcess/media/image96.png)
-
-![Machine generated alternative text: Material Editor -DIS CTY AB Modes Material Navigation Options Utilities Diffise Color: Map #1075 Composite Layers Composite Total Layers: Layer 2 opacity: 73.0 None Addition Layer I Opacity: 100 0 None rac.rmel ](BuildingsProcess/media/image97.png)
 
 要设置复合材质（Composite map）：
 
@@ -2009,9 +1488,7 @@ _带有发光纹理的Aqueduct Bath模型的MTL设置_
 
 然后，您需要调整资源预览器以显示纹理照明。全局预览器信息面板中有三个参数可以实现这一点：太阳比例（Sun Scale）、天空比例（Sky Scale）和光照图权重（Light Map Weight）。
 
-![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset ](BuildingsProcess/media/image99.png)
-
-![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset ](BuildingsProcess/media/image100.png)
+![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset ](BuildingsProcess/media/image99.png)![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset ](BuildingsProcess/media/image100.png)
 
 _全局预览器信息（Global Previewer Info） - 默认的“白天”设置_
 
@@ -2021,9 +1498,7 @@ _全局预览器信息（Global Previewer Info） - “夜晚”设置_
 
 光照图权重（Light Map Weight）是一个全局值，用于控制游戏中的整体昼夜循环。光照图权重默认为0。要在资源预览器中以完整值查看发光图（Emissive map），将光照图权重设置为4。
 
-![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex HUD Lighting Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure .46, 65, 6 Add Asset DefaultGameEn.. I Reset To Default Attached Assets Light Map Weight Day Threshold Night Threshold Time Of Day Culling DIS Base Bath Attachment Point DLBONE BathPool DIS AQD_Base Bath DIS AQD_Base Bath O Base Motion Display Transform Animation Knobs Show Model Center Show Obstructions Asset State Worked ](BuildingsProcess/media/image101.png)
-
-![Machine generated alternative text: Asset Previewer Global Previewer Info FPS: 58.8 Draws: 14 Module Landmark Last Refreshed At: pm Time Of Day: Night Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset DefaultGameEn.. I Reset To Default Attached Assets DIS Base Bath Attachment Point DLBONE BathPool DIS AQD_Base Bath DIS AQD_Base Bath O Base Motion Display Transform Animation Knobs Show Model Center Show Obstructions Asset State Worked ](BuildingsProcess/media/image102.png)
+![Machine generated alternative text: Global Previewer Info Module Landmark Base Camera Hex HUD Lighting Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure .46, 65, 6 Add Asset DefaultGameEn.. I Reset To Default Attached Assets Light Map Weight Day Threshold Night Threshold Time Of Day Culling DIS Base Bath Attachment Point DLBONE BathPool DIS AQD_Base Bath DIS AQD_Base Bath O Base Motion Display Transform Animation Knobs Show Model Center Show Obstructions Asset State Worked ](BuildingsProcess/media/image101.png)![Machine generated alternative text: Asset Previewer Global Previewer Info FPS: 58.8 Draws: 14 Module Landmark Last Refreshed At: pm Time Of Day: Night Base Camera Hex Knobs Bounce Color Sun Scale Sky Scale Shadow Bias Spec Enable Diffuse Enable Show Base Color Show Metalness Show AO Scene Exposure Light Map Weight Day Threshold Night Threshold Time Of Day Culling H LID Lighting .46, 65, 6 Add Asset DefaultGameEn.. I Reset To Default Attached Assets DIS Base Bath Attachment Point DLBONE BathPool DIS AQD_Base Bath DIS AQD_Base Bath O Base Motion Display Transform Animation Knobs Show Model Center Show Obstructions Asset State Worked ](BuildingsProcess/media/image102.png)
 
 _资源预览器对比：Aqueduct District Bath模型在“白天”（左侧）和“夜晚”（右侧）的显示，显示了启用的发光图。请注意，浴池内的蓝色照明来自分析光照点（详见下文）。_
 
@@ -2035,13 +1510,9 @@ __在游戏中审查发光模型__
 
 在资源编辑器中更新模型和材质，并进行最新的编译后，您将能够在游戏中看到效果。一旦加载了地图并放置了建筑物，使用波浪符号（~）键切换调试菜单。点击左侧（向下）箭头打开调试视图面板，勾选“显示时间”选项，然后点击并拖动滑块来改变时间。0.00表示午夜，这是评估发光效果最有用的时间。您可以修改和实时加载发光纹理。
 
-![Machine generated alternative text: oo WORLD TRACKER CHOOSE RESEARCH CODE OF LAWS T urns: ](BuildingsProcess/media/image103.png)
+![Machine generated alternative text: oo WORLD TRACKER CHOOSE RESEARCH CODE OF LAWS T urns: ](BuildingsProcess/media/image103.png)![Machine generated alternative text: Debug View nshow Frame Statistics Oshow VFX Statistics @show Time Of Day nshow Camera Oshow Lua Statistics Oshow Memory Time O f Day — Time: 0:00 am Rendered TOD 0.00 ](BuildingsProcess/media/image104.png)
 
-![Machine generated alternative text: Debug View nshow Frame Statistics Oshow VFX Statistics @show Time Of Day nshow Camera Oshow Lua Statistics Oshow Memory Time O f Day — Time: 0:00 am Rendered TOD 0.00 ](BuildingsProcess/media/image104.png)
-
-![Machine generated alternative text: 16 CLEVELAND T urns: oo WORLD TRACKER CHOOSE RESEARCH CODE OF LAWS €0, ](BuildingsProcess/media/image105.png)
-
-![Machine generated alternative text: Debug View nshow Frame Statistics Oshow VFX Statistics @show Time Of Day nshow Camera Oshow Lua Statistics Oshow Memory Time O f Day — Time: 0:00 am Rendered TOD 0.00 16 CLEVELAND ](BuildingsProcess/media/image106.png)
+![Machine generated alternative text: 16 CLEVELAND T urns: oo WORLD TRACKER CHOOSE RESEARCH CODE OF LAWS €0, ](BuildingsProcess/media/image105.png)![Machine generated alternative text: Debug View nshow Frame Statistics Oshow VFX Statistics @show Time Of Day nshow Camera Oshow Lua Statistics Oshow Memory Time O f Day — Time: 0:00 am Rendered TOD 0.00 16 CLEVELAND ](BuildingsProcess/media/image106.png)
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image113.png](BuildingsProcess/media/image107.png)
 
@@ -2090,19 +1561,13 @@ Mental Ray可以为光照图生成良好的渲染效果，并且只要您遵循�
 
 在场景中使用Mental Ray标准灯光，并选择阴影投射方式。一致使用远程衰减参数有助于减少渲染时间。
 
-![Machine generated alternative text: Stenderd Object Type AutoGrid Target Spot Free Spot Targe t Direct Free Direct Skylight mr Area Omni mr Area Spo t Name and Color ](BuildingsProcess/media/image112.png)
-
-![Machine generated alternative text: FM Use Start: I". 024 V Show B-,d: : ](BuildingsProcess/media/image113.png)
+![Machine generated alternative text: Stenderd Object Type AutoGrid Target Spot Free Spot Targe t Direct Free Direct Skylight mr Area Omni mr Area Spo t Name and Color ](BuildingsProcess/media/image112.png)  ![Machine generated alternative text: FM Use Start: I". 024 V Show B-,d: : ](BuildingsProcess/media/image113.png)
 
 使用最终的资产模型，设置一个适合所需外观的灯光系统。由于光照是预先渲染的，您可以根据需要使用少量或大量灯光，尽管使用较少的灯光更容易修改并减少渲染时间。
 
-![Machine generated alternative text: non_syan o ra House ](BuildingsProcess/media/image114.png)
+![Machine generated alternative text: non_syan o ra House ](BuildingsProcess/media/image114.png)![Machine generated alternative text: ](BuildingsProcess/media/image115.png)
 
-![Machine generated alternative text: ](BuildingsProcess/media/image115.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image116.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image117.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image116.png)![Machine generated alternative text: ](BuildingsProcess/media/image117.png)
 
 _左上方：悉尼歌剧院基色；右上方：模型的Max灯光效果；左下方：使用了许多灯光的线框图；右下方：Max灯光加上发光物体设置（下一节）_
 
@@ -2124,13 +1589,8 @@ _从左到右：悉尼歌剧院模型、模型的灯光系统以及应用了建�
 
 在使用这种方法时需要注意一点：为了正确渲染出发光物体，您需要在场景中至少有一个灯光。这个灯光不需要用于任何其他用途；实际上，它可以关闭，发光物体仍然会正确渲染。只需要存在一个灯光，渲染器才能正确识别发光物体的贡献。
 
-![Machine generated alternative text: ial Ed' rvlcclä Meteriel Ny.:igeticn Opticn: OOOQQ 'i oooce 24 - Default Architectural Templa tes user Defined Ph ysical Qualities Diffise Color: V iney Opera House E.jpg) Diffise Map: 100.0 Transpar ency: Index of Refraction: 1.5 Luminance cd 1m 2: 4000.0 Raw Diffise Texture 2-Sided Special Effects Advanced Lighting Override Super Sampling Dir ecü Manager Save as .FX File Enable Plugin mental ray Connection ](BuildingsProcess/media/image119.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image120.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image121.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image122.png)
+![Machine generated alternative text: ial Ed' rvlcclä Meteriel Ny.:igeticn Opticn: OOOQQ 'i oooce 24 - Default Architectural Templa tes user Defined Ph ysical Qualities Diffise Color: V iney Opera House E.jpg) Diffise Map: 100.0 Transpar ency: Index of Refraction: 1.5 Luminance cd 1m 2: 4000.0 Raw Diffise Texture 2-Sided Special Effects Advanced Lighting Override Super Sampling Dir ecü Manager Save as .FX File Enable Plugin mental ray Connection ](BuildingsProcess/media/image119.png)![Machine generated alternative text: ](BuildingsProcess/media/image120.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image121.png)![Machine generated alternative text: ](BuildingsProcess/media/image122.png)
 
 _从左到右：使用标准Max灯光照亮的悉尼歌剧院模型；仅使用发光物体几何体照亮的相同模型；标准灯光和发光物体照明的渲染结果_
 
@@ -2179,15 +1639,13 @@ __在资源编辑器中设置光照贴图__
 
 有关在夜间模式下查看模型以评估资源的光照贴图的信息，请参考上面的发光部分。
 
-![Machine generated alternative text: WON Sydney_Opera House EM.ast WON Sydney Opera_House Emissive.mtl Basic Name WON Sydney_Opera_House Emissive (I items) Landmark WON Sydney_Opera House AO WON Class Name Landmark Desc ri pticn C ategorization Tags Cook Parameters Value 3aseCcI or Emissive Emissive Minimu Gloss LightMap Text eight Remove WON Sydney Opera House WON Sydney_Opera WON Sydney_Opera WON Sydney_Opera House L House M House N LightMap Minimum Weim Metal ness Normal Opac ity ](BuildingsProcess/media/image126.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image127.png)
+![Machine generated alternative text: WON Sydney_Opera House EM.ast WON Sydney Opera_House Emissive.mtl Basic Name WON Sydney_Opera_House Emissive (I items) Landmark WON Sydney_Opera House AO WON Class Name Landmark Desc ri pticn C ategorization Tags Cook Parameters Value 3aseCcI or Emissive Emissive Minimu Gloss LightMap Text eight Remove WON Sydney Opera House WON Sydney_Opera WON Sydney_Opera WON Sydney_Opera House L House M House N LightMap Minimum Weim Metal ness Normal Opac ity ](BuildingsProcess/media/image126.png)![Machine generated alternative text: ](BuildingsProcess/media/image127.png)
 
 _"移除发光贴图"脚本_
 
 在区域、改良或（有时）奇观资源接收到发光贴图和/或光照贴图设置，并且资源在游戏中工作后，需要禁用“（正在）建造”和“未开垦”状态下的光照显示。为此，运行Remove\_Emissive.py脚本。
 
-_**\*在运行脚本之前关闭资源预览器\***_
+**\*在运行脚本之前关闭资源预览器\***
 
 从资源编辑器中，选择 文件 > 运行脚本：
 
@@ -2229,11 +1687,7 @@ IMP\_Fort（中世纪、工业和现代）
 
 _分析光照_
 
-![Machine generated alternative text: ](BuildingsProcess/media/image133.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image134.png)
-
-![Machine generated alternative text: ](BuildingsProcess/media/image135.png)
+![Machine generated alternative text: ](BuildingsProcess/media/image133.png)![Machine generated alternative text: ](BuildingsProcess/media/image134.png)![Machine generated alternative text: ](BuildingsProcess/media/image135.png)
 
 _仅使用分析光照（动态光照）的资产示例（油井），分析光照与发光贴图结合使用的资产示例（飞机跑道），以及带有发光贴图的特效动态光照的资产示例（城堡）_
 
@@ -2245,7 +1699,7 @@ _仅使用分析光照（动态光照）的资产示例（油井），分析光�
 
 __限制条件__
 
-在进行设置之前，了解系统的主要限制条件非常重要。在游戏中查看来自任何来源的动态光照的资产时，在四个六边形区域中不应超过**_四个_**动态光照点。特别是城市在核心开发的后期添加了许多动态实体，核心城市六边形的动态特效数量通常超过四个。请注意您的资产在游戏中的放置方式。
+在进行设置之前，了解系统的主要限制条件非常重要。在游戏中查看来自任何来源的动态光照的资产时，在四个六边形区域中不应超过 **四个** 动态光照点。特别是城市在核心开发的后期添加了许多动态实体，核心城市六边形的动态特效数量通常超过四个。请注意您的资产在游戏中的放置方式。
 
 分析光照没有投射阴影的属性。在设置光照时，请注意光线如何穿过附近的几何体，因为这可能导致被视为错误的视觉效果。这可以通过负光（见下文）在一定程度上减轻。
 
@@ -2275,25 +1729,25 @@ __在资源编辑器中创建光照__
 1.  行为部分指定光照如何响应游戏的白天和夜晚系统：
     
 
-1.  _**ApplyLightMapWeight**_ - 此标志确定是否应将光照的强度乘以当前光照贴图权重，然后传递给动态光照系统。通常情况下，您会希望启用此选项。
+1.  **ApplyLightMapWeight** - 此标志确定是否应将光照的强度乘以当前光照贴图权重，然后传递给动态光照系统。通常情况下，您会希望启用此选项。
     
 
-1.  _**TimeOfDay**_ - 此下拉菜单可选择指定光照是否始终开启（All），仅在白天（Day）或仅在夜晚（Night）开启，使用游戏中的白天/夜晚阈值。
+1.  **TimeOfDay** - 此下拉菜单可选择指定光照是否始终开启（All），仅在白天（Day）或仅在夜晚（Night）开启，使用游戏中的白天/夜晚阈值。
     
 
 1.  值部分指定光照实体的大小和颜色：
     
 
-1.  _**Attenuation**_ - 范围为0.01至100 - 控制光照的衰减，并调整从光照中心到由半径定义的外边缘的衰减曲线。在3DS Max中，此控制的等效设置为设置为Inverse Square的_Decay_。
+1.  **Attenuation** - 范围为0.01至100 - 控制光照的衰减，并调整从光照中心到由半径定义的外边缘的衰减曲线。在3DS Max中，此控制的等效设置为设置为Inverse Square的_Decay_。
     
 
-1.  _**Color**_ - 范围为0,0,0至255,255,255 - 不出所料，定义了光照的颜色。在仅在资源预览器中查看光照时，255的白色会有一个黄色的光晕 - 这是由于光照与默认的绿色六边形混合而导致的。
+1.  **Color** - 范围为0,0,0至255,255,255 - 不出所料，定义了光照的颜色。在仅在资源预览器中查看光照时，255的白色会有一个黄色的光晕 - 这是由于光照与默认的绿色六边形混合而导致的。
     
 
-1.  _**Intensity**_ - 范围为-100至100 - 光照的亮度。0实际上表示“关闭”。负数用于定义负光（见下一节）。在3DS Max中，此设置的等效设置为_Multiplier_。
+1.  **Intensity** - 范围为-100至100 - 光照的亮度。0实际上表示“关闭”。负数用于定义负光（见下一节）。在3DS Max中，此设置的等效设置为_Multiplier_。
     
 
-1.  _**Radius**_ - 范围为0.025至500 - 这是光照的外部边界。此设置和衰减相互配合，定义了光照在游戏中的大小。在3DS Max中，此设置的等效设置为_Far Attenuation_的结束值。
+1.  **Radius** - 范围为0.025至500 - 这是光照的外部边界。此设置和衰减相互配合，定义了光照在游戏中的大小。在3DS Max中，此设置的等效设置为_Far Attenuation_的结束值。
     
 
 在资源预览器中查看光照时，请记住一个重要的事实：预览器窗口中的默认光照对象仅略高于参考六边形。因此，除非您将其放置在模型上并进行适当调整（不要将其放置得过于接近地面），否则大小、衰减甚至颜色都不会完全符合预期。您需要将光照实际应用于相应的模型，并随后对.lit实体进行调整，以正确评估这些值。
@@ -2346,9 +1800,7 @@ __将光源分配给资产__
 
 然后，您将进入资产触发器编辑器（Asset Trigger Editor）：
 
-![Machine generated alternative text: Cook Params Geometries Attachments Filter: Attachment Point Name bathhfire DLBONE BathP001 Animations Particles Behaviors Bath PIL Bath acne Name bathhfire DLBONE BathP001 A Model Instance DIS AQD_Base ](BuildingsProcess/media/image146.png)
-
-![Machine generated alternative text: Asset Trigger Editor rlLL_qeeu Action ArtOefVFX Asset VFX Light Transfer Action ArtOefVFX Asset VFX Light Trans fer RKED OL AQoaathGIow COLBONE_aathPooI) Type Wiavior ktachment Point Duration Time TimeSeconds Ljght DL PODBathGow DLBONE BathP001 -0001852 Name of the asset to associate wth this tngger ](BuildingsProcess/media/image147.png)
+![Machine generated alternative text: Cook Params Geometries Attachments Filter: Attachment Point Name bathhfire DLBONE BathP001 Animations Particles Behaviors Bath PIL Bath acne Name bathhfire DLBONE BathP001 A Model Instance DIS AQD_Base ](BuildingsProcess/media/image146.png)![Machine generated alternative text: Asset Trigger Editor rlLL_qeeu Action ArtOefVFX Asset VFX Light Transfer Action ArtOefVFX Asset VFX Light Trans fer RKED OL AQoaathGIow COLBONE_aathPooI) Type Wiavior ktachment Point Duration Time TimeSeconds Ljght DL PODBathGow DLBONE BathP001 -0001852 Name of the asset to associate wth this tngger ](BuildingsProcess/media/image147.png)
 
 1.  验证资产的正确状态是否已定义。对于分析光照，通常使用_WORKED\_A_状态。如果您想要的状态缺失，请使用“添加时间轴”按钮进行定义。
     
@@ -2395,73 +1847,73 @@ __常见问题解答__
 
 (在Max中)
 
-\- 一旦模型被动画化，编辑起来可能会有些棘手，所以尽量在绑定之前将其调整到正确的比例和方向。
+- 一旦模型被动画化，编辑起来可能会有些棘手，所以尽量在绑定之前将其调整到正确的比例和方向。
 
-\- 添加所有的骨骼，将它们作为网格的父级，设置好层次结构，并将网格与骨骼进行绑定。
+- 添加所有的骨骼，将它们作为网格的父级，设置好层次结构，并将网格与骨骼进行绑定。
 
-\- 骨骼需要成为被导入的几何体的一部分，所以所有的东西都需要作为几何体根部的子级。
+- 骨骼需要成为被导入的几何体的一部分，所以所有的东西都需要作为几何体根部的子级。
 
-\- 创建您的动画。
+- 创建您的动画。
 
-\- 将动画添加到动画管理器中，并给它一个好的名称。
+- 将动画添加到动画管理器中，并给它一个好的名称。
 
 (在资产编辑器(Asset Editor)中)
 
-\- 添加DSG。这是一个状态图，告诉资产为每个状态循环播放单个动画。
+- 添加DSG。这是一个状态图，告诉资产为每个状态循环播放单个动画。
 
-\- 动画不是独立存在的，它们与不同的资产状态相关联。
+- 动画不是独立存在的，它们与不同的资产状态相关联。
 
-\- 点击“添加新的”，将动画导入到云端。
+- 点击“添加新的”，将动画导入到云端。
 
-\- 然后通过点击状态右侧的框将动画分配给您想要的状态。
+- 然后通过点击状态右侧的框将动画分配给您想要的状态。
 
-\- 然后重新导入几何体，因为它需要包含骨骼。
+- 然后重新导入几何体，因为它需要包含骨骼。
 
-\- 有两种播放动画的方式：
+- 有两种播放动画的方式：
 
-\- 在资产旋钮选项卡（带有资产名称的选项卡）中，转到“动画”选项卡。在“到状态”处，您需要在右侧的下拉菜单中选择要播放的状态。
+- 在资产旋钮选项卡（带有资产名称的选项卡）中，转到“动画”选项卡。在“到状态”处，您需要在右侧的下拉菜单中选择要播放的状态。
 
 或者：
 
-\- 打开“触发器编辑器”面板（默认情况下位于资产编辑器(Asset Editor)底部）。为每个具有分配动画的状态添加一个时间轴。
+- 打开“触发器编辑器”面板（默认情况下位于资产编辑器(Asset Editor)底部）。为每个具有分配动画的状态添加一个时间轴。
 
-\- 双击时间轴以播放动画。您可以使用时间轴编辑器更好地浏览动画。
+- 双击时间轴以播放动画。您可以使用时间轴编辑器更好地浏览动画。
 
-\- 您可能会注意到您的动画现在偏离中心，因为这是您在Max文件中的动画位置。如果这不是您想要的结果，您需要返回到动画管理器中，选择您的动画，并将其RMA（根动作累积）设置为1。然后保存并重新导入动画。
+- 您可能会注意到您的动画现在偏离中心，因为这是您在Max文件中的动画位置。如果这不是您想要的结果，您需要返回到动画管理器中，选择您的动画，并将其RMA（根动作累积）设置为1。然后保存并重新导入动画。
 
-\- 您可以将同一动画分配给多个状态，或者每个状态可以有一个单独的动画。
+- 您可以将同一动画分配给多个状态，或者每个状态可以有一个单独的动画。
 
-\- 每个状态只能有一个动画，所以所有的几何体都必须包含在动画中使用的骨骼。
+- 每个状态只能有一个动画，所以所有的几何体都必须包含在动画中使用的骨骼。
 
 (故障排除)
 
 动画无法播放：
 
-\- 确保在添加了一些动画或者骨骼的名称或层次结构发生变化后重新导入几何体。
+- 确保在添加了一些动画或者骨骼的名称或层次结构发生变化后重新导入几何体。
 
-\- 检查骨骼是否在模型管理器中被分配导出（默认情况下应该是的，但还是要检查一下）。
+- 检查骨骼是否在模型管理器中被分配导出（默认情况下应该是的，但还是要检查一下）。
 
-\- 确保将动画分配给正确的状态。
+- 确保将动画分配给正确的状态。
 
 当动画未播放时，我的物体旋转错误：
 
-\- 可能是因为您将物体的旋转烘焙到动画中（即在动画对象动画化之后进行旋转）。
+- 可能是因为您将物体的旋转烘焙到动画中（即在动画对象动画化之后进行旋转）。
 
 我需要修改我的网格，但它已经被动画化了：
 
-\- 您有两个选择：
+- 您有两个选择：
 
-\- 您可以在“皮肤”修改器下添加一个“编辑多边形”修改器，并在其中进行所有的更改。
+- 您可以在“皮肤”修改器下添加一个“编辑多边形”修改器，并在其中进行所有的更改。
 
-\- 您可以删除皮肤修改器，进行更改，然后重新对网格进行皮肤绑定。
+- 您可以删除皮肤修改器，进行更改，然后重新对网格进行皮肤绑定。
 
 (注意事项)
 
-\- 奇迹电影的可见性动画是基于每个网格进行的，与骨骼动画无关。
+- 奇迹电影的可见性动画是基于每个网格进行的，与骨骼动画无关。
 
-\- 只有附着点动画会与地形相适应（例如驴）。
+- 只有附着点动画会与地形相适应（例如驴）。
 
-\- 注意不要通过更改名称来破坏已存在的动画的特效和声音触发器。
+- 注意不要通过更改名称来破坏已存在的动画的特效和声音触发器。
 
 审批流程
 
@@ -2471,115 +1923,33 @@ __常见问题解答__
 
 每个审批阶段都应发送给负责人、艺术总监、创建概念的概念艺术家和制片人。
 
-**_资产建模清单_**
+**资产建模清单**
 
-_**草图**_
-
- 
-
-根据概念/审查创建模型
-
- 
-
-与类似资产进行比较
-
- 
-
-添加贴花
-
- 
-
-在游戏中测试所有适用条件
-
- 
-
-添加到OneNote - 电子邮件链接
-
- 
-
-审批 #1（需要负责人批准）
-
- 
-
-_**建模**_
-
- 
-
-模型/附件完成
-
- 
-
-纹理符合OneNote指南
-
-*   基础颜色
-    
-*   法线
-    
-*   光泽度
-    
-*   金属度
-    
-
- 
-
-使用模型/附件和游戏设置每个时代的基础瓷砖
-
- 
-
-创建遮挡配置文件
-
- 
-
-创建道路连接点（如果适用）
-
- 
-
-在游戏中测试所有适用条件
-
- 
-
-审批 #1 - 基础瓷砖/资产（需要负责人批准）
-
- 
-
-创建施工和被掠夺状态（如果适用）
-
- 
-
-创建未处理状态（如果适用）
-
- 
-
-创建AO贴图
-
- 
-
-创建自发光/光照贴图
-
- 
-
-添加特效节点
-
-*   如果存在特效，分配特效
-    
-*   如果没有特效，向特效负责人、建筑负责人和制片人发送电子邮件，告知他们可以添加特效。节点应该已经准备就绪。
-    
-
- 
-
-创建动画（如果适用）
-
- 
-
-在游戏中测试所有适用条件
-
- 
-
-添加到OneNote - 电子邮件链接
-
- 
-
-审批 #2（需要负责人批准）
+| **草图** |
+|--|
+| 根据概念/审查创建模型 |
+| 与类似资产进行比较 |
+| 添加贴花 |
+| 在游戏中测试所有适用条件 |
+| 添加到OneNote - 电子邮件链接 |
+| 审批 #1（需要负责人批准） |
+| **建模** |
+| 模型/附件完成 |
+| 纹理符合OneNote指南<br>$~$ $~$ $~$ $~$ ● 基础颜色<br>$~$ $~$ $~$ $~$ ● 基础颜色法线<br>$~$ $~$ $~$ $~$ ● 基础颜色光泽度<br>$~$ $~$ $~$ $~$ ● 基础颜色金属度</br> |
+| 使用模型/附件和游戏设置每个时代的基础瓷砖 |
+| 创建遮挡配置文件 |
+| 创建道路连接点（如果适用） |
+| 在游戏中测试所有适用条件 |
+| 审批 #1 - 基础瓷砖/资产（需要负责人批准） |
+| 创建施工和被掠夺状态（如果适用） |
+| 创建未处理状态（如果适用） |
+| 创建AO贴图 |
+| 创建自发光/光照贴图 |
+| 添加特效节点<br>$~$ $~$ $~$ $~$ ● 基础颜色如果存在特效，分配特效<<br>$~$ $~$ $~$ $~$ ● 基础颜色如果没有特效，向特效负责人、建筑负责人和制片人发送电子邮件，告知他们可以添加特效。节点应该已经准备就绪。</br> |
+| 创建动画（如果适用） |
+| 在游戏中测试所有适用条件 |
+| 添加到OneNote - 电子邮件链接 |
+| 审批 #2（需要负责人批准） |
 
  
 
@@ -2676,20 +2046,18 @@ _**建模**_
 **热键设置：**
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image158.jpg](BuildingsProcess/media/image152.jpg)
-
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image159.jpg](BuildingsProcess/media/image153.jpg)
 
 运行脚本"switchVisibility.ms" → 转到"自定义" → "自定义用户界面" → 转到"键盘"选项卡 → "Madrid Tools" → 将键绑定到可见性切换热键。
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image160.jpg](BuildingsProcess/media/image154.jpg)
-
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image161.jpg](BuildingsProcess/media/image155.jpg)
 
 **将可见性绑定到按钮（Binding Visibility to a Button）：**
 
 转到"工具栏"选项卡 → 将可见性切换拖动到Max工具栏上 → 单击按钮（Go to Toolbars tab  Click and drag Visibility Switch to max tool bar  Click on button）
 
-**_流程_**
+**流程**
 
 墙壁和地面 → 框架 → 脚手架 → 奇迹部件 → 贴花 → 附件 → 相机 → 动画 → 特效 → 辅助附件（Walls & Ground Frames Scaffolding Wonder Pieces Decals Attachments Camera Animations FX Attaching helpers）
 
@@ -2815,12 +2183,8 @@ _**建模**_
 *   ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image174.jpg](BuildingsProcess/media/image168.jpg)
     
 
- 
-
 *   ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image175.jpg](BuildingsProcess/media/image169.jpg)
     
-
- 
 
 *   ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image176.jpg](BuildingsProcess/media/image170.jpg)
     
@@ -2950,7 +2314,7 @@ _**建模**_
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image190.jpg](BuildingsProcess/media/image184.jpg)
 
-**_起重机_**
+**起重机**
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image191.jpg](BuildingsProcess/media/image185.jpg)
 
@@ -2969,7 +2333,7 @@ _**建模**_
 *   仅导出起重机几何体，并将其导出为骨骼。
     
 
-**_道路点辅助器_**
+**道路点辅助器**
 
 ![C:\74741245\F0A4F1AD-AE5D-4B3D-84B4-FD2A3508EFC1_files\image192.jpg](BuildingsProcess/media/image186.jpg)
 
@@ -3147,17 +2511,17 @@ _**建模**_
 
 有三种不同的方式可以设置奇迹电影的场景层次结构，具体取决于您希望它如何工作：
 
-*   **_将对象设置为根骨骼的父级_**：任何作为根骨骼的父级的对象将保持相对于骨骼本身的位置。这意味着这些对象不会单独适应地形。在导入到引擎中时，所有对象将作为单个几何文件导入。
+*   **将对象设置为根骨骼的父级**：任何作为根骨骼的父级的对象将保持相对于骨骼本身的位置。这意味着这些对象不会单独适应地形。在导入到引擎中时，所有对象将作为单个几何文件导入。
     
 
 ![根骨骼地形 子对象不会跟随地形，但会保持相对于根模型的位置 1 根模型将跟随地形](BuildingsProcess/media/image196.png)
 
-*   **_保持对象分离_**：如果您在层次结构中保持所有对象分离，它们将都适应地形。在导入到引擎中时，每个单独的对象将被视为单独的几何文件，如果有许多不同的对象，这将使管理变得有些棘手。
+*   **保持对象分离**：如果您在层次结构中保持所有对象分离，它们将都适应地形。在导入到引擎中时，每个单独的对象将被视为单独的几何文件，如果有许多不同的对象，这将使管理变得有些棘手。
     
 
 ![所有单独的几何体将跟随地形模型 1 根模型 2 地形](BuildingsProcess/media/image197.png)
 
-*   **_将单独的对象作为附件导入_**：为此，您需要为每个单独的对象创建一个附件点，然后将每个附件创建为单独的资产并进行附加。然后，每个附件将适应地形。与仅使用单独的几何体相比，这种方法的主要优点是相同的资产可以多次附加，而不需要为多个副本付费内存。这只有在部件不是唯一的情况下才有意义，并且它们只会被奇迹使用。
+*   **将单独的对象作为附件导入**：为此，您需要为每个单独的对象创建一个附件点，然后将每个附件创建为单独的资产并进行附加。然后，每个附件将适应地形。与仅使用单独的几何体相比，这种方法的主要优点是相同的资产可以多次附加，而不需要为多个副本付费内存。这只有在部件不是唯一的情况下才有意义，并且它们只会被奇迹使用。
     
 
 ![模型 2 附件点 模型 1 附件点 附加的对象（附件）将在其附件点的 x、y 位置上跟随地形 模型 1 根模型 2 地形](BuildingsProcess/media/image198.png)
@@ -3223,7 +2587,7 @@ IDLE动画是奇迹在地图上时播放的动画。这个动画应该是起重�
 
 ![Machine generated alternative text: CROW C Row C Row C Row C Row CROW CROW C Row C Row C Row C Row C Row C Row C Row c Row — Medieval Era—— - Wonders n BUILDING AMPHITHEATER" BUILDING CASTLE" BUILDING AMPHITHEATER" BUILDING AMPHITHEATER DESCRIPTION" DRAMA POETRY" Loc BUILDING CASTLE" BUILDING CASTLE DESCRIPTION" FORTIFICATION" BUILDING uurvrnsl'l%'" BUILDING uurvrnsl'l"l'" BUILDING uurvrnsl'l%' DESCRIPTION" EDUCATION" BUILDING WORKSHOP" BUILDING WORKSHOP" BUILDING WORKSHOP DESCRIPTION" METALWORKING" BUILDING ARMORY" BUILDING ARMORY" BUILDING ARMORY DESCRIPTION" MACHINERY" EN BUILDING SHIPYARD" BUILDING SHIPYARD" BUILDING SHIPYARD DESCRIPTION" ASSEMBLY LINE" BUILDING BANK" BUILDING BANK" BUILDING BANK DESCRIPTION" BANKING" coblERCIAL BUILDING STAR PORT" BUILDING STAR PORT" BUILDING STAR PORT DESCRIPTION" MILITARY ENGINEERING" BUILDING MUSEUM" BUILDING MUSEUM" BUILDING MUSEUM DESCRIPTION" preregcivic—ncrv'lc HUMANISM" the following fields should only be used for wondersÄdjacentDistrict, AdjacentRescurce, Coast, RequiresPIacement NCTE: the follow should NOT be use BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING "BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING ALHAMBRA" BUILDING ALHAMBRA" BUILDING ALHAMBRA DESCRIPTION" FORTIFICATION" CHICHEN BUILDING CHICHEN BUILDING CHICHEN 1'rzA DESCRIPTION" preregcivic—ncrv'lc GUILDS" ME COLOSSEUM" BUILDING COLOSSEUM" BUILDING COLOSSEUM DESCRIPTION" CONSTRUCTION" COLOSSUS" BUILDING COLOSSUS" BUILDING COLOSSUS DESCRIPTION" SHIPBUILDING" FORBIDDEN cl'l%'" BUILDING FORBIDDEN cl'l"l'" BUILDING FORBIDDEN cl'l%' DESCRIPTION" PRINTING" cost:"' GREAT LIBRARY" BUILDING GREAT LIBRARY" BUILDING GREAT LIBRARY DESCRIPTION" preregcivic—ncrv'lc RECORDED HISTORY" GREAT LIGHTHOUSE" BUILDING GREAT LIGHTHOUSE" BUILDING GREAT LIGHTHOUSE DESCRIPTION" CELESTIAL GREAT ZIMBA_BiE" BUILDING GREAT ZIMBABV,E" BUILDING GREAT ZIMBABV,E DESCRIPTION" BANKING" HAGIA SOPHIA" BUILDING HAGIA SOPHIA" BUILDING HAGIA SOPHIA DESCRIPTION" EDUCATION" HANGING GARDENS" BUILDING HANGING GARDENS" BUILDING HANGING GARDENS DESCRIPTION" IRRIGATION" MAHABODHI TEMPLE" BUILDING MAHABODHI TEMPLE" BUILDING MAHABODHI TEMPLE DESCRIPTION" preregcivic—ncrv'lc THEOLOGY' Lac BUILDING Lac BUILDING DRAY-A '240" Maxi') PETRA" BUILDING PETRA" BUILDING PETRA DESCRIPTION" MATHEMATICS" cost:" 240" MaxWozIdInstances—": PYRAMIDS" BUILDING PYRAMIDS" BUILDING PYRAMIDS DESCRIPTION" MASONRY" STONEHENGE" BUILDING STONEHENGE" BUILDING STONEHENGE DESCRIPTION" ASTROLOGY" TAJ MAHAL" BUILDING TAJ MAHAL" BUILDING TAJ MAHAL DESCRIPTION" preregcivic—ncrv'lc HUMANISM" TENOCHTITIÄN" BUILDING TENOCHTITIÄN" BUILDING TENOCHTITIÄN DESCRIPTION" MILITARY TAcT1csn cost: TERRACOTTA ARMY" BUILDING TERRACOTTA ARMY" BUILDING TERRACOTTA ARMY DESCRIPTION" ENGINEERING" ARSENAL" BUILDING ARSENAL" BUILDING ARSENAL DESCRIPTION" ASSEMBLY ](BuildingsProcess/media/image203.png)
 
-我们特别关注标签中的**BuildingType**，这是游戏在尝试确定如何显示奇迹时将要查找的名称。所以在我们的例子中是_**"BUILDING\_ORACLE"**_。
+我们特别关注标签中的**BuildingType**，这是游戏在尝试确定如何显示奇迹时将要查找的名称。所以在我们的例子中是**"BUILDING\_ORACLE"**。
 
 3\. 将您的奇迹电影资产添加到一个包中：
 
@@ -3239,7 +2603,7 @@ IDLE动画是奇迹在地图上时播放的动画。这个动画应该是起重�
 
 ![Machine generated alternative text: AssetEditor - D. Edit View Window TER Mountain Base.mtl TER Mountain Alt Definition Template WonderMovie .'.,'orcerMovie G. tex GameLighting.artdef AssetEditor - D: Window Ctrl Ctrl* Ctrl* Ctrl Ctrl* Edit Won View Undo Redo Copy Paste Delete y x v in G.tex GameLighting.artdef EAT LIBRARY ALHAMBRA CHICHEN ITZA COLOSSEUM COLOSSUS FORBIDDEN CITY GREAT LIGHTHOUSE GREAT ZIMBABWE HAGIA SOPHIA HANGING GARDENS MAHABOOHI TEMPLE MONT ST MICHEL ORACL POTALA PETRA STONEHENGE MAHAL TENOCHTITLAN TERRACOTTA ARMY VENETIAN ARSENAL Delete Ctrl*A aulLOI BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING Select All Add Element Keyboard Shortcuts Load or Save Settings... Reload Project Config Preferences... MAHABOOHI TEMPLE MONT ST MICHEL ORACL POTALA PETRA STONEHENGE MAHAL TENOCHTITLAN TERRACOTTA ARMY VENETIAN ARSENAL a ILOING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING BUILDING ](BuildingsProcess/media/image205.png)
 
-新条目的名称将类似于WonderMovie1，您需要将名称更改为我们从步骤1获得的BuildingType。在我们的例子中，名称应为_**BUILDING\_ORACLE**_。然后点击条目左侧的箭头展开它，并选择属于该条目的资产。在这里，我们需要分配我们在XLP文件中设置的奇迹电影资产。
+新条目的名称将类似于WonderMovie1，您需要将名称更改为我们从步骤1获得的BuildingType。在我们的例子中，名称应为 **BUILDING\_ORACLE**。然后点击条目左侧的箭头展开它，并选择属于该条目的资产。在这里，我们需要分配我们在XLP文件中设置的奇迹电影资产。
 
 保存ArtDef，完成。
 
@@ -3325,1121 +2689,265 @@ Modders（以及你的同事）需要帮助理解我们的数据工作原理。�
 
 ## 资产（Assets）
 
-资产类别
-
-描述
-
-CityBlock
-
-以程序化填充物的形式放置在城市和区域周围。被视为“地标”。有关流程，请参考建筑流程。
-
-Landmark
-
-曾被所有内容使用，现在仅被DynamicGeometry用于样条几何和塔楼。
-
-Leader
-
-RouteDoodad
-
-根据特定规则沿着道路放置，目前仅支持桥梁。被视为“地标”。
-
-StrategicView\_DirectedAsset
-
-表示沿着瓦片（六边形）边缘放置的StrategicView资产，因此需要12个排列组合（一个瓦片的六个边乘以两个迷雾状态，可见和已揭示）。排列组合是封装参数（[StrategicView\_Sprite](#scroll-bookmark-4)纹理），按照罗盘方向命名，例如“北东方向已揭示、北东方向可见、东方向已揭示、东方向可见、东南方向已揭示等）。游戏中使用的示例包括桥梁和悬崖。 [StrategicVIew.artdef](#scroll-bookmark-5)的TerrainBlends、Features和Improvements集合引用了有向资产XLP条目。
-
-StrategicView\_Route
-
-表示StrategicView道路，连接每个瓦片（六边形）边缘的中点。由于道路可以镜像，并且在大多数情况下穿过瓦片中心，只需要8个排列组合（4个道路段乘以两个迷雾状态，可见和已揭示）。这四个道路段是：
-
-*   西北到东北瓦片边缘
-    
-*   东北到东边瓦片边缘
-    
-*   西北瓦片边缘到瓦片中心
-    
-*   西边瓦片边缘到瓦片中心
-    
-
-游戏中使用的示例包括道路。 [StrategicVIew.artdef](#scroll-bookmark-5)的Routes集合引用了道路XLP条目。
-
-StrategicView\_TerrainBlend
-
-表示包含70个封装参数的StrategicView地形混合，可以使用17、31或70个纹理填充，代表不同的地形混合类别（参见[StrategicView地形概述](https://hub.take2games.com/display/FXSMadrid/Terrain+Overview)和**基础游戏的Art OneNote的StrategicView → 生成地形混合部分**）。 [StrategicVIew.artdef](#scroll-bookmark-5)的TerrainBlends集合引用了地形混合XLP条目。
-
-StrategicView\_TerrainBlendCorners
-
-表示共享的地形混合角，包含4个封装参数（参见[StrategicView地形概述](https://hub.take2games.com/display/FXSMadrid/Terrain+Overview)和**基础游戏的Art OneNote的StrategicView → 生成地形混合部分**）。 [StrategicVIew.artdef](#scroll-bookmark-5)的TerrainBlendCorners集合引用了地形混合角XLP条目。不太可能需要创建或修改任何地形混合角资产。
-
-TerrainElementAsset
-
-表示的资产
-
-TileBase
-
-作为区域、建筑物、改进等放置。可以附加到其他TileBase资产。被视为“地标”。有关流程，请参考建筑流程。
-
-UILensAsset
-
-描述给定“镜头”要打开/关闭的镜头层。
-
-Unit
-
-VFX
-
-表示由视觉效果系统管理或可以由粒子效果系统生成的资产。VFX资产不需要具有dsg、几何、动画或粒子效果。
-
-WonderMovie
-
-表示游戏中用于代表世界奇观的资产。这些资产通常具有WonderMovie几何类和WonderMovieCamera几何类的相机信息。通常，相机和基础几何来自同一个3DS Max文件，但位于不同的层次结构中。还可以将DecalGeometry资产类的几何添加到此资产中。直接添加到WonderMovie资产的DecalGeometry在游戏中放置时始终可见。此外，可以将附加几何（来自TileBase资产类）添加到WonderMovie资产中。附加几何（以及与之关联的任何贴花）仅在附加点几何可见时才可见（由WonderMovie资产状态定义），并且附加点本身可见（由揭示动画可见性定义）。还请注意，连接类型为ROAD的附件将在游戏中立即作为连接点添加（而不管与之关联的附加点的可见性如何）。
-
-请注意，奇观电影资产在游戏中放置时不需要动画或相机动画；但是，至少需要一个基础几何才能正常工作。
-
-建设过程中的视觉进度变化 - 在建造奇观的过程中，它所达到的建造进度被归一化，并用于采样与其揭示动画相关的可见性轨迹，以确定应显示哪些几何体。此外，附加点骨骼的可见性与附加到可见骨骼的附加效果的显示相关。附加点可见性信息很重要，因为它允许建造动画循环并在不可见骨骼上剔除对可见骨骼的视觉效果的调用。
-
-以下信息可用于确定放置奇观资产时的状态：
-
-*   奇观揭示之前：
-    
-    *   资产状态：UNWORKED（TileBase和所有DecalGeometry相同）
-        
-    *   DSG状态：ANY → CONSTRUCTION（TileBase：ANY → UNWORKED）
-        
-*   奇观揭示期间：
-    
-    *   资产(Asset)状态：UNWORKED（TileBase和所有DecalGeometry相同）
-        
-    *   DSG状态：ANY → REVEAL（TileBase：ANY → CONSTRUCTION）
-        
-*   奇观完全揭示后：
-    
-    *   资产状态：COMPLETE（TileBase和所有DecalGeometry相同）
-        
-    *   DSG状态：ANY → COMPLETE（TileBase：ANY → UNWORKED）
-        
+| **资产类别**                          | **描述**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CityBlock                         | 以程序化填充物的形式放置在城市和区域周围。被视为“地标”。有关流程，请参考建筑流程。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Landmark                          | 曾被所有内容使用，现在仅被DynamicGeometry用于样条几何和塔楼。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Leader                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| RouteDoodad                       | 根据特定规则沿着道路放置，目前仅支持桥梁。被视为“地标”。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| StrategicView_DirectedAsset       | 表示沿着瓦片（六边形）边缘放置的StrategicView资产，因此需要12个排列组合（一个瓦片的六个边乘以两个迷雾状态，可见和已揭示）。排列组合是封装参数（StrategicView_Sprite纹理），按照罗盘方向命名，例如“北东方向已揭示、北东方向可见、东方向已揭示、东方向可见、东南方向已揭示等）。游戏中使用的示例包括桥梁和悬崖。 StrategicVIew.artdef的TerrainBlends、Features和Improvements集合引用了有向资产XLP条目。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| StrategicView_Route               | 表示StrategicView道路，连接每个瓦片（六边形）边缘的中点。由于道路可以镜像，并且在大多数情况下穿过瓦片中心，只需要8个排列组合（4个道路段乘以两个迷雾状态，可见和已揭示）。这四个道路段是：<br>$~$ $~$●  西北到东北瓦片边缘</br><br>$~$ $~$●  东北到东边瓦片边缘</br><br>$~$ $~$●  西北瓦片边缘到瓦片中心</br><br>$~$ $~$●  西边瓦片边缘到瓦片中心</br><br>游戏中使用的示例包括道路。 StrategicVIew.artdef的Routes集合引用了道路XLP条目。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| StrategicView_TerrainBlend        | 表示包含70个封装参数的StrategicView地形混合，可以使用17、31或70个纹理填充，代表不同的地形混合类别（参见StrategicView地形概述和基础游戏的Art OneNote的StrategicView → 生成地形混合部分）。 StrategicVIew.artdef的TerrainBlends集合引用了地形混合XLP条目。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| StrategicView_TerrainBlendCorners | 表示共享的地形混合角，包含4个封装参数（参见StrategicView地形概述和基础游戏的Art OneNote的StrategicView → 生成地形混合部分）。 StrategicVIew.artdef的TerrainBlendCorners集合引用了地形混合角XLP条目。不太可能需要创建或修改任何地形混合角资产。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| TerrainElementAsset               | 表示的资产                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| TileBase                          | 作为区域、建筑物、改进等放置。可以附加到其他TileBase资产。被视为“地标”。有关流程，请参考建筑流程。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| UILensAsset                       | 描述给定“镜头”要打开/关闭的镜头层。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Unit                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| VFX                               | 表示由视觉效果系统管理或可以由粒子效果系统生成的资产。VFX资产不需要具有dsg、几何、动画或粒子效果。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| WonderMovie                       | 表示游戏中用于代表世界奇观的资产。这些资产通常具有WonderMovie几何类和WonderMovieCamera几何类的相机信息。通常，相机和基础几何来自同一个3DS Max文件，但位于不同的层次结构中。还可以将DecalGeometry资产类的几何添加到此资产中。直接添加到WonderMovie资产的DecalGeometry在游戏中放置时始终可见。此外，可以将附加几何（来自TileBase资产类）添加到WonderMovie资产中。附加几何（以及与之关联的任何贴花）仅在附加点几何可见时才可见（由WonderMovie资产状态定义），并且附加点本身可见（由揭示动画可见性定义）。还请注意，连接类型为ROAD的附件将在游戏中立即作为连接点添加（而不管与之关联的附加点的可见性如何）。<br>请注意，奇观电影资产在游戏中放置时不需要动画或相机动画；但是，至少需要一个基础几何才能正常工作。</br><br>建设过程中的视觉进度变化 - 在建造奇观的过程中，它所达到的建造进度被归一化，并用于采样与其揭示动画相关的可见性轨迹，以确定应显示哪些几何体。此外，附加点骨骼的可见性与附加到可见骨骼的附加效果的显示相关。附加点可见性信息很重要，因为它允许建造动画循环并在不可见骨骼上剔除对可见骨骼的视觉效果的调用。</br><br>  以下信息可用于确定放置奇观资产时的状态：</br><br>$~$ $~$●  奇观揭示之前：</br><br>$~$ $~$ $~$ $~$○   资产状态：UNWORKED（TileBase和所有DecalGeometry相同）</br><br>$~$ $~$ $~$ $~$○   DSG状态：ANY → CONSTRUCTION（TileBase：ANY → UNWORKED）</br><br>$~$ $~$●  奇观揭示期间：</br><br>$~$ $~$ $~$ $~$○   资产(Asset)状态：UNWORKED（TileBase和所有DecalGeometry相同）</br><br>$~$ $~$ $~$ $~$○   DSG状态：ANY → REVEAL（TileBase：ANY → CONSTRUCTION）</br><br>$~$ $~$●  奇观完全揭示后：</br><br>$~$ $~$ $~$ $~$○   资产状态：COMPLETE（TileBase和所有DecalGeometry相同）</br><br>$~$ $~$ $~$ $~$○   DSG状态：ANY → COMPLETE（TileBase：ANY → UNWORKED）|
 
 ## 材质（Materials）
 
-材质类别
-
-描述
-
-BurnMaterial（烧焦材质）
-
-烧焦材质可使现有材质呈现烧焦效果。它包含一组纹理，用于覆盖烧焦区域的材质纹理，并包含一组参数，用于控制用于在烧焦和非烧焦材质之间混合的程序噪声。任何具有烧焦材质的资产都将应用程序噪声烧焦效果。
-
-程序噪声烧焦效果还依赖于一些资产级参数，这些参数在CityBlock和Landmark资产的封装参数中指定。这些参数包括：
-
-*   GradientScale（渐变比例）：控制烧焦效果混合的速度。较高的比例会导致从烧焦到非烧焦的过渡更加锐利。
-    
-*   BurnEdgeBlend（烧焦边缘混合）：
-    
-*   BurnHeight（烧焦高度）：控制烧焦效果从资产底部开始混合的高度
-    
-
-DecalMaterial（贴花材质）
-
-用于放置在地形上的贴花的材质。
-
-FOWLineDrawing（迷雾线条绘制）
-
-该材质控制在几何体上绘制的迷雾笔画类型。FOW材质可用于禁用翅膀笔画、鳍笔画或两者。默认的FOWLineDrawing材质绘制两种笔画类型。常见的用途是在诸如小麦等使用Alpha测试的几何体上禁用FOW笔画。这是为了防止绘制基础几何体的轮廓。
-
-您还可以通过省略材质来防止几何体在FOW中出现。如果材质为空，则几何体在FOW中完全不可见。
-
-有关更多信息，请参阅“LandmarkModel”几何体类的文档。
-
-Landmark（地标）
-
-用于所有被视为“地标”的资产的材质。
-
-Leader（领导者）
-
-Leader\_Cloth（领导者\_布料）
-
-Leader\_Glass（领导者\_玻璃）
-
-Leader\_Hair（领导者\_头发）
-
-Leader\_Matte（领导者\_哑光）
-
-Leader\_Skin（领导者\_皮肤）
-
-RiverWater（河水）
-
-用于河流的简化水材质变体。
-
-SnowMaterial（雪材质）
-
-雪材质是一个占位符。如果将雪材质分配给三角形组，则会应用程序噪声雪效果。否则，将不会应用。如果存在程序噪声雪着色器的设置，则在资产级别指定。
-
-TerrainElement（地形元素）
-
-手工建造的地形局部区域，与程序化地形混合。
-
-TerrainMaterial（地形材质）
-
-由TerrainElement或程序化地形层使用的地形材质。
-
-UILensMaterial（UI镜头材质）
-
-用于UI镜头模型资产的简单材质，例如移动环。
-
-Unit（单位）
-
-VFXModel（视觉特效模型）
-
-表示与VFX相关内容使用的较基本版本的材质。
-
-VFXModel\_FX（视觉特效模型\_FX）
-
-表示与VFX相关内容的更高级版本的材质。该材质包含额外的功能，如多个纹理层、UV滚动和Alpha模式选择。
-
-Water（水）
-
-用于海洋、浅滩、湖泊和自然奇观等水体的水材质控制。
-
-WaveMaterial（波浪材质）
-
-指定用于沿海波浪的纹理图集的材质。波浪图集被视为灰度图像，仅使用红色通道。
+| **材质类别**               | **描述**                                                                                                                                                                                                                                                                                    |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BurnMaterial（烧焦材质）     | 烧焦材质可使现有材质呈现烧焦效果。它包含一组纹理，用于覆盖烧焦区域的材质纹理，并包含一组参数，用于控制用于在烧焦和非烧焦材质之间混合的程序噪声。任何具有烧焦材质的资产都将应用程序噪声烧焦效果。<br>程序噪声烧焦效果还依赖于一些资产级参数，这些参数在CityBlock和Landmark资产的封装参数中指定。这些参数包括：</br><br>$~$ $~$● GradientScale（渐变比例）：控制烧焦效果混合的速度。较高的比例会导致从烧焦到非烧焦的过渡更加锐利。</br><br> $~$ $~$●  BurnEdgeBlend（烧焦边缘混合）：</br><br>$~$ $~$●  BurnHeight（烧焦高度）：控制烧焦效果从资产底部开始混合的高度|
+| DecalMaterial（贴花材质）    | 用于放置在地形上的贴花的材质。                                                                                                                                                                                                                                                                           |
+| FOWLineDrawing（迷雾线条绘制） | 该材质控制在几何体上绘制的迷雾笔画类型。FOW材质可用于禁用翅膀笔画、鳍笔画或两者。默认的FOWLineDrawing材质绘制两种笔画类型。常见的用途是在诸如小麦等使用Alpha测试的几何体上禁用FOW笔画。这是为了防止绘制基础几何体的轮廓。<br>您还可以通过省略材质来防止几何体在FOW中出现。如果材质为空，则几何体在FOW中完全不可见。</br><br>有关更多信息，请参阅“LandmarkModel”几何体类的文档。                                                                                |
+| Landmark（地标）           | 用于所有被视为“地标”的资产的材质。                                                                                                                                                                                                                                                                        |
+| Leader（领导者）            |
+| Leader_Cloth（领导者_布料）   |
+| Leader_Glass（领导者_玻璃）   |
+| Leader_Hair（领导者_头发）    |
+| Leader_Matte（领导者_哑光）   |
+| Leader_Skin（领导者_皮肤）    |
+| RiverWater（河水）         | 用于河流的简化水材质变体。                                                                                                                                                                                                                                                                             |
+| SnowMaterial（雪材质）      | 雪材质是一个占位符。如果将雪材质分配给三角形组，则会应用程序噪声雪效果。否则，将不会应用。如果存在程序噪声雪着色器的设置，则在资产级别指定。                                                                                                                                                                                                                    |
+| TerrainElement（地形元素）   | 手工建造的地形局部区域，与程序化地形混合。                                                                                                                                                                                                                                                                     |
+| TerrainMaterial（地形材质）  | 由TerrainElement或程序化地形层使用的地形材质。                                                                                                                                                                                                                                                            |
+| UILensMaterial（UI镜头材质） | 用于UI镜头模型资产的简单材质，例如移动环。                                                                                                                                                                                                                                                                    |
+| Unit（单位）               |
+| VFXModel（视觉特效模型）       | 表示与VFX相关内容使用的较基本版本的材质。                                                                                                                                                                                                                                                                    |
+| VFXModel_FX（视觉特效模型_FX） | 表示与VFX相关内容的更高级版本的材质。该材质包含额外的功能，如多个纹理层、UV滚动和Alpha模式选择。                                                                                                                                                                                                                                     |
+| Water（水）               | 用于海洋、浅滩、湖泊和自然奇观等水体的水材质控制。                                                                                                                                                                                                                                                                 |
+| WaveMaterial（波浪材质）     | 指定用于沿海波浪的纹理图集的材质。波浪图集被视为灰度图像，仅使用红色通道。
 
 ## 几何体（Geometry）
 
-几何体类别
-
-描述
-
-DecalGeometry（贴花几何体）
-
-表示可用于地形贴花的几何体类别。
-
-LandmarkModel（地标模型）
-
-表示用于建筑物、杂物、城市街区和其他类似元素的几何体类别。地标模型几何体类别可能在FOW中可见。FOW中的地标模型将使用其BaseColor贴图与羊皮纸纹理混合进行渲染。它们还会在网格边缘上渲染“笔画”。
-
-有两种类型的FOW笔画：
-
-*   翅膀笔画：翅膀笔画的目的是突出模型的重要特征，如尖角和屋顶线条。翅膀笔画在以下情况下生成：
-    
-    *   连接到仅一个三角形的边缘
-        
-    *   连接到3个或更多个三角形的边缘（“风车”形状）
-        
-    *   具有两个三角形的边缘，其中三角形之间的角度超过给定阈值。
-        
-
-*   鳍笔画：鳍笔画为网格中连接两个三角形的每条边缘生成。鳍笔画的目的是突出模型的轮廓。只有当边缘是轮廓线时，鳍笔画才会被渲染，这意味着一个三角形是背面的，另一个是正面的。
-    
-
-FOWLineDrawing（FOW线条绘制）材质控制着渲染的笔画类型（翅膀或鳍），而几何体类别定义了控制笔画放置的参数：
-
-*   FOWForceThreshold（FOW强制阈值）：当相邻面之间的角度大于此值时，FOW笔画会被“强制”（始终绘制）。
-    
-*   FOWFlatThreshold（FOW平坦阈值）：当相邻面之间的角度小于或等于此值时，FOW笔画不会被绘制。此测试用于防止共面多边形之间出现虚假边缘。
-    
-
-LandmarkObstructionProfile（地标遮挡配置）
-
-指示一个区域，通常在TileBase资源上，其他资源不能占据该区域。该区域必须是XY平面的，每个顶点的Z坐标必须相同。
-
-Leader\_ShadowVolume（领袖阴影体积）
-
-UILensModel（UI镜头模型）
-
-Unit（单位）
-
-VFXModel（视觉效果模型）
-
-表示可添加到与视觉效果相关的内容的几何体类别。在游戏和资源编辑器中，当放置VFX资源时，它们将以默认资源状态放置。
-
-WonderMovieCamera（奇迹电影摄像机）
-
-表示可用于奇迹相关内容的摄像机几何体类别。
-
-WonderMovieModel（奇迹电影模型）
-
-表示可用于奇迹相关内容的基础骨架/网格的几何体类别。
-
-附加导出信息 - 确保具有可见性信息的对象具有唯一的名称；否则，系统将无法正确获取可见性信息。此外，为了在3DS Max中导出骨骼的可见性，您需要创建一个具有可见性的网格，并在模型管理器中为这些网格设置“导出为骨骼”的选项。
+| **几何体类别**                          | **描述**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DecalGeometry（贴花几何体）               | 表示可用于地形贴花的几何体类别。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| LandmarkModel（地标模型）                | 表示用于建筑物、杂物、城市街区和其他类似元素的几何体类别。地标模型几何体类别可能在FOW中可见。FOW中的地标模型将使用其BaseColor贴图与羊皮纸纹理混合进行渲染。它们还会在网格边缘上渲染“笔画”。<br>有两种类型的FOW笔画：</br><br>$~$ $~$ $~$ $~$● 翅膀笔画：翅膀笔画的目的是突出模型的重要特征，如尖角和屋顶线条。翅膀笔画在以下情况下生成：</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  连接到仅一个三角形的边缘</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  连接到3个或更多个三角形的边缘（“风车”形状）</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  具有两个三角形的边缘，其中三角形之间的角度超过给定阈值。</br><br>$~$ $~$ $~$ $~$● 鳍笔画：鳍笔画为网格中连接两个三角形的每条边缘生成。鳍笔画的目的是突出模型的轮廓。只有当边缘是轮廓线时，鳍笔画才会被渲染，这意味着一个三角形是背面的，另一个是正面的。</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  FOWLineDrawing（FOW线条绘制）材质控制着渲染的笔画类型（翅膀或鳍），而几何体类别定义了控制笔画放置的参数：</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  FOWForceThreshold（FOW强制阈值）：当相邻面之间的角度大于此值时，FOW笔画会被“强制”（始终绘制）。</br><br>$~$ $~$ $~$ $~$ $~$ $~$○  FOWFlatThreshold（FOW平坦阈值）：当相邻面之间的角度小于或等于此值时，FOW笔画不会被绘制。此测试用于防止共面多边形之间出现虚假边缘。</br>|
+| LandmarkObstructionProfile（地标遮挡配置） | 指示一个区域，通常在TileBase资源上，其他资源不能占据该区域。该区域必须是XY平面的，每个顶点的Z坐标必须相同。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Leader_ShadowVolume（领袖阴影体积）        |
+| UILensModel（UI镜头模型）                |
+| Unit（单位）                           |
+| VFXModel（视觉效果模型）                   | 表示可添加到与视觉效果相关的内容的几何体类别。在游戏和资源编辑器中，当放置VFX资源时，它们将以默认资源状态放置。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| WonderMovieCamera（奇迹电影摄像机）         | 表示可用于奇迹相关内容的摄像机几何体类别。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| WonderMovieModel（奇迹电影模型）           | 表示可用于奇迹相关内容的基础骨架/网格的几何体类别。<br>附加导出信息 - 确保具有可见性信息的对象具有唯一的名称；否则，系统将无法正确获取可见性信息。此外，为了在3DS Max中导出骨骼的可见性，您需要创建一个具有可见性的网格，并在模型管理器中为这些网格设置“导出为骨骼”的选项。</br>|
 
 ## 动画（Animation）
 
-动画类别
-
-描述
-
-地标（Landmark）
-
-可以添加到任何被视为“地标”的资产的动画类别。
-
-领导者（Leader）
-
-单位（Unit）
-
-VFX
-
-表示可以添加到与视觉效果相关的内容的动画类别。
-
-奇迹电影（WonderMovie）
-
-表示可以添加到与奇迹相关的内容的动画类别。
+| **动画类别**          | **描述**                  |
+|-------------------|-------------------------|
+| 地标（Landmark）      | 可以添加到任何被视为“地标”的资产的动画类别。 |
+| 领导者（Leader）       |
+| 单位（Unit）          |
+| VFX               | 表示可以添加到与视觉效果相关的内容的动画类别。 |
+| 奇迹电影（WonderMovie） | 表示可以添加到与奇迹相关的内容的动画类别。   |
 
 ## DSG（状态图）
 
-DSG类
-
-描述
-
-Clutter（杂物）
-
-Landmark（地标）
-
-用于任何被视为“地标”的资产的状态图类。
-
-LeaderDSG（领导者状态图）
-
-TerrainElementAsset（地形元素资产）
-
-用于任何被视为“地形元素资产”的资产的状态图类。
-
-Unit（单位）
-
-VFX（视觉特效）
-
-表示可添加到与VFX相关的上下文中的状态图类。在游戏和资产编辑器(Asset Editor)中，当放置VFX资产时，它们将应用从ANY到IDLE的状态图转换。
-
-WonderMovie（奇迹电影）
-
-表示可添加到与奇迹相关内容中的状态图类。
+| **DSG类**                    | **描述**                                                                          |
+|-----------------------------|---------------------------------------------------------------------------------|
+| Clutter（杂物）                 |
+| Landmark（地标）                | 用于任何被视为“地标”的资产的状态图类。                                                            |
+| LeaderDSG（领导者状态图）           |
+| TerrainElementAsset（地形元素资产） | 用于任何被视为“地形元素资产”的资产的状态图类。                                                        |
+| Unit（单位）                    |
+| VFX（视觉特效）                   | 表示可添加到与VFX相关的上下文中的状态图类。在游戏和资产编辑器(Asset Editor)中，当放置VFX资产时，它们将应用从ANY到IDLE的状态图转换。 |
+| WonderMovie（奇迹电影）           | 表示可添加到与奇迹相关内容中的状态图类。                                                            |
 
 ## Texture（纹理）
 
-Texture Class（纹理类别）
-
-Description（描述）
-
-ColorKey（颜色键）
-
-颜色键纹理用于实现表格化的颜色校正。要生成颜色键，您需要通过游戏内的调试控制台拍摄特殊截图。打开控制台并输入'screenshot colorkey'，这将在您的截图目录中生成一个图像文件，其中包含游戏截图和嵌入的颜色表。您可以对生成的图像进行颜色校正，并使用资产编辑器(Asset Editor)导入它。资产编辑器(Asset Editor)将从导入的图像中提取颜色表并丢弃其余部分。
-
-Decal\_BaseColor（贴花基色）
-
-此纹理类别定义了贴花材质的基色。基色用于调整漫反射光照。它是一个带有透明度的sRGB颜色图像。
-
-Decal\_FOWColor（贴花FOW颜色）
-
-此纹理类别定义了贴花材质在战争迷雾（FOW）中的颜色。当地形处于FOW状态时，此纹理用于直接设置地形的颜色，而不进行光照。它是一个带有透明度的sRGB颜色图像。
-
-Decal\_Heightmap（贴花高度图）
-
-此纹理类别定义了贴花材质的详细高度数据，在生成法线贴图之前与地形混合。它是一个线性纹理，其中红色通道表示高度，alpha通道表示混合值。
-
-Decal\_Spec（贴花高光）
-
-此纹理类别定义了贴花材质的高光。白色像素表示光泽，黑色像素表示无光泽。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，并使用CLEAN映射对其进行滤波，以避免在缩小纹理的常见情况下丢失高光。高光效果应该类似于GGX，但可能不会产生完全匹配。
-
-FOW（战争迷雾）
-
-此纹理类别用于战争迷雾的羊皮纸和图案纹理。
-
-FOWGreyscale（战争迷雾灰度）
-
-一种只有一个颜色通道的灰度战争迷雾纹理。这也可以用于羊皮纸和图案纹理。
-
-FOWSprite（战争迷雾精灵）
-
-此纹理类别用于战争迷雾的精灵。
-
-Generic\_AO（通用环境光遮蔽）
-
-此纹理类别用于环境光遮蔽纹理。它是一个灰度图像，由着色器解释为线性值。
-
-Generic\_BaseColor（通用基色）
-
-此纹理类别用于基色。基色用于调整漫反射光照。在金属表面上，漫反射光照被禁用，基色代替地调整高光光照。基色贴图是一个sRGB颜色图像。
-
-Generic\_BurnMap（通用烧伤贴图）
-
-此纹理类别定义了与基色混合的备用基色贴图，用于实现程序化的烧伤效果。它是一个sRGB颜色图像，在转换为线性颜色空间后与基色混合。
-
-Generic\_Emissive（通用自发光）
-
-此纹理类别用于具有自发光表面（如照明窗户）。它是一个sRGB颜色图像。自发光颜色在转换为线性颜色空间后直接添加到着色结果中。
-
-Generic\_Gloss（通用光泽）
-
-此纹理类别用于光泽效果。白色像素表示光泽，黑色像素表示无光泽。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，并使用CLEAN映射对其进行滤波，以避免在缩小纹理的常见情况下丢失高光。高光效果应该类似于GGX，但可能不会产生完全匹配。
-
-Generic\_LightMap（通用光照贴图）
-
-此纹理类别用于预计算的全局光照，适用于建筑纹理。它是一个sRGB颜色图像，在转换为线性空间后通过基色进行调制。
-
-Generic\_Metalness（通用金属度）
-
-此纹理类别用于标记表面的金属区域。它是一个灰度图像，由着色器解释为线性值。
-
-Generic\_Normal（通用法线贴图）
-
-这是一个法线贴图。它将由资产封装器进行后处理，生成一个CLEAN贴图。
-
-Generic\_OPAC（通用不透明度贴图）
-
-这是一个不透明度贴图。它是一个灰度图像，由着色器解释为线性值。Civ6使用基于MSAA覆盖掩码导出的屏幕门透明度，因此可用的不透明度级别与用户在图形选项中选择的MSAA级别成比例。在极限情况下，当禁用MSAA时，此技术退化为经典的Alpha测试。因此，具有混合边缘的高对比度贴图效果最佳。中间色调和细微的图案通常无法很好地解析。
-
-Generic\_TintMask（通用着色蒙版）
-
-此纹理类别用于在基色和外部定义的“着色颜色”之间进行混合。它是一个灰度图像，由着色器解释为线性值。单位材质还支持一个半透明模式，可以在帆等物体上实现背光和次表面散射等效果。在半透明模式下，着色蒙版被重新用作半透明蒙版。
-
-Leader\_Anisotropy（领袖各向异性）
-
-Leader\_AO（领袖环境光遮蔽）
-
-Leader\_BaseColor（领袖基色）
-
-Leader\_BlurWidth（领袖模糊宽度）
-
-Leader\_Fallback（领袖备用）
-
-Leader\_FilmGrain（领袖胶片颗粒）
-
-Leader\_Fuzz（领袖模糊）
-
-Leader\_Gloss（领袖光泽）
-
-Leader\_Metalness（领袖金属度）
-
-Leader\_Normal（领袖法线贴图）
-
-Leader\_OPAC（领袖不透明度贴图）
-
-Leader\_Tangent（领袖切线）
-
-Leader\_Tint（领袖着色）
-
-Leader\_Translucency（领袖半透明）
-
-Overlay（叠加层）
-
-用于文化边界、移动镜头、准星和其他各种游戏内叠加层的纹理。
-
-SkyboxTexture2D（天空盒纹理）
-
-用作“天空盒”的纹理。这是通过世界地图的顶部和底部可见的背景纹理。此类纹理被封装到'SkyboxTexture' XLP中。
-
-StrategicView\_CultureBorder（战略视图文化边界）
-
-一个2D的、256x256的RGBA8纹理，表示在StrategicView\_TerrainBlend资产中使用的文化边界掩码。
-
-StrategicView\_Riverbank（战略视图河岸）
-
-一个2D的、256x256的RGBA8纹理，表示在StrategicView\_TerrainBlend资产中使用的河岸和海岸线掩码。
-
-StrategicView\_Sprite（战略视图精灵）
-
-一个2D的RGBA8纹理，尺寸可变（4x4 - 4096x4096），表示战略视图中使用的任何精灵（地貌、改良、建筑等）。主要通过StrategicView.artdef的各种集合中的StrategicView\_Sprite XLP条目进行引用。请参阅“Base game's Art OneNote”的“StrategicView → How to Get Art into the Strategic View → Photoshop File Organization for Sprites and Terrain Types”和“Importing New Sprites and Terrain Types into the Asset Cloud”部分。
-
-StrategicView\_TerrainBlend（战略视图地形混合）
-
-一个2D的、256x256的RGBA8纹理，表示在StrategicView\_TerrainBlend资产中使用的地形混合掩码。
-
-StrategicView\_TerrainType（战略视图地形类型）
-
-一个2D的RGBA8纹理，尺寸可变（4x4 - 4096x4096），表示地形类型（草地、平原、雪地等）。主要通过StrategicVIew.artdef的TerrainType集合中的StrategicView\_TerrainType XLP条目进行引用。
-
-Terrain\_BaseColor（地形基色）
-
-这个纹理类定义了地形材质的基色。基色用于调节漫反射光照。它是一个sRGB颜色图像。
-
-Terrain\_FOWColor（地形FOW颜色）
-
-这个纹理类定义了地形材质的FOW颜色。当地形处于FOW状态时，该纹理用于直接设置地形的颜色，没有光照效果。它是一个sRGB颜色图像。
-
-Terrain\_Fuzz（地形模糊）
-
-Terrain\_Heightmap（地形高度图）
-
-这个纹理类定义了用于生成法线贴图的地形材质详细高度数据。它是一个线性纹理，其中红色通道表示高度，黑色较低，白色较高。
-
-Terrain\_Spec（地形光泽）
-
-这个纹理类定义了地形材质的光泽度。白色像素是有光泽的，黑色像素是暗淡的。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，使用CLEAN映射进行滤波，以避免在缩小纹理的情况下丢失镜面效果。镜面效果应该与GGX类似，但可能不会产生一对一的匹配。
-
-TerrainElementBlendmap（地形元素混合图）
-
-这个纹理类定义了用于驱动TerrainElementHeightmap混合的混合图。
-
-TerrainElementHeightmap（地形元素高度图）
-
-这个纹理类定义了用于定义地形几何体高度的高度图。
-
-TerrainElementIDMap（地形元素ID图）
-
-这个纹理类定义了在特定地形区域中应绘制哪些地形材质。它是一个带有alpha通道的线性纹理，其中alpha通道用于标识每个像素使用的材质。alpha通道必须设置为有效的AlphaIdentifier（参见TerrainMaterial）或0以保留现有材质。
-
-TerrainElementNoise2D（地形元素噪声纹理）
-
-这个纹理类定义了在一些程序生成的地形通道中使用的噪声纹理。它是一个线性纹理，红色和绿色通道中包含噪声。
-
-UserInterface（用户界面）
-
-UI纹理可以以两种不同的方式进行编码：
-
-*   可缩放：纹理存储在图集中，使用TexturePadding和IsStandalone参数控制如何与其他纹理配合。这种格式非常适合需要旋转或缩放超过原始分辨率两倍的纹理。
-    
-*   压缩：纹理进行块压缩，大大减少了内存占用，特别是对于具有大量重复图案区域的纹理。这种格式只能进行点和双线性过滤，因此需要大量旋转/缩放的纹理应标记为可缩放。
-    
-
-VFXParticle\_BaseColor（VFX粒子基色）
-
-VFX纹理资产的颜色映射。
-
-VFXParticle\_Mask（VFX粒子遮罩）
-
-VFXModel\_FX材质使用的灰度图，用于图层遮罩。
-
-VFXParticle\_Ramp（VFX粒子渐变）
-
-VFXModel\_FX材质用于在生命周期内混合颜色的颜色渐变。这是一个一维纹理，只使用顶部一行像素。
-
-Water\_Color（水体颜色）
-
-此纹理类不再使用。在项目配置中声明但未引用。请删除！
-
-WaterDensityMap（水体密度图）
-
-该图控制光线在不同水深处的吸收或衰减速度。它是一个一维纹理，只使用顶部一行像素。左侧是水表面，右侧是由“DensityMapRange”参数指定的深度（低于此深度的部分被夹紧）。您应根据特定水类型所需的精细控制程度设置DensityMapRange。
-
-高密度值会使物体看起来像颜色反转。这意味着纯蓝色的图像会导致水下物体呈现黄色，因为它们没有蓝光照射。它们在水下越深，呈黄色的程度就越高。颜色通道与alpha通道相乘，以给出密度图的实际值。颜色可以用于控制色调，而alpha可以控制强度。
-
-## 行为（Behaviors）
-
-行为类别
-
-描述
-
-Unit（单位）
+| **Texture Class（纹理类别）**               | **Description（描述）**                                                                                                                                                                                                                                                                                                                            |
+|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ColorKey（颜色键）                         | 颜色键纹理用于实现表格化的颜色校正。要生成颜色键，您需要通过游戏内的调试控制台拍摄特殊截图。打开控制台并输入'screenshot colorkey'，这将在您的截图目录中生成一个图像文件，其中包含游戏截图和嵌入的颜色表。您可以对生成的图像进行颜色校正，并使用资产编辑器(Asset Editor)导入它。资产编辑器(Asset Editor)将从导入的图像中提取颜色表并丢弃其余部分。                                                                                                                                              |
+| Decal_BaseColor（贴花基色）                 | 此纹理类别定义了贴花材质的基色。基色用于调整漫反射光照。它是一个带有透明度的sRGB颜色图像。                                                                                                                                                                                                                                                                                                |
+| Decal_FOWColor（贴花FOW颜色）               | 此纹理类别定义了贴花材质在战争迷雾（FOW）中的颜色。当地形处于FOW状态时，此纹理用于直接设置地形的颜色，而不进行光照。它是一个带有透明度的sRGB颜色图像。                                                                                                                                                                                                                                                               |
+| Decal_Heightmap（贴花高度图）                | 此纹理类别定义了贴花材质的详细高度数据，在生成法线贴图之前与地形混合。它是一个线性纹理，其中红色通道表示高度，alpha通道表示混合值。                                                                                                                                                                                                                                                                           |
+| Decal_Spec（贴花高光）                      | 此纹理类别定义了贴花材质的高光。白色像素表示光泽，黑色像素表示无光泽。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，并使用CLEAN映射对其进行滤波，以避免在缩小纹理的常见情况下丢失高光。高光效果应该类似于GGX，但可能不会产生完全匹配。                                                                                                                                                                                             |
+| FOW（战争迷雾）                             | 此纹理类别用于战争迷雾的羊皮纸和图案纹理。                                                                                                                                                                                                                                                                                                                          |
+| FOWGreyscale（战争迷雾灰度）                  | 一种只有一个颜色通道的灰度战争迷雾纹理。这也可以用于羊皮纸和图案纹理。                                                                                                                                                                                                                                                                                                            |
+| FOWSprite（战争迷雾贴花）                     | 此纹理类别用于战争迷雾的贴花。                                                                                                                                                                                                                                                                                                                                |
+| Generic_AO（通用环境光遮蔽）                   | 此纹理类别用于环境光遮蔽纹理。它是一个灰度图像，由着色器解释为线性值。                                                                                                                                                                                                                                                                                                            |
+| Generic_BaseColor（通用基色）               | 此纹理类别用于基色。基色用于调整漫反射光照。在金属表面上，漫反射光照被禁用，基色代替地调整高光光照。基色贴图是一个sRGB颜色图像。                                                                                                                                                                                                                                                                             |
+| Generic_BurnMap（通用烧伤贴图）               | 此纹理类别定义了与基色混合的备用基色贴图，用于实现程序化的烧伤效果。它是一个sRGB颜色图像，在转换为线性颜色空间后与基色混合。                                                                                                                                                                                                                                                                               |
+| Generic_Emissive（通用自发光）               | 此纹理类别用于具有自发光表面（如照明窗户）。它是一个sRGB颜色图像。自发光颜色在转换为线性颜色空间后直接添加到着色结果中。                                                                                                                                                                                                                                                                                 |
+| Generic_Gloss（通用光泽）                   | 此纹理类别用于光泽效果。白色像素表示光泽，黑色像素表示无光泽。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，并使用CLEAN映射对其进行滤波，以避免在缩小纹理的常见情况下丢失高光。高光效果应该类似于GGX，但可能不会产生完全匹配。                                                                                                                                                                                                 |
+| Generic_LightMap（通用光照贴图）              | 此纹理类别用于预计算的全局光照，适用于建筑纹理。它是一个sRGB颜色图像，在转换为线性空间后通过基色进行调制。                                                                                                                                                                                                                                                                                        |
+| Generic_Metalness（通用金属度）              | 此纹理类别用于标记表面的金属区域。它是一个灰度图像，由着色器解释为线性值。                                                                                                                                                                                                                                                                                                          |
+| Generic_Normal（通用法线贴图）                | 这是一个法线贴图。它将由资产封装器进行后处理，生成一个CLEAN贴图。                                                                                                                                                                                                                                                                                                            |
+| Generic_OPAC（通用不透明度贴图）                | 这是一个不透明度贴图。它是一个灰度图像，由着色器解释为线性值。Civ6使用基于MSAA覆盖掩码导出的屏幕门透明度，因此可用的不透明度级别与用户在图形选项中选择的MSAA级别成比例。在极限情况下，当禁用MSAA时，此技术退化为经典的Alpha测试。因此，具有混合边缘的高对比度贴图效果最佳。中间色调和细微的图案通常无法很好地解析。                                                                                                                                                                           |
+| Generic_TintMask（通用着色蒙版）              | 此纹理类别用于在基色和外部定义的“着色颜色”之间进行混合。它是一个灰度图像，由着色器解释为线性值。单位材质还支持一个半透明模式，可以在帆等物体上实现背光和次表面散射等效果。在半透明模式下，着色蒙版被重新用作半透明蒙版。                                                                                                                                                                                                                                  |
+| Leader_Anisotropy（领袖各向异性）             |
+| Leader_AO（领袖环境光遮蔽）                    |
+| Leader_BaseColor（领袖基色）                |
+| Leader_BlurWidth（领袖模糊宽度）              |
+| Leader_Fallback（领袖备用）                 |
+| Leader_FilmGrain（领袖胶片颗粒）              |
+| Leader_Fuzz（领袖模糊）                     |
+| Leader_Gloss（领袖光泽）                    |
+| Leader_Metalness（领袖金属度）               |
+| Leader_Normal（领袖法线贴图）                 |
+| Leader_OPAC（领袖不透明度贴图）                 |
+| Leader_Tangent（领袖切线）                  |
+| Leader_Tint（领袖着色）                     |
+| Leader_Translucency（领袖半透明）            |
+| Overlay（叠加层）                          | 用于文化边界、移动镜头、准星和其他各种游戏内叠加层的纹理。                                                                                                                                                                                                                                                                                                                  |
+| SkyboxTexture2D（天空盒纹理）                | 用作“天空盒”的纹理。这是通过世界地图的顶部和底部可见的背景纹理。此类纹理被封装到'SkyboxTexture' XLP中。                                                                                                                                                                                                                                                                                 |
+| StrategicView_CultureBorder（战略视图文化边界） | 一个2D的、256x256的RGBA8纹理，表示在StrategicView_TerrainBlend资产中使用的文化边界掩码。                                                                                                                                                                                                                                                                               |
+| StrategicView_Riverbank（战略视图河岸）       | 一个2D的、256x256的RGBA8纹理，表示在StrategicView_TerrainBlend资产中使用的河岸和海岸线掩码。                                                                                                                                                                                                                                                                             |
+| StrategicView_Sprite（战略视图贴花）          | 一个2D的RGBA8纹理，尺寸可变（4x4 - 4096x4096），表示战略视图中使用的任何贴花（地貌、改良、建筑等）。主要通过StrategicView.artdef的各种集合中的StrategicView_Sprite XLP条目进行引用。请参阅“Base game's Art OneNote”的“StrategicView → How to Get Art into the Strategic View → Photoshop File Organization for Sprites and Terrain Types”和“Importing New Sprites and Terrain Types into the Asset Cloud”部分。 |
+| StrategicView_TerrainBlend（战略视图地形混合）  | 一个2D的、256x256的RGBA8纹理，表示在StrategicView_TerrainBlend资产中使用的地形混合掩码。                                                                                                                                                                                                                                                                               |
+| StrategicView_TerrainType（战略视图地形类型）   | 一个2D的RGBA8纹理，尺寸可变（4x4 - 4096x4096），表示地形类型（草地、平原、雪地等）。主要通过StrategicVIew.artdef的TerrainType集合中的StrategicView_TerrainType XLP条目进行引用。                                                                                                                                                                                                              |
+| Terrain_BaseColor（地形基色）               | 这个纹理类定义了地形材质的基色。基色用于调节漫反射光照。它是一个sRGB颜色图像。                                                                                                                                                                                                                                                                                                      |
+| Terrain_FOWColor（地形FOW颜色）             | 这个纹理类定义了地形材质的FOW颜色。当地形处于FOW状态时，该纹理用于直接设置地形的颜色，没有光照效果。它是一个sRGB颜色图像。                                                                                                                                                                                                                                                                             |
+| Terrain_Fuzz（地形模糊）                    |
+| Terrain_Heightmap（地形高度图）              | 这个纹理类定义了用于生成法线贴图的地形材质详细高度数据。它是一个线性纹理，其中红色通道表示高度，黑色较低，白色较高。                                                                                                                                                                                                                                                                                     |
+| Terrain_Spec（地形光泽）                    | 这个纹理类定义了地形材质的光泽度。白色像素是有光泽的，黑色像素是暗淡的。这是一个线性值，编码了GGX粗糙度。Civ6引擎使用基于一对Beckman lobes的GGX近似，使用CLEAN映射进行滤波，以避免在缩小纹理的情况下丢失镜面效果。镜面效果应该与GGX类似，但可能不会产生一对一的匹配。                                                                                                                                                                                             |
+| TerrainElementBlendmap（地形元素混合图）       | 这个纹理类定义了用于驱动TerrainElementHeightmap混合的混合图。                                                                                                                                                                                                                                                                                                     |
+| TerrainElementHeightmap（地形元素高度图）      | 这个纹理类定义了用于定义地形几何体高度的高度图。                                                                                                                                                                                                                                                                                                                       |
+| TerrainElementIDMap（地形元素ID图）          | 这个纹理类定义了在特定地形区域中应绘制哪些地形材质。它是一个带有alpha通道的线性纹理，其中alpha通道用于标识每个像素使用的材质。alpha通道必须设置为有效的AlphaIdentifier（参见TerrainMaterial）或0以保留现有材质。                                                                                                                                                                                                                |
+| TerrainElementNoise2D（地形元素噪声纹理）       | 这个纹理类定义了在一些程序生成的地形通道中使用的噪声纹理。它是一个线性纹理，红色和绿色通道中包含噪声。                                                                                                                                                                                                                                                                                            |
+| UserInterface（用户界面）                   | UI纹理可以以两种不同的方式进行编码：<br>$~$ $~$ $~$ $~$ $~$● 可缩放：纹理存储在图集中，使用TexturePadding和IsStandalone参数控制如何与其他纹理配合。这种格式非常适合需要旋转或缩放超过原始分辨率两倍的纹理。</br><br>$~$ $~$ $~$ $~$ $~$● 压缩：纹理进行块压缩，大大减少了内存占用，特别是对于具有大量重复图案区域的纹理。这种格式只能进行点和双线性过滤，因此需要大量旋转/缩放的纹理应标记为可缩放。</br>|
+| VFXParticle_BaseColor（VFX粒子基色）        | VFX纹理资产的颜色映射。                                                                                                                                                                                                                                                                                                                                  |
+| VFXParticle_Mask（VFX粒子遮罩）             | VFXModel_FX材质使用的灰度图，用于图层遮罩。                                                                                                                                                                                                                                                                                                                    |
+| VFXParticle_Ramp（VFX粒子渐变）             | VFXModel_FX材质用于在生命周期内混合颜色的颜色渐变。这是一个一维纹理，只使用顶部一行像素。                                                                                                                                                                                                                                                                                             |
+| Water_Color（水体颜色）                     | 此纹理类不再使用。在项目配置中声明但未引用。请删除！                                                                                                                                                                                                                                                                                                                     |
+| WaterDensityMap（水体密度图）                | 该图控制光线在不同水深处的吸收或衰减速度。它是一个一维纹理，只使用顶部一行像素。左侧是水表面，右侧是由“DensityMapRange”参数指定的深度（低于此深度的部分被夹紧）。您应根据特定水类型所需的精细控制程度设置DensityMapRange。</br><br>高密度值会使物体看起来像颜色反转。这意味着纯蓝色的图像会导致水下物体呈现黄色，因为它们没有蓝光照射。它们在水下越深，呈黄色的程度就越高。颜色通道与alpha通道相乘，以给出密度图的实际值。颜色可以用于控制色调，而alpha可以控制强度。                                                                                           |
+
+## Behaviors（行为）
+
+| **行为类别** | **描述** |
+|----------|--------|
+| Unit（单位） |
 
 ## 粒子效果（Particle Effects）
 
-粒子类别
-
-描述
-
-FireFXParticle（火焰粒子效果）
-
-该类别用于使用新的FireFX脚本系统的粒子效果。有关理解脚本语言的文档，请访问[此处](https://hub.take2games.com/display/FXSMadrid/Understanding+FireFX+Scripts)。
-
-VFXParticle（视觉特效粒子效果）
-
-表示可添加到与VFX相关内容的粒子效果类别。
+| **粒子类别**               | **描述**                                      |
+|------------------------|---------------------------------------------|
+| FireFXParticle（火焰粒子效果） | 该类别用于使用新的FireFX脚本系统的粒子效果。有关理解脚本语言的文档，请访问此处。 |
+| VFXParticle（视觉特效粒子效果）  | 表示可添加到与VFX相关内容的粒子效果类别。                      |
 
 ## 灯光（ANALYTIC）
 
-灯光（ANALYTIC）类别
-
-描述
-
-Generic\_PointLight（通用点光源）
-
-表示点光源的类别。该类别公开了各种属性，允许用户定义光源对场景和周围物体的影响方式。
-
-Generic\_SpotLight（通用聚光灯）
+| **灯光（ANALYTIC）类别**        | **描述**                                     |
+|---------------------------|--------------------------------------------|
+| Generic_PointLight（通用点光源） | 表示点光源的类别。该类别公开了各种属性，允许用户定义光源对场景和周围物体的影响方式。 |
+| Generic_SpotLight（通用聚光灯）  |
 
 ## 灯光（ENVIRONMENT）
 
-灯光（ENV）类别
-
-描述
-
-GameEnvironment（游戏环境灯光）
-
-游戏环境灯光由“GameEnvironment”灯光架引用。
-
-LeaderEnvironment（领导者环境灯光）
+| **灯光（ENV）类别**              | **描述**                         |
+|----------------------------|--------------------------------|
+| GameEnvironment（游戏环境灯光）    | 游戏环境灯光由“GameEnvironment”灯光架引用。 |
+| LeaderEnvironment（领导者环境灯光） |
 
 ## 灯光架（Light Rigs）
 
-灯光架类别
-
-描述
-
-GameEnvironment（游戏环境灯光架）
-
-“GameEnvironment”灯光架由日夜时间艺术定义引用。日夜系统在时间的变化过程中定义了不同环境灯光之间的混合。
-
-LeaderEnvironment（领导者环境灯光架）
+| **灯光架类别**                   | **描述**                                                       |
+|-----------------------------|--------------------------------------------------------------|
+| GameEnvironment（游戏环境灯光架）    | “GameEnvironment”灯光架由日夜时间艺术定义引用。日夜系统在时间的变化过程中定义了不同环境灯光之间的混合。 |
+| LeaderEnvironment（领导者环境灯光架） |
 
 ## XLP
 
-XLP类别
-
-描述
-
-CameraAnimation（相机动画）
-
-CityBuildings（城市建筑）
-
-包含城市街区（CityBlock）资源。
-
-ColorKey（颜色键）
-
-该包含所有已处理的颜色键，可用于颜色校正。
-
-DynamicGeometry（动态几何）
-
-包含动态几何系统使用的地标（Landmark）资源。
-
-FireFX
-
-FOWSprite（战争迷雾精灵）
-
-包含战争迷雾精灵纹理。
-
-FOWTexture（战争迷雾纹理）
-
-包含全局战争迷雾纹理，如刻度图案和羊皮纸。
-
-GameLighting（游戏灯光）
-
-包含已处理的游戏环境灯光权利。
-
-Landmark（地标）
-
-包含无特定使用者的地标资源。
-
-Leader（领导者）
-
-LeaderFallback（领导者备用）
-
-LeaderLighting（领导者灯光）
-
-Light（灯光）
-
-引用使用灯光资源类创建的资源。预期条目名称和条目值字段将具有相同的名称。这是为了确保灯光资源能够通过灯光触发器正确地被其他资源引用。LT\_Warning资源是灯光的警告资源（看起来像一个青色聚光灯）。当灯光触发器在某个资源上触发，但在已处理的xlp中没有与灯光触发器资源名称相对应的灯光资源时，LT\_Warning资源将在游戏中出现（在非最终发布版本中）。
-
-OverlayTexture（叠加纹理）
-
-该包含已处理的叠加纹理，用于各种游戏内UI元素。
-
-RouteDecalMaterial（路径贴花材质）
-
-包含由程序化路径使用的贴花材质。
-
-RouteDoodad（路径装饰物）
-
-包含由程序化路径使用的路径装饰物资源。
-
-SkyBoxTexture（天空盒纹理）
-
-该包含已处理的天空盒纹理，可用作背景图像。
-
-StrategicView\_DirectedAsset（战略视图-定向资源）
-
-引用游戏使用的所有战略视图-定向资源。包括桥梁和悬崖。在StrategicView.artdef中的TerrainBlends、Features和Improvements集合中，除了默认的精灵纹理XLP条目外，还引用了定向资源的XLP条目。
-
-StrategicView\_Route（战略视图-路径）
-
-引用游戏使用的所有战略视图-路径资源。在StrategicView.artdef中的Routes集合中引用了路径XLP条目。
-
-StrategicView\_Sprite（战略视图-精灵）
-
-引用游戏使用的战略视图-精灵纹理。有几个使用该类的BLP文件，例如StrategicView\_Features、StrategicView\_Districts等。在StrategicView.artdef中的大多数集合中引用了精灵XLP条目。请参考“Base游戏的Art OneNote的StrategicView → How to Get Art into the Strategic View → "Photoshop File Organization for Sprites and Terrain Types"和"Importing New Sprites and Terrain Types into the Asset Cloud"部分。
-
-StrategicView\_TerrainBlend（战略视图-地形混合）
-
-引用游戏使用的战略视图-地形混合资源。在StrategicView.artdef中的TerrainBlends集合中引用了地形混合XLP条目。
-
-StrategicView\_TerrainBlendCorners（战略视图-地形混合角落）
-
-引用游戏使用的战略视图-地形混合角落资源。在StrategicView.artdef中的TerrainBlendCorners集合中引用了地形混合角落XLP条目。
-
-StrategicView\_TerrainType（战略视图-地形类型）
-
-引用游戏使用的战略视图-地形类型纹理。在StrategicView.artdef中的TerrainTypes集合中引用了地形类型XLP条目。
-
-TerrainAsset（地形资源）
-
-TerrainElement（地形元素）
-
-TerrainMaterial（地形材质）
-
-TileBase（瓦片基础）
-
-包含瓦片基础资源。
-
-UILensAsset（UI镜头资源）
-
-UITexture（UI纹理）
-
-该包类型包含游戏UI使用的UserInterface纹理的引用。
-
-Unit（单位）
-
-VFX（视觉特效）
-
-引用使用VFX资源类创建的资源。预期条目名称和条目值字段将具有相同的名称。这是为了确保VFX资源能够通过VFX资源触发器正确地被其他资源引用。FX\_Warning资源是VFX的警告资源（看起来像一个黄色的让路标志图标喷泉）。当VFX资源触发器在某个资源上触发，但在任何已处理的xlp中没有与VFX资源触发器资源名称相对应的VFX资源时，FX\_Warning资源将在游戏中出现（在非最终发布版本中）。
-
-Water（水）
-
-包含已处理的水材质，这些材质被艺术定义引用。
-
-Wave（波浪）
-
-包含已处理的波浪材质，这些材质被艺术定义引用。
-
-WonderMovie（奇迹电影）
-
-引用使用WonderMovie资源类创建的资源。
+| **XLP类别**                                      | **描述**                                                                                                                                                                                                                                                                                                                                 |
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CameraAnimation（相机动画）                          |
+| CityBuildings（城市建筑）                            | 包含城市街区（CityBlock）资源。                                                                                                                                                                                                                                                                                                                   |
+| ColorKey（颜色键）                                  | 该包含所有已处理的颜色键，可用于颜色校正。                                                                                                                                                                                                                                                                                                                  |
+| DynamicGeometry（动态几何）                          | 包含动态几何系统使用的地标（Landmark）资源。                                                                                                                                                                                                                                                                                                             |
+| FireFX                                         |
+| FOWSprite（战争迷雾贴花）                              | 包含战争迷雾贴花纹理。                                                                                                                                                                                                                                                                                                                            |
+| FOWTexture（战争迷雾纹理）                             | 包含全局战争迷雾纹理，如刻度图案和羊皮纸。                                                                                                                                                                                                                                                                                                                  |
+| GameLighting（游戏灯光）                             | 包含已处理的游戏环境灯光权利。                                                                                                                                                                                                                                                                                                                        |
+| Landmark（地标）                                   | 包含无特定使用者的地标资源。                                                                                                                                                                                                                                                                                                                         |
+| Leader（领导者）                                    |
+| LeaderFallback（领导者备用）                          |
+| LeaderLighting（领导者灯光）                          |
+| Light（灯光）                                      | 引用使用灯光资源类创建的资源。预期条目名称和条目值字段将具有相同的名称。这是为了确保灯光资源能够通过灯光触发器正确地被其他资源引用。LT_Warning资源是灯光的警告资源（看起来像一个青色聚光灯）。当灯光触发器在某个资源上触发，但在已处理的xlp中没有与灯光触发器资源名称相对应的灯光资源时，LT_Warning资源将在游戏中出现（在非最终发布版本中）。                                                                                                                                                     |
+| OverlayTexture（叠加纹理）                           | 该包含已处理的叠加纹理，用于各种游戏内UI元素。                                                                                                                                                                                                                                                                                                               |
+| RouteDecalMaterial（路径贴花材质）                     | 包含由程序化路径使用的贴花材质。                                                                                                                                                                                                                                                                                                                       |
+| RouteDoodad（路径装饰物）                             | 包含由程序化路径使用的路径装饰物资源。                                                                                                                                                                                                                                                                                                                    |
+| SkyBoxTexture（天空盒纹理）                           | 该包含已处理的天空盒纹理，可用作背景图像。                                                                                                                                                                                                                                                                                                                  |
+| StrategicView_DirectedAsset（战略视图-定向资源）         | 引用游戏使用的所有战略视图-定向资源。包括桥梁和悬崖。在StrategicView.artdef中的TerrainBlends、Features和Improvements集合中，除了默认的贴花纹理XLP条目外，还引用了定向资源的XLP条目。                                                                                                                                                                                                               |
+| StrategicView_Route（战略视图-路径）                   | 引用游戏使用的所有战略视图-路径资源。在StrategicView.artdef中的Routes集合中引用了路径XLP条目。                                                                                                                                                                                                                                                                         |
+| StrategicView_Sprite（战略视图-贴花）                  | 引用游戏使用的战略视图-贴花纹理。有几个使用该类的BLP文件，例如StrategicView_Features、StrategicView_Districts等。在StrategicView.artdef中的大多数集合中引用了贴花XLP条目。请参考“Base游戏的Art OneNote的StrategicView → How to Get Art into the Strategic View → "Photoshop File Organization for Sprites and Terrain Types"和"Importing New Sprites and Terrain Types into the Asset Cloud"部分。 |
+| StrategicView_TerrainBlend（战略视图-地形混合）          | 引用游戏使用的战略视图-地形混合资源。在StrategicView.artdef中的TerrainBlends集合中引用了地形混合XLP条目。                                                                                                                                                                                                                                                                |
+| StrategicView_TerrainBlendCorners（战略视图-地形混合角落） | 引用游戏使用的战略视图-地形混合角落资源。在StrategicView.artdef中的TerrainBlendCorners集合中引用了地形混合角落XLP条目。                                                                                                                                                                                                                                                      |
+| StrategicView_TerrainType（战略视图-地形类型）           | 引用游戏使用的战略视图-地形类型纹理。在StrategicView.artdef中的TerrainTypes集合中引用了地形类型XLP条目。                                                                                                                                                                                                                                                                 |
+| TerrainAsset（地形资源）                             |
+| TerrainElement（地形元素）                           |
+| TerrainMaterial（地形材质）                          |
+| TileBase（瓦片基础）                                 | 包含瓦片基础资源。                                                                                                                                                                                                                                                                                                                              |
+| UILensAsset（UI镜头资源）                            |
+| UITexture（UI纹理）                                | 该包类型包含游戏UI使用的UserInterface纹理的引用。                                                                                                                                                                                                                                                                                                       |
+| Unit（单位）                                       |
+| VFX（视觉特效）                                      | 引用使用VFX资源类创建的资源。预期条目名称和条目值字段将具有相同的名称。这是为了确保VFX资源能够通过VFX资源触发器正确地被其他资源引用。FX_Warning资源是VFX的警告资源（看起来像一个黄色的让路标志图标喷泉）。当VFX资源触发器在某个资源上触发，但在任何已处理的xlp中没有与VFX资源触发器资源名称相对应的VFX资源时，FX_Warning资源将在游戏中出现（在非最终发布版本中）。                                                                                                                                |
+| Water（水）                                       | 包含已处理的水材质，这些材质被艺术定义引用。                                                                                                                                                                                                                                                                                                                 |
+| Wave（波浪）                                       | 包含已处理的波浪材质，这些材质被艺术定义引用。                                                                                                                                                                                                                                                                                                                |
+| WonderMovie（奇迹电影）                              | 引用使用WonderMovie资源类创建的资源。                                                                                                                                                                                                                                                                                                               |
 
 ## ArtDefs（艺术定义）
 
-ArtDef类
-
-描述
-
-Appeal（吸引力）
-
-将一定范围的六边形“吸引力”值绑定到特定名称，可以被其他艺术定义引用。
-
-包含与游戏相关的内容。
-
-Buildings（建筑）
-
-将建筑名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "Building"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-StrategicView属性在[StrategicView.artdef](#scroll-bookmark-5)的Buildings集合中创建了BuildStates和条目之间的关联。
-
-BuildStates集合包含建筑的有效建造状态，并且必须与游戏的硬编码值匹配。
-
-BuildingChains包含被[StrategicView.artdef](#scroll-bookmark-5)的Buildings集合中的条目引用的命名集合。BuildingChain编码了区域→建筑等级1→建筑等级2→建筑等级3的进展（例如科学区→图书馆→大学→研究中心）。
-
-WorldView绘制区域及其所有建筑（可能是被掠夺的状态），而StrategicView只绘制最新（或最近被掠夺）的区域/建筑。为了实现这一点，它需要知道区域/建筑出现的顺序，并能够在列表中向上和向下移动（在掠夺的情况下）。
-
-请注意，在同一级别中，特殊项目（即特定文明的区域或建筑）应该放在“普通”项目之后，因为游戏会反向遍历级别的元素，并使用找到的第一个元素。
-
-还请注意，DLC和mod版本的ArtDef将其新元素追加到每个级别的末尾，并仅在名称相同的情况下覆盖元素。
-
-Camera（相机）
-
-定义游戏内相机的配置设置。相机artdef中的每个条目都是一组设置，并支持编辑以下内容：
-
-*   缩放级别的FOV、倾斜度和高度
-    
-*   大气雾参数，作为缩放级别的函数
-    
-*   近裁剪面和远裁剪面距离
-    
-*   泛光和曝光参数
-    
-
-DEFAULT\_CAMERA条目是默认使用的。目前没有办法在不使用游戏内控制台的情况下覆盖相机配置。
-
-Cities（城市）
-
-将[Eras.artdef](#scroll-bookmark-33)中的时代与[StrategicView.artdef](#scroll-bookmark-5)的Cities集合中的条目关联。
-
-CityGenerators（城市生成器）
-
-定义CityGen使用的程序化生成参数和资产列表，用于创建程序化的“城市中心”区域和附近区域的小填充建筑。
-
-Civilizations（文明）
-
-所有必须引用文明的ArtDef的来源。
-
-包含与游戏相关的内容。 "Civilization"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-Clutter（杂物）
-
-定义一组随机散布的模型的杂物资产。
-
-Cultures（文化）
-
-将文明分组，以便在其他ArtDef中更方便地引用。为什么要添加15个条目，当你可以添加一个条目和一个文化呢？
-
-Districts（区域）
-
-将区域名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "District"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-StrategicView属性在[StrategicView.artdef](#scroll-bookmark-5)的Districts集合中创建了BuildStates和条目之间的关联。
-
-BuildStates集合包含区域的有效建造状态，并且必须与游戏的硬编码值匹配。
-
-DynamicGeo（动态几何）
-
-定义“墙壁”：一组具有元数据的动态几何资产，可以在游戏中使用。
-
-Eras（时代）
-
-将时代名称绑定到各种系统可用的资产。
-
-将一组时代绑定到可以被其他ArtDef引用的特定ArtEra名称。
-
-包含与游戏相关的内容。 "Era"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-Farms（农田）
-
-定义农田系统使用的资产瓷砖集合。
-
-Features（地貌特征）
-
-将地貌特征名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "Feature"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-StrategicView属性在[StrategicView.artdef](#scroll-bookmark-5)的Features集合中创建了Shapes和条目之间的关联。Shapes可以是：
-
-*   1Dot（一个瓷砖）
-    
-*   2Dash（两个水平瓷砖）
-    
-*   2Dash\_East（两个水平瓷砖，其中东侧瓷砖是水域）
-    
-*   2Dash\_West（两个水平瓷砖，其中西侧瓷砖是水域）
-    
-*   2ForwardSlash（两个左上到右下的对角瓷砖）
-    
-*   2ForwardSlash\_NorthEast（两个左上到右下的对角瓷砖，其中东北侧瓷砖是水域）
-    
-*   2ForwardSlash\_SouthWest（两个左上到右下的对角瓷砖，其中西南侧瓷砖是水域）
-    
-*   2Backslash（两个右上到左下的对角瓷砖）
-    
-*   2Backslash\_SouthEast（两个右上到左下的对角瓷砖，其中东南侧瓷砖是水域）
-    
-*   2Backslash\_NorthWest（两个右上到左下的对角瓷砖，其中西北侧瓷砖是水域）
-    
-*   3Dash（三个水平瓷砖）
-    
-*   3ForwardSlash（三个左上到右下的对角瓷砖）
-    
-*   3Backslash（三个右上到左下的对角瓷砖）
-    
-*   3V\_North（三个呈A形的瓷砖，即底部一行两个瓷砖，顶部一行一个瓷砖）
-    
-*   3V\_NorthEast（三个V形瓷砖，底部瓷砖的西侧邻居是水域）
-    
-*   3V\_SouthEast（三个呈A形的瓷砖，顶部瓷砖的西侧邻居是水域）
-    
-*   3V\_South（三个V形瓷砖，即底部一行一个瓷砖，顶部一行两个瓷砖）
-    
-*   3V\_SouthWest（三个呈A形的瓷砖，顶部瓷砖的东侧邻居是水域）
-    
-*   3V\_NorthWest（三个V形瓷砖，底部瓷砖的东侧邻居是水域）
-    
-*   4Z（四个Z形瓷砖，即两行两列，顶部行向左偏移）
-    
-*   4S（四个S形瓷砖，即两行两列，顶部行向右偏移）
-    
-*   4Diamond（四个菱形瓷砖，即底部一行一个瓷砖，中间一行两个瓷砖，顶部一行一个瓷砖）
-    
-*   4Tail\_NorthEast（四个瓷砖，底部三个瓷砖指向东北，顶部一个瓷砖）
-    
-*   4Tail\_East（四个瓷砖，底部三个瓷砖指向东，顶部一个瓷砖）
-    
-*   4Tail\_SouthEast（四个瓷砖，底部三个瓷砖指向东南，顶部一个瓷砖）
-    
-*   4Tail\_SouthWest（四个瓷砖，底部三个瓷砖指向西南，顶部一个瓷砖）
-    
-*   4Tail\_West（四个瓷砖，底部三个瓷砖指向西，顶部一个瓷砖）
-    
-*   4Tail\_NorthWest（四个瓷砖，底部三个瓷砖指向西北，顶部一个瓷砖）
-    
-*   6Dash（六个水平瓷砖）
-    
-*   6ForwardSlash（六个左上到右下的对角瓷砖）
-    
-*   6Backslash（六个右上到左下的对角瓷砖）
-    
-
-（上述顺序均为游戏坐标，从左下到右上按行顺序排列。）
-
-FOWConfig（迷雾配置）
-
-定义迷雾配置。迷雾配置是一系列全局控制项，用于控制迷雾区域的外观。它还定义了散布在全迷雾和中迷雾中的各种精灵的放置规则。
-
-迷雾的artdef引用了嵌入在FOWSprites和FOWTextures xlps中的纹理。
-
-GamePropertyRanges（游戏属性范围）
-
-GenericObjectBLPs（通用对象BLPs）
-
-GoodyHuts（好运小屋，就是村庄）
-
-GraphicsTweaks（图形调整）
-
-包含各种旋钮和开关，用于对图形设置进行低级别控制。
-
-Improvements（改良）
-
-将改良名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "Improvement"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-StrategicView属性在[StrategicView.artdef](#scroll-bookmark-5)的Improvements集合中创建了BuildStates和条目之间的关联。
-
-BuildStates集合包含改良的有效建造状态，并且必须与游戏的硬编码值匹配。
-
-Landmarks（地标）
-
-包含大量描述区域、其中的建筑物、构成它们的资产以及它们之间关系的元数据。还描述了“地标”，其中大部分是瓷砖改良，其中夹杂着一些资源和地貌特征。凡是进入此处者，放弃一切希望。
-
-LeaderFallback（领袖回退）
-
-Leaders（领袖）
-
-Lenses（镜头）
-
-Minimap（小地图）
-
-Overlay（覆盖层）
-
-Resources（资源）
-
-将资源名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "Resource"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-Routes（路径）
-
-将资源名称绑定到各种系统可用的资产。
-
-包含与游戏相关的内容。 "Route"元素名称必须与相应游戏XML条目中的"type"属性相同。
-
-StrategicView属性在[StrategicView.artdef](#scroll-bookmark-5)的Routes集合中创建了BuildStates和条目之间的关联。
-
-BuildStates集合包含路径的有效建造状态，并且必须与游戏的硬编码值匹配。
-
-ScriptedArtSelector（脚本化艺术选择器）
-
-SkyBox（天空盒）
-
-允许覆盖背景纹理。
-
-StrategicView（战略视图）
-
-控制战略视图中的所有可绘制内容。大多数可绘制内容需要两种迷雾状态：已揭示（也称为中间迷雾）和可见。因此，战略视图中的大多数可绘制内容首先被分组为“条目”（例如FeatureEntries、ImprovementEntries、BuildingEntries等），然后这些条目再被分组为实际的可绘制“元素”（例如Features、Improvements、Buildings等）。
-
-_条目_将纹理XLP条目的引用与绘制特定的元信息（例如要绘制纹理的哪个部分）进行分组。
-
-_元素_将多个条目组合在一起，并添加使用特定的元信息（例如条目在地图上的绘制位置和方式）。
-
-条目（在任何\*Entries集合中找到）包括以下内容：
-
-*   Visible\_XLPEntry（可见的XLP条目），
-    
-*   Visible\_TopLeft（可见区域左上角），
-    
-*   Visible\_BottomRight（可见区域右下角），
-    
-*   Revealed\_XLPEntry（已揭示的XLP条目），
-    
-*   Revealed\_TopLeft（已揭示区域左上角），和
-    
-*   Revealed\_Bottom\_Right（已揭示区域右下角）。
-    
-
-Visible\_XLPEntry和Revealed\_XLPEntry是可见和已揭示纹理的XLP引用，用于表示可绘制内容。
-
-Visible\_TopLeft和Revealed\_TopLeft是表示可见和已揭示可绘制内容的纹理区域的左上角的2D坐标（以像素为单位）。
-
-Visible\_BottomRight和Revealed\_BottomRight是表示可见和已揭示可绘制内容的纹理区域的右下角的2D坐标（以像素为单位）。
-
-\*\_TopLeft和\*\_BottomRight的2D坐标允许您创建包含多个精灵的图集纹理，并且每个ArtDef条目仅引用该图像的一个小矩形部分。如果\*\_TopLeft和\*\_BottomRight的2D坐标相同，则绘制整个图像。
-
-元素（在除了Properties、PositionSets、PlacementRules、TerrainBlends和TerrainBlendCorners之外的任何其他集合中找到）包括以下内容：
-
-*   PositionSet（位置集），
-    
-*   PlacementRule（放置规则），
-    
-*   Render（渲染），
-    
-*   TileCount（瓷砖数量），和
-    
-*   Entries（条目）。
-    
-
-PositionSet（位置集）是对PositionSet集合中的条目的ArtDef引用。该条目确定可绘制内容在瓷砖内的放置位置。
-
-PlacementRule（放置规则）是对PlacementRules集合中的条目的ArtDef引用。该条目确定如何将PositionSet的值映射到各个条目。
-
-Render标志是一个布尔值，确定是否在屏幕上绘制精灵。这对于像宫殿或城墙这样的物体很有用，它们在世界视图中绘制，但在战略视图中只显示为UI元素。
-
-TileCount确定Entries集合中引用的条目将覆盖多少个游戏内瓷砖。根据所选的PlacementRule，这个数字可能需要与Entries集合中的元素数量相等，也可能不需要相等。
-
-Entries是对相应\*Entries集合中的条目的ArtDef引用的子集合。该条目表示将要渲染的实际可见和已揭示纹理。
-
-StrategicView.artdef包含以下集合：
-
-*   Properties（属性）包含适用于整个战略视图的通用值，例如海岸线和河水的颜色。
-    
-*   PositionSets（位置集）包含命名的2D坐标集合，用于确定在六边形内的何处绘制某物。坐标系的原点（0.0, 0.0）与六边形中心对齐。右边界位于（0.5, 0.0），左边界位于（-0.5, 0.0）。顶部六边形顶点位于（0.0, 0.57），底部六边形顶点位于（0.0, -0.57）。
-    
-*   PlacementRules（放置规则）是已知标识符的枚举，告诉引擎如何将PositionSet的2D坐标映射到纹理条目的集合。支持以下值：
-    
-    *   Centered（居中）将第一个纹理条目居中于PositionSet的第一个条目周围。
-        
-    *   Centered\_NotScaled（居中不缩放）在放置方面与Centered相同，但在垂直方向上不会压缩精灵。
-        
-    *   AtEdges\_NotScaled（边缘不缩放）将第一个纹理条目放置在由2\_Edges PositionSet提供的六边形边缘上。
-        
-    *   Centered\_NotScaled\_Animate（居中不缩放动画）与Centered\_NotScaled相同，并具有某种简单的插值动画。
-        
-    *   Centered\_Random（随机居中）将随机纹理条目居中于PositionSet的第一个条目周围。
-        
-    *   GreatWall（长城）用于长城改进，将一个纹理条目（塔）与一个定向资源（不同方向的墙块）组合在一起。
-        
-    *   MultipleEntriesPerTile（每个瓷砖多个条目）用于产量图标，每个瓷砖可以具有相同UI Lens类型的多个纹理条目
-        
-    *   OneEntryPerTile（每个瓷砖一个条目）用于多瓷砖自然奇观，它将每个纹理条目放置在单独的瓷砖上。
-        
-*   TerrainBlends（地形混合）包含对StrategicView\_TerrainBlend资产的XLP条目的引用，以及可选的StrategicView\_DirectedAsset用于悬崖（因为悬崖必须与地形混合确定的海岸线相匹配）。
-    
-*   TerrainBlendCorners（地形混合角）包含对StrategicView\_TerrainBlendCorners资产的XLP条目的引用。
-    
-*   TerrainSpriteEntries（地形精灵条目）是对StrategicView\_Sprite纹理的XLP条目的引用的条目。
-    
-*   TerrainSprites（地形精灵）是引用包含与地形相关的纹理的TerrainSpriteEntries的元素。这些纹理可以与周围的瓷砖重叠（与TerrainTypes集合中的StrategicView\_TerrainType纹理不同，后者仅在瓷砖边界内绘制）。例如，包括山脉和丘陵。
-    
-*   TerrainTypes（地形类型）包含一个类别和内联（即非引用）的条目，其中包含对StrategicView\_TerrainType纹理的XLP条目的引用。类别可以是Hills（丘陵）、Mountains（山脉）、Coast（海岸）、Ocean（海洋）和Default（其他）。游戏对每个类别应用不同的规则。此外，每个内联条目可以包含对TerrainSprite的引用。（例如，“Mountains”是一个TerrainType，它具有填充瓷砖直到边界的背景纹理，并引用一个“Mountains” TerrainSprite，它具有实际的山脉纹理，可以与瓷砖边界重叠。）
-    
-
-*   FeatureEntries（特征条目）是包含对StrategicView\_Sprite纹理的XLP条目引用的条目。
-    
-*   Features（特征）是引用FeatureEntries的元素，其中包含游戏中的特征（冰、丛林等）和自然奇观（克雷特湖、珠穆朗玛峰等）。此外，Features可以引用StrategicView\_DirectedAssets（用于基于悬崖的自然奇观，如多佛尔海峡悬崖），并包含一个RenderTerrainSprite复选框和一个TerrainTypeOverride列表。RenderTerrainSprite复选框确定是否在特征下方绘制基础游戏瓷砖的地形精灵。TerrainTypeOverride列表允许游戏覆盖湖泊类似的自然奇观的基础地形类型。（湖泊的一个实现副作用是它们的地形类型隐式更改为海岸。在StrategicView中，湖泊纹理具有自己的海岸线，因此游戏必须创建一个非海岸的地形类型来填补瓷砖边界和纹理中的湖泊海岸线之间的空白。该列表允许您影响创建哪些地形类型。）
-    
-*   Routes（路径）包含两个对XLP条目的引用，一个是道路（StrategicView\_Route资产），一个是桥梁（StrategicView\_DirectedAssets资产）。
-    
-*   ImprovementEntries（改良条目）是包含对Improvements引用的XLP条目的条目，这些引用与Improvements（改良）相关联，其中包含游戏中的改良（农场、矿山等）。此外，Improvements可以引用StrategicView\_DirectedAssets（用于特殊情况下的改良，如长城）。
-    
-*   Improvements（改良）是引用ImprovementEntries的元素，其中包含游戏中的改良（农场、矿山等）。此外，Improvements可以引用StrategicView\_DirectedAssets（用于特殊情况下的改良，如长城）。
-    
-*   DistrictEntries（城区条目）是包含对Districts引用的XLP条目的条目，这些引用与Districts（城区）相关联。
-    
-*   Districts（城区）是引用DistrictEntries的元素，其中包含游戏中的城区（科学、信仰等）。
-    
-*   BuildingEntries（建筑条目）是包含对Buildings引用的XLP条目的条目，这些引用与Buildings（建筑）相关联。
-    
-*   Buildings（建筑）是引用BuildingEntries的元素，其中包含游戏中的建筑（图书馆、市场等）。此外，Buildings包含对Buildings.artdef中BuildingChain条目的引用。
-    
-*   CityEntries（城市条目）是包含对Cities引用的XLP条目的条目，这些引用与Cities（城市）相关联。
-    
-*   Cities（城市）是引用CityEntries的元素，其中包含游戏中各个时代的城市。
-    
-*   ParkEntries（公园条目）是包含对Parks引用的XLP条目的条目，这些引用与Parks（公园）相关联。
-    
-*   Parks（公园）是引用ParkEntries的元素，其中包含游戏中的国家公园。
-    
-*   EffectEntries（效果条目）是包含对Effects引用的XLP条目的条目，这些引用与Effects（效果）相关联。
-    
-*   Effects（效果）是引用EffectEntries的元素，其中包含游戏中的效果（例如辐射）。
-    
-*   UILensEntries（UI镜头条目）是包含对UILenses引用的XLP条目的条目，这些引用与UILenses（UI镜头）相关联。
-    
-*   UILenses（UI镜头）是引用UILensEntries的元素，其中包含游戏中的UI镜头纹理。
-    
-
-TerrainMaterialSet（地形材质集）
-
-TerrainStyle（地形样式）
-
-用于控制程序化地形层的参数。
-
-RidgelineMountain（脊线山脉）：控制程序化脊线山脉的外观。
-
-StandardHills（标准丘陵）：控制基本地形类型的丘陵外观。这些丘陵通过地形元素的高度图混合到地形中。
-
-DuneDesertHills（沙丘沙漠丘陵）：控制沙漠丘陵，这些丘陵是程序化生成的沙丘。
-
-StandardCoastline（标准海岸线）：控制游戏中程序化海岸线的外观。
-
-StandardRiver（标准河流）：控制游戏中程序化河流的外观，以及用于河流源和随机散布的河流资产的TerrainElement条目列表。
-
-StandardFlat（标准平原）：控制游戏中平坦地形类型的外观。平坦地形由地形材质和微小的高度变化的地形元素组成。
-
-StandardOcean（标准海洋）：控制程序化海洋的外观。
-
-StandardIceShelf（标准冰架）：控制冰地形瓷砖周围的程序化冰架的外观。
-
-DesertMountain（沙漠山脉）：控制新的沙漠山脉样式的外观。删除此条目将使所有山脉使用RidgelineMountain样式。
-
-NaturalWonders（自然奇观）：定义自然奇观资产的条目列表，包括地形资产、地形元素和水样式设置。自然奇观的地形元素必须具有512像素或1024像素的正方形纹理（用于覆盖单个六边形或更大区域）。下面的两个图表显示这两种尺寸的纹理如何与游戏中的六边形对齐。Pattern组中的条目允许您为1-6号六边形定义特定属性，游戏会根据需要自动旋转资产以确保正确对齐。这些属性包括：
-
-1.  BlockingHexN（阻塞六边形）- 此自然奇观填充此六边形，阻塞并覆盖程序化地形。默认情况下，六边形0（中心六边形）是阻塞的。
-    
-2.  TerrainTypeN（地形类型）- 此自然奇观资产需要特定条件才能正确对齐，例如与特定方向的水相邻。
-    
-
-![/download/attachments/152437570/TerrainElementTemplate_Small.jpg?version=1&modificationDate=1498249375480&api=v2](DataDocumentation/media/image1.jpeg)
-
-![/download/attachments/152437570/TerrainElementTemplate_Medium.jpg?version=1&modificationDate=1498249713867&api=v2](DataDocumentation/media/image2.jpeg)
-
-MaterialSet（材质集）：地形材质的列表，被自然奇观列表中的TerrainElementIDMap条目引用。如果您没有将材质放入此列表中，游戏将无法加载它，并使用黑色错误材质。
-
-Terrains（地形）
-
-将资源名称绑定到各个系统可用的资产。
-
-包含与游戏相关的内容。"Terrain"元素的名称必须与相应游戏XML条目中的"type"属性完全相同。StrategicView属性引用了[StrategicView.artdef](#scroll-bookmark-5)中TerrainTypes集合中的条目。
-
-TimeOfDay（时间）
-
-控制白天时间系统。大部分情况下使用名为'DEFAULT\_LIGHTING'的TimeOfDay设置。当奇观影片激活时，使用名为'WONDER\_TOD'的设置。引擎和奇观影片将使用0到24之间（从午夜到午夜）的值来设置时间。时间系统提供以下控制，所有这些控制都可以随时间进行动画处理：
-
-*   随时间混合环境光：'CubeLights'集合定义了一组用于基于图像的照明的GameEnvironment光照系统，并定义了一个随时间应用于每个光照的权重曲线。权重曲线可以用于调整给定光照随时间的影响（例如，在夜晚淡出）。引擎支持最多8个同时非零权重。
-    
-*   太阳方向动画：SunAzimuth、SunTilt、SunZenith和SunColor控制太阳在一天中的行为。
-    
-*   随时间关闭光照贴图和发光贴图：'LightMapWeight'曲线指定应用于着色器中所有光照贴图和发光贴图的缩放因子。除其他用途外，这可以用于在夜间打开和关闭发光窗户灯。
-    
-*   曝光：这是一个相机曝光控制，可以随时间进行动画处理。曝光以f-stop为单位。
-    
-*   颜色键校正时间：颜色键系统受时间系统控制。'ColorKeys'集合指定一组颜色键和一个权重曲线，类似于环境光。引擎支持最多2个同时激活的颜色键。
-    
-
-UIPreview（用户界面预览）
-
-UnitActivities（单位活动）
-
-UnitOperations（单位操作）
-
-Units（单位）
-
-UserInterfaceBLPs（用户界面BLP文件）
-
-VFX（视觉效果）
-
-包含有关全局命名的视觉效果的信息。NormalVFX集合中的视觉效果通常在游戏中（通过名称）直接引用，当特定的游戏条件发生时。这些视觉效果也可以通过ArtDef触发器由资产引用。WeaponVFX、TerrainVFX和MaterialVFX集合包含了表格，表示在使用特定武器、击中特定地形/特征类型或遇到特定材质时应显示的视觉效果类型。WeaponVFX、TerrainVFX和MaterialVFX集合通常由单位的ArtDef触发器引用，游戏的单位系统会确保为每个集合提供适当的上下文，以正确选择要显示的视觉效果（通常发生在战斗中）。请注意，WeaponVFX、TerrainVFX和MaterialVFX集合中的DEFAULT条目将在命名元素的表格中找不到适当匹配项时使用。
-
-WaterMaterials（水材质）
-
-WaterSettings（水设置）
-
-提供了控制河流和海洋水外观的全局控制。包括：
-
-*   指定用于冰、海洋、湖泊和河流周围的水材质。
-    
-*   控制应用于海岸线周围的程序化雾效果。
-    
-*   为水的全局视觉设置指定了镜面功率、反射率等。某些值是全局指定的，而不是在各个材质中指定，以确保一致的水外观。
-    
-
-WaveSettings（波浪设置）
-
-用于沿海波浪的各种控制和调整。
-
-WonderMovie（奇观影片）
-
-包含游戏可以显示的每个世界奇观的信息。此外，特殊建筑物（如小型、中型和大型火箭）也被表示为奇观。在创建建筑物的视觉表示时，会先检查奇观artdef中的建筑物，然后再检查建筑物的artdef。
-
-WorldViewRoutes（世界视图路径）
-
-定义在世界视图中创建程序化道路时要使用的材质和模型（而不是战略视图！）。此外，还定义了一些参数，用于控制程序化道路的形状和形成。
-
-* * *
+| **ArtDef类**                   | **描述**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Appeal（吸引力）                   | 将一定范围的六边形“吸引力”值绑定到特定名称，可以被其他艺术定义引用。<br>包含与游戏相关的内容。</br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Buildings（建筑）                 | 将建筑名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "Building"元素名称必须与相应游戏XML条目中的"type"属性相同。</br><br>StrategicView属性在StrategicView.artdef的Buildings集合中创建了BuildStates和条目之间的关联。</br><br>BuildStates集合包含建筑的有效建造状态，并且必须与游戏的硬编码值匹配。</br><br>BuildingChains包含被StrategicView.artdef的Buildings集合中的条目引用的命名集合。BuildingChain编码了区域→建筑等级1→建筑等级2→建筑等级3的进展（例如科学区→图书馆→大学→研究中心）。</br><br>WorldView绘制区域及其所有建筑（可能是被掠夺的状态），而StrategicView只绘制最新（或最近被掠夺）的区域/建筑。为了实现这一点，它需要知道区域/建筑出现的顺序，并能够在列表中向上和向下移动（在掠夺的情况下）。</br><br>请注意，在同一级别中，特殊项目（即特定文明的区域或建筑）应该放在“普通”项目之后，因为游戏会反向遍历级别的元素，并使用找到的第一个元素。</br><br>还请注意，DLC和mod版本的ArtDef将其新元素追加到每个级别的末尾，并仅在名称相同的情况下覆盖元素。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Camera（相机）                    | 定义游戏内相机的配置设置。相机artdef中的每个条目都是一组设置，并支持编辑以下内容：<br>$~$ $~$ $~$ $~$ $~$● 缩放级别的FOV、倾斜度和高度</br><br>$~$ $~$ $~$ $~$ $~$● 大气雾参数，作为缩放级别的函数</br><br>$~$ $~$ $~$ $~$ $~$● 近裁剪面和远裁剪面距离</br><br>$~$ $~$ $~$ $~$ $~$● 泛光和曝光参数</br><br>DEFAULT_CAMERA条目是默认使用的。目前没有办法在不使用游戏内控制台的情况下覆盖相机配置。</br>|
+| Cities（城市）                    | 将Eras.artdef中的时代与StrategicView.artdef的Cities集合中的条目关联。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CityGenerators（城市生成器）         | 定义CityGen使用的程序化生成参数和资产列表，用于创建程序化的“城市中心”区域和附近区域的小填充建筑。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Civilizations（文明）             | 所有必须引用文明的ArtDef的来源。<br>包含与游戏相关的内容。 "Civilization"元素名称必须与相应游戏XML条目中的"type"属性相同。</br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Clutter（杂物）                   | 定义一组随机散布的模型的杂物资产。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Cultures（文化）                  | 将文明分组，以便在其他ArtDef中更方便地引用。为什么要添加15个条目，当你可以添加一个条目和一个文化呢？                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Districts（区域）                 | 将区域名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "District"元素名称必须与相应游戏XML条目中的"type"属性相同。</br><br>StrategicView属性在StrategicView.artdef的Districts集合中创建了BuildStates和条目之间的关联。</br><br>BuildStates集合包含区域的有效建造状态，并且必须与游戏的硬编码值匹配。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| DynamicGeo（动态几何）              | 定义“墙壁”：一组具有元数据的动态几何资产，可以在游戏中使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Eras（时代）                      | 将时代名称绑定到各种系统可用的资产。<br>将一组时代绑定到可以被其他ArtDef引用的特定ArtEra名称。</br><br>包含与游戏相关的内容。 "Era"元素名称必须与相应游戏XML条目中的"type"属性相同。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Farms（农田）                     | 定义农田系统使用的资产瓷砖集合。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Features（地貌特征）                | 将地貌特征名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "Feature"元素名称必须与相应游戏XML条目中的"type"属性相同。</br><br>StrategicView属性在StrategicView.artdef的Features集合中创建了Shapes和条目之间的关联。Shapes可以是：</br><br>$~$ $~$ $~$ $~$● 1Dot（一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 2Dash（两个水平瓷砖）</br><br>$~$ $~$ $~$ $~$● 2Dash_East（两个水平瓷砖，其中东侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 2Dash_West（两个水平瓷砖，其中西侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 2ForwardSlash（两个左上到右下的对角瓷砖）</br><br>$~$ $~$ $~$ $~$● 2ForwardSlash_NorthEast（两个左上到右下的对角瓷砖，其中东北侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 2ForwardSlash_SouthWest（两个左上到右下的对角瓷砖，其中西南侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 2Backslash（两个右上到左下的对角瓷砖）</br><br>$~$ $~$ $~$ $~$● 2Backslash_SouthEast（两个右上到左下的对角瓷砖，其中东南侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 2Backslash_NorthWest（两个右上到左下的对角瓷砖，其中西北侧瓷砖是水域）</br><br>$~$ $~$ $~$ $~$● 3Dash（三个水平瓷砖）</br><br>$~$ $~$ $~$ $~$● 3ForwardSlash（三个左上到右下的对角瓷砖）</br><br>$~$ $~$ $~$ $~$● 3Backslash（三个右上到左下的对角瓷砖）</br><br>$~$ $~$ $~$ $~$● 3V_North（三个呈A形的瓷砖，即底部一行两个瓷砖，顶部一行一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 3V_NorthEast（三个V形瓷砖，底部瓷砖的西侧邻居是水域）</br><br>$~$ $~$ $~$ $~$● 3V_SouthEast（三个呈A形的瓷砖，顶部瓷砖的西侧邻居是水域）</br><br>$~$ $~$ $~$ $~$● 3V_South（三个V形瓷砖，即底部一行一个瓷砖，顶部一行两个瓷砖）</br><br>$~$ $~$ $~$ $~$● 3V_SouthWest（三个呈A形的瓷砖，顶部瓷砖的东侧邻居是水域）</br><br>$~$ $~$ $~$ $~$● 3V_NorthWest（三个V形瓷砖，底部瓷砖的东侧邻居是水域）</br><br>$~$ $~$ $~$ $~$● 4Z（四个Z形瓷砖，即两行两列，顶部行向左偏移）</br><br>$~$ $~$ $~$ $~$● 4S（四个S形瓷砖，即两行两列，顶部行向右偏移）</br><br>$~$ $~$ $~$ $~$● 4Diamond（四个菱形瓷砖，即底部一行一个瓷砖，中间一行两个瓷砖，顶部一行一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_NorthEast（四个瓷砖，底部三个瓷砖指向东北，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_East（四个瓷砖，底部三个瓷砖指向东，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_SouthEast（四个瓷砖，底部三个瓷砖指向东南，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_SouthWest（四个瓷砖，底部三个瓷砖指向西南，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_West（四个瓷砖，底部三个瓷砖指向西，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 4Tail_NorthWest（四个瓷砖，底部三个瓷砖指向西北，顶部一个瓷砖）</br><br>$~$ $~$ $~$ $~$● 6Dash（六个水平瓷砖）</br><br>$~$ $~$ $~$ $~$● 6ForwardSlash（六个左上到右下的对角瓷砖）</br><br>$~$ $~$ $~$ $~$● 6Backslash（六个右上到左下的对角瓷砖）</br><br>（上述顺序均为游戏坐标，从左下到右上按行顺序排列。）                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| FOWConfig（迷雾配置）               | 定义迷雾配置。迷雾配置是一系列全局控制项，用于控制迷雾区域的外观。它还定义了散布在全迷雾和中迷雾中的各种贴花的放置规则。<br>迷雾的artdef引用了嵌入在FOWSprites和FOWTextures xlps中的纹理。</br>|
+| GamePropertyRanges（游戏属性范围）    |
+| GenericObjectBLPs（通用对象BLPs）   |
+| GoodyHuts（好运小屋，就是村庄）          |
+| GraphicsTweaks（图形调整）          | 包含各种旋钮和开关，用于对图形设置进行低级别控制。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Improvements（改良）              | 将改良名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "Improvement"元素名称必须与相应游戏XML条目中的"type"属性相同。</br><br>StrategicView属性在StrategicView.artdef的Improvements集合中创建了BuildStates和条目之间的关联。</br><br>BuildStates集合包含改良的有效建造状态，并且必须与游戏的硬编码值匹配。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Landmarks（地标）                 | 包含大量描述区域、其中的建筑物、构成它们的资产以及它们之间关系的元数据。还描述了“地标”，其中大部分是瓷砖改良，其中夹杂着一些资源和地貌特征。凡是进入此处者，放弃一切希望。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| LeaderFallback（领袖回退）          |
+| Leaders（领袖）                   |
+| Lenses（镜头）                    |
+| Minimap（小地图）                  |
+| Overlay（覆盖层）                  |
+| Resources（资源）                 | 将资源名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "Resource"元素名称必须与相应游戏XML条目中的"type"属性相同。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Routes（路径）                    | 将资源名称绑定到各种系统可用的资产。<br>包含与游戏相关的内容。 "Route"元素名称必须与相应游戏XML条目中的"type"属性相同。</br><br>StrategicView属性在StrategicView.artdef的Routes集合中创建了BuildStates和条目之间的关联。</br><br>BuildStates集合包含路径的有效建造状态，并且必须与游戏的硬编码值匹配。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ScriptedArtSelector（脚本化艺术选择器） |
+| SkyBox（天空盒）                   | 允许覆盖背景纹理。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| StrategicView（战略视图）           | 控制战略视图中的所有可绘制内容。大多数可绘制内容需要两种迷雾状态：已揭示（也称为中间迷雾）和可见。因此，战略视图中的大多数可绘制内容首先被分组为“条目”（例如FeatureEntries、ImprovementEntries、BuildingEntries等），然后这些条目再被分组为实际的可绘制“元素”（例如Features、Improvements、Buildings等）。<br>条目将纹理XLP条目的引用与绘制特定的元信息（例如要绘制纹理的哪个部分）进行分组。</br><br>元素将多个条目组合在一起，并添加使用特定的元信息（例如条目在地图上的绘制位置和方式）。</br><br>条目（在任何*Entries集合中找到）包括以下内容：</br><br>$~$ $~$ $~$ $~$ $~$● Visible_XLPEntry（可见的XLP条目），</br><br>$~$ $~$ $~$ $~$ $~$● Visible_TopLeft（可见区域左上角），</br><br>$~$ $~$ $~$ $~$ $~$● Visible_BottomRight（可见区域右下角），</br><br>$~$ $~$ $~$ $~$ $~$● Revealed_XLPEntry（已揭示的XLP条目），</br><br>$~$ $~$ $~$ $~$ $~$● Revealed_TopLeft（已揭示区域左上角），和</br><br>$~$ $~$ $~$ $~$ $~$● Revealed_Bottom_Right（已揭示区域右下角）。</br><br>Visible_XLPEntry和Revealed_XLPEntry是可见和已揭示纹理的XLP引用，用于表示可绘制内容。</br><br>Visible_TopLeft和Revealed_TopLeft是表示可见和已揭示可绘制内容的纹理区域的左上角的2D坐标（以像素为单位）。</br><br>Visible_BottomRight和Revealed_BottomRight是表示可见和已揭示可绘制内容的纹理区域的右下角的2D坐标（以像素为单位）。</br><br>*_TopLeft和*_BottomRight的2D坐标允许您创建包含多个贴花的图集纹理，并且每个ArtDef条目仅引用该图像的一个小矩形部分。如果*_TopLeft和*_BottomRight的2D坐标相同，则绘制整个图像</br><br>元素（在除了Properties、PositionSets、PlacementRules、TerrainBlends和TerrainBlendCorners之外的任何其他集合中找到）包括以下内容：</br><br>$~$ $~$ $~$ $~$ $~$● PositionSet（位置集），</br><br>$~$ $~$ $~$ $~$ $~$● PlacementRule（放置规则），</br><br>$~$ $~$ $~$ $~$ $~$● Render（渲染），</br><br>$~$ $~$ $~$ $~$ $~$● TileCount（瓷砖数量），和</br><br>$~$ $~$ $~$ $~$ $~$● Entries（条目）。</br><br>PositionSet（位置集）是对PositionSet集合中的条目的ArtDef引用。该条目确定可绘制内容在瓷砖内的放置位置。</br><br>PlacementRule（放置规则）是对PlacementRules集合中的条目的ArtDef引用。该条目确定如何将PositionSet的值映射到各个条目。</br><br>Render标志是一个布尔值，确定是否在屏幕上绘制贴花。这对于像宫殿或城墙这样的物体很有用，它们在世界视图中绘制，但在战略视图中只显示为UI元素。</br><br>TileCount确定Entries集合中引用的条目将覆盖多少个游戏内瓷砖。根据所选的PlacementRule，这个数字可能需要与Entries集合中的元素数量相等，也可能不需要相等。</br><br>Entries是对相应*Entries集合中的条目的ArtDef引用的子集合。该条目表示将要渲染的实际可见和已揭示纹理。</br><br>StrategicView.artdef包含以下集合：</br><br>$~$ $~$ $~$ $~$ $~$● Properties（属性）包含适用于整个战略视图的通用值，例如海岸线和河水的颜色。</br><br>$~$ $~$ $~$ $~$ $~$● PositionSets（位置集）包含命名的2D坐标集合，用于确定在六边形内的何处绘制某物。坐标系的原点（0.0, 0.0）与六边形中心对齐。右边界位于（0.5, 0.0），左边界位于（-0.5, 0.0）。顶部六边形顶点位于（0.0, 0.57），底部六边形顶点位于（0.0, -0.57）。</br><br>$~$ $~$ $~$ $~$ $~$● PlacementRules（放置规则）是已知标识符的枚举，告诉引擎如何将PositionSet的2D坐标映射到纹理条目的集合。支持以下值：</br><br>$~$ $~$ $~$ $~$ $~$● Centered（居中）将第一个纹理条目居中于PositionSet的第一个条目周围。</br><br>$~$ $~$ $~$ $~$ $~$● Centered_NotScaled（居中不缩放）在放置方面与Centered相同，但在垂直方向上不会压缩贴花。</br><br>$~$ $~$ $~$ $~$ $~$● AtEdges_NotScaled（边缘不缩放）将第一个纹理条目放置在由2_Edges PositionSet提供的六边形边缘上。</br><br>$~$ $~$ $~$ $~$ $~$● Centered_NotScaled_Animate（居中不缩放动画）与Centered_NotScaled相同，并具有某种简单的插值动画。</br><br>$~$ $~$ $~$ $~$ $~$● Centered_Random（随机居中）将随机纹理条目居中于PositionSet的第一个条目周围。</br><br>$~$ $~$ $~$ $~$ $~$● GreatWall（长城）用于长城改进，将一个纹理条目（塔）与一个定向资源（不同方向的墙块）组合在一起。</br><br>$~$ $~$ $~$ $~$ $~$● MultipleEntriesPerTile（每个瓷砖多个条目）用于产量图标，每个瓷砖可以具有相同UI Lens类型的多个纹理条目</br><br>$~$ $~$ $~$ $~$ $~$● OneEntryPerTile（每个瓷砖一个条目）用于多瓷砖自然奇观，它将每个纹理条目放置在单独的瓷砖上。</br><br>$~$ $~$ $~$ $~$ $~$● TerrainBlends（地形混合）包含对StrategicView_TerrainBlend资产的XLP条目的引用，以及可选的StrategicView_DirectedAsset用于悬崖（因为悬崖必须与地形混合确定的海岸线相匹配）。</br><br>$~$ $~$ $~$ $~$ $~$● TerrainBlendCorners（地形混合角）包含对StrategicView_TerrainBlendCorners资产的XLP条目的引用。</br><br>$~$ $~$ $~$ $~$ $~$● TerrainSpriteEntries（地形贴花条目）是对StrategicView_Sprite纹理的XLP条目的引用的条目。</br><br>$~$ $~$ $~$ $~$ $~$● TerrainSprites（地形贴花）是引用包含与地形相关的纹理的TerrainSpriteEntries的元素。这些纹理可以与周围的瓷砖重叠（与TerrainTypes集合中的StrategicView_TerrainType纹理不同，后者仅在瓷砖边界内绘制）。例如，包括山脉和丘陵。</br><br>$~$ $~$ $~$ $~$ $~$● TerrainTypes（地形类型）包含一个类别和内联（即非引用）的条目，其中包含对StrategicView_TerrainType纹理的XLP条目的引用。类别可以是Hills（丘陵）、Mountains（山脉）、Coast（海岸）、Ocean（海洋）和Default（其他）。游戏对每个类别应用不同的规则。此外，每个内联条目可以包含对TerrainSprite的引用。（例如，“Mountains”是一个TerrainType，它具有填充瓷砖直到边界的背景纹理，并引用一个“Mountains” TerrainSprite，它具有实际的山脉纹理，可以与瓷砖边界重叠。）</br><br>$~$ $~$ $~$ $~$ $~$● FeatureEntries（特征条目）是包含对StrategicView_Sprite纹理的XLP条目引用的条目。</br><br>$~$ $~$ $~$ $~$ $~$● Features（特征）是引用FeatureEntries的元素，其中包含游戏中的特征（冰、丛林等）和自然奇观（克雷特湖、珠穆朗玛峰等）。此外，Features可以引用StrategicView_DirectedAssets（用于基于悬崖的自然奇观，如多佛尔海峡悬崖），并包含一个RenderTerrainSprite复选框和一个TerrainTypeOverride列表。RenderTerrainSprite复选框确定是否在特征下方绘制基础游戏瓷砖的地形贴花。TerrainTypeOverride列表允许游戏覆盖湖泊类似的自然奇观的基础地形类型。（湖泊的一个实现副作用是它们的地形类型隐式更改为海岸。在StrategicView中，湖泊纹理具有自己的海岸线，因此游戏必须创建一个非海岸的地形类型来填补瓷砖边界和纹理中的湖泊海岸线之间的空白。该列表允许您影响创建哪些地形类型。）</br><br>$~$ $~$ $~$ $~$ $~$● Routes（路径）包含两个对XLP条目的引用，一个是道路（StrategicView_Route资产），一个是桥梁（StrategicView_DirectedAssets资产）。</br><br>$~$ $~$ $~$ $~$ $~$● ImprovementEntries（改良条目）是包含对Improvements引用的XLP条目的条目，这些引用与Improvements（改良）相关联，其中包含游戏中的改良（农场、矿山等）。此外，Improvements可以引用StrategicView_DirectedAssets（用于特殊情况下的改良，如长城）。</br><br>$~$ $~$ $~$ $~$ $~$● Improvements（改良）是引用ImprovementEntries的元素，其中包含游戏中的改良（农场、矿山等）。此外，Improvements可以引用StrategicView_DirectedAssets（用于特殊情况下的改良，如长城）。</br><br>$~$ $~$ $~$ $~$ $~$● DistrictEntries（城区条目）是包含对Districts引用的XLP条目的条目，这些引用与Districts（城区）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● Districts（城区）是引用DistrictEntries的元素，其中包含游戏中的城区（科学、信仰等）。</br><br>$~$ $~$ $~$ $~$ $~$● BuildingEntries（建筑条目）是包含对Buildings引用的XLP条目的条目，这些引用与Buildings（建筑）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● Buildings（建筑）是引用BuildingEntries的元素，其中包含游戏中的建筑（图书馆、市场等）。此外，Buildings包含对Buildings.artdef中BuildingChain条目的引用。</br><br>$~$ $~$ $~$ $~$ $~$● CityEntries（城市条目）是包含对Cities引用的XLP条目的条目，这些引用与Cities（城市）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● Cities（城市）是引用CityEntries的元素，其中包含游戏中各个时代的城市。</br><br>$~$ $~$ $~$ $~$ $~$● ParkEntries（公园条目）是包含对Parks引用的XLP条目的条目，这些引用与Parks（公园）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● Parks（公园）是引用ParkEntries的元素，其中包含游戏中的国家公园。</br><br>$~$ $~$ $~$ $~$ $~$● EffectEntries（效果条目）是包含对Effects引用的XLP条目的条目，这些引用与Effects（效果）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● Effects（效果）是引用EffectEntries的元素，其中包含游戏中的效果（例如辐射）。</br><br>$~$ $~$ $~$ $~$ $~$● UILensEntries（UI镜头条目）是包含对UILenses引用的XLP条目的条目，这些引用与UILenses（UI镜头）相关联。</br><br>$~$ $~$ $~$ $~$ $~$● UILenses（UI镜头）是引用UILensEntries的元素，其中包含游戏中的UI镜头纹理。|
+| TerrainMaterialSet（地形材质集）     |
+| TerrainStyle（地形样式）            | 用于控制程序化地形层的参数。<br>$~$ $~$ RidgelineMountain（脊线山脉）：控制程序化脊线山脉的外观。</br><br>$~$ $~$ StandardHills（标准丘陵）：控制基本地形类型的丘陵外观。这些丘陵通过地形元素的高度图混合到地形中。</br><br>$~$ $~$ DuneDesertHills（沙丘沙漠丘陵）：控制沙漠丘陵，这些丘陵是程序化生成的沙丘。</br><br>$~$ $~$ StandardCoastline（标准海岸线）：控制游戏中程序化海岸线的外观。</br><br>$~$ $~$ StandardRiver（标准河流）：控制游戏中程序化河流的外观，以及用于河流源和随机散布的河流资产的TerrainElement条目列表。</br><br>$~$ $~$ StandardFlat（标准平原）：控制游戏中平坦地形类型的外观。平坦地形由地形材质和微小的高度变化的地形元素组成。</br><br>$~$ $~$ StandardOcean（标准海洋）：控制程序化海洋的外观。</br><br>$~$ $~$ StandardIceShelf（标准冰架）：控制冰地形瓷砖周围的程序化冰架的外观。</br><br>$~$ $~$ DesertMountain（沙漠山脉）：控制新的沙漠山脉样式的外观。删除此条目将使所有山脉使用RidgelineMountain样式。</br><br>$~$ $~$ NaturalWonders（自然奇观）：定义自然奇观资产的条目列表，包括地形资产、地形元素和水样式设置。</br><br>自然奇观的地形元素必须具有512像素或1024像素的正方形纹理（用于覆盖单个六边形或更大区域）。下面的两个图表显示这两种尺寸的纹理如何与游戏中的六边形对齐。Pattern组中的条目允许您为1-6号六边形定义特定属性，游戏会根据需要自动旋转资产以确保正确对齐。这些属性包括：</br><br>$~$ $~$  $~$ $~$ $~$● 1.BlockingHexN（阻塞六边形）- 此自然奇观填充此六边形，阻塞并覆盖程序化地形。默认情况下，六边形0（中心六边形）是阻塞的。</br><br>$~$ $~$  $~$ $~$ $~$● 2.TerrainTypeN（地形类型）- 此自然奇观资产需要特定条件才能正确对齐，例如与特定方向的水相邻。</br><br> ![/download/attachments/152437570/TerrainElementTemplate_Small.jpg?version=1&modificationDate=1498249375480&api=v2](DataDocumentation/media/image1.jpeg)</br><br> ![/download/attachments/152437570/TerrainElementTemplate_Medium.jpg?version=1&modificationDate=1498249713867&api=v2](DataDocumentation/media/image2.jpeg)</br><br>MaterialSet（材质集）：地形材质的列表，被自然奇观列表中的TerrainElementIDMap条目引用。如果您没有将材质放入此列表中，游戏将无法加载它，并使用黑色错误材质。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Terrains（地形）                  | 将资源名称绑定到各个系统可用的资产。<br>包含与游戏相关的内容。&quot;Terrain&quot;元素的名称必须与相应游戏XML条目中的&quot;type&quot;属性完全相同。StrategicView属性引用了StrategicView.artdef中TerrainTypes集合中的条目。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| TimeOfDay（时间）                 | 控制白天时间系统。大部分情况下使用名为'DEFAULT_LIGHTING'的TimeOfDay设置。当奇观影片激活时，使用名为'WONDER_TOD'的设置。引擎和奇观影片将使用0到24之间（从午夜到午夜）的值来设置时间。时间系统提供以下控制，所有这些控制都可以随时间进行动画处理：<br>$~$ $~$ $~$ $~$ $~$● 随时间混合环境光：'CubeLights'集合定义了一组用于基于图像的照明的GameEnvironment光照系统，并定义了一个随时间应用于每个光照的权重曲线。权重曲线可以用于调整给定光照随时间的影响（例如，在夜晚淡出）。引擎支持最多8个同时非零权重。</br><br>$~$ $~$ $~$ $~$ $~$● 太阳方向动画：SunAzimuth、SunTilt、SunZenith和SunColor控制太阳在一天中的行为。</br><br>$~$ $~$ $~$ $~$ $~$● 随时间关闭光照贴图和发光贴图：'LightMapWeight'曲线指定应用于着色器中所有光照贴图和发光贴图的缩放因子。除其他用途外，这可以用于在夜间打开和关闭发光窗户灯。</br><br>$~$ $~$ $~$ $~$ $~$● 曝光：这是一个相机曝光控制，可以随时间进行动画处理。曝光以f-stop为单位。</br><br>$~$ $~$ $~$ $~$ $~$● 颜色键校正时间：颜色键系统受时间系统控制。'ColorKeys'集合指定一组颜色键和一个权重曲线，类似于环境光。引擎支持最多2个同时激活的颜色键。|
+| UIPreview（用户界面预览）             |
+| UnitActivities（单位活动）          |
+| UnitOperations（单位操作）          |
+| Units（单位）                     |
+| UserInterfaceBLPs（用户界面BLP文件）  |
+| VFX（视觉效果）                     | 包含有关全局命名的视觉效果的信息。NormalVFX集合中的视觉效果通常在游戏中（通过名称）直接引用，当特定的游戏条件发生时。这些视觉效果也可以通过ArtDef触发器由资产引用。WeaponVFX、TerrainVFX和MaterialVFX集合包含了表格，表示在使用特定武器、击中特定地形/特征类型或遇到特定材质时应显示的视觉效果类型。WeaponVFX、TerrainVFX和MaterialVFX集合通常由单位的ArtDef触发器引用，游戏的单位系统会确保为每个集合提供适当的上下文，以正确选择要显示的视觉效果（通常发生在战斗中）。请注意，WeaponVFX、TerrainVFX和MaterialVFX集合中的DEFAULT条目将在命名元素的表格中找不到适当匹配项时使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| WaterMaterials（水材质）           |
+| WaterSettings（水设置）            | 提供了控制河流和海洋水外观的全局控制。包括：<br>$~$ $~$ $~$ $~$ $~$● 指定用于冰、海洋、湖泊和河流周围的水材质。</br><br>$~$ $~$ $~$ $~$ $~$● 控制应用于海岸线周围的程序化雾效果。</br><br>$~$ $~$ $~$ $~$ $~$● 为水的全局视觉设置指定了镜面功率、反射率等。某些值是全局指定的，而不是在各个材质中指定，以确保一致的水外观。|
+| WaveSettings（波浪设置）            | 用于沿海波浪的各种控制和调整。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| WonderMovie（奇观影片）             | 包含游戏可以显示的每个世界奇观的信息。此外，特殊建筑物（如小型、中型和大型火箭）也被表示为奇观。在创建建筑物的视觉表示时，会先检查奇观artdef中的建筑物，然后再检查建筑物的artdef。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| WorldViewRoutes（世界视图路径）       | 定义在世界视图中创建程序化道路时要使用的材质和模型（而不是战略视图！）。此外，还定义了一些参数，用于控制程序化道路的形状和形成。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 # Geometry（几何体）
 
@@ -4557,32 +3065,39 @@ WorldViewRoutes（世界视图路径）
     
 
 示例：
-
+```xml
 <IconTextureAtlases>  
 <Row Name="ICON\_ATLAS\_POTTERY" IconSize="32" Filename="TechPottery32"/>  
 <Row Name="ICON\_ATLAS\_POTTERY" Iconsize="48" Filename="TechPottery48"/>  
 </IconTextureAtlases>
+```
 
 带有手动图集纹理的示例：
 
+```xml
 <IconTextureAtlases>  
 <Row Name="ICON\_ATLAS\_TECH" IconSize="32" IconsPerRow="8" IconsPerColumn="8" Filename="Tech32"/>  
 <Row Name="ICON\_ATLAS\_TECH" IconSize="48" IconsPerRow="8" IconsPerColumn="8" Filename="Tech48"/>  
 </IconTextureAtlases>
+```
 
 2\. 在**IconDefinitions**部分，添加一个条目，将**图集名称**映射到**图标名称**。如果图标是手动图集化的，则需要指定图集位置的**索引**。图标名称用于在UI中获取正确的纹理。
 
 示例：
 
+```xml
 <IconDefinitions>  
 <Row Name="ICON\_TECH\_POTTERY" Atlas="ICON\_ATLAS\_POTTERY"/>  
 </IconDefinitions>
+```
 
 带有手动图集纹理的示例：
 
+```xml
 <IconDefinitions>  
 <Row Name="ICON\_TECH\_MINING" Index="2" Atlas="ICON\_ATLAS\_TECH"/>  
 </IconDefinitions>
+```
 
 * * *
 
@@ -4596,7 +3111,7 @@ WorldViewRoutes（世界视图路径）
 
 每当在资产编辑器(Asset Editor)中打开一个实体时，它会在相应的源文件上创建一个文件监视，因此如果您在编辑器中打开了实例，它将在检测到源文件更改时尝试重新导入实体。它还会在组成您打开的实体的所有实体上放置监视器，因此如果您打开一个资产，它将在组成它的所有实体上放置文件监视。
 
-您可以通过查看资产编辑器(Asset Editor)中默认位于底部的“文件监视”选项卡来查看所有文件监视的列表。如果没有显示该选项卡，您需要通过转到**窗口 > 文件监视**来启用它。
+您可以通过查看资产编辑器(Asset Editor)中默认位于底部的“文件监视”选项卡来查看所有文件监视的列表。如果没有显示该选项卡，您需要通过转到 **窗口 > 文件监视** 来启用它。
 
 ![机器生成的替代文本：资产编辑器(Asset Editor) - D:XprojectsXBALW-AGOULD Civ6 mainXCiv6Xpa编辑视图窗口灯光探针.geo基本名称类名描述分类标签组源源文件路径源对象导入时间导出时间数据数据文件文件监视单位路径（I项）单位项）D:XprojectsXBALW-AGOULD Civ6 1/1/0001 AM 1/1/0001 AM相对路径灯光探针.gr2 GR2 CIVE mainlCIvBpantryXGeomethesXLighting_Probegeo D AprojectsXBALW-AGOLlLD CIVE main* DevXLjghtingXHeIper ObjectsXLjghting Probe.max](Iteration/media/image1.jpg)
 
@@ -4606,7 +3121,7 @@ WorldViewRoutes（世界视图路径）
 
 您有两个选项：
 
-1.  打开需要重新导入的实体，然后转到“_**文件 > 导入**_”（CTRL + SHIFT + I），或者点击顶部工具栏上的导入按钮
+1.  打开需要重新导入的实体，然后转到“ **文件 > 导入** ”（CTRL + SHIFT + I），或者点击顶部工具栏上的导入按钮
     
 
 ![机器生成的替代文本：资产编辑器(Asset Editor) - 编辑D:XprojectsXBALW-AGOULD Civ6_mainXCiv6NpantryNGeometriesX16 Scouts.geo视图窗口tilebases.xlp 16 Scouts Unit en源文件16_Scouts.geo资产Pr. 16 Scouts.ast*基本名称类名描述](Iteration/media/image2.png)
@@ -4797,11 +3312,11 @@ Cooker使用一个**XML库包（XLP）**文件来确定哪些资产和实体属�
     
 6.  在“Particles”选项卡中点击“添加新建”工具栏按钮，启动Mini Importer
     
-7.  点击“+ 添加源文件...”，浏览到所需的.peb文件，然后点击“_**确定**_”
+7.  点击“+ 添加源文件...”，浏览到所需的.peb文件，然后点击“ **确定** ”
     
 8.  确保所选的.peb文件出现在Mini Importer的文本框中并被选中。然后点击“导入”
     
-    1.  如果您重新导入.peb文件，需要确保“_**签出**_”按钮被选中
+    1.  如果您重新导入.peb文件，需要确保“ **签出** ”按钮被选中
         
         1.  或者，如果您重新导入.peb文件，您可以简单地在“Particles”选项卡中选择该项目，然后点击“重新导入”工具栏按钮（它看起来像回收标志）。
             
@@ -4909,25 +3424,13 @@ Cooker使用一个**XML库包（XLP）**文件来确定哪些资产和实体属�
 
 ![/download/attachments/166105140/image2017-6-14_10-33-35.png?version=1&modificationDate=1497450815060&api=v2](TerrainOverview/media/image3.png)![/download/attachments/166105140/image2017-6-14_10-34-0.png?version=1&modificationDate=1497450840313&api=v2](TerrainOverview/media/image4.png)
 
-**通道**
+| **通道** | **描述**                |
+|--------|-----------------------|
+| R      | 右下角（红色）地形漫反射纹理将在此处绘制。 |
+| G      | 左下角（绿色）地形漫反射纹理将在此处绘制。 |
+| B      | 顶部（蓝色）地形漫反射纹理将在此处绘制。  |
+| A      | 六边形形状的可见性，以防止四边形重叠。   |
 
-**描述**
-
-R
-
-右下角（红色）地形漫反射纹理将在此处绘制。
-
-G
-
-左下角（绿色）地形漫反射纹理将在此处绘制。
-
-B
-
-顶部（蓝色）地形漫反射纹理将在此处绘制。
-
-A
-
-六边形形状的可见性，以防止四边形重叠。
 
 ## 地形漫反射纹理(Terrain Diffuse Textures)
 
@@ -4935,17 +3438,10 @@ A
 
 ![/download/attachments/166105140/image2017-6-14_10-47-35.png?version=1&modificationDate=1497451655923&api=v2](TerrainOverview/media/image5.png)![/download/attachments/166105140/image2017-6-14_10-47-50.png?version=1&modificationDate=1497451670440&api=v2](TerrainOverview/media/image6.png)
 
-**通道**
-
-**描述**
-
-R, G , B
-
-地形类型的漫反射颜色信息。
-
-A
-
-无信息
+| **通道**   | **描述**        |
+|----------|---------------|
+| R, G , B | 地形类型的漫反射颜色信息。 |
+| A        | 无信息           |
 
 ## 海岸线/河岸纹理(The Coastline / Riverbank Texture)
 
@@ -4988,25 +3484,12 @@ A
 
 不幸的是，由于海岸线轮廓需要比河水区域更宽，海岸线纹理和河流纹理无法共享。
 
-**通道**
-
-**描述**
-
-R
-
-海岸线/河岸线内部亮度信息。
-
-G
-
-海岸线/河岸线外部亮度信息。
-
-B
-
-海岸线/河岸线点亮度信息。
-
-A
-
-海岸轮廓/河水放置。
+| **通道** | **描述**         |
+|--------|----------------|
+| R      | 海岸线/河岸线内部亮度信息。 |
+| G      | 海岸线/河岸线外部亮度信息。 |
+| B      | 海岸线/河岸线点亮度信息。  |
+| A      | 海岸轮廓/河水放置。     |
 
 ## 文化边界/六边形网格纹理
 
@@ -5045,25 +3528,12 @@ A
 
 文化边界/六边形网格纹理与地形混合纹理的地形混合形状或海岸线/河岸线形状紧密耦合，因此不能同时与两者关联。
 
-**通道**
-
-**描述**
-
-R
-
-内部文化边界亮度/渐变查找信息。
-
-G
-
-外部文化边界亮度/渐变查找信息。
-
-B
-
-点文化边界亮度/渐变查找信息。
-
-A
-
-六边形网格亮度信息。
+| **通道** | **描述**           |
+|--------|------------------|
+| R      | 内部文化边界亮度/渐变查找信息。 |
+| G      | 外部文化边界亮度/渐变查找信息。 |
+| B      | 点文化边界亮度/渐变查找信息。  |
+| A      | 六边形网格亮度信息。       |
 
 ## 制作和运行
 
@@ -5079,168 +3549,88 @@ A
     
 *   Source必须包含所有Base和Channel图层，并表示可以应用于任何混合块，包括具有河源的混合块的完整地形混合。
     
+| **Group(组)** | **Layer(图层) **                                                                                |
+|--------------|-----------------------------------------------------------------------------------------------|
+| Base         | TerrainBlend（地形混合）                                                                            |
+|              | CultureBorder_Right（文化边界_右）                                                                   |
+|              | CultureBorder_Left（文化边界_左）                                                                    |
+|              | CultureBorder_Top（文化边界_上）                                                                     |
+|              | RiverbankCorners_CultureBorder_RightBottom（河岸角_文化边界_右下）                                       |
+|              | RiverbankCorners_CultureBorder_RightTop（河岸角_文化边界_右上）                                          |
+|              | RiverbankCorners_CultureBorder_RightTopAndBottom（河岸角_文化边界_右上和下）                               |
+|              | RiverbankCorners_CultureBorder_LeftBottom（河岸角_文化边界_左下）                                        |
+|              | RiverbankCorners_CultureBorder_LeftTop（河岸角_文化边界_左上）                                           |
+|              | RiverbankCorners_CultureBorder_LeftTopAndBottom（河岸角_文化边界_左上和下）                                |
+|              | RiverbankCorners_CultureBorder_TopLeft（河岸角_文化边界_上左）                                           |
+|              | RiverbankCorners_CultureBorder_TopRight（河岸角_文化边界_上右）                                          |
+|              | RiverbankCorners_CultureBorder_TopRightAndLeft（河岸角_文化边界_上右和左）                                 |
+| Channel      | RiverbankChannelRight_ChannelBottomThin（河岸通道右_通道底部细）                                          |
+|              | RiverbankChannelRight_ChannelBottomThin_CultureBorder_Left（河岸通道右_通道底部细_文化边界_左）                |
+|              | RiverbankChannelRight_ChannelBottomThin_CultureBorder_Right（河岸通道右_通道底部细_文化边界_右）               |
+|              | RiverbankChannelRight_ChannelBottomThin_CultureBorder_Top（河岸通道右_通道底部细_文化边界_上）                 |
+|              | RiverbankChannelRight_ChannelBottomFat（河岸通道右_通道底部粗）                                           |
+|              | RiverbankChannelLeft_ChannelBottomThin（河岸通道左_通道底部细）                                           |
+|              | RiverbankChannelLeft_ChannelBottomThin_CultureBorder_Left（河岸通道左_通道底部细_文化边界_左）                 |
+|              | RiverbankChannelLeft_ChannelBottomThin_CultureBorder_Right（河岸通道左_通道底部细_文化边界_右）                |
+|              | RiverbankChannelLeft_ChannelBottomThin_CultureBorder_Top（河岸通道左_通道底部细_文化边界_上）                  |
+|              | RiverbankChannelLeft_ChannelBottomFat（河岸通道左_通道底部粗）                                            |
+|              | RiverbankChannelRight_ChannelLeft（河岸通道右_通道左）                                                  |
+|              | RiverbankChannelRight_ChannelLeft_CultureBorder_Left（河岸通道右_通道左_文化边界_左）                        |
+|              | RiverbankChannelRight_ChannelLeft_CultureBorder_Right（河岸通道右_通道左_文化边界_右）                       |
+|              | RiverbankChannelRight_ChannelLeft_CultureBorder_Top（河岸通道右_通道左_文化边界_上）                         |
+| Source       | RiverbankSourceRight（河岸源_右）                                                                   |
+|              | RiverbankSourceRight_CultureBorder_Right（河岸源_右_文化边界_右）                                        |
+|              | RiverbankSourceRight_CultureBorder_Top（河岸源_右_文化边界_上）                                          |
+|              | RiverbankSourceRight_ChannelBottomThin（河岸源_右_通道底部细）                                           |
+|              | RiverbankSourceRight_ChannelBottomThin_CultureBorder_Right（河岸源_右_通道底部细_文化边界_右）                |
+|              | RiverbankSourceRight_ChannelBottomThin_CultureBorder_Top（河岸源_右_通道底部细_文化边界_上）                  |
+|              | RiverbankSourceRight_ChannelBottomFat（河岸源_右_通道底部粗）                                            |
+|              | RiverbankSourceRight_ChannelLeft_ChannelBottomThin（河岸源_右_通道左_通道底部细）                           |
+|              | RiverbankSourceRight_ChannelLeft_ChannelBottomThin_CultureBorder_Top（河岸源_右_通道左_通道底部细_文化边界_上）  |
+|              | RiverbankSourceRight_ChannelLeft_ChannelBottomFat（河岸源_右_通道左_通道底部粗）                            |
+|              | RiverbankSourceRight_ChannelLeft（河岸源_右_通道左）                                                   |
+|              | RiverbankSourceRight_ChannelLeft_CultureBorder_Right（河岸源_右_通道左_文化边界_右）                        |
+|              | RiverbankSourceRight_SourceLeft_ChannelBottomThin（河岸源_右_源左_通道底部细）                             |
+|              | RiverbankSourceRight_SourceLeft_ChannelBottomThin_CultureBorder_Left（河岸源_右_源左_通道底部细_文化边界_左）   |
+|              | RiverbankSourceRight_SourceLeft_ChannelBottomThin_CultureBorder_Top（河岸源_右_源左_通道底部细_文化边界_上）    |
+|              | RiverbankSourceRight_SourceLeft_ChannelBottomFat（河岸源_右_源左_通道底部粗）                              |
+|              | RiverbankSourceRight_SourceBottom_ChannelLeft（河岸源_右_源底_通道左）                                   |
+|              | RiverbankSourceRight_SourceBottom_ChannelLeft_CultureBorder_Left（河岸源_右_源底_通道左_文化边界_左）         |
+|              | RiverbankSourceRight_SourceBottom_ChannelLeft_CultureBorder_Right（河岸源_右_源底_通道左_文化边界_右）        |
+|              | RiverbankSourceLeft（河岸源_左）                                                                    |
+|              | RiverbankSourceLeft_CultureBorder_Left（河岸源_左_文化边界_左）                                          |
+|              | RiverbankSourceLeft_CultureBorder_Top（河岸源_左_文化边界_上）                                           |
+|              | RiverbankSourceLeft_ChannelRight_ChannelBottomThin（河岸源_左_通道右_通道底部细）                           |
+|              | RiverbankSourceLeft_ChannelRight_ChannelBottomThin_CultureBorder_Top（河岸源_左_通道右_通道底部细_文化边界_上）  |
+|              | RiverbankSourceLeft_ChannelRight_ChannelBottomFat（河岸源_左_通道右_通道底部粗）                            |
+|              | RiverbankSourceLeft_ChannelBottomThin（河岸源_左_通道底部细）                                            |
+|              | RiverbankSourceLeft_ChannelBottomThin_CultureBorder_Top（河岸源_左_通道底部细_文化边界_上）                   |
+|              | RiverbankSourceLeft_ChannelBottomFat（河岸源_左_通道底部粗）                                             |
+|              | RiverbankSourceLeft_ChannelRight（河岸源_左_通道右）                                                   |
+|              | RiverbankSourceLeft_ChannelRight_CultureBorder_Left（河岸源_左_通道右_文化边界_左）                         |
+|              | RiverbankSourceLeft_SourceBottom_ChannelRight（河岸源_左_源底_通道右）                                   |
+|              | RiverbankSourceLeft_SourceBottom_ChannelRight_CultureBorder_Left（河岸源_左_源底_通道右_文化边界_左）         |
+|              | RiverbankSourceLeft_SourceBottom_ChannelRight_CultureBorder_Right（河岸源_左_源底_通道右_文化边界_右）        |
+|              | RiverbankSourceBottom_Thin（河岸源底_细）                                                            |
+|              | RiverbankSourceBottom_Thin_CultureBorder_Left（河岸源底_细_文化边界_左）                                  |
+|              | RiverbankSourceBottom_Thin_CultureBorder_Right（河岸源底_细_文化边界_右）                                 |
+|              | RiverbankSourceBottom_Fat（河岸源底_粗）                                                             |
+|              | RiverbankSourceBottom_ChannelRight（河岸源底_通道右）                                                  |
+|              | RiverbankSourceBottom_ChannelRight_CultureBorder_Left（河岸源底_通道右_文化边界_左）                        |
+|              | RiverbankSourceBottom_ChannelLeft（河岸源底_通道左）                                                   |
+|              | RiverbankSourceBottom_ChannelLeft_CultureBorder_Right（河岸源底_通道左_文化边界_右）                        |
+|              | RiverbankSourceBottom_ChannelRight_ChannelLeft（河岸源底_通道右_通道左）                                  |
+|              | RiverbankSourceRight_SourceLeft_SourceBottom（河岸源_右_源左_源底）                                     |
 
-Group(组)
-
-Layer(图层)
-
-Base
-
-TerrainBlend（地形混合）
-
-CultureBorder\_Right（文化边界\_右）
-
-CultureBorder\_Left（文化边界\_左）
-
-CultureBorder\_Top（文化边界\_上）
-
-RiverbankCorners\_CultureBorder\_RightBottom（河岸角\_文化边界\_右下）
-
-RiverbankCorners\_CultureBorder\_RightTop（河岸角\_文化边界\_右上）
-
-RiverbankCorners\_CultureBorder\_RightTopAndBottom（河岸角\_文化边界\_右上和下）
-
-RiverbankCorners\_CultureBorder\_LeftBottom（河岸角\_文化边界\_左下）
-
-RiverbankCorners\_CultureBorder\_LeftTop（河岸角\_文化边界\_左上）
-
-RiverbankCorners\_CultureBorder\_LeftTopAndBottom（河岸角\_文化边界\_左上和下）
-
-RiverbankCorners\_CultureBorder\_TopLeft（河岸角\_文化边界\_上左）
-
-RiverbankCorners\_CultureBorder\_TopRight（河岸角\_文化边界\_上右）
-
-RiverbankCorners\_CultureBorder\_TopRightAndLeft（河岸角\_文化边界\_上右和左）
-
-Channel
-
-RiverbankChannelRight\_ChannelBottomThin（河岸通道右\_通道底部细）
-
-RiverbankChannelRight\_ChannelBottomThin\_CultureBorder\_Left（河岸通道右\_通道底部细\_文化边界\_左）
-
-RiverbankChannelRight\_ChannelBottomThin\_CultureBorder\_Right（河岸通道右\_通道底部细\_文化边界\_右）
-
-RiverbankChannelRight\_ChannelBottomThin\_CultureBorder\_Top（河岸通道右\_通道底部细\_文化边界\_上）
-
-RiverbankChannelRight\_ChannelBottomFat（河岸通道右\_通道底部粗）
-
-RiverbankChannelLeft\_ChannelBottomThin（河岸通道左\_通道底部细）
-
-RiverbankChannelLeft\_ChannelBottomThin\_CultureBorder\_Left（河岸通道左\_通道底部细\_文化边界\_左）
-
-RiverbankChannelLeft\_ChannelBottomThin\_CultureBorder\_Right（河岸通道左\_通道底部细\_文化边界\_右）
-
-RiverbankChannelLeft\_ChannelBottomThin\_CultureBorder\_Top（河岸通道左\_通道底部细\_文化边界\_上）
-
-RiverbankChannelLeft\_ChannelBottomFat（河岸通道左\_通道底部粗）
-
-RiverbankChannelRight\_ChannelLeft（河岸通道右\_通道左）
-
-RiverbankChannelRight\_ChannelLeft\_CultureBorder\_Left（河岸通道右\_通道左\_文化边界\_左）
-
-RiverbankChannelRight\_ChannelLeft\_CultureBorder\_Right（河岸通道右\_通道左\_文化边界\_右）
-
-RiverbankChannelRight\_ChannelLeft\_CultureBorder\_Top（河岸通道右\_通道左\_文化边界\_上）
-
-Source
-
-RiverbankSourceRight（河岸源\_右）
-
-RiverbankSourceRight\_CultureBorder\_Right（河岸源\_右\_文化边界\_右）
-
-RiverbankSourceRight\_CultureBorder\_Top（河岸源\_右\_文化边界\_上）
-
-RiverbankSourceRight\_ChannelBottomThin（河岸源\_右\_通道底部细）
-
-RiverbankSourceRight\_ChannelBottomThin\_CultureBorder\_Right（河岸源\_右\_通道底部细\_文化边界\_右）
-
-RiverbankSourceRight\_ChannelBottomThin\_CultureBorder\_Top（河岸源\_右\_通道底部细\_文化边界\_上）
-
-RiverbankSourceRight\_ChannelBottomFat（河岸源\_右\_通道底部粗）
-
-RiverbankSourceRight\_ChannelLeft\_ChannelBottomThin（河岸源\_右\_通道左\_通道底部细）
-
-RiverbankSourceRight\_ChannelLeft\_ChannelBottomThin\_CultureBorder\_Top（河岸源\_右\_通道左\_通道底部细\_文化边界\_上）
-
-RiverbankSourceRight\_ChannelLeft\_ChannelBottomFat（河岸源\_右\_通道左\_通道底部粗）
-
-RiverbankSourceRight\_ChannelLeft（河岸源\_右\_通道左）
-
-RiverbankSourceRight\_ChannelLeft\_CultureBorder\_Right（河岸源\_右\_通道左\_文化边界\_右）
-
-RiverbankSourceRight\_SourceLeft\_ChannelBottomThin（河岸源\_右\_源左\_通道底部细）
-
-RiverbankSourceRight\_SourceLeft\_ChannelBottomThin\_CultureBorder\_Left（河岸源\_右\_源左\_通道底部细\_文化边界\_左）
-
-RiverbankSourceRight\_SourceLeft\_ChannelBottomThin\_CultureBorder\_Top（河岸源\_右\_源左\_通道底部细\_文化边界\_上）
-
-RiverbankSourceRight\_SourceLeft\_ChannelBottomFat（河岸源\_右\_源左\_通道底部粗）
-
-RiverbankSourceRight\_SourceBottom\_ChannelLeft（河岸源\_右\_源底\_通道左）
-
-RiverbankSourceRight\_SourceBottom\_ChannelLeft\_CultureBorder\_Left（河岸源\_右\_源底\_通道左\_文化边界\_左）
-
-RiverbankSourceRight\_SourceBottom\_ChannelLeft\_CultureBorder\_Right（河岸源\_右\_源底\_通道左\_文化边界\_右）
-
-RiverbankSourceLeft（河岸源\_左）
-
-RiverbankSourceLeft\_CultureBorder\_Left（河岸源\_左\_文化边界\_左）
-
-RiverbankSourceLeft\_CultureBorder\_Top（河岸源\_左\_文化边界\_上）
-
-RiverbankSourceLeft\_ChannelRight\_ChannelBottomThin（河岸源\_左\_通道右\_通道底部细）
-
-RiverbankSourceLeft\_ChannelRight\_ChannelBottomThin\_CultureBorder\_Top（河岸源\_左\_通道右\_通道底部细\_文化边界\_上）
-
-RiverbankSourceLeft\_ChannelRight\_ChannelBottomFat（河岸源\_左\_通道右\_通道底部粗）
-
-RiverbankSourceLeft\_ChannelBottomThin（河岸源\_左\_通道底部细）
-
-RiverbankSourceLeft\_ChannelBottomThin\_CultureBorder\_Top（河岸源\_左\_通道底部细\_文化边界\_上）
-
-RiverbankSourceLeft\_ChannelBottomFat（河岸源\_左\_通道底部粗）
-
-RiverbankSourceLeft\_ChannelRight（河岸源\_左\_通道右）
-
-RiverbankSourceLeft\_ChannelRight\_CultureBorder\_Left（河岸源\_左\_通道右\_文化边界\_左）
-
-RiverbankSourceLeft\_SourceBottom\_ChannelRight（河岸源\_左\_源底\_通道右）
-
-RiverbankSourceLeft\_SourceBottom\_ChannelRight\_CultureBorder\_Left（河岸源\_左\_源底\_通道右\_文化边界\_左）
-
-RiverbankSourceLeft\_SourceBottom\_ChannelRight\_CultureBorder\_Right（河岸源\_左\_源底\_通道右\_文化边界\_右）
-
-RiverbankSourceBottom\_Thin（河岸源底\_细）
-
-RiverbankSourceBottom\_Thin\_CultureBorder\_Left（河岸源底\_细\_文化边界\_左）
-
-RiverbankSourceBottom\_Thin\_CultureBorder\_Right（河岸源底\_细\_文化边界\_右）
-
-RiverbankSourceBottom\_Fat（河岸源底\_粗）
-
-RiverbankSourceBottom\_ChannelRight（河岸源底\_通道右）
-
-RiverbankSourceBottom\_ChannelRight\_CultureBorder\_Left（河岸源底\_通道右\_文化边界\_左）
-
-RiverbankSourceBottom\_ChannelLeft（河岸源底\_通道左）
-
-RiverbankSourceBottom\_ChannelLeft\_CultureBorder\_Right（河岸源底\_通道左\_文化边界\_右）
-
-RiverbankSourceBottom\_ChannelRight\_ChannelLeft（河岸源底\_通道右\_通道左）
-
-RiverbankSourceRight\_SourceLeft\_SourceBottom（河岸源\_右\_源左\_源底）
 
 此外，以下四个纹理是单独的地形混合角落PSD的一部分，因为它们不依赖于单独的地形混合：
 
-Corners（角落）
+| **Corners（角落）** | **CultureBorderCorners_All（文化边界角落_全部） **          |
+|-----------------|---------------------------------------------------|
+|                 | RiverbankCorners_All（河岸角落_全部）                     |
+|                 | RiverbankWaterCorners_All（河岸水角落_全部）               |
+|                 | RiverbankCorners_CultureBorder_All（河岸角落_文化边界_全部）  |
 
-CultureBorderCorners\_All（文化边界角落\_全部）
-
-RiverbankCorners\_All（河岸角落\_全部）
-
-RiverbankWaterCorners\_All（河岸水角落\_全部）
-
-RiverbankCorners\_CultureBorder\_All（河岸角落\_文化边界\_全部）
 
 * * *
 
@@ -5248,7 +3638,7 @@ RiverbankCorners\_CultureBorder\_All（河岸角落\_文化边界\_全部）
 
 纹理（.tex）
 
-纹理是表示像素数据的实体，用于材质中的不同地图，或者可以用于用户界面（UI），或者作为战略视图层中的精灵。
+纹理是表示像素数据的实体，用于材质中的不同地图，或者可以用于用户界面（UI），或者作为战略视图层中的贴花。
 
 引擎目前支持两种不同的源格式来创建纹理：TGA和PSD。您可以使用资产编辑器(Asset Editor)(Asset Editor)逐个创建）或使用资产导入器（一次导入多个，只要它们来自同一源文件）来创建纹理。
 
@@ -5338,22 +3728,22 @@ _这是设置手动MIP时源文件的样子。_
 
 # The Life of a Leader（领导者的生命？）
 
-![](The Life of a Leader/media/image1.png)
+![](The%20Life%20of%20a%20Leader/media/image1.png)
 
 领导者可以说是《文明VI》中成本最高的部分。无论是花费数月时间创建一个完全动画的领导者，还是处理不同文化服装的复杂性，领导者都是一个挑战。在本文中，我们希望以我们所知的最佳方式记录创建这些角色的过程。  
   
 为了开始创建这样一个复杂的移动角色，我们像游戏开发中的大多数其他概念一样，从一次对话开始。
 
-**启动：  
-一旦我们确定了文明的概念和领导者的身份，我们作为一个团队坐下来讨论所有的制作想法。在这个过程中，可能会呈现一个概念的初步草图（或几个草图），我们会讨论建模和动画对于这个领导者的所有想法。**
+**启动：**
+一旦我们确定了文明的概念和领导者的身份，我们作为一个团队坐下来讨论所有的制作想法。在这个过程中，可能会呈现一个概念的初步草图（或几个草图），我们会讨论建模和动画对于这个领导者的所有想法。
 
-**
 
-![](The Life of a Leader/media/image2.jpeg)
+
+![](The%20Life%20of%20a%20Leader/media/image2.jpeg)
 
 概念参考文件夹非常重要。这是由概念部门收集的图像文件夹，在整个流程中使用。文件夹中包含有关服装、颜色和其他道具的一般文化注释，供建模部门参考。
 
-![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The Life of a Leader/media/image3.png)
+![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The%20Life%20of%20a%20Leader/media/image3.png)
 
 **配音工作：**
 
@@ -5361,7 +3751,7 @@ _这是设置手动MIP时源文件的样子。_
 
 在这里需要注意的是，设计团队对于要录制的配音台词有明确的设定。不应该录制设计团队不再考虑或持有犹豫态度的台词。这样，在后续流程中，不会浪费时间在那些根本不是选项的台词之间进行审核和选择。
 
-![](The Life of a Leader/media/image4.jpeg)
+![](The%20Life%20of%20a%20Leader/media/image4.jpeg)
 
 **概念：**
 
@@ -5371,7 +3761,7 @@ _这是设置手动MIP时源文件的样子。_
 
 一旦我们真正开始理解概念的方向，就会进行最终反馈。通常这是交接阶段，建模团队可以开始工作。在这里，建模团队确定是否有他们所需的一切（或至少有很大一部分），以便开始工作，并检查是否存在任何问题。此时，我们应该对这个领导者的整体概念有共识。
 
-![](The Life of a Leader/media/image4.jpeg)
+![](The%20Life%20of%20a%20Leader/media/image4.jpeg)
 
 **最终概念？**
 
@@ -5381,25 +3771,25 @@ _这是设置手动MIP时源文件的样子。_
 
 此外，有时需要进行涂鸦以使基本形状感觉正确，这些涂鸦往往成为后续更终绘图的基础。
 
-![](The Life of a Leader/media/image6.png)
+![](The%20Life%20of%20a%20Leader/media/image6.png)
 
-**建模：**  
+**建模：** 
   
 从我们用于领导者的基础模型之一开始，建模团队开始对其进行粗略的雕刻。这个阶段我们可以给出初步的反馈意见。这个阶段通常包括面部的处理和服装形状的大致估计。我们可以开始细化一些细节。在这个阶段，我们还会决定一些事情，比如是否使用Marvelous Designer来制作服装，以及在Substance中完成多少工作。通常在从2D到3D的转换过程中会出现一些问题。概念团队通常会再次参与讨论，我们会来回讨论一些问题，但只有在翻译过程中遇到困难时才会这样。建模团队会尽量将大部分形状粗略地完成。宁愿拥有而不需要，也不要漏掉任何东西。
 
-一旦我们满意了基础形状，我们就开始进行最终的高模型制作。这个阶段模型会更加完善。在Zbrush中，我们尝试在雕刻本身中给出一些材质定义（不要太多，因为大部分工作将在Substance中完成），并清理掉一些不必要的形状。模型被分解和分离。建模师开始考虑低模型的形状，并决定如何对低模型进行拓扑。  
+一旦我们满意了基础形状，我们就开始进行最终的高模型制作。这个阶段模型会更加完善。在Zbrush中，我们尝试在雕刻本身中给出一些材质定义（不要太多，因为大部分工作将在Substance中完成），并清理掉一些不必要的形状。模型被分解和分离。建模师开始考虑低模型的形状，并决定如何对低模型进行拓扑。
   
 在这个阶段还有许多较小的任务，并不一定在所有的领导者身上都发生。如果使用了Marvelous Designer，我们会清理这些模型，因为它们通常是三角化的，并且比我们实际渲染的要高保真度。我们发现，如果褶皱是固定的而不会移动，那么效果并不好。如果角色有很多硬表面部分（如盔甲），我们会将它们分开，并确定哪些部分是分离的。
 
-![](The Life of a Leader/media/image7.png)
+![](The%20Life%20of%20a%20Leader/media/image7.png)
 
 一旦我们满意了高模型，我们开始生成低模型。虽然使用的软件可能有所不同，但通常我们要么使用TopoGun，要么使用Maya在高模型上进行建模。
 
-![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture.png](The Life of a Leader/media/image8.png)
+![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture.png](The%20Life%20of%20a%20Leader/media/image8.png)
 
 我们考虑镜像的部分和UV的元素。高模型和低模型之间通常会有来回的调整，重新投影和调整网格，以生成最干净的模型。
 
-![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The Life of a Leader/media/image9.png)![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The Life of a Leader/media/image10.png)
+![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The%20Life%20of%20a%20Leader/media/image9.png)![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\Capture2.png](The%20Life%20of%20a%20Leader/media/image10.png)
 
 使用像UV Layout这样的程序，我们在它和Maya之间快速切换，随着进行调整网格，以获得尽可能干净的UV。UV的制作是线性进行的。
 
@@ -5417,15 +3807,15 @@ Substance用于所有纹理和源纹理。
 
 这意味着在Marmoset中的所有内容都与驱动器上的源资产位置实时链接，因此如果更新了源资产，Marmoset场景也会更新，然后实时生成法线贴图，再将其传回Substance...等等。基本上，我们所做的每个调整都可以相对轻松地通过纹理流程传递，尽管情况并非总是如此。
 
-![](The Life of a Leader/media/image11.png)
+![](The%20Life%20of%20a%20Leader/media/image11.png)
 
 在Marmoset中进行烘焙非常简单，而且除了Maya和Substance之外，建模团队几乎只使用这个程序。烘焙的一致性非常重要，能够依赖相同质量的法线贴图和环境遮挡质量（我们烘焙的两张贴图）使后续工作更加容易。在将高模型和低模型分组后，只需点击"烘焙"，然后使用提供的笔刷调整自动的cage网格和法线偏移，以创建干净的烘焙结果。
 
-![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\screenshot054.png](The Life of a Leader/media/image12.png)
+![C:\Users\mkean\AppData\Local\Microsoft\Windows\INetCache\Content.Word\screenshot054.png](The%20Life%20of%20a%20Leader/media/image12.png)
 
 继续建模流程，我们将低模型和我们创建的所有源纹理（法线和环境遮挡）导入Substance，并使用Substance的内部贴图转换器创建其他所需的贴图。这样做更加清晰，而且智能材质会假设这些贴图是以这种方式创建的。然后，根据概念进行材质的初步阻塞，并根据需要调整材质，以适应新的想法。由于我们在Painter中使用了文明技术着色器，这使得我们可以在进入引擎之前在Substance中进行一些实时的调整。
 
-![](The Life of a Leader/media/image13.png)
+![](The%20Life%20of%20a%20Leader/media/image13.png)
 
 使用预先制作的文明技术导出预设，我们在将贴图初步阻塞后导出纹理。之后，我们加载资产编辑器(Asset Editor)并在引擎中创建一个领导者资产。这包括选择资产类型并将几何体从Maya导入场景中。然后我们为皮肤和服装创建着色器。
 
@@ -5435,7 +3825,7 @@ Substance用于所有纹理和源纹理。
 
 这将带我们到一个准备好进行初步反馈的纹理版本。
 
-![](The Life of a Leader/media/image14.png)
+![](The%20Life%20of%20a%20Leader/media/image14.png)
 
 **动画：**
 
@@ -5443,23 +3833,23 @@ Substance用于所有纹理和源纹理。
 
 **测试姿势：**
 
-双臂交叉放在胸前、双臂放在身体两侧、双手合拢放在前方，以检查比例并确保领导者看起来放松。这可能会导致对模型的修改请求。
+臂交叉放在胸前、双臂放在身体两侧、双手合拢放在前方，以检查比例并确保领导者看起来放松。这可能会导致对模型的修改请求。
 
-![TestPoses](The Life of a Leader/media/image15.jpeg)
+![TestPoses](The%20Life%20of%20a%20Leader/media/image15.jpeg)
 
 使用道具进行IK和FK切换，躯干扭转和折叠，脚部滚动和手指皮肤绑定。我们对身体的每个控制器进行彻底的调查。握拳、面部表情和口型。我们需要看到角色能够做出令人信服的O、M和T形状，鼓起腮帮子，闭上眼睛。我们希望看到眉毛能够形成吸引人的形状。
 
-![Tshape](The Life of a Leader/media/image16.jpeg)![Mshape](The Life of a Leader/media/image17.jpeg)![OShape](The Life of a Leader/media/image18.jpeg)![Eyebrows](The Life of a Leader/media/image19.jpeg)
+![Tshape](The%20Life%20of%20a%20Leader/media/image16.jpeg)![Mshape](The%20Life%20of%20a%20Leader/media/image17.jpeg)![OShape](The%20Life%20of%20a%20Leader/media/image18.jpeg)![Eyebrows](The%20Life%20of%20a%20Leader/media/image19.jpeg)
 
 动画师开始使用功能性骨骼创建和评估基本的空闲姿势（快乐、中立、不快乐）。
 
-![](The Life of a Leader/media/image20.png)
+![](The%20Life%20of%20a%20Leader/media/image20.png)
 
 这对于几个原因来说是非常有价值的，例如看姿势如何对基本照明产生反应，以及角色的比例如何保持。在这个阶段，我们会集合在一起，查看姿势并讨论需要进行的更改。如前所述，这有时包括模型的修改，以及骨骼和权重的调整。骨骼和模型可能会再次进行调整，以完成最终的骨骼设置。
 
 此时，照明团队进行初始的基本姿势照明。
 
-![Tshape](The Life of a Leader/media/image16.jpeg)![Mshape](The Life of a Leader/media/image17.jpeg)![OShape](The Life of a Leader/media/image18.jpeg)![Eyebrows](The Life of a Leader/media/image19.jpeg)
+![Tshape](The%20Life%20of%20a%20Leader/media/image16.jpeg)![Mshape](The%20Life%20of%20a%20Leader/media/image17.jpeg)![OShape](The%20Life%20of%20a%20Leader/media/image18.jpeg)![Eyebrows](The%20Life%20of%20a%20Leader/media/image19.jpeg)
 
 动画师使用选定的空闲姿势拍摄配音和基本设置的参考视频。动画师根据动画主管批准的选择进行表演。
 
@@ -5489,9 +3879,9 @@ Substance用于所有纹理和源纹理。
 
 这样可以将动力学应用于整个动画序列，从而节省大量时间。
 
-![](The Life of a Leader/media/image22.png)
+![](The%20Life%20of%20a%20Leader/media/image22.png)
 
-随着动画接近准备好进行反馈，我们开始进行调整和模型微调的循环。通常情况下，动画主管和建模主管会坐下来进行微调。建模团队对预期的外观提出建议，而动画团队则更清楚地呈现他们对角色的意图。  
+随着动画接近准备好进行反馈，我们开始进行调整和模型微调的循环。通常情况下，动画主管和建模主管会坐下来进行微调。建模团队对预期的外观提出建议，而动画团队则更清楚地呈现他们对角色的意图。
   
 随着动画的进行，照明开始进行调整，与空闲姿势相匹配。随着动画和材质的最终化，照明将继续进行修正。我们不会根据照明设置进行动画和纹理制作，而是根据我们的制作创建照明设置。
 
@@ -5501,15 +3891,11 @@ Substance用于所有纹理和源纹理。
 
 在文明游戏中，所有动态物品（布料、项链等）都不是实时完成的。我们必须将在Maya中完成的模拟结果转换为静态结果。
 
-此时，音频可以开始进行音效处理。动画和动力学大部分已经确定下来。  
+此时，音频可以开始进行音效处理。动画和动力学大部分已经确定下来。
   
 最后，我们开始进行最终的润色阶段。随着动力学的最终化，我们开始审查整体效果。照明根据背景进行微调（强度），我们开始进行最后的材质微调等。最终的错误清单被清除，如果一切都正确完成，我们应该得到一个与基础游戏不冲突的领导者场景。
 
 音频现在可以完全发挥作用，以完善整体效果。
-
-**
-
-**
 
 * * *
 
@@ -5537,15 +3923,15 @@ Tilebases（瓷砖基础）在文明6中具有相当复杂的流程，以支持�
 
 注意：请记住，如果Max/Maya中分配给对象的材质名称与Asset Cloud中兼容材质的名称匹配，引擎将尝试通过自动分配材质来帮助您。
 
-一旦您按照所需的方式布置好场景，您需要运行**“TileBase Cleanup”**脚本，将所有对象副本转换为具有相同名称的点，以便将其导入引擎时作为骨骼而不是网格：
+一旦您按照所需的方式布置好场景，您需要运行 **“TileBase Cleanup”** 脚本，将所有对象副本转换为具有相同名称的点，以便将其导入引擎时作为骨骼而不是网格：
 
 *   选择将所有部件副本作为父对象的根骨骼/点。
     
-*   运行“**TileBase Cleanup**”脚本，该脚本位于“**Civ 6 Tools**”下（图像显示了一种获取脚本的方法）。
+*   运行“ **TileBase Cleanup** ”脚本，该脚本位于“ **Civ 6 Tools** ”下（图像显示了一种获取脚本的方法）。
     
 *   ![Machine generated alternative text: 10 Tilebase Cleanup Do Cleanup Undo Cleanup Utilibes Sets More... Asset ar owser Perspective Match Collapse Color Clipboard Measure MO bon Capture Rese t XF orm Flight Studio (c) MAX Script Open Listener New Script Open Script Run Script Utilities Civ S Tools Civ 6 Tools Amma bon Manager Model Manager Clean Scene TileBase Cleanup Close ](TileBase/media/image3.png)
     
-*   在工具的对话框中点击“**Do Cleanup**”按钮。
+*   在工具的对话框中点击“ **Do Cleanup** ”按钮。
     
 *   您将看到每个根下的对象位置处出现一个点。
     
@@ -5554,11 +3940,11 @@ Tilebases（瓷砖基础）在文明6中具有相当复杂的流程，以支持�
 
 为Max文件中的每个模型创建一个资产：
 
-我们有一个脚本，可以自动将Max文件中的每个模型转换为资产。转到“_**File > Run Script**_”，加载脚本“_**C:\\Program Files\\Civ6\\Asset Cloud - Civ6\\AssetEditor\\Scripts\\Create\_Assets\_From\_Source\_File.py**_”。脚本将弹出一个提示框，询问资产应该是哪个资产类别，选择“**TileBase**”，然后点击“**OK**”
+我们有一个脚本，可以自动将Max文件中的每个模型转换为资产。转到“ **File > Run Script** ”，加载脚本“ **C:\\Program Files\\Civ6\\Asset Cloud - Civ6\\AssetEditor\\Scripts\\Create\_Assets\_From\_Source\_File.py** ”。脚本将弹出一个提示框，询问资产应该是哪个资产类别，选择“ **TileBase** ”，然后点击“ **OK** ”
 
 ![Machine generated alternative text: Please Pick the Asset Class to use This script wil create individual assets for each root model in one or more Max/Maya Please pick the classfor the assets you want to creatæ ASSET CLASS T,1eBase ](TileBase/media/image4.png)
 
-然后，您将通过Mini导入器对话框进行提示。点击“_**\+ Add Source File…**_”按钮，在文件浏览器中导航到您的Max文件。Mini导入器将显示您的Max文件中找到的所有模型的列表。默认情况下，它们都将被设置为导入，但如果有一个您不想导入的模型，请点击其左侧的复选框以禁用其导入。每个模型右侧还会显示一个下拉菜单，指示它应该是什么几何类别。3D模型应该是“_**LandmarkModel**_”，贴花模型应该设置为“_**DecalGeometry**_”。对话框顶部有一个下拉菜单，可以同时为所有模型分配一个几何类别，只需从下拉菜单中选择类别，然后点击“_**Apply to Selected**_”按钮
+然后，您将通过Mini导入器对话框进行提示。点击“ **\+ Add Source File…** ”按钮，在文件浏览器中导航到您的Max文件。Mini导入器将显示您的Max文件中找到的所有模型的列表。默认情况下，它们都将被设置为导入，但如果有一个您不想导入的模型，请点击其左侧的复选框以禁用其导入。每个模型右侧还会显示一个下拉菜单，指示它应该是什么几何类别。3D模型应该是“ **LandmarkModel** ”，贴花模型应该设置为“ **DecalGeometry** ”。对话框顶部有一个下拉菜单，可以同时为所有模型分配一个几何类别，只需从下拉菜单中选择类别，然后点击“ **Apply to Selected** ”按钮
 
 ![Machine generated alternative text: Mini Importer Entity Type: Geometry LandmarkWodeI Entity Nanne Sort by Name Select/DeseIect All house pineTree PineTreeSma City La m p zost I + Add Source File... Apply ta Selected Entity Class: Check Out All LandmarkModeI LandmarkModeI LandmarkModeI LandmarkModeI LandmarkModeI Impart. Cancel ](TileBase/media/image5.png)
 
@@ -5566,13 +3952,13 @@ Tilebases（瓷砖基础）在文明6中具有相当复杂的流程，以支持�
 
 在基础资产上创建附着点：
 
-通过“_**File > Open Entity**_”打开由脚本创建的基础资产，找到您的资产，在浏览器中选择它，然后点击“_**OK**_”。
+通过“ **File > Open Entity** ”打开由脚本创建的基础资产，找到您的资产，在浏览器中选择它，然后点击“ **OK** ”。
 
 选择“Attachments”选项卡，点击“Add Attachment Points to all Bones”按钮。这将自动为基础资产中的每个骨骼/点创建一个附着点（这些骨骼是Max中“TileBase Cleanup”脚本创建的骨骼）。
 
 ![Machine generated alternative text: Landmarks.aftdef tilebases.xlp (I items) Lamp Post. ast City.ast* Properties Name Class Name Desc ri pticn C ity Tile Base Particles C ategorization Tags Groups o Tile Base items) Geomet ries Attachments Cook Pa rams 0 001 Animations Filter: Add Attachment Points to all Bones Attachment Point Name A Model Instance ](TileBase/media/image6.png)
 
-创建附着点后，保存您的资产。您可以通过转到右侧的旋钮，选择资产的选项卡（与您的资产同名后跟“\_0”的选项卡），然后点击“_**Attach by name**_”来测试附着点和附着资产，这将将资产插入到相应的附着点中。
+创建附着点后，保存您的资产。您可以通过转到右侧的旋钮，选择资产的选项卡（与您的资产同名后跟“\_0”的选项卡），然后点击“ **Attach by name** ”来测试附着点和附着资产，这将将资产插入到相应的附着点中。
 
 ![Machine generated alternative text: Global Previewer Info Module Landmark Base Lighting Values Knobs Reset Camera Reset Lighting H ide Skybox Reset Camera Reset Lighting City_o DefaultGameEnviro.. I Add Asset ktach By Name Attachment Point HouseOOI PineTreeS mallOOI PineTreeSma11002 PineTreeS ma11003 Pi neTreeSma 11004 PineTreeS ma11005 PineT rees ma 11007 PineT rees ma 11008 PineTreeS mal 1009 Attac hed Asset ](TileBase/media/image7.png)
 
@@ -5582,7 +3968,7 @@ Tilebases（瓷砖基础）在文明6中具有相当复杂的流程，以支持�
 
 Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将这些信息存储在artdef中，是因为同一个基础资产可能具有多个不同的附着集。例如，矿井可能使用相同的基础资产，但与不同的资源类型关联的矿石附着资产不同。
 
-由于许多瓷砖基础资产都有几十个附着，手动设置所有连接可能需要很长时间，因此有一个脚本可以自动化这一步骤。转到“_**File > Run Script**_”，加载脚本“_**C:\\Program Files\\Civ6\\Asset Cloud - Civ6\\AssetEditor\\Scripts\\Create\_District\_Base.py**_”。这将弹出一个对话框，显示tilebases.xlp文件中所有资产的列表。从列表中选择之前创建的基础资产，然后点击“_**OK**_”。这将为您打开Landmarks.artdef文件，并创建带有所有附着的瓷砖基础条目。
+由于许多瓷砖基础资产都有几十个附着，手动设置所有连接可能需要很长时间，因此有一个脚本可以自动化这一步骤。转到“ **File > Run Script** ”，加载脚本“ **C:\\Program Files\\Civ6\\Asset Cloud - Civ6\\AssetEditor\\Scripts\\Create\_District\_Base.py** ”。这将弹出一个对话框，显示tilebases.xlp文件中所有资产的列表。从列表中选择之前创建的基础资产，然后点击“ **OK** ”。这将为您打开Landmarks.artdef文件，并创建带有所有附着的瓷砖基础条目。
 
 ![Machine generated alternative text: BLP Entry Browser Name CityCent er_ Lg _ Test CityCenter Sm Test CityCent er_Test Asset Path DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS CTY AW CTY AW CItyCenter Sm Test CTY AW CItyCenter_Test DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS DIS Ancient Ancient Ancient Ancient Ancient Ancient Ancient Cross flag Lg aller Sm Banner Sm Filler Stone Patch Wood Ancient Ancient Ancient Ancient Ancient Ancient Ancient Cross flag Lg aller Sm Banner Sm Filler Stone Patch Wood CM p CM p CM p CM p CM p CM p CM p CM p CM p CM p CM p CM p CM p CM p Ancient Base 01 Ancient Base 02 Ancient _ Lg Filler Ancient Base 01 Ancient Base 02 Ancient Lg Filler Base Classical Base Industrial Classical Base Classical Base _ Temp _ Temp 02 Base Classical Base Industrial Classical Base Classical Base _ Temp _ Temp 01 02 ](TileBase/media/image8.png)
 
@@ -5594,25 +3980,25 @@ Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将�
 
 **Landmark(地标)：**
 
-如果您没有打开它，请打开Landmarks.artdef文件。在左侧有一个树形列表，展开“_**Landmarks**_”列表，点击左侧的箭头。
+如果您没有打开它，请打开Landmarks.artdef文件。在左侧有一个树形列表，展开“ **Landmarks** ”列表，点击左侧的箭头。
 
 ![Machine generated alternative text: AssetEditor - D. Edit View Landma rtdef* Alt Definition Template Landmarks Districts DEFAULT Window Open Source fil M M M M M M M CAMP CAMP CHATEAU FARM FISHING BOATS GOODY HUT LUMBER MILL MINE OFFSHORE OIL RIG OIL WEL PASTURE PLANTATION QUARRY STEPWEL ZIGGURAT Dis trictGenerators Tileaase Her08uiIdingTags Res ourceTags Cul tureTags EraTags UsageTags Globals CITY GL08ALS ](TileBase/media/image9.png)
 
 这将显示当前游戏正在使用的条目列表。如果您正在处理的资产尚未有条目，您需要设置它。关于将artdef条目与游戏元素关联的连接说明在这里：将GameCore ID映射到ArtDef条目。如果您需要帮助设置，请向您的负责人或正在处理系统的相关程序员咨询。
 
-如果您需要的条目已经存在，请展开它，然后您将看到一个名为“_**Eras**_”的条目。点击“_**Eras**_”条目（1），右侧将显示一个网格，将刚刚创建的瓷砖基础与特定时代进行映射。如果您需要的时代已经存在，请点击“_**Ref\_LandmarkBase**_”项，它将显示一个下拉菜单，您可以在其中选择上一步创建的瓷砖基础（2）。如果您需要的时代不在列表中，请点击顶部工具栏上的“Add Element”按钮（3）。这将向网格中添加一个新元素，您可以从可用时代的下拉菜单中设置“Tag\_Era”，然后分配瓷砖基础。
+如果您需要的条目已经存在，请展开它，然后您将看到一个名为“ **Eras** ”的条目。点击“ **Eras** ”条目（1），右侧将显示一个网格，将刚刚创建的瓷砖基础与特定时代进行映射。如果您需要的时代已经存在，请点击“ **Ref\_LandmarkBase** ”项，它将显示一个下拉菜单，您可以在其中选择上一步创建的瓷砖基础（2）。如果您需要的时代不在列表中，请点击顶部工具栏上的“Add Element”按钮（3）。这将向网格中添加一个新元素，您可以从可用时代的下拉菜单中设置“Tag\_Era”，然后分配瓷砖基础。
 
 ![Machine generated alternative text: AssetEditor - D:XprojectsXBALW-AGOULD Civ6 mainXCiv6Xpantry%ArtDefsXLandmarks.artdeff File Edit View Window Landma rtdef* Alt Definition Template Landmarks Open Source file Ref Landmark3ase VIL Tribal Thatch 01 v I Tag Era DEFAULT Filter: Name CAMP Erasl Districts Landmarks DEFAULT M M M M M M M CAMP CHATEAU FARM CMP CMP CMP CMP CMP CMP Ancient Base 01 Ancient Base 02 Base Classical Temp Base Industrial Temp Classical Base 01 Classical Base 02 FISHING BOATS GOODY HUT LUMBER ILL MINE OFFSHORE OIL RIG OIL WEL PASTURE PLANTATION QUARRY STEPWEL ZIGGURAT Dis trictGenerators Tileaase Her08uiIdingTags Res ourceTags Cul tureTags EraTags UsageTags Globals CITY GL08ALS ](TileBase/media/image10.png)
 
 **District(区域)：**
 
-如果您没有打开它，请打开Landmarks.artdef文件。在左侧有一个树形列表，展开“_**Landmarks**_”列表，点击左侧的箭头。
+如果您没有打开它，请打开Landmarks.artdef文件。在左侧有一个树形列表，展开“ **Landmarks** ”列表，点击左侧的箭头。
 
 ![Machine generated alternative text: AssetEditor - D:XprojectsXBALW-AGOULD Civ6 mainXCiv6Xpa File Edit View Window Landma rtdef* Alt Definition Template Landmarks C.i3trict3 ACROPOLIS AERODROME AQUEDUCT CAMPUS CITY CENTER COMMERCIAL HUB ENCAMPMENT ENTERTAINMENT cot, HARBOR HOLY SITE INDUSTRIAL ZONE MBANZA NEIGHBORHOOD SPACEPORT THEATER DEFAULT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT Landmarks Dis trictGenerators Tileaase Her08uiIdingTags Res ourceTags Cul tureTags EraTags UsageTags Globals CITY GL08ALS ](TileBase/media/image11.png)
 
 这将显示当前游戏正在使用的条目列表。如果您正在处理的资产尚未有条目，您需要设置它。关于将artdef条目与游戏元素关联的连接说明在这里：将GameCore ID映射到ArtDef条目。如果您需要帮助设置，请向您的负责人或正在处理系统的相关程序员咨询。
 
-如果您需要的条目已经存在，请展开它，然后您将看到一个名为“_**BaseVariants**_”的条目。点击“_**BaseVariants**_”条目（1），右侧将显示一个网格，将刚刚创建的瓷砖基础与特定时代、文化和英雄建筑集进行映射。如果您需要的时代/文化/英雄建筑组合已经存在，请点击“_**Ref\_DistrictBase**_”项，它将显示一个下拉菜单，您可以在其中选择上一步创建的瓷砖基础（2）。如果您需要的组合不在列表中，请点击顶部工具栏上的“Add Element”按钮（3）。这将向网格中添加一个新元素，您可以从可用的下拉菜单中设置时代/文化/英雄建筑，并分配瓷砖基础。
+如果您需要的条目已经存在，请展开它，然后您将看到一个名为“ **BaseVariants** ”的条目。点击“ **BaseVariants** ”条目（1），右侧将显示一个网格，将刚刚创建的瓷砖基础与特定时代、文化和英雄建筑集进行映射。如果您需要的时代/文化/英雄建筑组合已经存在，请点击“ **Ref\_DistrictBase** ”项，它将显示一个下拉菜单，您可以在其中选择上一步创建的瓷砖基础（2）。如果您需要的组合不在列表中，请点击顶部工具栏上的“Add Element”按钮（3）。这将向网格中添加一个新元素，您可以从可用的下拉菜单中设置时代/文化/英雄建筑，并分配瓷砖基础。
 
 ![Machine generated alternative text: AssetEditor - D:XprojectsXBALW-AGOULD Civ6 mainXCiv6Xpantry%ArtDefsXLandmarks.artdef File Edit View Window Open Source file Landmarks.artdef tilebas Alt Definition Template Landmarks Districts Tag Era DEFAULT DEFAULT DEFAULT MCDERN ARTERA MODERN ARTERA MODERN ARTERA_MODERN Tag Culture DEFAULT DEFAULT DEFAULT DEFAULT Ref District3ase DIS HBR Base Classical 01 DIS HBR Base Classical 02 DIS HBR Base Classical (B DIS 01 Filter: Name BaseVariantsOOI BaseVariants002 Var iants003 3aseVariantsDDS BaseVariants006 BaseVar iants007 Set Herc3uiIdings EMPTY LIGHTHOUSE LIGHTHOUSE SHIPYARD LIGHTHOUSE LIGHTHOUSE, SHIPYARD HTHOUSE SHIHARD. SEAPOR ACROPOLIS AERODROME AQUEDUCT CAMPUS CITY CENTER COMMERCIAL HUB ENCAMPMENT ENTERTAINMENT cot, HARBOR DEFAULT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT City CMP CMP CMP CMP CMP CMP Ancient Base 01 Ancient Base 02 Base Classical Temp Base Industrial Temp Classical Base 01 Classical Base 02 BaseVariants Bull dingVariants C:' BuildingSets DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT DISTRICT Landmarks HOLY SITE INDUSTRIAL ZONE MBANZA NEIGHBORHOOD SPACEPORT THEATER Dis trictGenerators Tileaase Her08uiIdingTags Res ourceTags Cul tureTags EraTags UsageTags Globals CITY GL08ALS ](TileBase/media/image12.png)
 
@@ -5682,14 +4068,14 @@ Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将�
 
 # World Builder（世界构建器）
 
-![_scroll_external\attachments\image2018-6-6_15-55-19-806c77b8608b72aed5a3181a425630c744adee755cf1dbce003a6f7396c1ec69.png](World Builder/media/image1.png)
+![_scroll_external\attachments\image2018-6-6_15-55-19-806c77b8608b72aed5a3181a425630c744adee755cf1dbce003a6f7396c1ec69.png](World%20Builder/media/image1.png)
 
 如何使用Tiled导入器进行世界构建
 
 1.  打开Tiled编辑器并新建一个地图( (File -> New -> New Map))（文件 -> 新建 -> 新建地图）
     
 
-![_scroll_external\attachments\image2018-6-5_16-27-20-f6115e54a7ccc71bb38e8cd13e510d433cd1aedb83c32634e556ed062241c8b6.png](World Builder/media/image2.png)
+![_scroll_external\attachments\image2018-6-5_16-27-20-f6115e54a7ccc71bb38e8cd13e510d433cd1aedb83c32634e556ed062241c8b6.png](World%20Builder/media/image2.png)
 
 1.  选择六边形地图，对于图块层格式选择CSV，并将渲染顺序设置为最下方
     
@@ -5710,7 +4096,7 @@ Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将�
 3.  在图块尺寸下，选择宽度：32像素，高度：64像素
     
 
-![_scroll_external\attachments\image2018-7-23_16-16-44-82ef751efb1b4df764abe1866e95a73100f63a42b25a6c6199416028b606bae1.png](World Builder/media/image3.png)
+![_scroll_external\attachments\image2018-7-23_16-16-44-82ef751efb1b4df764abe1866e95a73100f63a42b25a6c6199416028b606bae1.png](World%20Builder/media/image3.png)
 
 1.  使用Tiled的文件→打开功能加载您要使用的每个图层的图块集。它们目前位于Examples/WorldBuilder Tiled Importing文件夹中。
     
@@ -5731,44 +4117,46 @@ Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将�
     *   图块渲染顺序：选择“右下”或“右上”都可以。导入器可以识别并相应地翻转地图。
         
 
-![_scroll_external\attachments\image2018-6-6_15-50-53-5f28629fc6414da6b74787a778576bcc441ac991562fd17962236e30002ccde3.png](World Builder/media/image4.png)
+![_scroll_external\attachments\image2018-6-6_15-50-53-5f28629fc6414da6b74787a778576bcc441ac991562fd17962236e30002ccde3.png](World%20Builder/media/image4.png)
 
 1.  图层可以是图块图层和对象图层的混合。对于某些类型，对象图层是必需的，因为它们允许您定义传递给导入器的每个图块的参数。
     
 2.  从图层列表的顶部到底部的顺序必须是：Rivers（河流）、Buildings（建筑物）、Districts（城区）、Cities（城市）、Continents（大陆）、Improvements（改良）、Resources（资源）、Features（地貌）和Terrain（地形）。
     
-    1.  Terrain（地形）必须是一个图块图层，并且您应该始终定义地形图层上的所有图块。使用填充工具可以将整个地图设置为基本类型。
+    a.  Terrain（地形）必须是一个图块图层，并且您应该始终定义地形图层上的所有图块。使用填充工具可以将整个地图设置为基本类型。
         
-    2.  您不必在给定的地图中拥有所有图层才能成功导入，但是您拥有的最高图层以下的所有图层必须存在。例如，如果您想在地形上放置改良物，则仍然必须有资源和地貌图层。只是不要在它们上面放置任何东西。
+    b.  您不必在给定的地图中拥有所有图层才能成功导入，但是您拥有的最高图层以下的所有图层必须存在。例如，如果您想在地形上放置改良物，则仍然必须有资源和地貌图层。只是不要在它们上面放置任何东西。
         
-    3.  Features（地貌）可以是图块图层或对象图层。未使用的六边形不需要填充。
+    c.  Features（地貌）可以是图块图层或对象图层。未使用的六边形不需要填充。
         
-    4.  Resources（资源）应该是一个对象图层。在放置每个资源后，点击属性列底部的“+”按钮，添加一个名为“number”的自定义属性，类型为“int”。然后将该值设置为表示该六边形中存在的该资源的数量。
+    d.  Resources（资源）应该是一个对象图层。在放置每个资源后，点击属性列底部的“+”按钮，添加一个名为“number”的自定义属性，类型为“int”。然后将该值设置为表示该六边形中存在的该资源的数量。
         
-    5.  Improvements（改良）应该是一个对象图层。与资源一样，添加一个名为“player”的自定义属性，类型为“int”。该值确定改良物属于哪个文明。
+    e.  Improvements（改良）应该是一个对象图层。与资源一样，添加一个名为“player”的自定义属性，类型为“int”。该值确定改良物属于哪个文明。
         
-    6.  Continents（大陆）目前应该是一个图块图层。它们的图块依次表示：非洲、亚美尼亚、美洲、南极洲、北极洲、亚洲、亚美尼亚美洲、大西洋、亚特兰蒂斯、澳大利亚、阿瓦隆、阿扎尼亚、巴尔提卡、西米里亚、哥伦比亚、刚果板块、欧美、欧洲、冈瓦纳、卡拉哈里亚、哈萨克斯坦、科诺兰、库马里坎达姆、劳拉亚洲、劳伦西亚、勒穆里亚、穆、内纳、北美洲、新派恩吉亚、努纳、大洋洲、泛地球、终极泛地球、泛诺提亚、罗迪尼亚、西伯利亚、南美洲、澳大利亚、乌尔、瓦尔巴拉、文迪亚和泽兰迪亚。
+    f.  Continents（大陆）目前应该是一个图块图层。它们的图块依次表示：非洲、亚美尼亚、美洲、南极洲、北极洲、亚洲、亚美尼亚美洲、大西洋、亚特兰蒂斯、澳大利亚、阿瓦隆、阿扎尼亚、巴尔提卡、西米里亚、哥伦比亚、刚果板块、欧美、欧洲、冈瓦纳、卡拉哈里亚、哈萨克斯坦、科诺兰、库马里坎达姆、劳拉亚洲、劳伦西亚、勒穆里亚、穆、内纳、北美洲、新派恩吉亚、努纳、大洋洲、泛地球、终极泛地球、泛诺提亚、罗迪尼亚、西伯利亚、南美洲、澳大利亚、乌尔、瓦尔巴拉、文迪亚和泽兰迪亚。
         
-    7.  Cities（城市）可以是图块图层或对象图层。在两种情况下，图块为1-16，表示游戏中最多16个玩家。这里的图块1与改良图层中的“player 0”相同，2与“1”相同，依此类推。
+    g.  Cities（城市）可以是图块图层或对象图层。在两种情况下，图块为1-16，表示游戏中最多16个玩家。这里的图块1与改良图层中的“player 0”相同，2与“1”相同，依此类推。
         
-        1.  如果将其设置为对象图层，您可以添加一个名为“spawn”的自定义参数，类型为Bool。这将显示为参数列表中的复选框，如果选中它，这将成为玩家的出生点，而不是在现场生成城市。
+        I.  如果将其设置为对象图层，您可以添加一个名为“spawn”的自定义参数，类型为Bool。这将显示为参数列表中的复选框，如果选中它，这将成为玩家的出生点，而不是在现场生成城市。
             
-    8.  Districts（城区）应该是一个带有“player”自定义参数的对象图层。
+    h.  Districts（城区）应该是一个带有“player”自定义参数的对象图层。
         
-    9.  Buildings（建筑物）应该是一个带有“player”自定义参数的对象图层。
+    i.  Buildings（建筑物）应该是一个带有“player”自定义参数的对象图层。
         
-    10.  Rivers（河流应该是一个带有名为“direction”的自定义参数的对象图层，类型为String。有效值为“NE”、“E”、“SE”、“SW”、“W”或“NW”。TODO：这个参数的含义是什么？
+    j.  Rivers（河流应该是一个带有名为“direction”的自定义参数的对象图层，类型为String。有效值为“NE”、“E”、“SE”、“SW”、“W”或“NW”。TODO：这个参数的含义是什么？
         
-    11.  设置参数的步骤如下：
+    k.  设置参数的步骤如下：
         
-        1.  点击这里：  
-            ![_scroll_external\attachments\image2018-7-26_16-21-29-681b577720210f3bf085ba8de004e7208e374b2613575a829b618b1ae9e13ce2.png](World Builder/media/image5.png)
+	     I.  点击这里:
+    $~~~~~$ ![](World%20Builder/media/image5.png)
             
-        2.  这将弹出以下界面：![_scroll_external\attachments\image2018-7-26_16-23-59-11d86b1413e07a024a686f73c2aa8609783f9c190f05bd7434e499ecf18d49fb.png](World Builder/media/image6.png)
+        II.  i这将弹出以下界面：
+    $~~~~~$ ![_scroll_external\attachments\image2018-7-26_16-23-59-11d86b1413e07a024a686f73c2aa8609783f9c190f05bd7434e499ecf18d49fb.png](World%20Builder/media/image6.png)
             
-        3.  在文本字段中输入名称，并使用下拉菜单设置类型：![_scroll_external\attachments\image2018-7-26_16-27-27-d2e0ec31bbffe7d88f9c2b88188a2743a6468510816c4c46a7f7ecb0d0804860.png](World Builder/media/image7.png)
+        III.  在文本字段中输入名称，并使用下拉菜单设置类型：
+    $~~~~~$ ![_scroll_external\attachments\image2018-7-26_16-27-27-d2e0ec31bbffe7d88f9c2b88188a2743a6468510816c4c46a7f7ecb0d0804860.png](World%20Builder/media/image7.png)
             
-        4.  新参数将显示在左侧列中，您可以在其中设置值。建筑物应该是一个带有“player”自定义参数的对象图层。
+        IV.  新参数将显示在左侧列中，您可以在其中设置值。建筑物应该是一个带有“player”自定义参数的对象图层。
             
 3.  每个图层只能使用一个图块集中的图块。如果使用多个图块集，导入器的行为不能保证正确。
     
@@ -5776,7 +4164,7 @@ Landmarks.artdef文件是将附着与基础资产关联的地方。之所以将�
     
 5.  在Civ VI->附加内容->世界构建器中选择“导入地图”。
     
-    1.  ![_scroll_external\attachments\image2018-6-25_9-58-38-ce921c1f7b19efb11e6e68a5606dece4cfe609f3b9b2f36990d4f251114e0817.png](World Builder/media/image8.png)
+    a.  ![_scroll_external\attachments\image2018-6-25_9-58-38-ce921c1f7b19efb11e6e68a5606dece4cfe609f3b9b2f36990d4f251114e0817.png](World%20Builder/media/image8.png)
         
 6.  将出现“高级设置(Advanced Setup)”屏幕，不包括地图大小选项。选择地图的玩家数量以及如果您希望它们成为特定文明的特定团队，以及任何规则更改。
     
@@ -5919,193 +4307,196 @@ UI 与 FireFX 脚本的映射方式是通过代码注入实现的，用户可以
 示例：
 
 代码块 1 属性块示例 1
-
+```
 Description = "这决定了粒子在屏幕上的混合方式（网格粒子根据其材质自行确定混合方式）"  
-\# 属性块具有一个公开的 UI 枚举，其中每个枚举项都映射到一个代码块  
+# 属性块具有一个公开的 UI 枚举，其中每个枚举项都映射到一个代码块  
   
   
-\# 这是第一个可能的代码块，在添加到发射器时应该是默认值  
+# 这是第一个可能的代码块，在添加到发射器时应该是默认值  
 Enum1: "additive"  
   
-\[PARTICLE\_GLOBAL\]  
-varying color p\_color;  
-varying float p\_alpha;  
+[PARTICLE_GLOBAL]  
+varying color p_color;  
+varying float p_alpha;  
   
-\[PARTICLE\_SPAWN\]  
-p\_color = color(1,1,1);  
-p\_alpha = 0;  
+[PARTICLE_SPAWN]  
+p_color = color(1,1,1);  
+p_alpha = 0;  
   
-\[PARTICLE\_PROPERTIES\]  
-property geometry\_type = quad\_rotated;  
+[PARTICLE_PROPERTIES]  
+property geometry_type = quad_rotated;  
   
-\[PARTICLE\_RENDER\]  
-export( "COLOR", p\_color);  
-export( "ALPHA", p\_alpha);
-
+[PARTICLE_RENDER]  
+export( "COLOR", p_color);  
+export( "ALPHA", p_alpha);
+```
 代码块 2 属性块示例 2
-
-\# 该代码块与第一个代码块互斥  
+```
+# 该代码块与第一个代码块互斥  
 Enum2: "alpha"  
   
-\[PARTICLE\_GLOBAL\]  
-varying color p\_color;  
-varying float p\_alpha;  
+[PARTICLE_GLOBAL]  
+varying color p_color;  
+varying float p_alpha;  
   
-\[PARTICLE\_SPAWN\]  
-p\_color = color(1,1,1);  
-p\_alpha = 0;  
+[PARTICLE_SPAWN]  
+p_color = color(1,1,1);  
+p_alpha = 0;  
   
-\[PARTICLE\_PROPERTIES\]  
-property geometry\_type = quad\_rotated;  
+[PARTICLE_PROPERTIES]  
+property geometry_type = quad_rotated;  
   
-\[PARTICLE\_RENDER\]  
-export( "COLOR", p\_color);  
-export( "ALPHA", p\_alpha);
-
+[PARTICLE_RENDER]  
+export( "COLOR", p_color);  
+export( "ALPHA", p_alpha);
+```
 粒子逻辑块：这是最常见的块类型，将构成粒子逻辑的主要部分。这些块只包含一个代码块，以及其他元数据来指示块的类型、唯一性、其他逻辑块的先决条件和 UI 公开。
 
 示例：
 
 代码块 3 粒子逻辑块
-
-\# 用于指示该块是否在发射器内的一组块中是唯一的标志（每个发射器只允许一个生命周期块）  
-Block\_Type = SpawnRate（生成速率）  
+- (注意下面括号及其括号里面内容为chatgpt翻译时加的关于前面内容“翻译”，或许可以帮我们更好理解？？我就不删除了，但有必要找到她们不属于教程内容)
+```
+# 用于指示该块是否在发射器内的一组块中是唯一的标志（每个发射器只允许一个生命周期块）  
+Block_Type = SpawnRate（生成速率）  
 Unique = True（唯一）  
   
-\# 指示该块需要其他类型的块存在才能正常工作  
+# 指示该块需要其他类型的块存在才能正常工作  
 Before = none（无）  
 After = none（无）  
 Anywhere = none（无）  
   
-\# 用户界面中的描述  
+# 用户界面中的描述  
 Description = "Particles will spawn at a constant rate of N particles per second"（粒子将以每秒 N 个粒子的恒定速率生成）  
   
-\# 这一部分描述了暴露给用户界面的变量。需要描述变量的 UI 字符串、变量名（这是代码中将被用户驱动值替换的标识符）、类型、范围、工具提示和默认值。  
-\# 最终可能会提供 UI 提示，告诉工具在显示时使用哪种控件  
-\[UI: Particles per second（每秒粒子数）, name: PARTICLE\_RATE（粒子速率）, float（浮点数）, range:0,1000000, default: 10\]  
-\[UI: Initial Particle burst（初始粒子爆发）, name: PARTICLE\_BURST（粒子爆发）, float（浮点数）, range:0,1000000, default: 0\]  
-\[UI: Emitter life（发射器寿命）, name: EMITTER\_LIFE（发射器寿命）, float（浮点数）, range:-1,1000000, default: -1\]  
-\[UI: Delay Min（最小延迟）, name: DELAY\_MIN（最小延迟）, float（浮点数）, range:-1,1000000, default: 0\]  
-\[UI: Delay Max（最大延迟）, name: DELAY\_MAX（最大延迟）, float（浮点数）, range:-1,1000000, default: 0\]  
+# 这一部分描述了暴露给用户界面的变量。需要描述变量的 UI 字符串、变量名（这是代码中将被用户驱动值替换的标识符）、类型、范围、工具提示和默认值。  
+# 最终可能会提供 UI 提示，告诉工具在显示时使用哪种控件  
+[UI: Particles per second（每秒粒子数）, name: PARTICLE_RATE（粒子速率）, float（浮点数）, range:0,1000000, default: 10]  
+[UI: Initial Particle burst（初始粒子爆发）, name: PARTICLE_BURST（粒子爆发）, float（浮点数）, range:0,1000000, default: 0]  
+[UI: Emitter life（发射器寿命）, name: EMITTER_LIFE（发射器寿命）, float（浮点数）, range:-1,1000000, default: -1]  
+[UI: Delay Min（最小延迟）, name: DELAY_MIN（最小延迟）, float（浮点数）, range:-1,1000000, default: 0]  
+[UI: Delay Max（最大延迟）, name: DELAY_MAX（最大延迟）, float（浮点数）, range:-1,1000000, default: 0]  
   
-\# 这一部分将被转换为代码并合并  
-\[INCLUDES\]（包含）  
+# 这一部分将被转换为代码并合并  
+[INCLUDES]（包含）  
   
-\[PARTICLE\_GLOBAL\]（粒子全局）  
+[PARTICLE_GLOBAL]（粒子全局）  
   
-\[PARTICLE\_SPAWN\]（粒子生成）  
+[PARTICLE_SPAWN]（粒子生成）  
   
-\[PARTICLE\_SPAWN\_ARGUMENTS\]（粒子生成参数）  
+[PARTICLE_SPAWN_ARGUMENTS]（粒子生成参数）  
 (  
-<PARTICLE\_SPAWN\_ARGUMENTS\_ADDITIONAL>（额外的粒子生成参数）  
-float in\_age（年龄）  
+<PARTICLE_SPAWN_ARGUMENTS_ADDITIONAL>（额外的粒子生成参数）  
+float in_age（年龄）  
 )  
   
-\[PARTICLE\_SIM\]（粒子模拟）  
+[PARTICLE_SIM]（粒子模拟）  
   
-\[PARTICLE\_PROPERTIES\]（粒子属性）  
+[PARTICLE_PROPERTIES]（粒子属性）  
   
-\[RENDER\]（渲染）  
+[RENDER]（渲染）  
   
   
-\[EMITTER\_GLOBAL\]（发射器全局）  
-varying float p\_age（粒子年龄）;  
-varying float p\_inv\_lifetime（粒子寿命的倒数）;  
+[EMITTER_GLOBAL]（发射器全局）  
+varying float p_age（粒子年龄）;  
+varying float p_inv_lifetime（粒子寿命的倒数）;  
   
-\[EMITTER\_SPAWN\]（发射器生成）  
-p\_inv\_lifetime = (EMITTER\_LIFE > 0)? 1.0 / EMITTER\_LIFE : 0;（如果发射器寿命大于0，则计算粒子寿命的倒数，否则为0）  
-p\_age = 0.0;（粒子年龄初始值为0）  
+[EMITTER_SPAWN]（发射器生成）  
+p_inv_lifetime = (EMITTER_LIFE > 0)? 1.0 / EMITTER_LIFE : 0;（如果发射器寿命大于0，则计算粒子寿命的倒数，否则为0）  
+p_age = 0.0;（粒子年龄初始值为0）  
   
-emit\_count("EMITTER\_NAME" + "\_particle", PARTICLE\_RATE)（生成粒子数量为 EMITTER\_NAME\_particle 的发射器）  
+emit_count("EMITTER_NAME" + "_particle", PARTICLE_RATE)（生成粒子数量为 EMITTER_NAME_particle 的发射器）  
 {  
-<PARTICLE\_SPAWN\_PARAMETERS>（粒子生成参数）  
-export("in\_age", p\_age);（导出粒子年龄）  
+<PARTICLE_SPAWN_PARAMETERS>（粒子生成参数）  
+export("in_age", p_age);（导出粒子年龄）  
 };  
   
-\[EMITTER\_SIM\]（发射器模拟）  
-emit\_rate("EMITTER\_NAME" + "\_particle", PARTICLE\_RATE)（发射粒子数量为 EMITTER\_NAME\_particle 的发射器）  
+[EMITTER_SIM]（发射器模拟）  
+emit_rate("EMITTER_NAME" + "_particle", PARTICLE_RATE)（发射粒子数量为 EMITTER_NAME_particle 的发射器）  
 {  
-<PARTICLE\_SPAWN\_PARAMETERS>（粒子生成参数）  
-export("in\_age", p\_age);（导出粒子年龄）  
+<PARTICLE_SPAWN_PARAMETERS>（粒子生成参数）  
+export("in_age", p_age);（导出粒子年龄）  
 };  
-p\_age = p\_age + delta\_time() \* p\_inv\_lifetime;（更新粒子年龄）  
-kill(p\_age > 1);（判断粒子年龄是否大于1，如果是则销毁粒子）
-
-空发射器块：该块会自动生成，用于每个发射器。除了名称之外，它没有用户暴露的内容，只是为其他块提供结构。"EMITTER\_NAME+\_particle" 表示该行应包含带有 "\_particle" 后缀的发射器名称。
+p_age = p_age + delta_time() * p_inv_lifetime;（更新粒子年龄）  
+kill(p_age > 1);（判断粒子年龄是否大于1，如果是则销毁粒子）
+```
+空发射器块：该块会自动生成，用于每个发射器。除了名称之外，它没有用户暴露的内容，只是为其他块提供结构。"EMITTER_NAME+_particle" 表示该行应包含带有 "_particle" 后缀的发射器名称。
 
 代码块 4 空发射器块
-
-\# 空发射器  
+- (注意下面括号及其括号里面内容为chatgpt翻译时加的关于前面内容“翻译”，或许可以帮我们更好理解？？我就不删除了，但有必要找到她们不属于教程内容)
+```
+# 空发射器  
   
-\[PARTICLES\]（粒子）  
-emitter EMITTER\_NAME+\_particle（发射器名称+\_particle）  
+[PARTICLES]（粒子）  
+emitter EMITTER_NAME+_particle（发射器名称+_particle）  
 {  
-<PARTICLE\_GLOBAL>（粒子全局）  
+<PARTICLE_GLOBAL>（粒子全局）  
 SPAWN（生成）  
-<PARTICLE\_SPAWN\_ARGUMENTS>（粒子生成参数）  
+<PARTICLE_SPAWN_ARGUMENTS>（粒子生成参数）  
 {  
-<PARTICLE\_SPAWN>（粒子生成）  
+<PARTICLE_SPAWN>（粒子生成）  
 }  
 SIM（模拟）  
 {  
-<PARTICLE\_SIM>（粒子模拟）  
+<PARTICLE_SIM>（粒子模拟）  
 }  
   
-<PARTICLE\_PROPERTIES>（粒子属性）  
+<PARTICLE_PROPERTIES>（粒子属性）  
   
 RENDER（渲染）  
 {  
-<PARTICLE\_RENDER>（粒子渲染）  
+<PARTICLE_RENDER>（粒子渲染）  
 }  
 }  
   
-\[EMITTERS\]（发射器）  
-emitter EMITTER\_NAME（发射器名称）  
+[EMITTERS]（发射器）  
+emitter EMITTER_NAME（发射器名称）  
 {  
-<EMITTER\_GLOBAL>（发射器全局）  
+<EMITTER_GLOBAL>（发射器全局）  
 SPAWN（生成）  
 {  
-<EMITTER\_SPAWN>（发射器生成）  
+<EMITTER_SPAWN>（发射器生成）  
 }  
 SIM（模拟）  
 {  
-<EMITTER\_SIM>（发射器模拟）  
+<EMITTER_SIM>（发射器模拟）  
 }  
   
-<EMITTER\_PROPERTIES>（发射器属性）  
+<EMITTER_PROPERTIES>（发射器属性）  
   
 RENDER（渲染）  
 {  
-<EMITTER\_RENDER>（发射器渲染）  
+<EMITTER_RENDER>（发射器渲染）  
 }  
 }  
   
-\[GROUP\_SPAWN\]（组生成）  
-emit\_count("EMITTER\_NAME", 1);
-
+[GROUP_SPAWN]（组生成）  
+emit_count("EMITTER_NAME", 1);
+```
 空组块：类似于空发射器块，这只是代码的内部结构块，供其他代码注入使用。每个效果只有一个组块，并且是第一个被使用的块，其他所有块都放入其中：
 
 代码块 5 空组块
-
+- (注意下面括号及其括号里面内容为chatgpt翻译时加的关于前面内容“翻译”，或许可以帮我们更好理解？？我就不删除了，但有必要找到她们不属于教程内容)
+```
 <INCLUDES>（包含）  
   
 <PARTICLES>（粒子）  
   
 <EMITTERS>（发射器）  
   
-  
-group PARTICLE\_SYSTEM\_NAME（粒子系统名称）  
+
+group PARTICLE_SYSTEM_NAME（粒子系统名称）  
 {  
 SPAWN（生成）  
 {  
-<GROUP\_SPAWN>（组生成）  
+<GROUP_SPAWN>（组生成）  
 }  
 SIM（模拟）  
 {  
-<GROUP\_SIM>（组模拟）  
+<GROUP_SIM>（组模拟）  
 }  
 }
-
+```
 特殊情况：
 
 模板发射器块：这些是高度优化的发射器块，它们是自包含的，只向用户公开一些参数，但不能添加其他块。然而，在内部，它应该与常规的发射器逻辑块非常相似，直接注入到群组块中。
@@ -6167,8 +4558,8 @@ FireFX 是一种用于表达粒子或类似粒子的运动和渲染的语言。
 一个非常简单的粒子脚本可能如下所示：
 
 代码块 1：简单脚本
-
-group My\_First\_Particle  
+```
+group My_First_Particle  
 {  
 SPAWN  
 {  
@@ -6177,12 +4568,12 @@ SPAWN
 SIM  
 {  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
   
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
 export( "ROTATION", 0 );  
 export( "POSITION", float3(0,0,0));  
@@ -6190,7 +4581,7 @@ export( "COLOR", float3(1,1,1));
 export( "ALPHA", 1);  
 }  
 }
-
+```
 第一行由两部分组成。关键字“group”用于表示这是脚本文件的入口点，后面跟着您选择的标识符，这里是“My\_First\_Particle”。所有粒子系统必须定义一个Group，它是该粒子系统的起始代码。一个脚本文件可以定义多个Group，但每次只能由一个粒子系统使用。
 
 Group的代码必须包含在一对花括号中。
@@ -6219,65 +4610,68 @@ float4（四个浮点数）
 
 varying变量的语法是关键字"varying"，后跟变量类型，后跟您想要使用的名称或标识符，后跟分号。例如：
 
-group My\_Particle  
+```
+group My_Particle  
 {  
-varying float silly\_variable;  
+varying float silly_variable;  
 SPAWN  
 {  
-silly\_variable = 3;  
+silly_variable = 3;  
 }  
 SIM  
 {  
-silly\_variable = silly\_variable + 1;  
+silly_variable = silly_variable + 1;  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
-export( "ROTATION", silly\_variable );  
+export( "ROTATION", silly_variable );  
 export( "POSITION", float3(0,0,0));  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }  
 }
 
-这个粒子有一个名为"silly\_variable"的变量，在生成块中初始化为3，然后每次模拟块运行时该变量增加1（稍后详细介绍）。然后在渲染块中将该变量输出为粒子的ROTATION值。这将产生一个快速旋转的粒子：
+```
+这个粒子有一个名为"silly_variable"的变量，在生成块中初始化为3，然后每次模拟块运行时该变量增加1（稍后详细介绍）。然后在渲染块中将该变量输出为粒子的ROTATION值。这将产生一个快速旋转的粒子：
 
 ![/download/attachments/304711043/worddav444314236a06fa123f12a2daf114a66d.png?version=1&modificationDate=1549399541153&api=v2](FireFX\Understanding FireFX Scripts/media/image2.png)
 
 另一方面，"local"变量仅存在于粒子的一个块的范围内，并且在该块结束时立即被销毁。局部变量用于在块内临时存储值，主要用于使代码更易读，或者在同一块中计算一次值并多次重用。模拟块中的局部变量在每次模拟块运行时重新初始化，因此数据不会跨块迭代保留。生成块中的局部变量在模拟块中不可访问，但模拟块中的局部变量可以在渲染块中访问。在内部，模拟块和渲染块合并为一个块，以便更轻松地将模拟数据传递到渲染步骤中。  
 局部变量的语法类似于varying变量。局部变量必须在将要使用它们的块内定义。使用关键字"local"，后面跟着类型，再跟着变量名，最后加上分号。您还可以在定义变量的同一行进行初始化，就像您所期望的那样。
 
-group My\_Particle(我的粒子)  
+```
+group My_Particle 
 {  
-varying float silly\_variable;  
+varying float silly_variable;  
 SPAWN  
 {  
-silly\_variable = 3;  
+silly_variable = 3;  
 }  
 SIM  
 {  
-silly\_variable = silly\_variable + 1;  
-local float output\_rotation = silly\_variable / 10;  
-local float3 output\_position;  
-output\_position = float3(0,0, silly\_variable / 5);  
+silly_variable = silly_variable + 1;  
+local float output_rotation = silly_variable / 10;  
+local float3 output_position;  
+output_position = float3(0,0, silly_variable / 5);  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
-export( "ROTATION", output\_rotation );  
-export( "POSITION", output\_position);  
+export( "ROTATION", output_rotation );  
+export( "POSITION", output_position);  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }  
 }
-
-在这个例子中，你可以看到在Sim块中创建了两个局部变量"output\_rotation"和"output\_position"，它们在每次Sim循环运行时重新计算。这两个变量然后作为导出项在Render中使用，控制渲染行为。在这种情况下，你可以在导出函数中直接进行这些变量的计算，但是一旦计算变得更加复杂，这种方式可能会变得混乱。  
+```
+在这个例子中，你可以看到在Sim块中创建了两个局部变量"output_rotation"和"output_position"，它们在每次Sim循环运行时重新计算。这两个变量然后作为导出项在Render中使用，控制渲染行为。在这种情况下，你可以在导出函数中直接进行这些变量的计算，但是一旦计算变得更加复杂，这种方式可能会变得混乱。  
 注意：一般来说，稍微多一些数学计算总比使用更多的varyings要好。访问内存的速度通常比每帧重新计算一个值要慢得多。此外，CivTech游戏通常受到内存限制，而不是CPU性能的限制。
 
 ## 生成（Spawn）：
@@ -6287,38 +4681,38 @@ export( "ALPHA", 1);
 ## 模拟（Sim）：
 
 模拟块是通过时间定义粒子行为的地方。模拟块每帧对每个粒子运行一次。从一帧传递数据到下一帧的唯一方法是使用varyings，因为每个局部变量都会在每帧重新初始化。还要记住，您正在为一个单独的粒子编写逻辑，它不知道其他粒子的信息。  
-由于Sim代码每帧运行一次，这意味着Sim块是与帧率相关的，您应该相应地编程。为了帮助您，有一个有用的系统函数delta\_time()，它返回自上一帧以来的秒数。因此，您应该尽可能地根据该函数的结果编写粒子逻辑。例如：
-
-group 我的粒子  
+由于Sim代码每帧运行一次，这意味着Sim块是与帧率相关的，您应该相应地编程。为了帮助您，有一个有用的系统函数delta_time()，它返回自上一帧以来的秒数。因此，您应该尽可能地根据该函数的结果编写粒子逻辑。例如：
+```
+group My_First_Particle
 {  
-varying float3 particle\_position;  
+varying float3 particle_position;  
 SPAWN  
 {  
-particle\_position = float3(0,0,0);  
+particle_position = float3(0,0,0);  
 }  
 SIM  
 {  
-local float3 particle\_velocity = float3(15,0,0);  
-particle\_position = particle\_position + particle\_velocity \* delta\_time();  
+local float3 particle_velocity = float3(15,0,0);  
+particle_position = particle_position + particle_velocity * delta_time();  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
 export( "ROTATION", 0 );  
-export( "POSITION", particle\_position);  
+export( "POSITION", particle_position);  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }  
 }
-
-在这个例子中，我们在Spawn块中设置了初始位置，然后在Sim块中使用速度来改变位置。如果我们每帧只是简单地添加速度值而不乘以delta\_time值，那么在游戏以60 FPS运行时，粒子的移动速度将是在30 FPS运行时的两倍。
+```
+在这个例子中，我们在Spawn块中设置了初始位置，然后在Sim块中使用速度来改变位置。如果我们每帧只是简单地添加速度值而不乘以delta_time值，那么在游戏以60 FPS运行时，粒子的移动速度将是在30 FPS运行时的两倍。
 
 ## 属性（Properties）：
 
-每个粒子程序都有一组粒子属性，用于告诉引擎如何处理程序要导出的数据。粒子的属性在编译时固定，无法在运行时更改。某些属性需要填写特定的导出项。例如，对于"geometry\_type"的"quad\_rotated"属性，程序需要导出一个"ROTATION"值。  
+每个粒子程序都有一组粒子属性，用于告诉引擎如何处理程序要导出的数据。粒子的属性在编译时固定，无法在运行时更改。某些属性需要填写特定的导出项。例如，对于"geometry_type"的"quad_rotated"属性，程序需要导出一个"ROTATION"值。  
 大多数属性都有默认值，这些默认值是基于传统粒子效果的常见值。因此，如果您没有指定属性，将使用默认值。  
 有关可用属性、可能的值和所需的导出项的更多信息，请访问此处（[https://hub.firaxis.com/display/FXSMadrid/Emitter+Properties](https://hub.firaxis.com/display/FXSMadrid/Emitter+Properties)_）_。  
 每个属性在粒子程序中只能设置一次。
@@ -6327,63 +4721,69 @@ export( "ALPHA", 1);
 
 程序中的导出项最终是最重要的部分。您可以将导出项视为粒子程序向引擎实际输出的内容。您需要填写哪些导出项取决于粒子程序的属性，无论是显式的还是隐式的（隐式的是指您没有为其选择值的任何属性，它们将使用默认值）。  
 您可以填写不需要的导出项，该程序仍然会编译，但导出的数据将被忽略。如果您尝试通过更改使用的属性来进行迭代，这可能很有用，这样您就可以将有效数据导出到所有必需的导出项中。否则，您必须记住在更改程序的属性时更改导出项。
-
-property geometry\_type = quad\_rotated;  
-//property geometry\_type = quad\_aligned;  
-property blend\_type = additive;  
+```
+property geometry_type = quad_rotated;  
+//property geometry_type = quad_aligned;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
 export( "ROTATION", 0 );  
 export( "TANGENT", float3(0,1,0) );  
-export( "POSITION", particle\_position);  
+export( "POSITION", particle_position);  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }
-
-这个例子展示了即使"ROTATION"和"TANGENT"这两个值分别仅用于"quad\_rotated"和"quad\_aligned"属性，你仍然可以导出它们。这样，你可以通过在属性部分交换注释来轻松尝试不同的几何类型。
+```
+这个例子展示了即使"ROTATION"和"TANGENT"这两个值分别仅用于"quad_rotated"和"quad_aligned"属性，你仍然可以导出它们。这样，你可以通过在属性部分交换注释来轻松尝试不同的几何类型。
 
 ## 发射粒子：
 
 到目前为止，我们一直在为单个粒子编写逻辑，这并不特别有趣。在FireFX中，每个粒子都可以在任何时刻发射其他粒子。为了能够发射一个粒子，你需要两个东西：一个粒子定义和一个发射语句。  
-粒子定义的语法与group相同，唯一的区别是使用关键字"emitter"。因此，例如，这是一个非常基本的粒子定义：  
-emitter 我的粒子  
-\\{  
-SPAWN  
-\\{  
-\\}  
-\\\\  
-SIM  
-\\{  
-\\}  
-\\\\  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
-\\\\  
-RENDER  
-\\{  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
-export( "SCALE", float2(15, 5 ));  
-export( "ROTATION", 0 );  
-export( "POSITION", float3(0,0,0));  
-export( "COLOR", float3(1,1,1));  
-export( "ALPHA", 1);  
-\\}  
-\\}  
-然后，你可以使用以下emit语句使粒子系统发射这种类型的粒子：  
-group 我的粒子系统  
-\\{  
-SPAWN  
-\\{  
-emit\_count("我的粒子", 7);  
-\\}  
-\\}  
-这个group将在生成时立即发射七个"我的粒子"类型的粒子。有两个emit函数，emit\_count()和emit\_rate()，语法如下：  
-emit\_count("\\\[要发射的发射器的名称\\\]", \\\[要发射的粒子数量\\\]);  
-emit\_rate("\\\[要发射的发射器的名称\\\]", \\\[每秒发射的粒子数量\\\], \\\[最小发射数量，可选\\\]);  
+粒子定义的语法与group相同，唯一的区别是使用关键字"emitter"。因此，例如，这是一个非常基本的粒子定义：
+```
+emitter My_Particle
+{
+SPAWN
+{
+}
+
+SIM
+{
+}
+
+property geometry_type = quad_rotated;
+property blend_type = additive;
+
+RENDER
+{
+export( "BASECOLOR_UV", float4(0,0,1,1) );
+export( "SCALE", float2(15, 5 ));
+export( "ROTATION", 0 );
+export( "POSITION", float3(0,0,0));
+export( "COLOR", float3(1,1,1));
+export( "ALPHA", 1);
+}
+}
+```
+然后，你可以使用以下emit语句使粒子系统发射这种类型的粒子： 
+```
+group My_Particle_System
+{
+SPAWN
+{
+emit_count("My_Particle", 7);
+}
+}
+```
+这个group将在生成时立即发射七个"我的粒子"类型的粒子。有两个emit函数，emit_count()和emit_rate()，语法如下：  
+```
+emit_count("[要发射的发射器的名称]", [要发射的粒子数量]);  
+emit_rate("[要发射的发射器的名称]", [每秒发射的粒子数量], [最小发射数量，可选]);  
+```
 第一个函数将立即在该帧上发射指定数量的粒子，而第二个函数将根据需要在该帧上发射尽可能多的粒子，以维持传入的发射速率。因此，如果你以每秒30帧的速度运行，并且发射速率为每秒10个粒子，它将大约每三个帧发射一个粒子。  
-emit\_count()函数可以在粒子的Spawn块和Sim块中使用，而emit\_rate()函数只能在Sim块中使用，因为只有在那里才有意义。  
+emit_count()函数可以在粒子的Spawn块和Sim块中使用，而emit_rate()函数只能在Sim块中使用，因为只有在那里才有意义。  
 任何粒子都可以在任何时刻发射其他粒子，但有一些例外情况：
 
 *   一个发射器不能发射其他组，只能发射发射器。
@@ -6398,88 +4798,93 @@ emit\_count()函数可以在粒子的Spawn块和Sim块中使用，而emit\_rate(
 ### 发射生成参数：
 
 emit函数还允许您使用以下语法在发射粒子时传递任意数据到粒子中：
+```
+emit_count("[particle name(粒子名称)]", [number of particles to emit(要发射的粒子数量)])
 
-emit\_count("\\\[particle name(粒子名称)\\\]", \\\[number of particles to emit(要发射的粒子数量)\\\])
+{
 
-## {
+export("[参数名称1]", [参数值1] );
 
-export("\\\[参数名称1\\\]", \\\[参数值1\\\] );
+export("[参数名称2]", [参数值2] );
 
-export("\\\[参数名称2\\\]", \\\[参数值2\\\] );
+…
 
-## …
+export("[参数名称n]", [参数值n] );
 
-export("\\\[参数名称n\\\]", \\\[参数值n\\\] );
+};
+```
 
-## };
-
-\\\\  
 当粒子被发射时，这些参数将通过将参数名称与粒子自身定义的输入参数进行匹配而传递给它们。每个粒子可以定义它所期望的参数，可以是必需的或可选的。您可以传递粒子不期望的参数，但它们不会被用于任何操作。参数的顺序不重要，因为它们是通过名称进行匹配的。任何由发射器公开的不是可选的 Spawn 参数都必须传入。  
 发射器通过其 Spawn 块上的一组函数参数来定义预期的 Spawn 参数：  
-group My\_Particle  
-\\{  
-SPAWN(\\\[参数类型\\\] \\\[参数名称1\\\],  
-\\\[参数类型\\\] \\\[参数名称2\\\],  
+```
+group My_Particle  
+{  
+SPAWN([参数类型] [参数名称1],  
+[参数类型] [参数名称2],  
 …,  
-\\\[参数类型\\\] \\\[参数名称n\\\]  
+[参数类型] [参数名称n]  
 )  
-\\{  
+{  
 …  
-\\}  
-\\}  
+}  
+}  
+```
 然后，Spawn 参数在 Spawn 块内作为变量可用，并且将在粒子发射时初始化为传入的值。  
-例如：  
-group My\_Particle\_System  
-\\{  
+例如：
+```  
+group My_Particle_System  
+{  
 SPAWN  
-\\{  
-emit\_count("My\_Particle", 1)  
-\\{  
-export("minimum\_size", 5 );  
-export("maximum\_size", 10 );  
-\\};  
-\\}  
-\\}  
-emitter My\_Particle  
-\\{  
+{  
+emit_count("My_Particle", 1)  
+{  
+export("minimum_size", 5 );  
+export("maximum_size", 10 );  
+};  
+}  
+}  
+emitter My_Particle  
+{  
 varying float size;  
-\\\\  
-SPAWN( float minimum\_size,  
-float maximum\_size  
+  
+SPAWN( float minimum_size,  
+float maximum_size  
 )  
-\\{  
-size = mix(minimum\_size, maximum\_size, random());  
-\\}  
-\\\\  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
-\\\\  
+{  
+size = mix(minimum_size, maximum_size, random());  
+}  
+  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
+  
 RENDER  
-\\{  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+{  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(size, size ));  
 export( "ROTATION", 0 );  
 export( "POSITION", float3(0,0,0));  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
-\\}  
-\\\\  
-\\}  
-\\\\  
-在这个例子中，该组发射一个单独的粒子，该粒子期望两个参数："minimum\_size" 和 "maximum\_size"。然后，粒子使用 mix() 函数（通过一个从 0 到 1 的插值值线性插值两个值）和 random() 函数（生成一个从 0 到 1 的伪随机值）随机选择两个值之间的一个值，并将其作为粒子的大小。  
-\\\\  
+}  
+  
+}  
+```
+在这个例子中，该组发射一个单独的粒子，该粒子期望两个参数："minimum_size" 和 "maximum_size"。然后，粒子使用 mix() 函数（通过一个从 0 到 1 的插值值线性插值两个值）和 random() 函数（生成一个从 0 到 1 的伪随机值）随机选择两个值之间的一个值，并将其作为粒子的大小。  
+
 要将发射器的 Spawn 参数定义为可选的，在参数名称后面添加等号（=），然后是默认值。如果未将参数传递给 emit 函数，则使用默认值。例如：  
-\\\\  
-…  
-SPAWN( float minimum\_size = 1)  
-…  
-\\\\
+  
+```
+…
+SPAWN( float minimum_size = 1)  
+…
+```
+
 
 ## 消除粒子：
 
 消除粒子可以停止给定粒子的执行。要消除粒子，您必须使用 kill() 函数。该函数接受一个比较表达式，如果比较结果为真，则粒子将被消除。
-
-group My\_Particle  
+```
+group My_Particle  
 {  
 varying float time;  
 SPAWN  
@@ -6488,14 +4893,14 @@ time = 0;
 }  
 SIM  
 {  
-time = time + delta\_time();  
+time = time + delta_time();  
 kill(time > 3);  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
 export( "ROTATION", 0 );  
 export( "POSITION", float3(0,0,0));  
@@ -6503,6 +4908,7 @@ export( "COLOR", float3(1,1,1));
 export( "ALPHA", 1);  
 }  
 }
+```
 
 这个例子展示了一个带有时间变量的粒子，用于跟踪粒子存在的时间。kill() 语句检查时间变量是否大于 3，如果是，则消除该粒子。这样，粒子存在三秒钟后消失。  
 kill 语句将在脚本中的位置执行，因此如果粒子被消除，则不会执行 kill 语句后面的任何代码行。这对于在粒子被消除的帧上进行的发射调用尤其重要。如果希望在消除之前发射粒子，则这些调用需要在 kill() 语句之前。  
@@ -6514,35 +4920,36 @@ FireFX 不支持任何传统的流程控制语句，如 if 或 for 语句。目�
 (条件表达式)? 表达式1 : 表达式2  
 如果条件表达式为真，则返回第一个表达式，如果条件为假，则返回第二个表达式。  
 您可以使用这个运算符根据条件是否为真来屏蔽特定的行为。例如：
-
-group My\_Particle  
+```
+group My_Particle  
 {  
-varying float3 particle\_position;  
+varying float3 particle_position;  
 varying float time;  
 SPAWN  
 {  
 time = 0;  
-particle\_position = float3(0,0,0);  
+particle_position = float3(0,0,0);  
 }  
 SIM  
 {  
-time = time + delta\_time();  
-local float velocity\_mask = (time < 5)? 1 : 0;  
-local float3 particle\_velocity = float3(15,0,0) \* velocity\_mask;  
-particle\_position = particle\_position + particle\_velocity \* delta\_time();  
+time = time + delta_time();  
+local float velocity_mask = (time < 5)? 1 : 0;  
+local float3 particle_velocity = float3(15,0,0) * velocity_mask;  
+particle_position = particle_position + particle_velocity * delta_time();  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
 export( "SCALE", float2(15, 5 ));  
 export( "ROTATION", 0 );  
-export( "POSITION", particle\_position);  
+export( "POSITION", particle_position);  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }  
 }
+```
 
 这个例子展示了一个粒子，它跟踪其存在的时间，并根据经过的时间是否小于5来决定是否应用速度。
 
@@ -6571,12 +4978,12 @@ mix(float a, float b, float time)：使用时间值 t（从零到一）在 a 和
 这些函数只能在程序的 Spawn 块中使用。  
 random()：返回介于 0 和 1 之间的伪随机数。  
 index()：返回粒子在系统中的索引。系统中的每个粒子都被赋予一个基于发射顺序的有序索引值（第一个发射的粒子索引为 0，下一个为 1，依此类推）。系统中的每个发射器都有自己的索引集，每个索引从 0 开始。  
-instance\_id()：返回整个效果实例及其所有粒子的唯一标识符。
+instance_id()：返回整个效果实例及其所有粒子的唯一标识符。
 
 ### Sim 特定：
 
 这些函数只能在程序的 Sim 块中使用。  
-delta\_time()：返回自上一帧以来经过的时间（以秒为单位）。
+delta_time()：返回自上一帧以来经过的时间（以秒为单位）。
 
 ## 最佳实践：
 
@@ -6585,34 +4992,35 @@ delta\_time()：返回自上一帧以来经过的时间（以秒为单位）。
 ### 粒子年龄：
 
 除法运算相对较昂贵（与乘法和加法相比），因此我们尽量避免在可能的情况下使用除法。对于粒子的归一化年龄值（从零到一）是一个非常常见的用例。如果您在粒子的 Spawn 阶段知道其寿命，可以计算其倒数，然后使用倒数在 Spawn 块中将年龄保持为归一化值，只使用一次除法运算：
-
-group My\_Particle  
+```
+group My_Particle  
 {  
 varying float age;  
-varying float inverse\_lifetime;  
+varying float inverse_lifetime;  
 SPAWN  
 {  
 age = 0;  
-local float lifetime = random() \* 10;  
-inverse\_lifetime = 1 / lifetime;  
+local float lifetime = random() * 10;  
+inverse_lifetime = 1 / lifetime;  
 }  
 SIM  
 {  
-age = age + delta\_time() \* inverse\_lifetime;  
+age = age + delta_time() * inverse_lifetime;  
 kill(age > 1);  
 }  
-property geometry\_type = quad\_rotated;  
-property blend\_type = additive;  
+property geometry_type = quad_rotated;  
+property blend_type = additive;  
 RENDER  
 {  
-export( "BASECOLOR\_UV", float4(0,0,1,1) );  
-export( "SCALE", float2(5, 5 ) \* (1-age));  
+export( "BASECOLOR_UV", float4(0,0,1,1) );  
+export( "SCALE", float2(5, 5 ) * (1-age));  
 export( "ROTATION", 0 );  
 export( "POSITION", float3(0,0,0));  
 export( "COLOR", float3(1,1,1));  
 export( "ALPHA", 1);  
 }  
 }
+```
 
 在这个例子中，"age" 值在 Spawn 阶段开始为 0，并在 Spawn 块中随机计算的 "lifetime" 值达到粒子的寿命时变为 1。
 
@@ -6659,96 +5067,77 @@ UI调试(Debug)功能
 将d设置为数字1、2、3、4、5或6
 
 例如，**d=”1”**
-
+```xml
 <Container   Anchor="R,T" Size="512,1" >
-
-      <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" **d="1"** />
-
-      <!-- 等等... -->
-
-![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image001.png](Forge UI\Debug Features/media/image1.png)
+    <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" **d="1"** />
+    <!-- 等等... -->
+```
+![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image001.png](Forge%20UI/Debug%20Features/media/image1.png)
 
 例如，**d=”6”**
-
+```xml
 <Container   Anchor="R,T" Size="512,1" >
-
-      <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" **d="6"** />
-
-      <!-- 等等... -->
-
-![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image002.png](Forge UI\Debug Features/media/image2.png)
+    <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" **d="6"** />
+    <!-- 等等... -->
+```
+![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image002.png](Forge%20UI/Debug%20Features/media/image2.png)
 
 将d设置为数字，并在后面添加加号（“+”）以级联到子控件。
 
 例如，**d=”6+”**
-
+```xml
 <Container   Anchor="R,T" Size="512,1" **d="6+"** >
-
-      <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" />
-
-      <!-- 等等... -->
-
-![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image003.png](Forge UI\Debug Features/media/image3.png)
+    <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" />
+    <!-- 等等... -->
+```
+![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image003.png](Forge%20UI/Debug%20Features/media/image3.png)
 
 或者，而不是数字，只使用星号（“\*”），ForgeUI将循环显示12种随机颜色：
 
 例如，**d=”\*+”**
-
+```xml
 <Container   Anchor="R,T" Size="512,1" **d="\*+"** >
-
-      <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" />
-
-      <!-- 等等... -->
-
-![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image004.png](Forge UI\Debug Features/media/image4.png)
+    <Image Anchor="R,T" Size="119,119" Texture="HUDBackingCorner.dds" />
+    <!-- 等等... -->
+```
+![C:\0FAAA085\222AE316-8AD0-43BE-AD7A-3B0A13BF93FC_files\image004.png](Forge%20UI/Debug%20Features/media/image4.png)
 
 例如，**d=”id”**
-
+```xml
 <Container  ID="CultureArea"    Anchor="R,T" Offset="100,0" Size="100,140" **d=”id”**\>
-
   <Image                        Anchor="L,T" Offset="3,20"  Size="71,79"   Texture="TopBarRingCulture.dds">
-
     <Meter  ID="CultureMeter"   Anchor="L,T" Offset="7,17"  Size="56,56"   Texture="HUDTopBarCultureMeter.dds" />
-
   </Image>
-
 </Container>
-
-![cid:image001.png@01D01AF0.32FBA450](Forge UI\Debug Features/media/image5.jpg)
+```
+![cid:image001.png@01D01AF0.32FBA450](Forge%20UI/Debug%20Features/media/image5.jpg)
 
 将鼠标悬停在文本上：
 
-![cid:image002.png@01D01AF0.32FBA450](Forge UI\Debug Features/media/image6.jpg)
+![cid:image002.png@01D01AF0.32FBA450](Forge%20UI/Debug%20Features/media/image6.jpg)
 
 例如，**d=”id+”**
-
+```xml
 <Container  ID="CultureArea"    Anchor="R,T" Offset="100,0" Size="100,140" **d=”id+”**\>
-
   <Image                        Anchor="L,T" Offset="3,20"  Size="71,79"   Texture="TopBarRingCulture.dds">
-
     <Meter  ID="CultureMeter"   Anchor="L,T" Offset="7,17"  Size="56,56"   Texture="HUDTopBarCultureMeter.dds" />
-
   </Image>
-
 </Container>
-
-![cid:image003.png@01D01AF0.32FBA450](Forge UI\Debug Features/media/image7.jpg)
+```
+![cid:image003.png@01D01AF0.32FBA450](Forge%20UI/Debug%20Features/media/image7.jpg)
 
 将ID与着色和级联组合：
 
 例如，**d=”id\*+”**
-
+```xml
 <Container  ID="CultureArea"    Anchor="R,T" Offset="100,0" Size="100,140" **d=”id\*+”**\>
-
   <Image                        Anchor="L,T" Offset="3,20"  Size="71,79"   Texture="TopBarRingCulture.dds">
-
     <Meter  ID="CultureMeter"   Anchor="L,T" Offset="7,17"  Size="56,56"   Texture="HUDTopBarCultureMeter.dds" />
-
   </Image>
-
 </Container>
+```
 
-![cid:image004.png@01D01B7B.A5DD3750](Forge UI\Debug Features/media/image8.jpg)
+![cid:image004.png@01D01B7B.A5DD3750](Forge%20UI/Debug%20Features/media/image8.jpg)
 
 * * *
 
@@ -6763,7 +5152,7 @@ LUA 约定
 Havokscript 提供了一个扩展，可以将变量定义为特定类型（number、string、boolean、ifunction、table）。在可能的情况下，使用强类型定义可以获得 Havokscript 的一些好处：防止分配无效类型、执行更快、占用更少内存。
 
 _示例_
-
+```lua
 local numPlayers     :number = 0;
 
 local isReady        :boolean = false;
@@ -6771,6 +5160,7 @@ local isReady        :boolean = false;
 local data           :table = {};
 
 local callback       :ifunction = nil;
+```
 
 LUA 变量命名
 
@@ -6781,230 +5171,54 @@ LUA 变量命名
 一目了然地显示变量的作用域，并有助于防止函数与文件名冲突。
 
 _示例：_
-
+```lua
 local m\_currentPlayer;
+```
 
 **使用 "g\_" 作为全局作用域变量的前缀。**
 
 没有 "local" 关键字的变量（在包含时可全局访问）使用 "g\_" 来标识其作用域。
 
 _示例：_
-
+```lua
 g\_debugColor :number  = 0x3344ffee;
+```
 
 常量命名
 
-**前缀（Prefix)**
+|前缀（Prefix)|后缀(Suffix)|类型(Type)|示例(Example)|描述（Description）|
+|--- |--- |--- |--- |--- |
+|COLOR_||number|COLOR_FILTERED_NOT|ABGR 颜色数值。|
+|m_debug||*|m_debugOutputInfo|某个调试功能的设置。|
+|PIC_||string|PIC_MARKER_PLAYER|纹理的名称（可以是独立的 .DDS 文件或者 BLP 中的 ID）。|
+|SIZE_|_X|number|SIZE_MIN_SPEC_X|宽度的像素大小。|
+|SIZE_|_Y|number|SIZE_MIN_SPEC_Y|高度的像素大小。|
+|TXT_||string|TXT_TO_BOOST|通过 Locale.Lookup() 获得的本地化字符串常量。|
 
-**后缀(Suffix)**
-
-**类型(Type)**
-
-**示例(Example)**
-
-**描述（Description）**
-
-COLOR\_
-
- 
-
-number
-
-COLOR\_FILTERED\_NOT
-
-ABGR 颜色数值。
-
-m\_debug
-
- 
-
-\*
-
-m\_debugOutputInfo
-
-某个调试功能的设置。
-
-PIC\_
-
- 
-
-string
-
-PIC\_MARKER\_PLAYER
-
-纹理的名称（可以是独立的 .DDS 文件或者 BLP 中的 ID）。
-
-SIZE\_
-
-\_X
-
-number
-
-SIZE\_MIN\_SPEC\_X
-
-宽度的像素大小。
-
-SIZE\_
-
-\_Y
-
-number
-
-SIZE\_MIN\_SPEC\_Y
-
-高度的像素大小。
-
-TXT\_
-
- 
-
-string
-
-TXT\_TO\_BOOST
-
-通过 Locale.Lookup() 获得的本地化字符串常量。
 
 变量命名
 
-**前缀（Prefix)**
-
-**后缀(Suffix)**
-
-**类型(Type)**
-
-**示例(Example)**
-
-**描述（Description）**
-
-cached
-
- 
-
-\*
-
-m\_cachedPathUnit
-
-用于本地防止多余计算和/或 C++ 调用的检查值。
-
-e
-
- 
-
-number
-
-m\_ePlayer
-
-C++ 枚举（通常从0开始，-1 表示无效）
-
-k
-
- 
-
-table
-
-m\_kFilters
-
-通用的 LUA 表。
-
-k
-
-IM
-
-table
-
-m\_kEraLabelIM
-
-作为实例管理器的表（用于在池结构中动态创建控件实例的辅助工具）。
-
-m\_
-
- 
-
- 
-
- 
-
- 
-
-max
-
- 
-
-number
-
-m\_maxColumns
-
-一系列值中的最大值。
-
-min
-
- 
-
-number
-
-m\_minMoves
-
-一系列值中的最小值。
-
-p
-
- 
-
-table
-
-pInputStruct
-
-从 C++ 创建的表（可能有 C++ 方法调用）
-
-is
-
- 
-
-boolean
-
-isHandled
-
-通用的布尔值
-
-ui
-
- 
-
-table
-
-m\_uiEraLabels
-
-保存动态创建的 UI 控件引用的表。
-
- 
-
-Control
-
-table
-
-civTextControl
-
-UI 控件实例
+|前缀（Prefix)|后缀(Suffix)|类型(Type)|示例(Example)|描述（Description）|
+|--- |--- |--- |--- |--- |
+|cached||*|m_cachedPathUnit|用于本地防止多余计算和/或 C++ 调用的检查值。|
+|e||number|m_ePlayer|C++ 枚举（通常从0开始，-1 表示无效）|
+|k||table|m_kFilters|通用的 LUA 表。|
+|k|IM|table|m_kEraLabelIM|作为实例管理器的表（用于在池结构中动态创建控件实例的辅助工具）。|
+|m_|||||
+|max||number|m_maxColumns|一系列值中的最大值。|
+|min||number|m_minMoves|一系列值中的最小值。|
+|p||table|pInputStruct|从 C++ 创建的表（可能有 C++ 方法调用）|
+|is||boolean|isHandled|通用的布尔值|
+|ui||table|m_uiEraLabels|保存动态创建的 UI 控件引用的表。|
+||Control|table|civTextControl|UI 控件实例|
 
 函数命名
 
 函数应使用 PascalCase，即每个单词的首字母大写，避免使用下划线，除非是一组类似命名的函数。
 
-**前缀（Prefix)**
-
-**后缀(Suffix)**
-
-**示例(Example)**
-
-**描述（Description）**
-
-On
-
- 
-
-OnPlayerElected
-
-作为事件、LUAEvent 或 UI 回调的函数。
+|前缀（Prefix)|后缀(Suffix)|示例(Example)|描述（Description）|
+|--- |--- |--- |--- |
+|On||OnPlayerElected|作为事件、LUAEvent 或 UI 回调的函数。|
 
 定义一个 Initialize 函数
 
@@ -7013,7 +5227,7 @@ OnPlayerElected
 当在文件范围之外进行初始化可能很难确定时，这非常有用，特别是如果初始化跨越多行并且文件特别大。
 
 _示例：_
-
+```lua
 function Initialize()
 
     -- 进行设置
@@ -7021,13 +5235,14 @@ function Initialize()
 end
 
 Initialize();
+```
 
 将 UI 回调链接放在 Initialize() 中
 
 以前，UI 事件链接是在调用它们的函数之后立即定义的。这使得确定哪些回调被链接到 XML 更加困难。
 
 _示例：_
-
+```lua
 function OnExitButtonPressed()
 
     ExitScreen();
@@ -7039,7 +5254,7 @@ function Initialize()
 Controls.ExitButton:RegisterCallback( Mouse.eLClick, OnExitButtonPressed);
 
 end
-
+```
 事件注册
 
 将广播回调放在文件底部的 Initialize() 中的 "Events" 部分。
@@ -7047,7 +5262,7 @@ end
 这些事件要么由其他文件（LuaEvents）引发，要么由 C++ 部分引发，并且它们进行广播，因此可能有多个监听器，甚至在同一个文件中。
 
 _示例：_
-
+```lua
 function Initialize()
 
     -- 事件
@@ -7058,14 +5273,14 @@ function Initialize()
 
     Events.CitySelectionChanged.Add( OnCitySelectionChanged );
 
-   Events.LocalPlayerTurnBegin.Add( OnLocalPlayerTurnBegin );
+    Events.LocalPlayerTurnBegin.Add( OnLocalPlayerTurnBegin );
 
-Events.UnitOperationsCleared.Add( OnUnitOperationsCleared );
+    Events.UnitOperationsCleared.Add( OnUnitOperationsCleared );
 
-LuaEvent.TestPanel\_AllSectionsClosed.Add( OnAllSectionsClosed );
+    LuaEvent.TestPanel_AllSectionsClosed.Add( OnAllSectionsClosed );
 
 end
-
+```
 LUAEvents
 
 根据引发事件的上下文命名
@@ -7077,9 +5292,9 @@ LUAEvents
 这样可以减少对于逻辑应用于 UI 的 LUA 事件来说，关于哪个 LUA 事件是从哪里引发的混淆，并简化调试基于 LUA 事件的问题。
 
 _示例：_
-
-LuaEvent.ActionPanel\_OpenChooseResearch(); -- 从 ActionPanel.lua 引发，供任何监听器使用
-
+```lua
+LuaEvent.ActionPanel_OpenChooseResearch(); -- 从 ActionPanel.lua 引发，供任何监听器使用
+```
 只传递简单类型
 
 只应将字符串、数字和布尔值作为参数传递给 LUAEvent。也可以传递表，只要它不是从游戏引擎返回的表，也不是在某个地方保存游戏引擎对象的表。这包括 UI 对象。
@@ -7108,7 +5323,7 @@ LUA输入
 
 处理程序函数应该返回**false**，如果输入未被处理或者已处理但应该由其他输入考虑。
 
-一旦输入被标记为已处理（**true**），在该**_根_**上下文中的其他控件（或上下文）将不会接收输入。但是，在其他**_根_**上下文中的其他控件/上下文将有机会处理输入，即使它在不同的根上下文中被标记为已处理（**true**）。
+一旦输入被标记为已处理（**true**），在该**根**上下文中的其他控件（或上下文）将不会接收输入。但是，在其他**根**上下文中的其他控件/上下文将有机会处理输入，即使它在不同的根上下文中被标记为已处理（**true**）。
 
 _（注意：根上下文是通过C++设置的，很可能您正在单个根上下文中工作。）_
 
@@ -7119,209 +5334,120 @@ _（注意：根上下文是通过C++设置的，很可能您正在单个根上�
 **简单处理程序**
 
 当输入发生时，简单处理程序将回调并传入3个参数：
-
-**function InputHandler( uiMsg, wParam, lParam )**
-
+```lua
+function InputHandler( uiMsg, wParam, lParam )**
+```
 uiMsg将是输入的类型（键盘、鼠标、指针等），wParam和lParam将是具有意义的值，根据输入的类型而定。
 
 要设置处理程序，请在上下文上调用**SetInputHandler()**，并传入接收输入的函数名称。
-
+```lua
 ContextPtr:SetInputHandler( InputHandler );
-
+```
 **示例：**
-
+```lua
 function InputHandler( uiMsg, wParam, lParam )
 
-if (uiMsg==KeyEvents.KeyDown) then
-
-if (wParam==Keys.VK\_ESCAPE) then
-
-OnBack();
-
+    if (uiMsg==KeyEvents.KeyDown) then
+        if (wParam==Keys.VK_ESCAPE) then
+            OnBack();
+return true;
 return true;
 
-end
+            return true;
 
 end
+end
+
+        end
+
+    end
 
 if (uiMsg==MouseEvents.MouseMove) then        
+if (uiMsg==MouseEvents.MouseMove) then        
+
+    if (uiMsg==MouseEvents.MouseMove) then        
 
 InspectWhatsBelowTheCursor();
+InspectWhatsBelowTheCursor();
+
+        InspectWhatsBelowTheCursor();
 
 return true;
+return true;
+
+        return true;
 
 end
+end
+
+    end
 
 return false;
+return false;
+
+    return false;
 
 end
 
 ContextPtr:SetInputHandler( InputHandler );
-
+```
 **扩展处理程序**
 
 扩展处理程序与简单处理程序几乎相同，只是它接收一个参数，该参数是一个包含输入信息的表：
-
-**function InputHandler( inputStruct )**
+```lua
+function InputHandler( inputStruct )
+```
 
 **inputStruct**与ForgeUI中定义的"**InputStruct**"相同。它允许通过各种函数对输入进行详细查询。
 
 要设置输入处理程序：
-
-ContextPtr:SetInputHandler(
-
-InputHandler, true );
-
+```lua
+ContextPtr:SetInputHandler(   InputHandler, true );
+```
 **输入结构（InputStruct）** functions include:
 
 **InputStruct**的函数包括：
 
-**函数（Function）**
+| **函数（Function）** | **返回值（Returns）** | **描述（Description）** |
+|------------------|------------------| -- |
+| GetFlags         | number           | 返回输入系统正在使用的低级位标志。 |
+| GetKey           | number           | 获取AppHost键码。 |
+| GetMessageType   | number           | 此结构实例中包含的输入消息类型。值包括：<br>KeyEvents.KeyDown<br>KeyEvents.KeyUp<br>MouseEvents.LButtonDown<br>MouseEvents.LButtonDoubleClick<br>MouseEvents.LButtonUp<br>MouseEvents.MButtonDown<br>MouseEvents.MButtonDoubleClick<br>MouseEvents.MButtonUp<br>MouseEvents.PointerDown<br>MouseEvents.PointerUp<br>MouseEvents.RButtonDown<br>MouseEvents.RButtonDoubleClick<br>MouseEvents.RButtonUp |
+| GetMouseDX       | number           | 获取自上一帧输入以来鼠标的水平增量。 |
+| GetMouseDY       | number           | 获取自上一帧输入以来鼠标的垂直增量。 |
+| GetTouchID       | number           | 与生成事件的触摸关联的唯一ID。 |
+| GetWheel         | number           | 获取鼠标滚轮值。 |
+| GetX             | number           | 此鼠标或触摸事件的水平坐标。 |
+| GetY             | number           | 此鼠标或触摸事件的垂直坐标。 |
+| IsShiftDown      | bool             | Shift键是否按下？ |
+| IsControlDown    | bool             | Control键是否按下？ |
+| IsLButtonDown    | bool             | 左鼠标按钮（或触摸等效）是否按下？ |
+| IsRButtonDown    | bool             | 右鼠标按钮是否按下？ |
+| IsMButtonDown    | bool             | 中间鼠标按钮（通常是鼠标滚轮）是否按下？ |
+| IsAnyButtonDown  | bool             | 左、右或中间鼠标按钮是否按下？ |
 
-**返回值（Returns）**
-
-**描述（Description）**
-
-GetFlags
-
-number
-
-返回输入系统正在使用的低级位标志。
-
-GetKey
-
-number
-
-获取AppHost键码。
-
-GetMessageType
-
-number
-
-此结构实例中包含的输入消息类型。
-
-值包括：
-
-KeyEvents.KeyDown
-
-KeyEvents.KeyUp
-
-MouseEvents.LButtonDown
-
-MouseEvents.LButtonDoubleClick
-
-MouseEvents.LButtonUp
-
-MouseEvents.MButtonDown
-
-MouseEvents.MButtonDoubleClick
-
-MouseEvents.MButtonUp
-
-MouseEvents.PointerDown
-
-MouseEvents.PointerUp
-
-MouseEvents.RButtonDown
-
-MouseEvents.RButtonDoubleClick
-
-MouseEvents.RButtonUp
-
-GetMouseDX
-
-number
-
-获取自上一帧输入以来鼠标的水平增量。
-
-GetMouseDY
-
-number
-
-获取自上一帧输入以来鼠标的垂直增量。
-
-GetTouchID
-
-number
-
-与生成事件的触摸关联的唯一ID。
-
-GetWheel
-
-number
-
-获取鼠标滚轮值。
-
-GetX
-
-number
-
-此鼠标或触摸事件的水平坐标。
-
-GetY
-
-number
-
-此鼠标或触摸事件的垂直坐标。
-
-IsShiftDown
-
-bool
-
-Shift键是否按下？
-
-IsControlDown
-
-bool
-
-Control键是否按下？
-
-IsLButtonDown
-
-bool
-
-左鼠标按钮（或触摸等效）是否按下？
-
-IsRButtonDown
-
-bool
-
-右鼠标按钮是否按下？
-
-IsMButtonDown
-
-bool
-
-中间鼠标按钮（通常是鼠标滚轮）是否按下？
-
-IsAnyButtonDown
-
-bool
-
-左、右或中间鼠标按钮是否按下？
 
 **示例：**
-
+```lua
 function KeyHandler( key:number )
-
-if (key == Keys.VK\_ESCAPE) then Close(); return true; end
-
-return false;
-
+    if (key == Keys.VK_ESCAPE) then Close(); return true; end
+    return false;
 end
 
 function InputHandler( inputStruct:table )
+    local uiMsg = inputStruct:GetMessageType();
 
-local uiMsg = inputStruct:GetMessageType();
-
-if (uiMsg == KeyEvents.KeyDown) then return KeyHandler( inputStruct:GetKey() ); end;
+    if (uiMsg == KeyEvents.KeyDown) then return KeyHandler( inputStruct:GetKey() ); end;
 
 return false;
+return false;
+
+    return false;
 
 end
 
 ContextPtr:SetInputHandler( InputHandler, true );
-
+```
 * * *
 
 # LUA Reference（LUA参考）
@@ -7334,12 +5460,12 @@ LUA参考
 
 在运行时，可以使用LUA中的特定方法更改和编辑控件的常见属性。例如，可以通过这种方式改变窗口的大小、显示或隐藏窗口、改变窗口的屏幕位置等。
 
-_示例：_
-
+**示例：**
+```lua
 Controls.MyControl:SetSizeVal(width, height);
 
 Controls.MyControl:SetHide(false);
-
+```
 **控件操作**
 
 **ContextPtr:LookUpControl( path )**
@@ -7350,35 +5476,35 @@ Controls.MyControl:SetHide(false);
 
 如果使用的上下文需要从当前位置向上跳转到父级，可以使用两个点（".."）。
 
-通配符可以在路径中的任何位置使用星号（"\*"），除了控件名称。如果有多个具有相同名称的控件，将返回找到的第一个匹配名称的控件。尽可能避免使用通配符查找，因为它们可能会消耗较多资源。
+通配符可以在路径中的任何位置使用星号（"*"），除了控件名称。如果有多个具有相同名称的控件，将返回找到的第一个匹配名称的控件。尽可能避免使用通配符查找，因为它们可能会消耗较多资源。
 
 **示例：**
-
+```lua
 local a = ContextPtr:LookUpControl("/FrontEnd/FrontEndPopup/CloseButton"); -- 从根开始
 
 local b = ContextPtr:LookUpControl("../FrontEndPopup/CloseButton"); -- 从当前上下文向上一级
 
-local c = ContextPtr:LookUpControl("/FrontEnd/\*/CloseButton"); -- 使用通配符匹配子上下文
+local c = ContextPtr:LookUpControl("/FrontEnd/*/CloseButton"); -- 使用通配符匹配子上下文
 
-local d = ContextPtr:LookUpControl("\*/FrontEndPopup/CloseButton"); -- 使用通配符匹配根上下文
+local d = ContextPtr:LookUpControl("*/FrontEndPopup/CloseButton"); -- 使用通配符匹配根上下文
 
-local e = ContextPtr:LookUpControl("\*/\*/CloseButton"); -- 从根上下文使用多个通配符
+local e = ContextPtr:LookUpControl("*/*/CloseButton"); -- 从根上下文使用多个通配符
 
-local f = ContextPtr:LookUpControl("../FrontEndPopup/\*"); -- 非法，控件名称不能使用通配符
-
+local f = ContextPtr:LookUpControl("../FrontEndPopup/*"); -- 非法，控件名称不能使用通配符
+```
 **字符串操作符：**
 
 在字符串中使用的命令，会产生特殊行为。
 
-**\[NEWLINE\]**
+**[NEWLINE]**
 
 在字符串中插入换行符。
 
-**\[COLOR:ColorName\] 要着色的文本字符串 \[ENDCOLOR\]**
+**[COLOR:ColorName] 要着色的文本字符串 [ENDCOLOR]**
 
 将文本字符串的颜色动态设置为某个特定颜色，而不是默认颜色。'ColorName'是项目颜色图集中定义的颜色名称。
 
-**\[ICON\_name\]**
+**[ICON_name]**
 
 从文本图标图集中提取并插入一个图形“图标”到文本字段中。
 
@@ -7396,11 +5522,11 @@ local f = ContextPtr:LookUpControl("../FrontEndPopup/\*"); -- 非法，控件名
 
 设置控件的文本。
 
-**LocalizeAndSetToolTip("MY\_TEXT\_KEY")**
+**LocalizeAndSetToolTip("MY_TEXT_KEY")**
 
 本地化并设置控件的工具提示文本。
 
-**Locale.Lookup("MY\_TEXT\_KEY")**
+**Locale.Lookup("MY_TEXT_KEY")**
 
 将文本键转换为本地化的等效文本。
 
@@ -7462,7 +5588,7 @@ Madrid
 
 根据前一个子控件的位置排列其子控件的容器。堆栈可以线性或以 2D 网格的形式排列其子控件
 
-![/download/attachments/168854679/stack.png?version=1&modificationDate=1498673892670&api=v2](Forge UI\Reference Guide/media/image1.png)
+![/download/attachments/168854679/stack.png?version=1&modificationDate=1498673892670&api=v2](Forge%20UI/Reference%20Guide/media/image1.png)
 
 ### 上下文控件 (Context Controls)
 
@@ -7522,7 +5648,7 @@ Madrid
 
 9 分割图像，将纹理映射到 3x3 网格。这样可以使纹理仅拉伸中间区域，而边缘和角落保持一致
 
-![/download/attachments/168854679/grid.png?version=1&modificationDate=1498673727463&api=v2](Forge UI\Reference Guide/media/image2.png)
+![/download/attachments/168854679/grid.png?version=1&modificationDate=1498673727463&api=v2](Forge%20UI/Reference%20Guide/media/image2.png)
 
 #### 标签控件 (Label)
 
@@ -7614,551 +5740,123 @@ Madrid
 
 每个控件都可以具有以下属性来初始化，某些控件还可以使用该控件类型特定的其他属性。
 
-属性
+| **属性**                                         | **描述**                                                                                                                                 | **示例**                                                                      |
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| Size                                           | 控件的大小。大小可以指定为以下之一：</br><br>$~$ $~$ $~$ $~$ $~$ ● number：控件的绝对像素大小<br>$~$ $~$ $~$ $~$ $~$ ● parent[+/-number]：相对于父控件的大小（顶级控件使用屏幕分辨率）<br>$~$ $~$ $~$ $~$ $~$ ● auto：相对于子控件占用的区域大小</br><br>注意：'full' 已被弃用，请使用 'parent' 替代 | Size="parent-16, parent"<br>Size="1920, auto"                                  |
+| Offset                                         | 相对于父控件的位置                                                                                                                              | Offset="16, 0"                                                              |
+| ClampSize                                      | 是否将控件的大小限制为其父控件的大小。可以是 1、0、True、False、Vertical 或 Horizontal                                                                            | ClampSize="1"<br>ClampSize="False"<br>ClampSize="Vertical"                        |
+| InnerPadding                                   | 当子控件使用父控件大小时使用的填充量                                                                                                                     | InnerPadding="8,0"                                                          |
+| MinSize                                        | 计算自动大小时，此控件的最小大小                                                                                                                       | MinSize="32, 32"                                                            |
+| Anchor                                         | 锚定到父控件的哪个边缘：<br>X 轴可以是：L、C 或 R（分别表示左、中、右）<br>Y 轴可以是：T、C 或 B（分别表示上、中、下）<br>![/download/attachments/168854679/anchor.png?version=1&modificationDate=1498672831210&api=v2](Forge%20UI/Reference%20Guide/media/image3.png) | Anchor="C,C"<br>Anchor="R,B" |
+| AnchorSide                                     | 锚定在父控件的内部还是外部：I=Inside，O=Outside<br>![/download/attachments/168854679/anchorside.png?version=1&modificationDate=1498672869350&api=v2](Forge%20UI/Reference%20Guide/media/image4.png) | AnchorSide="I,O"                                                            |
+| Color                                          | 用于此控件的颜色（多个控件类型不使用）<br>RGBA 值范围为 0-255，alpha 是可选的。<br>颜色名称将使用 Civ6_ColorAtlas.xml 中定义的值 | Color="206,218,225,255"<br>Color="255,255,255"<br>Color="White"<br>Color="Black,128" |
+| ID                                             | 用于在 lua 中引用此控件的 ID                                                                                                                     | ID="Foo"                                                                    |
+| Hidden                                         | 此控件当前是否可见                                                                                                                              | Hidden="1"                                                                  |
+| NeedsMouseOver                                 | 当鼠标悬停在此控件上时，是否应通知该控件                                                                                                                   | NeedsMouseOver="0"                                                          |
+| NoClip                                         | 是否忽略剪切                                                                                                                                 | NoClip="1"                                                                  |
+| GlobalUpdate                                   | 即使不可见，是否更新此控件                                                                                                                          | GlobalUpdate="0"                                                            |
+| ConsumeMouse<br>ConsumeAllMouse                   | 此控件是否消耗所有鼠标操作                                                                                                                          | ConsumeMouseButton="1"                                                      |
+| ConsumeMouseButton                             | 鼠标点击是否被此控件消耗                                                                                                                           | ConsumeMouseButton="0"                                                      |
+| ConsumeMouseOver                               | 鼠标移动是否被此控件消耗                                                                                                                           | ConsumeMouseOver="1"                                                        |
+| ConsumeMouseWheel                              | 鼠标滚轮移动是否被此控件消耗                                                                                                                         | ConsumeMouseWheel="0"                                                       |
+| ModalBlocksInput                               | 当模态时，此控件是否允许输入                                                                                                                         | ModalBlocksInput="1"                                                        |
+| Disabled                                       | 此控件是否处于禁用状态                                                                                                                            | ModalBlocksInput="0"                                                        |
+| AutoSize                                       | 已弃用，请在 Size 属性中使用 'auto'                                                                                                               | AutoSize="Vertical"                                                         |
+| AutoSizePadding<br>SizePadding                    | 计算自动大小时，添加到子控件周围的边框                                                                                                                    | AutoSizePadding="16, 0"                                                     |
+| Padding                                        | 已弃用，与 AutoSizePadding 和 SizePadding 相同                                                                                                 | Padding="32, 32"                                                            |
+| Alpha                                          | 此控件及其子控件的不透明度                                                                                                                          | Alpha="0.3"                                                                 |
+| ToolTip                                        | 鼠标悬停在此控件上时显示的文本                                                                                                                        | ToolTip="Foo"                                                               |
+| ToolTipType                                    | 显示工具提示时使用的面板类型                                                                                                                         | ToolTipType="CivTooltip"                                                    |
+| ShowOnMouseOver<br>HideOnMouseOver<br>ShowOnMouseOut | 当鼠标移动时，是否显示或隐藏此控件                                                                                                                      | ShowOnMouseOver="1"                                                         |
+| debug<br>d                                        | * 用随机颜色的矩形突出显示控件<br># 设置调试标签                                                                                                              | d="*"<br>d="#2"                                                                |
 
-描述
-
-示例
-
-Size
-
-控件的大小。大小可以指定为以下之一：
-
-*   number：控件的绝对像素大小
-    
-*   parent\[+/-number\]：相对于父控件的大小（顶级控件使用屏幕分辨率）
-    
-*   auto：相对于子控件占用的区域大小
-    
-
-_注意：'full' 已被弃用，请使用 'parent' 替代_
-
-Size="parent-16, parent"  
-Size="1920, auto"
-
-Offset
-
-相对于父控件的位置
-
-Offset="16, 0"
-
-ClampSize
-
-是否将控件的大小限制为其父控件的大小。可以是 1、0、True、False、Vertical 或 Horizontal
-
-ClampSize="1"  
-ClampSize="False"  
-ClampSize="Vertical"
-
-InnerPadding
-
-当子控件使用父控件大小时使用的填充量
-
-InnerPadding="8,0"
-
-MinSize
-
-计算自动大小时，此控件的最小大小
-
-MinSize="32, 32"
-
-Anchor
-
-锚定到父控件的哪个边缘：  
-X 轴可以是：L、C 或 R（分别表示左、中、右）  
-Y 轴可以是：T、C 或 B（分别表示上、中、下）
-
-![/download/attachments/168854679/anchor.png?version=1&modificationDate=1498672831210&api=v2](Forge UI\Reference Guide/media/image3.png)
-
-Anchor="C,C"  
-Anchor="R,B"
-
-AnchorSide
-
-锚定在父控件的内部还是外部：I=Inside，O=Outside
-
-![/download/attachments/168854679/anchorside.png?version=1&modificationDate=1498672869350&api=v2](Forge UI\Reference Guide/media/image4.png)
-
-AnchorSide="I,O"
-
-Color
-
-用于此控件的颜色（多个控件类型不使用）
-
-RGBA 值范围为 0-255，alpha 是可选的。
-
-颜色名称将使用 Civ6\_ColorAtlas.xml 中定义的值
-
-Color="206,218,225,255"  
-Color="255,255,255"  
-Color="White"  
-Color="Black,128"
-
-ID
-
-用于在 lua 中引用此控件的 ID
-
-ID="Foo"
-
-Hidden
-
-此控件当前是否可见
-
-Hidden="1"
-
-NeedsMouseOver
-
-当鼠标悬停在此控件上时，是否应通知该控件
-
-NeedsMouseOver="0"
-
-NoClip
-
-是否忽略剪切
-
-NoClip="1"
-
-GlobalUpdate
-
-即使不可见，是否更新此控件
-
-GlobalUpdate="0"
-
-ConsumeMouse  
-ConsumeAllMouse
-
-此控件是否消耗所有鼠标操作
-
-ConsumeMouseButton="1"
-
-ConsumeMouseButton
-
-鼠标点击是否被此控件消耗
-
-ConsumeMouseButton="0"
-
-ConsumeMouseOver
-
-鼠标移动是否被此控件消耗
-
-ConsumeMouseOver="1"
-
-ConsumeMouseWheel
-
-鼠标滚轮移动是否被此控件消耗
-
-ConsumeMouseWheel="0"
-
-ModalBlocksInput
-
-当模态时，此控件是否允许输入
-
-ModalBlocksInput="1"
-
-Disabled
-
-此控件是否处于禁用状态
-
-ModalBlocksInput="0"
-
-AutoSize
-
-_已弃用，请在 Size 属性中使用 'auto'_
-
-AutoSize="Vertical"
-
-AutoSizePadding  
-SizePadding
-
-计算自动大小时，添加到子控件周围的边框
-
-AutoSizePadding="16, 0"
-
-Padding
-
-_已弃用，与 AutoSizePadding 和 SizePadding 相同_
-
-Padding="32, 32"
-
-Alpha
-
-此控件及其子控件的不透明度
-
-Alpha="0.3"
-
-ToolTip
-
-鼠标悬停在此控件上时显示的文本
-
-ToolTip="Foo"
-
-ToolTipType
-
-显示工具提示时使用的面板类型
-
-ToolTipType="CivTooltip"
-
-ShowOnMouseOver  
-HideOnMouseOver  
-ShowOnMouseOut
-
-当鼠标移动时，是否显示或隐藏此控件
-
-ShowOnMouseOver="1"
-
-debug  
-d
-
-\* 用随机颜色的矩形突出显示控件  
-\# 设置调试标签
-
-d="\*"  
-d="#2"
 
 ## Lua
 
-在 LuaContext 中定义的控件可以通过 Lua 进行控制。要引用一个命名的控件，请使用命名空间 'Controls'，例如 Controls.Background 将是一个具有 ID 'Background' 的控件。
-
-所有控件都具有以下公开方法，某些控件还具有仅适用于该控件类型的其他方法：
-
-方法(Method)
-
-描述(Description)
-
-SetOffset
-
-将控件的偏移设置为指定的值，该值是一个二维向量
-
-SetOffsetX
-
-将控件的 X 偏移设置为指定的浮点数值
-
-SetOffsetY
-
-将控件的 Y 偏移设置为指定的浮点数值
-
-SetOffsetVal
-
-将控件的偏移设置为指定的 X、Y 浮点数值
-
-GetOffsetX
-
-返回此控件的 X 偏移
-
-GetOffsetY
-
-返回此控件的 Y 偏移
-
-GetOffsetVal
-
-返回此控件的 X 和 Y 偏移
-
-GetScreenOffset
-
-返回相对于屏幕左上角的偏移
-
-SetAnchor
-
-基于指定的逗号分隔字符串锚定控件
-
-SetAllChildrenVisible
-
-根据布尔参数显示/隐藏所有子控件
-
-SetHide
-
-根据指定的布尔值设置控件的可见性
-
-SetShow
-
-根据指定的布尔值设置控件的可见性
-
-SetNoClip
-
-根据指定的布尔值启用/禁用裁剪
-
-IsHidden
-
-返回控件是否不可见
-
-IsVisible
-
-返回控件是否可见
-
-GetNumChildren
-
-返回控件的子控件数量
-
-GetChildren
-
-返回包含此控件所有子控件的表
-
-ReprocessAnchoring
-
-强制控件根据其父控件更新位置和大小
-
-GetSizeX
-
-返回控件的宽度  
-_注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小_
-
-GetSizeY
-
-返回控件的高度  
-_注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小_
-
-GetSizeVal
-
-返回控件的宽度和高度  
-_注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小_
-
-SetSize
-
-将控件的大小设置为指定的值，该值是一个二维向量
-
-SetSizeX
-
-将控件的宽度设置为指定的浮点数值
-
-SetSizeY
-
-将控件的高度设置为指定的浮点数值
-
-SetSizeVal
-
-将控件的宽度和高度设置为指定的 X、Y 浮点值
-
-DoAutoSize
-
-强制控件根据其子控件调整大小
-
-GetParentRelativeSizeX
-
-返回控件在计算父控件大小时使用的 X 修饰符
-
-GetParentRelativeSizeY
-
-返回控件在计算父控件大小时使用的 Y 修饰符
-
-GetParentRelativeSizeVal
-
-返回控件在计算父控件大小时使用的 X 和 Y 修饰符
-
-SetParentRelativeSize
-
-将计算父控件大小时使用的修饰符设置为指定的 2D 向量
-
-SetParentRelativeSizeX
-
-将计算父控件大小时使用的 X 修饰符设置为指定的浮点值
-
-SetParentRelativeSizeY
-
-将计算父控件大小时使用的 Y 修饰符设置为指定的浮点值
-
-SetParentRelativeSizeVal
-
-将计算父控件大小时使用的修饰符设置为指定的 X、Y 浮点值
-
-GetParentRelativeOffset
-
-返回相对于锚点位置的 X 和 Y 偏移量
-
-SetColor
-
-设置控件的颜色，可以是包含 r、g、b 值的表，单个整数编码的 RGB 颜色，或分开的 RGB 值
-
-SetColorByName
-
-将颜色设置为 Civ6\_ColorAtlas.xml 文件中的命名颜色
-
-SetAlpha
-
-将控件的不透明度设置为指定的浮点值
-
-GetAlpha
-
-返回控件的不透明度
-
-SortChildren
-
-使用指定的 Lua 比较函数对子控件进行排序
-
-AddChildAtIndex
-
-将指定的控件作为子控件添加到指定的序号位置，较低的索引首先渲染，实质上在较高的索引“后面”
-
-BranchResetAnimation
-
-递归重置此控件及其子控件的所有动画
-
-SetID
-
-将此控件的名称设置为指定的字符串  
-_注意：不会更改 Controls 命名空间中的值_
-
-GetID
-
-返回此控件的指定名称
-
-SetDisabled
-
-根据布尔值参数启用/禁用控件
-
-IsDisabled
-
-返回控件是否已禁用
-
-SetEnabled
-
-根据布尔值参数启用/禁用控件
-
-IsEnabled
-
-返回控件是否已启用
-
-SetModal
-
-根据布尔值参数将控件设置为模态
-
-IsModal
-
-返回控件是否处于模态状态
-
-SetTag
-
-将标签设置为指定的整数，用于调试
-
-GetTag
-
-获取指定的调试标签
-
-CalculateVisibilityBox
-
-强制控件更新其可见性框
-
-SetToolTipCallback
-
-设置在显示工具提示时调用的 Lua 函数
-
-ClearToolTipCallback
-
-删除工具提示回调函数
-
-IsToolTipEnabled
-
-返回此控件是否有活动的工具提示
-
-EnableToolTip
-
-根据布尔值参数启用/禁用工具提示
-
-SetToolTipType
-
-将工具提示类型设置为定义的 ToolTipType
-
-SetToolTipString
-
-设置工具提示中显示的字符串
-
-LocalizeAndSetToolTip
-
-在查找本地化字符串后，设置工具提示中显示的字符串
-
-GetToolTipString
-
-返回工具提示中显示的字符串
-
-ChangeParent
-
-更改此控件的父控件
-
-GetParent
-
-返回该控件的父控件
-
-GetParentByType
-
-递归向上查找，找到第一个具有指定类型的父控件
-
-GetParentByID
-
-递归向上查找，找到第一个具有指定名称的父控件
-
-Reparent
-
-将该控件重新附加到其父控件，使其位于最后一个索引位置
-
-HasMouseOver
-
-返回鼠标当前是否位于该控件上方
-
-DestroyChild  
-ReleaseChild
-
-释放指定的子控件
-
-SetConsumeMouseOver
-
-根据指定的布尔值启用/禁用消耗鼠标悬停输入
-
-SetConsumeMouseButton
-
-根据指定的布尔值启用/禁用消耗鼠标点击输入
-
-SetConsumeMouseWheel
-
-根据指定的布尔值启用/禁用消耗鼠标滚轮输入
-
-GetConsumeMouseOver
-
-返回该控件是否消耗鼠标移动
-
-GetConsumeMouseButton
-
-返回该控件是否消耗鼠标点击
-
-GetConsumeMouseWheel
-
-返回该控件是否消耗鼠标滚轮移动
-
-DestroyAllChildren
-
-销毁该控件的所有子控件
-
-RegisterMouseEnterCallback
-
-设置当鼠标进入该控件的边界框时调用的函数
-
-RegisterMouseExitCallback
-
-设置当鼠标离开该控件的边界框时调用的函数
-
-RegisterMouseOverCallback
-
-设置当鼠标在该控件的边界框内移动时调用的函数
-
-RegisterWhenShown
-
-设置当该控件变为可见时调用的函数
-
-RegisterWhenHidden
-
-设置当该控件变为隐藏时调用的函数
-
-ClearMouseEnterCallback
-
-清除当鼠标进入该控件的边界框时调用的函数
-
-ClearMouseExitCallback
-
-清除当鼠标离开该控件的边界框时调用的函数
-
-ClearMouseOverCallback
-
-清除当鼠标在该控件的边界框内移动时调用的函数
-
-* * *
+| **方法(Method)**             | **描述(Description)**                               |
+|----------------------------|---------------------------------------------------|
+| SetOffset                  | 将控件的偏移设置为指定的值，该值是一个二维向量                           |
+| SetOffsetX                 | 将控件的 X 偏移设置为指定的浮点数值                               |
+| SetOffsetY                 | 将控件的 Y 偏移设置为指定的浮点数值                               |
+| SetOffsetVal               | 将控件的偏移设置为指定的 X、Y 浮点数值                             |
+| GetOffsetX                 | 返回此控件的 X 偏移                                       |
+| GetOffsetY                 | 返回此控件的 Y 偏移                                       |
+| GetOffsetVal               | 返回此控件的 X 和 Y 偏移                                   |
+| GetScreenOffset            | 返回相对于屏幕左上角的偏移                                     |
+| SetAnchor                  | 基于指定的逗号分隔字符串锚定控件                                  |
+| SetAllChildrenVisible      | 根据布尔参数显示/隐藏所有子控件                                  |
+| SetHide                    | 根据指定的布尔值设置控件的可见性                                  |
+| SetShow                    | 根据指定的布尔值设置控件的可见性                                  |
+| SetNoClip                  | 根据指定的布尔值启用/禁用裁剪                                   |
+| IsHidden                   | 返回控件是否不可见                                         |
+| IsVisible                  | 返回控件是否可见                                          |
+| GetNumChildren             | 返回控件的子控件数量                                        |
+| GetChildren                | 返回包含此控件所有子控件的表                                    |
+| ReprocessAnchoring         | 强制控件根据其父控件更新位置和大小                                 |
+| GetSizeX                   | 返回控件的宽度<br> *注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小*        |
+| GetSizeY                   | 返回控件的高度<br> *注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小*        |
+| GetSizeVal                 | 返回控件的宽度和高度<br> *注意：建议尽可能使用相对大小，而不是在 Lua 中手动调整控件的大小*     |
+| SetSize                    | 将控件的大小设置为指定的值，该值是一个二维向量                           |
+| SetSizeX                   | 将控件的宽度设置为指定的浮点数值                                  |
+| SetSizeY                   | 将控件的高度设置为指定的浮点数值                                  |
+| SetSizeVal                 | 将控件的宽度和高度设置为指定的 X、Y 浮点值                           |
+| DoAutoSize                 | 强制控件根据其子控件调整大小                                    |
+| GetParentRelativeSizeX     | 返回控件在计算父控件大小时使用的 X 修饰符                            |
+| GetParentRelativeSizeY     | 返回控件在计算父控件大小时使用的 Y 修饰符                            |
+| GetParentRelativeSizeVal   | 返回控件在计算父控件大小时使用的 X 和 Y 修饰符                        |
+| SetParentRelativeSize      | 将计算父控件大小时使用的修饰符设置为指定的 2D 向量                       |
+| SetParentRelativeSizeX     | 将计算父控件大小时使用的 X 修饰符设置为指定的浮点值                       |
+| SetParentRelativeSizeY     | 将计算父控件大小时使用的 Y 修饰符设置为指定的浮点值                       |
+| SetParentRelativeSizeVal   | 将计算父控件大小时使用的修饰符设置为指定的 X、Y 浮点值                     |
+| GetParentRelativeOffset    | 返回相对于锚点位置的 X 和 Y 偏移量                              |
+| SetColor                   | 设置控件的颜色，可以是包含 r、g、b 值的表，单个整数编码的 RGB 颜色，或分开的 RGB 值 |
+| SetColorByName             | 将颜色设置为 Civ6_ColorAtlas.xml 文件中的命名颜色               |
+| SetAlpha                   | 将控件的不透明度设置为指定的浮点值                                 |
+| GetAlpha                   | 返回控件的不透明度                                         |
+| SortChildren               | 使用指定的 Lua 比较函数对子控件进行排序                            |
+| AddChildAtIndex            | 将指定的控件作为子控件添加到指定的序号位置，较低的索引首先渲染，实质上在较高的索引“后面”     |
+| BranchResetAnimation       | 递归重置此控件及其子控件的所有动画                                 |
+| SetID                      | 将此控件的名称设置为指定的字符串<br> *注意：不会更改 Controls 命名空间中的值*         |
+| GetID                      | 返回此控件的指定名称                                        |
+| SetDisabled                | 根据布尔值参数启用/禁用控件                                    |
+| IsDisabled                 | 返回控件是否已禁用                                         |
+| SetEnabled                 | 根据布尔值参数启用/禁用控件                                    |
+| IsEnabled                  | 返回控件是否已启用                                         |
+| SetModal                   | 根据布尔值参数将控件设置为模态                                   |
+| IsModal                    | 返回控件是否处于模态状态                                      |
+| SetTag                     | 将标签设置为指定的整数，用于调试                                  |
+| GetTag                     | 获取指定的调试标签                                         |
+| CalculateVisibilityBox     | 强制控件更新其可见性框                                       |
+| SetToolTipCallback         | 设置在显示工具提示时调用的 Lua 函数                              |
+| ClearToolTipCallback       | 删除工具提示回调函数                                        |
+| IsToolTipEnabled           | 返回此控件是否有活动的工具提示                                   |
+| EnableToolTip              | 根据布尔值参数启用/禁用工具提示                                  |
+| SetToolTipType             | 将工具提示类型设置为定义的 ToolTipType                         |
+| SetToolTipString           | 设置工具提示中显示的字符串                                     |
+| LocalizeAndSetToolTip      | 在查找本地化字符串后，设置工具提示中显示的字符串                          |
+| GetToolTipString           | 返回工具提示中显示的字符串                                     |
+| ChangeParent               | 更改此控件的父控件                                         |
+| GetParent                  | 返回该控件的父控件                                         |
+| GetParentByType            | 递归向上查找，找到第一个具有指定类型的父控件                            |
+| GetParentByID              | 递归向上查找，找到第一个具有指定名称的父控件                            |
+| Reparent                   | 将该控件重新附加到其父控件，使其位于最后一个索引位置                        |
+| HasMouseOver               | 返回鼠标当前是否位于该控件上方                                   |
+| DestroyChild<br>ReleaseChild  | 释放指定的子控件                                          |
+| SetConsumeMouseOver        | 根据指定的布尔值启用/禁用消耗鼠标悬停输入                             |
+| SetConsumeMouseButton      | 根据指定的布尔值启用/禁用消耗鼠标点击输入                             |
+| SetConsumeMouseWheel       | 根据指定的布尔值启用/禁用消耗鼠标滚轮输入                             |
+| GetConsumeMouseOver        | 返回该控件是否消耗鼠标移动                                     |
+| GetConsumeMouseButton      | 返回该控件是否消耗鼠标点击                                     |
+| GetConsumeMouseWheel       | 返回该控件是否消耗鼠标滚轮移动                                   |
+| DestroyAllChildren         | 销毁该控件的所有子控件                                       |
+| RegisterMouseEnterCallback | 设置当鼠标进入该控件的边界框时调用的函数                              |
+| RegisterMouseExitCallback  | 设置当鼠标离开该控件的边界框时调用的函数                              |
+| RegisterMouseOverCallback  | 设置当鼠标在该控件的边界框内移动时调用的函数                            |
+| RegisterWhenShown          | 设置当该控件变为可见时调用的函数                                  |
+| RegisterWhenHidden         | 设置当该控件变为隐藏时调用的函数                                  |
+| ClearMouseEnterCallback    | 清除当鼠标进入该控件的边界框时调用的函数                              |
+| ClearMouseExitCallback     | 清除当鼠标离开该控件的边界框时调用的函数                              |
+| ClearMouseOverCallback     | 清除当鼠标在该控件的边界框内移动时调用的函数                            |
 
 # AlphaAnim（透明度动画控件）
 
@@ -8180,43 +5878,14 @@ ClearMouseOverCallback
 
 **LUA 方法**
 
-**函数(Function)**
+| **函数(Function)**        | **返回值(Returns)** | **参数(Arguments)** |
+|-------------------------|------------------|-------------------|
+| **SetTexture**          | bool             | string            |
+| **SetTextureOffset**    | void             | FGXVector2        |
+| **SetTextureOffsetVal** | void             | float x, float y  |
+| **SetSize**             | void             | FGXVector2        |
+| **SetSizeVal**          | void             | float x, float y  |
 
-**返回值(Returns)**
-
-**参数(Arguments)**
-
-**SetTexture**
-
-bool
-
-string
-
-**SetTextureOffset**
-
-void
-
-FGXVector2
-
-**SetTextureOffsetVal**
-
-void
-
-float x, float y
-
-**SetSize**
-
-void
-
-FGXVector2
-
-**SetSizeVal**
-
-void
-
-float x, float y
-
-常用的 LUA 动画方法，请参见：_LUA Animation Methods（LUA 动画方法）_
 
 * * *
 
@@ -8232,67 +5901,24 @@ float x, float y
 
 **XML**
 
-**属性(Attribute)**
+| **属性(Attribute)** | **类型(Type)** | **详情(Details)**                                              |
+|-------------------|--------------|--------------------------------------------------------------|
+| FGColor           | 字符串(String)  | 应用于进度条纹理的红色、绿色、蓝色和（可选）透明度值。（默认为白色，完全不透明，例如“255,255,255,255”） |
+| BGColor           | 字符串          |                                                              |
+| Direction         | 字符串          | 进度条的填充方向：**“Up”、“Down”、“Left”、“Right”**                         |
+| Percent           | 数字(Number)   | 进度条的起始值，默认为0。                                                |
+| Speed             | 数字           | （默认为“0”）填充动画的速度。如果为0，则没有动画；立即设置百分比。                          |
 
-**类型(Type)**
-
-**详情(Details)**
-
-FGColor
-
-字符串(String)
-
-应用于进度条纹理的红色、绿色、蓝色和（可选）透明度值。（默认为白色，完全不透明，例如“255,255,255,255”）
-
-BGColor
-
-字符串
-
- 
-
-Direction
-
-字符串
-
-进度条的填充方向：**“Up”、“Down”、“Left”、“Right”**
-
-Percent
-
-数字(Number)
-
-进度条的起始值，默认为0。
-
-Speed
-
-数字
-
-（默认为“**0**”）填充动画的速度。如果为0，则没有动画；立即设置百分比。
 
 **LUA 函数**
 
 **函数**
 
-**返回值**
-
-**参数**
-
-**SetPercent**
-
-**n/a**
-
-**float**，0.0 - 1.0，显示（填充）的纹理进度条的百分比
-
-**SetShadowPercent**
-
-**n/a**
-
-**float**，0.0-1.0，用作“投影阴影”的纹理百分比
-
-**SetAnimationSpeed**
-
-**n/a**
-
-**float**，动画速度，范围从0到动画速度，其中0表示无动画
+| **函数**            | **返回值** | **参数**                           |
+|-------------------|---------|----------------------------------|
+| **SetPercent**    | **n/a** | **float，** 0.0 - 1.0，显示（填充）的纹理进度条的百分比 |
+| **SetShadowPercent** | **n/a** | **float，** 0.0-1.0，用作“投影阴影”的纹理百分比     |
+| **SetAnimationSpeed** | **n/a** | **float，** 动画速度，范围从0到动画速度，其中0表示无动画    |
 
 * * *
 
@@ -8310,31 +5936,15 @@ Speed
 
 **XML**
 
-**属性**
-
-**类型**
-
-**详情**
-
-Color
-
-字符串
-
-红色、绿色、蓝色和（可选）透明度的值（0-255），用逗号分隔。例如，橙色："255,128,0,200"
+| **属性** | **类型** | **详情** |
+|--------|--------|----|
+| Color  | 字符串    | 红色、绿色、蓝色和（可选）透明度的值（0-255），用逗号分隔。例如，橙色：&quot;255,128,0,200&quot; |
 
 **LUA 函数**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**SetColor**
-
-**n/a**
-
-**uint**，表示红色、绿色、蓝色和透明度值的单个ABGR或RGBA值。默认情况下使用ABGR。如果在启动时调用ForgeUI管理器的**SetColorFormatRGBA(true)**，可以将其更改为RGBA。
+| **函数**   | **返回值** | **参数**                                                                                                 |
+|----------|-----|----|
+| SetColor | n/a | **uint**，表示红色、绿色、蓝色和透明度值的单个ABGR或RGBA值。默认情况下使用ABGR。如果在启动时调用ForgeUI管理器的**SetColorFormatRGBA(true)**，可以将其更改为RGBA。 |
 
 * * *
 
@@ -8350,17 +5960,18 @@ Color
 
 **XML**
 
-没有独特的XML属性，请参考_<Button>_
+没有独特的XML属性，请参考 **\<Button\>**
 
 **示例**
-
+```xml
 <BoxButton ID="MySoothingButton" Color="10,255,30,200" Size=300,100 />
+```
 
 * * *
 
 # Button（按钮）
 
-<Button>
+**\<Button\>**
 
 日期：2014年2月21日
 
@@ -8383,205 +5994,44 @@ Color
 
 **XML**
 
-**纹理**
-
-用于纹理的文件
-
-**TextureOffset**
-
-纹理内的偏移量
-
-**States**
-
-（默认为7）按钮的状态数。有效值为2、4、5、7和8。状态如下：
-
-1=正常，2=悬停，3=按下，4=禁用，5=选中，6=选中悬停，7=选中按下，8=选中禁用
-
-**StateOffsetIncrement**
-
-状态变化时纹理的偏移量。如果未指定，偏移量默认为控件的y大小。
-
-**NoStateChange**
-
-指示状态变化时不应偏移纹理的标志
-
-**Sampler**
-
-用于采样纹理的采样器类型。所有图像默认为点采样器，但如果我们希望使用非点采样的纹理，可以在此处指定"Linear"。
-
-**String**
-
-按钮上显示的文本。
-
-**ToolTip**
-
-工具提示字符串
-
-**TextAnchor**
-
-文本的锚定标志。
-
-**TextOffset**
-
-文本的X、Y偏移值。
-
-**Color**
-
-按钮的RGB色调。
-
-**DisabledCallbacks**
-
-禁用时触发输入回调。
+| **纹理**                   | **用于纹理的文件**                                                                    |
+|--------------------------|--------------------------------------------------------------------------------|
+| **TextureOffset**        | 纹理内的偏移量                                                                        |
+| **States**               | （默认为7）按钮的状态数。有效值为2、4、5、7和8。状态如下：<br>1=正常，2=悬停，3=按下，4=禁用，5=选中，6=选中悬停，7=选中按下，8=选中禁用 |
+| **StateOffsetIncrement** | 状态变化时纹理的偏移量。如果未指定，偏移量默认为控件的y大小。                                                |
+| **NoStateChange**        | 指示状态变化时不应偏移纹理的标志                                                               |
+| **Sampler**              | 用于采样纹理的采样器类型。所有图像默认为点采样器，但如果我们希望使用非点采样的纹理，可以在此处指定&quot;Linear&quot;。           |
+| **String**               | 按钮上显示的文本。                                                                      |
+| **ToolTip**              | 工具提示字符串                                                                        |
+| **TextAnchor**           | 文本的锚定标志。                                                                       |
+| **TextOffset**           | 文本的X、Y偏移值。                                                                     |
+| **Color**                | 按钮的RGB色调。                                                                      |
+| **DisabledCallbacks**    | 禁用时触发输入回调。                                                                     |
 
 **LUA 方法**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**描述**
-
-**ClearCallback**
-
-void
-
- 
-
-清除注册的回调函数。
-
-**GetVoid1**
-
-void
-
- 
-
- 
-
-**GetVoid2**
-
-void
-
- 
-
- 
-
-**IsTrackingLeftMouseButton**
-
-bool
-
- 
-
- 
-
-**IsTrackingRightMouseButton**
-
-bool
-
- 
-
- 
-
-**IsTrackingMiddleMouseButton**
-
-bool
-
- 
-
- 
-
-**IsTrackingTouch**
-
-bool
-
- 
-
- 
-
-**RegisterCallback**
-
-void
-
-state, function
-
-设置一个LUA函数来接收回调。state可以是以下之一：
-
-eLClick（左键单击）
-
-eRClick（右键单击）
-
-eMClick（中键单击）
-
-eLDbClick（左键双击）
-
-eRDblClick（右键双击）
-
-eMDblClick（中键双击）
-
-eTap（轻触）
-
-eDblTap（双击轻触）
-
-eWheel（滚轮滚动）
-
-eMouseEnter（鼠标进入）
-
-eMouseExit（鼠标离开）
-
-**ReceiveCallbacksIfDisabled**
-
-void
-
-bool
-
-设置禁用时是否触发输入回调。
-
-**SetDisabled**
-
-void
-
-bool
-
-将按钮设置为“禁用”状态（注意：来自ControlBase）
-
-**SetSelected**
-
-void
-
-bool
-
-将按钮设置为“选中模式”
-
-**SetVoid1**
-
-void
-
-bool/string/number
-
-设置一个值用于返回调用。
-
-**SetVoid2**
-
-void
-
-bool/string/number
-
-设置一个值用于返回调用。
-
-**SetVoids**
-
-void
-
-x2 bool/string/number
-
-设置两个值用于返回调用。
+| **函数**                          | **返回值** | **参数**                | **描述**                                                                                                                                                                                            |
+|---------------------------------|---------|-----------------------|----|
+| **ClearCallback**               | void    |                       | 清除注册的回调函数。 |
+| **GetVoid1**                    | void    |                       | |
+| **GetVoid2**                    | void    |                       | |
+| **IsTrackingLeftMouseButton**   | bool    |                       | |
+| **IsTrackingRightMouseButton**  | bool    |                       | |
+| **IsTrackingMiddleMouseButton** | bool    |                       | |
+| **IsTrackingTouch**             | bool    |                       | |
+| **RegisterCallback**            | void    | state, function       | 设置一个LUA函数来接收回调。state可以是以下之一：<br>eLClick（左键单击）<br>eRClick（右键单击）<br>eMClick（中键单击）<br>eLDbClick（左键双击）<br>eRDblClick（右键双击）<br>eMDblClick（中键双击）<br>eTap（轻触）<br>eDblTap（双击轻触）<br>eWheel（滚轮滚动）<br>eMouseEnter（鼠标进入）<br>eMouseExit（鼠标离开）|
+| **ReceiveCallbacksIfDisabled**  | void    | bool                  | 设置禁用时是否触发输入回调。 |
+| **SetDisabled**                 | void    | bool                  | 将按钮设置为“禁用”状态（注意：来自ControlBase） |
+| **SetSelected**                 | void    | bool                  | 将按钮设置为“选中模式” |
+| **SetVoid1**                    | void    | bool/string/number    | 设置一个值用于返回调用。 |
+| **SetVoid2**                    | void    | bool/string/number    | 设置一个值用于返回调用。 |
+| **SetVoids**                    | void    | x2 bool/string/number | 设置两个值用于返回调用。 |
 
 * * *
 
 # CheckBox（复选框）
 
-<CheckBox>
+**\<CheckBox\>**
 
 Friday, February 21, 2014
 
@@ -8593,423 +6043,107 @@ Friday, February 21, 2014
 
 所有属性都传递给内部的TextButton控件，该控件本身是基于内部的Text控件构建的。因此，下面列出的属性要么是常见设置的属性，要么是复选框特有的属性，但还有其他可以设置的属性（例如，“Font”，“NormalColor”等）。
 
-**属性**
-
-**详情**
-
-**BoxOnLeft**
-
-替代“**TextAnchor**”，如果为true，则将复选框放置在文本按钮的左侧，而不是右侧。
-
-**ButtonSize**
-
-**必需**，复选按钮本身的大小。
-
-**ButtonTexture**
-
-**必需**，用于按钮的纹理。
-
-**CheckColor**
-
-用于给选中图像着色的颜色。
-
-**CheckOffset**
-
-用于定位选中框在按钮上的坐标。
-
-**CheckSize**
-
-选中纹理的大小。
-
-**CheckTexture**
-
-用作选中标记的纹理。
-
-**CheckTextureOffset**
-
-选中纹理的偏移。
-
-**IsChecked**
-
-标志，指示复选框是否应该默认选中。
-
-**String**
-
-设置标签。
-
-**TextAnchor**
-
-已弃用，用于TextButton的锚点标志
-
-**TextButtonData**
-
-此处使用TextButton控件的所有标签来描述复选框的文本按钮部分。
-
-**TextOffset**
-
-文本按钮部分与复选框之间的偏移。
-
-**UnCheckColor**
-
-用于给未选中状态下使用的图像着色的颜色。
-
-**UnCheckOffset**
-
-与CheckOffset相同，但用于UnCheckTexture。
-
-**UnCheckSize**
-
-与CheckSize相同，但用于UnCheckTexture。
-
-**UnCheckTexture**
-
-未选中时在按钮上显示的纹理。
-
-**UnCheckTextureOffset**
-
-与CheckTextureOffset相同，但用于UnCheckTexture。
-
-**UseSelectedTextures**
-
-复选框的按钮具有“选中”状态（正常、悬停和按下），在选中时应使用这些状态。
-
+| **属性**                   | **详情**                                        |
+|--------------------------|-----------------------------------------------|
+| **BoxOnLeft**            | 替代“TextAnchor”，如果为true，则将复选框放置在文本按钮的左侧，而不是右侧。 |
+| **ButtonSize**           | 必需，复选按钮本身的大小。                                 |
+| **ButtonTexture**        | 必需，用于按钮的纹理。                                   |
+| **CheckColor**           | 用于给选中图像着色的颜色。                                 |
+| **CheckOffset**          | 用于定位选中框在按钮上的坐标。                               |
+| **CheckSize**            | 选中纹理的大小。                                      |
+| **CheckTexture**         | 用作选中标记的纹理。                                    |
+| **CheckTextureOffset**   | 选中纹理的偏移。                                      |
+| **IsChecked**            | 标志，指示复选框是否应该默认选中。                             |
+| **String**               | 设置标签。                                         |
+| ~~**TextAnchor**~~       | ~~已弃用，用于TextButton的锚点标志~~                         |
+| **TextButtonData**       | 此处使用TextButton控件的所有标签来描述复选框的文本按钮部分。           |
+| **TextOffset**           | 文本按钮部分与复选框之间的偏移。                              |
+| **UnCheckColor**         | 用于给未选中状态下使用的图像着色的颜色。                          |
+| **UnCheckOffset**        | 与CheckOffset相同，但用于UnCheckTexture。             |
+| **UnCheckSize**          | 与CheckSize相同，但用于UnCheckTexture。               |
+| **UnCheckTexture**       | 未选中时在按钮上显示的纹理。                                |
+| **UnCheckTextureOffset** | 与CheckTextureOffset相同，但用于UnCheckTexture。      |
+| **UseSelectedTextures**  | 复选框的按钮具有“选中”状态（正常、悬停和按下），在选中时应使用这些状态。         |
 * * *
 
 # Container（容器）
 
-<Container>
+**\<Container\>**
 
 Friday, February 21, 2014
 
 1:50 PM
 
-**<Container>**是系统中最基本的控件。所有其他控件都继承自它，因此所有这些标签都可以在其他控件上使用。它最适用于创建可以轻松显示/隐藏的一组控件。对于UI程序员而言，它可能比UI艺术家更有用。
+**<Container>** 是系统中最基本的控件。所有其他控件都继承自它，因此所有这些标签都可以在其他控件上使用。它最适用于创建可以轻松显示/隐藏的一组控件。对于UI程序员而言，它可能比UI艺术家更有用。
 
 类名为ControlBase。
 
 **XML**
 
-**属性**
-
-**详情**
-
-**Alpha**
-
-用于控制该控件及其所有子控件的透明度，取值范围为0-1。
-
-**Anchor**
-
-控件在父控件上的附着位置。
-
-**AnchorSide**
-
-控件是否附着在父控件的内部或外部（在X和Y方向上）。
-
-**AutoSize**
-
-0、1、V或H。如果为1，控件将完全自动调整大小。如果为0，则不会自动调整大小。
-
-如果为V，仅垂直自动调整大小。
-
-如果为H，仅水平自动调整大小。
-
-自动调整大小基于其子控件的总大小。这仅在加载时发生。如果子控件的大小发生变化，程序员必须在运行时调用DoAutoSize()。
-
-**AutoSizePadding**
-
-在进行自动调整大小计算时，X和Y方向上要添加的填充量。以前称为“Padding”。
-
-**Color**
-
-控件的颜色。颜色范围为0-255，可以包含透明通道，并且可以使用命名颜色。这不适用于所有控件类型，仅影响该控件本身，而不影响其子控件。
-
-**ConsumeAllMouse**
-
-指示该控件在鼠标悬停时是否消耗所有鼠标事件的标志。
-
-**ConsumeMouseButton**
-
-指示该控件在鼠标悬停时是否消耗鼠标按钮事件的标志。
-
-**ConsumeMouseOver**
-
-指示该控件在鼠标悬停时是否消耗鼠标移动事件的标志。
-
-**ConsumeMouseWheel**
-
-指示该控件在鼠标悬停时是否消耗鼠标滚轮事件的标志。
-
-**d**
-
-1-6，或“\*”和可选的“+”。设置调试标志。1-6将设置颜色。“\*”将选择随机颜色。“+”将级联到子控件。此属性故意小写且为单个字母，以便作者可以快速添加/删除。
-
-**Disabled**
-
-指示该控件是否被禁用，不接收鼠标悬停状态或可点击的标志。
-
-**GlobalUpdate**
-
-程序员标志。用于使控件即使在不可见时也接收更新。
-
-**Hidden**
-
-指示该控件（及其所有子控件）是否应该被绘制的标志。
-
-**HideOnMouseOver**
-
-指示该控件只在其父控件未被鼠标悬停时可见的标志。
-
-**ID**
-
-控件的名称。程序员在运行时使用该名称与该控件进行交互。此值必须是唯一的。
-
-**InnerOffset**
-
-与AutoSize一起使用。
-
-**InnerPadding**
-
-与AutoSize一起使用。
-
-**NeedsMouseOver**
-
-程序员标志。指示控件需要鼠标信息。
-
-**NoClip**
-
-指示该控件在放置在滚动面板内部时不受影响的标志。
-
-**Offset**
-
-控件与锚点之间的距离。
-
-**ShowOnMouseOver**
-
-指示该控件只在其父控件被鼠标悬停时可见的标志。
-
-**ShowOnMouseOut**
-
-类似于HideOnMouseOver，但在首次可见时不显示内容。最适用于鼠标移出动画。
-
-**Size**
-
-在屏幕上的像素大小。
-
-**SizePadding**
-
-AutoSizePadding的替代名称（参见上文）。
-
-**ToolTip**
-
-鼠标悬停在该控件上时显示的简单工具提示文本。
-
-**ToolTipType**
-
-鼠标悬停在该控件上时使用的复杂工具提示类型的名称。
-
-**TutorialActive**
-
-该控件及其子控件将显示在教程覆盖层的顶部，并对输入作出响应。实际上，当教程进行时，该控件将继续正常工作。
+| **属性**                 | **详情**                                                                                                                                   |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| **Alpha**              | 用于控制该控件及其所有子控件的透明度，取值范围为0-1。                                                                                                             |
+| **Anchor**             | 控件在父控件上的附着位置。                                                                                                                            |
+| **AnchorSide**         | 控件是否附着在父控件的内部或外部（在X和Y方向上）。                                                                                                               |
+| **AutoSize**           | 0、1、V或H。如果为1，控件将完全自动调整大小。如果为0，则不会自动调整大小。<br>如果为V，仅垂直自动调整大小。<br>如果为H，仅水平自动调整大小。<br>自动调整大小基于其子控件的总大小。这仅在加载时发生。如果子控件的大小发生变化，程序员必须在运行时调用DoAutoSize()。 |
+| **AutoSizePadding**    | 在进行自动调整大小计算时，X和Y方向上要添加的填充量。以前称为“Padding”。                                                                                                |
+| **Color**              | 控件的颜色。颜色范围为0-255，可以包含透明通道，并且可以使用命名颜色。这不适用于所有控件类型，仅影响该控件本身，而不影响其子控件。                                                                      |
+| **ConsumeAllMouse**    | 指示该控件在鼠标悬停时是否消耗所有鼠标事件的标志。                                                                                                                |
+| **ConsumeMouseButton** | 指示该控件在鼠标悬停时是否消耗鼠标按钮事件的标志。                                                                                                                |
+| **ConsumeMouseOver**   | 指示该控件在鼠标悬停时是否消耗鼠标移动事件的标志。                                                                                                                |
+| **ConsumeMouseWheel**  | 指示该控件在鼠标悬停时是否消耗鼠标滚轮事件的标志。                                                                                                                |
+| **d**                  | 1-6，或“*”和可选的“+”。设置调试标志。1-6将设置颜色。“*”将选择随机颜色。“+”将级联到子控件。此属性故意小写且为单个字母，以便作者可以快速添加/删除。                                                       |
+| **Disabled**           | 指示该控件是否被禁用，不接收鼠标悬停状态或可点击的标志。                                                                                                             |
+| **GlobalUpdate**       | 程序员标志。用于使控件即使在不可见时也接收更新。                                                                                                                 |
+| **Hidden**             | 指示该控件（及其所有子控件）是否应该被绘制的标志。                                                                                                                |
+| **HideOnMouseOver**    | 指示该控件只在其父控件未被鼠标悬停时可见的标志。                                                                                                                 |
+| **ID**                 | 控件的名称。程序员在运行时使用该名称与该控件进行交互。此值必须是唯一的。                                                                                                     |
+| **InnerOffset**        | 与AutoSize一起使用。                                                                                                                           |
+| **InnerPadding**       | 与AutoSize一起使用。                                                                                                                           |
+| **NeedsMouseOver**     | 程序员标志。指示控件需要鼠标信息。                                                                                                                        |
+| **NoClip**             | 指示该控件在放置在滚动面板内部时不受影响的标志。                                                                                                                 |
+| **Offset**             | 控件与锚点之间的距离。                                                                                                                              |
+| **ShowOnMouseOver**    | 指示该控件只在其父控件被鼠标悬停时可见的标志。                                                                                                                  |
+| **ShowOnMouseOut**     | 类似于HideOnMouseOver，但在首次可见时不显示内容。最适用于鼠标移出动画。                                                                                              |
+| **Size**               | 在屏幕上的像素大小。                                                                                                                               |
+| **SizePadding**        | AutoSizePadding的替代名称（参见上文）。                                                                                                              |
+| **ToolTip**            | 鼠标悬停在该控件上时显示的简单工具提示文本。                                                                                                                   |
+| **ToolTipType**        | 鼠标悬停在该控件上时使用的复杂工具提示类型的名称。                                                                                                                |
+| **TutorialActive**     | 该控件及其子控件将显示在教程覆盖层的顶部，并对输入作出响应。实际上，当教程进行时，该控件将继续正常工作。                                                                                     |
 
 **LUA**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**描述**
-
-**RegisterMouseEnterCallback**
-
- 
-
- 
-
- 
-
-**RegisterMouseExitCallback**
-
- 
-
- 
-
- 
-
-**RegisterMouseOverCallback**
-
- 
-
- 
-
- 
-
-**(RegisterWhenClippedCallback)**
-
-float
-
-void
-
-警告！这是每帧执行的，可能是所有LUA操作中最昂贵的操作。使用它会降低性能，并且很可能该函数会被移除。请不要使用它。
-
-**RegisterWhenShown**
-
- 
-
- 
-
- 
-
-**RegisterWhenHidden**
-
- 
-
- 
-
- 
-
-**SetColorByName**
-
-void
-
-string
-
-根据颜色图集中的名称设置控件的颜色。
-
-**SetHide**
-
-void
-
-bool
-
- 
-
-**SetOffsetVal**
-
-void
-
-float x, float y
-
- 
-
-**GetOffsetVal**
-
-float x, float y
-
-..
-
- 
-
-**SetSizeVal**
-
-void
-
-float x, float y
-
- 
-
-**GetSizeVal**
-
-float x, float y
-
-..
-
- 
-
-**SetAnchor**
-
-void
-
-字符串 - 参见_'Anchor'_属性
-
- 
-
-**SetDisabled**
-
-void
-
-bool
-
- 
-
-**SetHide**
-
-void
-
-bool
-
- 
-
-**SetSizeX**
-
-void
-
-float
-
- 
-
-**SetSizeY**
-
-void
-
-float
-
- 
-
-**GetSizeX**
-
-float
-
-..
-
- 
-
-**GetSizeY**
-
-float
-
-..
-
- 
-
-**SetOffsetX**
-
-void
-
-float
-
- 
-
-**SetOffsetY**
-
-void
-
-float
-
- 
-
-**GetOffsetX**
-
-float
-
-..
-
- 
-
-**GetOffsetY**
-
-float
-
-..
-
- 
+| **函数**                            | **返回值**          | **参数**             | **描述**                                                     |
+|-----------------------------------|------------------|--------------------|------------------------------------------------------------|
+| **RegisterMouseEnterCallback**    |                  |                    |                                                            |
+| **RegisterMouseExitCallback**     |                  |                    |                                                            |
+| **RegisterMouseOverCallback**     |                  |                    |                                                            |
+| **(RegisterWhenClippedCallback)** | float            | void               | 警告！这是每帧执行的，可能是所有LUA操作中最昂贵的操作。使用它会降低性能，并且很可能该函数会被移除。请不要使用它。 |
+| **RegisterWhenShown**             |                  |                    |                                                            |
+| **RegisterWhenHidden**            |                  |                    |                                                            |
+| **SetColorByName**                | void             | string             | 根据颜色图集中的名称设置控件的颜色。                                         |
+| **SetHide**                       | void             | bool               |                                                            |
+| **SetOffsetVal**                  | void             | float x, float y   |                                                            |
+| **GetOffsetVal**                  | float x, float y | ..                 |                                                            |
+| **SetSizeVal**                    | void             | float x, float y   |                                                            |
+| **GetSizeVal**                    | float x, float y | ..                 |                                                            |
+| **SetAnchor**                     | void             | 字符串 - 参见'Anchor'属性 |                                                            |
+| **SetDisabled**                   | void             | bool               |                                                            |
+| **SetHide**                       | void             | bool               |                                                            |
+| **SetSizeX**                      | void             | float              |                                                            |
+| **SetSizeY**                      | void             | float              |                                                            |
+| **GetSizeX**                      | float            | ..                 |                                                            |
+| **GetSizeY**                      | float            | ..                 |                                                            |
+| **SetOffsetX**                    | void             | float              |                                                            |
+| **SetOffsetY**                    | void             | float              |                                                            |
+| **GetOffsetX**                    | float            | ..                 |                                                            |
+| **GetOffsetY**                    | float            | ..                 |                                                            |
 
 * * *
 
 # Context（上下文）
 
-<Context>
+**\<Context\>**
 
 2014年2月21日，星期五
 
@@ -9021,30 +6155,21 @@ float
 
 当不是文件的顶级标签时，可以使用以下属性：
 
-**属性**
-
-**详情**
-
-**FileName**
-
-要加载的 XML 文件的名称（不包括 .xml 扩展名）
+| **属性** | **详情** |
+| -- | -- |
+| **FileName** | 要加载的 XML 文件的名称（不包括 .xml 扩展名）
 
 当它是文件的顶级标签时，可以使用以下属性：
 
-**属性**
-
-**详情**
-
-**Layer**
-
-（可选）要绘制在的渲染层的名称。通常，游戏引擎会设置具有命名层，例如“Debug”或“Modal”。如果省略该属性，所有内容将被渲染到默认的渲染层。  
-这不应该用于 UI 的 Z 轴排序，因为层的数量有限，通常 UI 元素需要位于特定层的唯一原因是因为将默认层应用于着色器效果（例如，当弹出窗口出现时，模糊游戏和 UI；弹出窗口将位于特殊的“Modal”层，以便不对其应用着色器效果，但默认层上的所有 UI 将被模糊处理）。
+| **属性** | **详情** |
+| -- | -- |
+|**Layer** | （可选）要绘制在的渲染层的名称。通常，游戏引擎会设置具有命名层，例如“Debug”或“Modal”。如果省略该属性，所有内容将被渲染到默认的渲染层。<br>这不应该用于 UI 的 Z 轴排序，因为层的数量有限，通常 UI 元素需要位于特定层的唯一原因是因为将默认层应用于着色器效果（例如，当弹出窗口出现时，模糊游戏和 UI；弹出窗口将位于特殊的“Modal”层，以便不对其应用着色器效果，但默认层上的所有 UI 将被模糊处理）。
 
 * * *
 
 # DragPanel（拖动面板）
 
-**<DragPanel>**
+**\<DragPanel\>**
 
 2014年2月21日，星期五
 
@@ -9052,35 +6177,19 @@ float
 
 一个面板，通过获取焦点（例如，按住鼠标）并拖动到新位置来移动，以显示被裁剪的内容，可以是顶部和底部、左侧和右侧，或者四个方向的内容。
 
-**属性**
-
-**详情**
-
-**Horizontal**
-
-(t/f，默认为 t) 允许在水平轴上进行拖动滚动。
-
-**Vertical**
-
-(t/f，默认为 t) 允许在垂直轴上进行拖动滚动。
-
-**ZoomMax**
-
-发送给控件或 LUA 的最大缩放值。
-
-**ZoomMin**
-
-发送给控件或 LUA 的最小缩放值。
-
-**ZoomStep**
-
-通过等效鼠标滚轮点击进行缩放的增量。
+| **属性**         | **详情**                     |
+|----------------|----------------------------|
+| **Horizontal** | (t/f，默认为 t) 允许在水平轴上进行拖动滚动。 |
+| **Vertical**   | (t/f，默认为 t) 允许在垂直轴上进行拖动滚动。 |
+| **ZoomMax**    | 发送给控件或 LUA 的最大缩放值。         |
+| **ZoomMin**    | 发送给控件或 LUA 的最小缩放值。         |
+| **ZoomStep**   | 通过等效鼠标滚轮点击进行缩放的增量。         |
 
 * * *
 
 # EditBox（编辑框控件）
 
-**<EditBox>**
+**\<EditBox\>**
 
 2014年2月21日，星期五
 
@@ -9088,135 +6197,28 @@ float
 
 用于用户输入文本的控件。
 
-**属性**
-
-**5**
-
-**F**
-
-**详情**
-
-**CallOnChar**
-
-Y
-
-?
-
- 
-
-**ColorSet**
-
-\-
-
-Y
-
-要使用的颜色集的名称。
-
-**CursorColor**
-
-Y
-
-Y
-
-光标的颜色
-
-**EditMode**
-
-Y
-
-Y
-
-指示此控件用于编辑现有字符串而不是输入新字符串的标志。
-
-当编辑框获得焦点时，EditMode 会缓存现有字符串，并在按下 esc 键时恢复缓存的版本。
-
-当编辑框失去焦点时，EditMode 还会自动调用提交回调函数。
-
-**FocusStop**
-
-Y
-
-Y
-
- 
-
-**Font**
-
-\-
-
-Y
-
-要用于此控件的字体的名称。
-
-**FontSize**
-
-\-
-
-Y
-
-要使用的字体大小。
-
-**FontStyle**
-
-\-
-
-Y
-
-要使用的字体样式的名称。有效的样式有：**"Shadow"、"Glow"、"Stroke"**
-
-**HighlightColor**
-
-Y
-
-Y
-
-文本高亮的颜色
-
-**KeepFocus**
-
-Y
-
-Y
-
-指示此控件在用户输入文本后是否保持焦点的标志。
-
-**MaxLength**
-
-Y
-
-Y
-
-可输入的最大字符数。
-
-**NumberInput**
-
-Y
-
-Y
-
-指示此输入框仅用于数字的标志。
-
-**Obscure**
-
-Y
-
-Y
-
-不显示输入内容，而是使用替代字符。
-
-**HighlightOnFocus**
-
-?
-
-?
-
-当编辑框获得焦点时，自动将编辑框中的所有文本都高亮显示。适用于需要复制/粘贴的文本。
+| **属性**               | **5** | **F** | **详情**                                                                                                       |
+|----------------------|-------|-------|--------------------------------------------------------------------------------------------------------------|
+| **CallOnChar**       | Y     | ?     |                                                                                                              |
+| **ColorSet**         | -     | Y     | 要使用的颜色集的名称。                                                                                                  |
+| **CursorColor**      | Y     | Y     | 光标的颜色                                                                                                        |
+| **EditMode**         | Y     | Y     | 指示此控件用于编辑现有字符串而不是输入新字符串的标志。</br><br>当编辑框获得焦点时，EditMode 会缓存现有字符串，并在按下 esc 键时恢复缓存的版本。</br><br>当编辑框失去焦点时，EditMode 还会自动调用提交回调函数。 |
+| **FocusStop**        | Y     | Y     |                                                                                                              |
+| **Font**             | -     | Y     | 要用于此控件的字体的名称。                                                                                                |
+| **FontSize**         | -     | Y     | 要使用的字体大小。                                                                                                    |
+| **FontStyle**        | -     | Y     | 要使用的字体样式的名称。有效的样式有：&quot;Shadow&quot;、&quot;Glow&quot;、&quot;Stroke&quot;                                    |
+| **HighlightColor**   | Y     | Y     | 文本高亮的颜色                                                                                                      |
+| **KeepFocus**        | Y     | Y     | 指示此控件在用户输入文本后是否保持焦点的标志。                                                                                      |
+| **MaxLength**        | Y     | Y     | 可输入的最大字符数。                                                                                                   |
+| **NumberInput**      | Y     | Y     | 指示此输入框仅用于数字的标志。                                                                                              |
+| **Obscure**          | Y     | Y     | 不显示输入内容，而是使用替代字符。                                                                                            |
+| **HighlightOnFocus** | ?     | ?     | 当编辑框获得焦点时，自动将编辑框中的所有文本都高亮显示。适用于需要复制/粘贴的文本。 |
 
 * * *
 
 # FlipAnim（翻转动画控件）
 
-<FlipAnim>
+**\<FlipAnim\>**
 
 2014年2月21日，星期五
 
@@ -9232,29 +6234,19 @@ Y
 
 Civ5: StepSize, MaskTexture
 
-有关其他控件，请参阅：_动画_
+有关其他控件，请参阅：Animation（动画）
 
-**LUA 方法**
+| **函数**   | **返回值** | **参数** |
+|----------|---------|--------|
+| SetFrame | bool    | Int    |
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**SetFrame**
-
-bool
-
-Int
-
-有关常见的 LUA 动画方法，请参阅：_LUA 动画方法_
+有关常见的 LUA 动画方法，请参阅：LUA Animation Methods(LUA 动画方法)
 
 * * *
 
 # Grid（网格控件）
 
-**<Grid>**
+**\<Grid\>**
 
 2014年2月21日，星期五
 
@@ -9262,282 +6254,105 @@ Int
 
 带纹理、可动态调整大小的九切片控件。
 
-**属性**
+| **属性**                   | **详情**                                         |
+|--------------------------|------------------------------------------------|
+| **NoStateChange**        | 指示在用作按钮时纹理是否不应偏移的标志                            |
+| **StateOffsetIncrement** | 在用作按钮时，状态变化时纹理的偏移量                             |
+| **Texture**              | 用于构建网格的纹理文件名                                   |
+| **SliceStart**           | （可选）纹理在图像中开始的 x、y 坐标。如果整个图像是纹理，则可以省略。默认值为 0,0。 |
+| **SliceCorner**          | 从纹理起始点开始进行九切片的 x、y 偏移量。                        |
+| **SliceSize**            | 实际九切片的宽度和高度。（即：网格中心矩形的大小。）默认值为 1,1。            |
+| **SliceTextureSize**     | 纹理中图像的宽度和高度。如果省略，将假定切割是对称的。                    |
 
-**详情**
-
-**NoStateChange**
-
-指示在用作按钮时纹理是否不应偏移的标志
-
-**StateOffsetIncrement**
-
-在用作按钮时，状态变化时纹理的偏移量
-
-**Texture**
-
-用于构建网格的纹理文件名
-
-**SliceStart**
-
-（可选）纹理在图像中开始的 x、y 坐标。如果整个图像是纹理，则可以省略。默认值为 0,0。
-
-**SliceCorner**
-
-从纹理起始点开始进行九切片的 x、y 偏移量。
-
-**SliceSize**
-
-实际九切片的宽度和高度。（即：网格中心矩形的大小。）默认值为 1,1。
-
-**SliceTextureSize**
-
-纹理中图像的宽度和高度。如果省略，将假定切割是对称的。
-
-![SliceStart SliceCorner SlicerSize SliceTextureSize](Forge UI\Controls\Grid/media/image1.png)
+![SliceStart SliceCorner SlicerSize SliceTextureSize](Forge%20UI/Controls\Grid/media/image1.png)
 
 * * *
 
 # GridButton（网格按钮控件）
 
-<GridButton>
+**\<GridButton\>**
 
 2014年2月21日，星期五
 
 下午2:33
 
-一个使用**网格（Grid）**的按钮控件，允许大小灵活，并可以包含一个可选的文本字段。网格特定的数据由名为**<GridData>**的子控件指定，其中包含了网格控件的所有常规控件数据。对于状态变化，我们通过**GridData**中的**StateOffsetIncrement**值在纹理中进行偏移。
+一个使用 **网格（Grid）** 的按钮控件，允许大小灵活，并可以包含一个可选的文本字段。网格特定的数据由名为 **<GridData>** 的子控件指定，其中包含了网格控件的所有常规控件数据。对于状态变化，我们通过 **GridData** 中的 **StateOffsetIncrement** 值在纹理中进行偏移。
 
 **子标签**
 
-**<GridData>** - 包含要使用的网格的详细信息的子控件。有关详情，请参阅_<Grid>_。
+**\<GridData\>** - 包含要使用的网格的详细信息的子控件。有关详情，请参阅 **\<Grid\>**。
 
 **XML**
 
-**属性**
+| **属性**                | **详情**                                                                    |
+|-----------------------|---------------------------------------------------------------------------|
+| **Color**             | 设置网格顶点使用的颜色。                                                              |
+| **ColorSet**          | 要使用的颜色集。                                                                  |
+| **Font**              | 要在此控件中使用的字体名称。                                                            |
+| **FontSize**          | 要使用的字体大小（磅值）。                                                             |
+| **FontStyle**         | 要使用的字体样式名称。有效的样式有：&quot;Shadow&quot;、&quot;Glow&quot;、&quot;Stroke&quot;。 |
+| **SelectedTextColor** | 在“选中”状态下使用的文本颜色。                                                          |
+| **TextAnchor**        | 在网格内的对齐方式。（默认为居中，例如：“C,C”）。                                               |
+| **TextColor**         | 设置文本的颜色，用于覆盖影响按钮顶点和文本颜色的一般“Color”标签。                                      |
+| **TextOffset**        | 文本的偏移量（以像素为单位）。                                                           |
+| **String**            | 文本标签的内容。（默认为空白。）                                                          |
+| **ToolTip**           | 工具提示字符串。                                                                  |
 
-**详情**
-
-**Color**
-
-设置网格顶点使用的颜色。
-
-**ColorSet**
-
-要使用的颜色集。
-
-**Font**
-
-要在此控件中使用的字体名称。
-
-**FontSize**
-
-要使用的字体大小（磅值）。
-
-**FontStyle**
-
-要使用的字体样式名称。有效的样式有：**"Shadow"、"Glow"、"Stroke"**。
-
-**SelectedTextColor**
-
-在“选中”状态下使用的文本颜色。
-
-**TextAnchor**
-
-在网格内的对齐方式。（默认为居中，例如：“C,C”）。
-
-**TextColor**
-
-设置文本的颜色，用于覆盖影响按钮顶点和文本颜色的一般“Color”标签。
-
-**TextOffset**
-
-文本的偏移量（以像素为单位）。
-
-**String**
-
-文本标签的内容。（默认为空白。）
-
-**ToolTip**
-
-工具提示字符串。
 
 **LUA 方法**
 
-除了<Button>中的所有方法外，还包括：
+除了\<Button\>中的所有方法外，还包括：
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**描述**
-
-**DoAutoSize**
-
-void
-
-bool
-
-执行自动调整大小操作
-
-**GetText**
-
-bool
-
- 
-
-获取子文本控件中的文本
-
-**GetTextControl**
-
-bool
-
- 
-
-获取子文本控件
-
-**LocalizeAndSetText**
-
-bool
-
- 
-
-通过本地化系统设置文本控件的文本。
-
-**SetSizeToText**
-
-void
-
-width, height
-
-将按钮的背景网格设置为其内部文本字段的大小，并附加宽度和高度的填充。
-
-**SetSizeVal**
-
-void
-
-width, height
-
-通过值设置大小。
-
-**SetText**
-
-void
-
- 
-
-设置文本控件的文本
-
-**SetTextureOffset**
-
-void
-
- 
-
-清除注册的回调函数。
-
-**SetTextureOffsetVal**
-
-void
-
- 
-
-设置网格的偏移量。
+| **函数**                  | **返回值** | **参数**        | **描述**                             |
+|-------------------------|---------|---------------|------------------------------------|
+| **DoAutoSize**          | void    | bool          | 执行自动调整大小操作                         |
+| **GetText**             | bool    |               | 获取子文本控件中的文本                        |
+| **GetTextControl**      | bool    |               | 获取子文本控件                            |
+| **LocalizeAndSetText**  | bool    |               | 通过本地化系统设置文本控件的文本。                  |
+| **SetSizeToText**       | void    | width, height | 将按钮的背景网格设置为其内部文本字段的大小，并附加宽度和高度的填充。 |
+| **SetSizeVal**          | void    | width, height | 通过值设置大小。                           |
+| **SetText**             | void    |               | 设置文本控件的文本                          |
+| **SetTextureOffset**    | void    |               | 清除注册的回调函数。                         |
+| **SetTextureOffsetVal** | void    |               | 设置网格的偏移量。                          |
 
 * * *
 
 # Image（图像控件）
 
-**<Image>**
+**\<Image\>**
 
 2014年2月21日，星期五
 
 下午2:35
 
-这个<Image>控件用于显示纹理。
+这个 \<Image\> 控件用于显示纹理。
 
 **XML**
 
-**属性**
-
-**详情**
-
-**ColorSpace**
-
-(默认值: "**RGB**", "Linear") 如果将线性纹理渲染到四边形上（例如，将其用作渲染目标），请将其设置为"linear"。
-
-**FlipX**
-
-水平翻转图像
-
-**FlipY**
-
-垂直翻转图像
-
-**Icon**
-
-调用图标管理器以获取指定的图标。
-
-**IconSize**
-
-指定图标的宽度和高度。
-
-**MaskTexture**
-
-用作alpha遮罩的纹理的文件名。
-
-**MaskTextureOffset**
-
-遮罩纹理中的x、y偏移量（以像素为单位）。
-
-**NormalizedQuad**
-
-程序员标志。表示像素与纹素的比例不是1:1。
-
-**Sampler**
-
-如果要缩放块压缩图像，请将其设置为"Linear"。它会尝试。
-
-**Rotate**
-
-旋转四边形上的纹理（度数）。注意：在当前的实现中，会发生拉伸，因为四边形本身没有旋转。
-
-**Scale**
-
-通过乘数等比例缩放纹理。（例如，"1.5"将使其放大150%。）
-
-**Size**
-
-(继承自**Container**)为此控件指定一个大小；纹理将占据一部分（或全部）。仅当拉伸模式设置为自动时，此属性才会被忽略。
-
-**StretchMode**
-
-如何拉伸纹理；以下值之一：
-
-**None, Uniform, Fill, Tile, TileX, TileY, UniformToFill, Auto**
-
-**Texture**
-
-要使用的纹理的文件名。
-
-**TextureOffset**
-
-在纹理中开始绘制的位置的x、y偏移量（以像素为单位）。
-
-**TextureOffsetUV**
-
-纹理中的偏移量，使用UV坐标。
-
-**TextureSizeUV**
-
-以浮点UV纹理坐标指定的大小。
+| **属性**                | **详情**                                                                     |
+|-----------------------|----------------------------------------------------------------------------|
+| **ColorSpace**        | (默认值: "RGB", "Linear") 如果将线性纹理渲染到四边形上（例如，将其用作渲染目标），请将其设置为"linear"。         |
+| **FlipX**             | 水平翻转图像                                                                     |
+| **FlipY**             | 垂直翻转图像                                                                     |
+| **Icon**              | 调用图标管理器以获取指定的图标。                                                           |
+| **IconSize**          | 指定图标的宽度和高度。                                                                |
+| **MaskTexture**       | 用作alpha遮罩的纹理的文件名。                                                          |
+| **MaskTextureOffset** | 遮罩纹理中的x、y偏移量（以像素为单位）。                                                      |
+| **NormalizedQuad**    | 程序员标志。表示像素与纹素的比例不是1:1。                                                     |
+| **Sampler**           | 如果要缩放块压缩图像，请将其设置为"Linear"。它会尝试。                                            |
+| **Rotate**            | 旋转四边形上的纹理（度数）。注意：在当前的实现中，会发生拉伸，因为四边形本身没有旋转。                                |
+| **Scale**             | 通过乘数等比例缩放纹理。（例如，"1.5"将使其放大150%。）                                           |
+| **Size**              | (继承自Container)为此控件指定一个大小；纹理将占据一部分（或全部）。仅当拉伸模式设置为自动时，此属性才会被忽略。              |
+| **StretchMode**       | 如何拉伸纹理；以下值之一：<br> **None, Uniform, Fill, Tile, TileX, TileY, UniformToFill, Auto** |
+| **Texture**           | 要使用的纹理的文件名。                                                                |
+| **TextureOffset**     | 在纹理中开始绘制的位置的x、y偏移量（以像素为单位）。                                                |
+| **TextureOffsetUV**   | 纹理中的偏移量，使用UV坐标。                                                            |
+| **TextureSizeUV**     | 以浮点UV纹理坐标指定的大小。                                                            |
 
 **示例：**
-
+```xml
 <Image Anchor="L,C" TextureOffset="0,0" AnchorSide="O,O" Texture="buttonsides.dds" Size="8,16" />
-
+```
 拉伸模式的工作方式如下：
 
 None
@@ -9584,7 +6399,7 @@ Auto
 
 # Include（包含）
 
-<Include>
+**\<Include\>**
 
 2017年7月25日，星期二
 
@@ -9593,52 +6408,60 @@ Auto
 将一个xml文件的内容包含到当前上下文中。它主要用于包含多个上下文共享的实例。
 
 **示例：**
-
+```xml
 <!-- 包含弹出对话框实例 -->
-
 <Include File="PopupDialog" />
 
 <!-- 创建弹出对话框实例 -->
-
 <MakeInstance Name="PopupDialog"/>
-
+```
 * * *
 
 # Instance（实例控件）
 
-<Instance>
+**\<Instance\>**
 
 2017年7月25日，星期二
 
 下午5:22
 
-定义一个控件集合，可以使用**<MakeInstance>**标签或调用**ContextPtr:BuildInstanceForControl()**来创建。
+定义一个控件集合，可以使用 **\<MakeInstance\>** 标签或调用**ContextPtr:BuildInstanceForControl()**来创建。
 
 **示例：**
 
-<Instance Name="MyInstance">
+在xml中设定实例默认状态
 
+```xml
+<Instance Name="MyInstance">
 <Bar ID="TopControl" Size="10,10" Hidden="1"/>
+<Bar ID="TopControl" Size="10,10" Hidden="1"/>
+
+    <Bar ID="TopControl" Size="10,10" Hidden="1"/>
 
 </Instance>
 
 <Stack ID="MyStack">
-
+<MakeInstance Name="MyInstance"/>
 <MakeInstance Name="MyInstance"/>
 
+    <MakeInstance Name="MyInstance"/>
+
 </Stack>
+```
 
 \-- 在Lua中创建实例：
 
+```lua
 local myInstance:table = {};
 
 ContextPtr:BuildInstanceForControl("MyInstance", myInstance, Controls.MyStack);
+```
 
 * * *
 
 # Label（标签控件）
 
-**<Label>**
+**\<Label\>**
 
 2014年2月21日，星期五
 
@@ -9646,195 +6469,128 @@ ContextPtr:BuildInstanceForControl("MyInstance", myInstance, Controls.MyStack);
 
 用于显示文本的内部“TextControl”。它的**大小**将自动根据文本字符串的边界计算，并且不应手动设置。
 
-**属性**
-
-**详情**
-
-**Align**
-
-如何对齐文本行：“**left**”、“**center**”、“**right**” - \*注意：文本将根据最长文本字符串的宽度对齐（对于段落）或根据其父控件的宽度对齐。
-
-**Color0**
-
-与基本控件的“**Color**”具有相同的含义。（如果在同一个标签中同时指定两者，Color0将覆盖Color）
-
-**Color1**
-
-已弃用：参见_EffectColor_
-
-**Color2**
-
-已弃用：参见GradientColor
-
-**ColorSet**
-
-要使用的颜色集的名称。
-
-**EffectColor**
-
-(可选) 用于字体样式（如“**描边**”、“**发光**”和“**阴影**”）的辅助颜色。
-
-**Font**
-
-要在此控件中使用的字体的名称。
-
-**FontSize**
-
-要使用的字体的字号。
-
-**FontStyle**
-
-要使用的字体样式的名称。有效的样式有：“**阴影**”、“**发光**”、“**描边**”
-
-**GradientColor**
-
-(可选) 应用于字体底部的渐变颜色。
-
-**LeadingOffset**
-
-行间距的偏移量。
-
-**ReduceWidth**
-
-缩小字号，直到字符串适应指定的宽度。\*未实现\*
-
-**Rotation**
-
-文本旋转的角度。旋转的中心点是第一个字形的左下角。
-
-**SmallCaps**
-
-用于大写字母的字体大小
-
-**SmallCapsLeading**
-
-添加到非小写字母的行间距。
-
-**SmallCapsType**
-
-如何应用小写字母，可以是：“**每个单词**”（默认）或“**仅第一个**”
-
-**String**
-
-控件的文本内容。
-
-**TruncateWidth**
-
-截断字符串的宽度（以像素为单位）。
-
-**WrapWidth**
-
-开始换行到下一行的宽度（以像素为单位）。
+| **属性**               | **详情**                                                                     |
+|----------------------|----------------------------------------------------------------------------|
+| **Align**            | 如何对齐文本行： **“left”、“center”、“right”** - *注意：文本将根据最长文本字符串的宽度对齐（对于段落）或根据其父控件的宽度对齐。* |
+| **Color0**           | 与基本控件的 **“Color”** 具有相同的含义。（如果在同一个标签中同时指定两者，Color0将覆盖Color）                      |
+| **Color1**           | 已弃用：参见EffectColor                                                          |
+| **Color2**           | 已弃用：参见GradientColor                                                        |
+| **ColorSet**         | 要使用的颜色集的名称。                                                                |
+| **EffectColor**      | (可选) 用于字体样式（如 **“描边”、“发光”和“阴影”（“Stroke”, “Glow”, and “Shadow”.）**  ）的辅助颜色。                                         |
+| **Font**             | 要在此控件中使用的字体的名称。                                                     |
+| **FontSize**         | 要使用的字体的字号。                                                                 |
+| **FontStyle**        | 要使用的字体样式的名称。有效的样式有： **“阴影”、“发光”、“描边”（"Shadow", "Glow", "Stroke"）**                                |
+| **GradientColor**    | (可选) 应用于字体底部的渐变颜色。                                                         |
+| **LeadingOffset**    | 行间距的偏移量。                                                                   |
+| **ReduceWidth**      | 缩小字号，直到字符串适应指定的宽度。*未实现*                                                    |
+| **Rotation**         | 文本旋转的角度。旋转的中心点是第一个字形的左下角。                                                  |
+| **SmallCaps**        | 用于大写字母的字体大小                                                                |
+| **SmallCapsLeading** | 添加到非小写字母的行间距。                                                              |
+| **SmallCapsType**    | 如何应用小写字母，可以是： **“每个单词”（"EveryWord"）** （默认）或 **“仅第一个”（FirstOnly）**                                            |
+| **String**           | 控件的文本内容。                                                                   |
+| **TruncateWidth**    | 截断字符串的宽度（以像素为单位）。                                                          |
+| **WrapWidth**        | 开始换行到下一行的宽度（以像素为单位）。                                                       |
 
 **示例：渐变文本**
 
 _Game\_ColorAtlas.xml：_
 
+```xml
 <ColorSet Name="ResCultureLabelCS" Color0="190,89,189,255" Color1="0,0,0,100" Color2="255,214,255,255" />
+```
 
 其中：
 
-Color0
+| **Color0** | 顶部渐变色   |
+|------------|-------------|
+| **Color1** | 阴影、描边或发光的颜色 |
+| **Color2** | 底部渐变色       |
 
-顶部渐变色
-
-Color1
-
-阴影、描边或发光的颜色
-
-Color2
-
-底部渐变色
 
 _SomeTechCivicToggle.xml_
 
+```xml
 <Label Offset="32,6" Style="FontNormal14" FontStyle="Glow" ColorSet="ResCultureLabelCS" />
+```
 
 生成结果：
 
-![C:\E3AD9F25\673868D8-982B-4885-B090-A5DC822099F8_files\image001.png](Forge UI\Controls\Label/media/image1.png)
+![C:\E3AD9F25\673868D8-982B-4885-B090-A5DC822099F8_files\image001.png](Forge%20UI/Controls\Label/media/image1.png)
 
 **示例：小写字母**
 
+```xml
 <Label FontSize="20" String="NATIVE SMALL CAPS SUPPORT" Offset="10,10" Color="green" SmallCaps="28" SmallCapsLeading="6" SmallCapsType="EveryWord" />
+```
 
-![cid:image002.png@01D06594.25B3CD10](Forge UI\Controls\Label/media/image2.png)
+![cid:image002.png@01D06594.25B3CD10](Forge%20UI/Controls\Label/media/image2.png)
 
 **示例：换行宽度**
 
-![Machine generated alternative text: I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie.](Forge UI\Controls\Label/media/image3.png)
+![Machine generated alternative text: I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie. I’m excited for the new super troopers movie.](Forge%20UI/Controls\Label/media/image3.png)
 
+```xml
 <Box Size="200,50" Color="99,88,77">
-
 <Label String="I'm excited for the new super troopers movie." Size="parent,100" debug="1" />
+<Label String="I'm excited for the new super troopers movie." Size="parent,100" debug="1" />
+
+    <Label String="I'm excited for the new super troopers movie." Size="parent,100" debug="1" />
 
 </Box>
 
 <Box Size="200,50" Color="99,88,77" Offset="0,60">
-
 <Label String="I'm excited for the new super troopers movie." Size="200,100" debug="1" />
+<Label String="I'm excited for the new super troopers movie." Size="200,100" debug="1" />
+
+    <Label String="I'm excited for the new super troopers movie." Size="200,100" debug="1" />
 
 </Box>
 
 <Box Size="200,50" Color="99,88,77" Offset="0,120">
-
 <Label String="I'm excited for the new super troopers movie." debug="1" />
+<Label String="I'm excited for the new super troopers movie." debug="1" />
+
+    <Label String="I'm excited for the new super troopers movie." debug="1" />
 
 </Box>
 
 <Box Size="200,50" Color="99,88,77" Offset="0,180">
-
 <Label String="I'm excited for the new super troopers movie." WrapWidth="200" debug="1" />
+<Label String="I'm excited for the new super troopers movie." WrapWidth="200" debug="1" />
+
+    <Label String="I'm excited for the new super troopers movie." WrapWidth="200" debug="1" />
 
 </Box>
 
 <Box Size="200,50" Color="99,88,77" Offset="0,240">
-
 <Label String="I'm excited for the new super troopers movie." WrapWidth="parent" debug="1" />
+<Label String="I'm excited for the new super troopers movie." WrapWidth="parent" debug="1" />
+
+    <Label String="I'm excited for the new super troopers movie." WrapWidth="parent" debug="1" />
 
 </Box>
 
 <Box Size="200,50" Color="99,88,77" Offset="0,300">
-
+<Label String="I'm excited for the new super troopers movie." Size="parent,100" WrapWidth="parent" debug="1" />
 <Label String="I'm excited for the new super troopers movie." Size="parent,100" WrapWidth="parent" debug="1" />
 
+    <Label String="I'm excited for the new super troopers movie." Size="parent,100" WrapWidth="parent" debug="1" />
+
 </Box>
+```
 
 **LUA函数**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**描述**
-
-**SetColor**
-
-**n/a**
-
-**uint ABGR, (uint layer)**
-
-**ABGR**是一个表示Alpha、蓝色、绿色和红色值的单个十六进制值（0xAABBGGRR）。
-
-**layer**（可选）是一个值为0到2的整数，表示要更改的颜色的“层”。0表示字形的主要颜色，1表示效果颜色（阴影、发光等），2是一个尚未使用的层。
-
- 
-
-**SetColorByName**
-
-**n/a**
-
-**name**，颜色图集中颜色集的名称
-
-将标签设置为使用现有颜色集中的所有控件。（覆盖基本实现，基本实现只获取颜色集中的第一个颜色）。
+| **函数**             | **返回值** | **参数**                                                                                                                                         | **描述**                                          |
+|--------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| **SetColor**       | **n/a** | **uint ABGR, (uint layer)**<br>**ABGR** 是一个表示Alpha、蓝色、绿色和红色值的单个十六进制值（0xAABBGGRR）。<br>**layer** （可选）是一个值为0到2的整数，表示要更改的颜色的“层”。0表示字形的主要颜色，1表示效果颜色（阴影、发光等），2是一个尚未使用的层。 |                                                 |
+| **SetColorByName** | **n/a** | **name** ，颜色图集中颜色集的名称                                                                                                                               | 将标签设置为使用现有颜色集中的所有控件。<br>（覆盖基本实现，基本实现只获取颜色集中的第一个颜色）。 |
 
 * * *
 
 # Line（线段控件）
 
-**<Line>**
+**\<Line\>**
 
 Friday, February 21, 2014
 
@@ -9842,35 +6598,24 @@ Friday, February 21, 2014
 
 绘制具有实线描边的线段
 
-**属性**
-
-**详情**
-
-**Color**
-
-线段的颜色和透明度的RGBA值。
-
-**End**
-
-线段的结束点。
-
-**Start**
-
-线段的起始点。
-
-**Width**
-
-线段的粗细。
+| **属性**    | **详情**           |
+|-----------|------------------|
+| **Color** | 线段的颜色和透明度的RGBA值。 |
+| **End**   | 线段的结束点。          |
+| **Start** | 线段的起始点。          |
+| **Width** | 线段的粗细。           |
 
 **示例：**
 
+```xml
 <Line Start="100,100" End="400,400" Width="10" Color="255,128,63,200" />
+```
 
 * * *
 
 # LuaContext（Lua上下文）
 
-<LuaContext>
+**\<LuaContext\>**
 
 星期二，2014年3月4日
 
@@ -9882,187 +6627,50 @@ Friday, February 21, 2014
 
 **XML**
 
-**属性**
-
-**详情**
-
-**FileName**
-
-要加载的XML文件的名称（不包括.xml扩展名）
-
-**ID**
-
-（可选）LUA上下文的标识符
+| **属性**       | **详情**                   |
+|--------------|--------------------------|
+| **FileName** | 要加载的XML文件的名称（不包括.xml扩展名） |
+| **ID**       | （可选）LUA上下文的标识符           |
 
 **LUA**
 
 注意：由于上下文是ControlBase（例如<Container>），因此所有ControlBase上的LUA函数也可以在此处使用。以下是上下文特定的函数：
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**BuildInstance**
-
-nil
-
-创建一个实例并将其附加到上下文作为父级。
-
-**BuildInstanceForControl( name, outTable, parent)**
-
-nil
-
-创建一个实例并将其附加到一个控件。
-
-**name**是一个控件的字符串名称
-
-**outTable**是一个（空）表，将引用LUA中的控件
-
-**parent**是一个现有的控件，将成为新创建的实例的父级
-
-**BuildInstanceForControlAtIndex( )**
-
-nil
-
-创建一个实例并将其附加到指定索引处的控件。
-
-**CallParentShowHideHandler( func )**
-
-nil
-
-已弃用
-
-**ClearRefreshHandler( )**
-
-nil
-
-删除刷新回调函数。
-
-**ClearRequestRefresh( )**
-
-nil
-
-手动重置标志，告诉上下文在下一个C++ Update()中进行刷新。注意：在刷新发生后，内部会自动调用此函数。
-
-**ClearUpdate( )**
-
-nil
-
-清除更新回调函数。
-
-**IsHotLoad**
-
-bool
-
-上下文是否处于热加载状态。
-
-**LoadNewContext( nameAndPath )**
-
-nil
-
-动态加载一个新的上下文，并将其作为此上下文的子级。
-
-**Reload( )**
-
-nil
-
-重新加载上下文。
-
-**RequestRefresh( )**
-
-nil
-
-请求在下一个C++ Update()中发生刷新回调。
-
-**SetAppLostFocusHandler( func )**
-
-nil
-
-当玩家的应用程序失去操作系统焦点时调用。（不支持iOS）。
-
-**SetAppRegainedFocusHandler( func )**
-
-nil
-
-当玩家的应用程序重新获得操作系统焦点时调用。（不支持iOS）。
-
-**SetHideHandler( func )**
-
-nil
-
-当上下文被隐藏时调用。
-
-**SetInitHandler( func )**
-
-nil
-
-设置一个回调函数，在第一个上下文刚刚完成初始化时调用。当发生热加载时，也会调用回调函数。
-
-**SetInputHandler( func, isUsingStruct )**
-
-nil
-
-func是一个回调函数，其方法签名取决于第二个参数是true还是false。
-
-isUsingStruct是一个布尔值，如果为false，则函数预期使用旧的、已弃用的方式接收输入，即3个值。如果为true，则函数将接收一个输入结构对象。有关更多信息，请参阅“LUA输入”。
-
-**SetPostInit( func )**
-
-nil
-
-设置一个在C++ Initialize()完成后调用的函数。
-
-**SetRefreshHandler( func )**
-
-nil
-
-设置一个显式的回调函数，在C++ Update()中明确发生一次。当许多值正在变化，但不需要实时更新时使用；通常用于防止重新计算复杂屏幕的子部分。
-
-**SetShowHandler( func )**
-
-nil
-
-当上下文可见时调用。
-
-**SetShowHideHandler( func )**
-
-nil
-
-已弃用：当上下文显示/隐藏时调用的单个函数。
-
-**警告**：如果使用SetShowHandler或SetHideHandler，此回调函数将不起作用。
-
-**SetShutdown( func )**
-
-nil
-
-function，上下文关闭之前的回调函数（例如，在热加载期间发生）。
-
-**SetUpdate( func )**
-
-nil
-
-**警告**：尽量避免使用此函数（请参阅上面的刷新处理程序），因为这会在每个C++ Update()中调用，这对于内存碎片化来说真的很糟糕，因为LUA喜欢进行许多小的分配。
-
-每帧更新的函数，函数签名为：**function( fdTime )**，每帧的**fdTime**将包含一个表示自上次更新以来的时间的数字。
-
-**UnifyClickAndTap( isUnified )**
-
-nil
-
-将鼠标点击和手指轻触视为同一操作。
+| **函数**                                               | **返回值** | **参数**                                                                                                                                             |
+|------------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **BuildInstance**                                    | nil     | 创建一个实例并将其附加到上下文作为父级。                                                                                                                               |
+| **BuildInstanceForControl( name, outTable, parent)** | nil     | 创建一个实例并将其附加到一个控件。<br> **name** 是一个控件的字符串名称<br> **outTable** 是一个（空）表，将引用LUA中的控件<br> **parent** 是一个现有的控件，将成为新创建的实例的父级 |
+| **BuildInstanceForControlAtIndex( )**                | nil     | 创建一个实例并将其附加到指定索引处的控件。                                                                                                                              |
+| **CallParentShowHideHandler( func )**                | nil     | 已弃用                                                                                                                                                |
+| **ClearRefreshHandler( )**                           | nil     | 删除刷新回调函数。                                                                                                                                          |
+| **ClearRequestRefresh( )**                           | nil     | 手动重置标志，告诉上下文在下一个C++ Update()中进行刷新。注意：在刷新发生后，内部会自动调用此函数。                                                                                            |
+| **ClearUpdate( )**                                   | nil     | 清除更新回调函数。                                                                                                                                          |
+| **IsHotLoad**                                        | bool    | 上下文是否处于热加载状态。                                                                                                                                      |
+| **LoadNewContext( nameAndPath )**                    | nil     | 动态加载一个新的上下文，并将其作为此上下文的子级。                                                                                                                          |
+| **Reload( )**                                        | nil     | 重新加载上下文。                                                                                                                                           |
+| **RequestRefresh( )**                                | nil     | 请求在下一个C++ Update()中发生刷新回调。                                                                                                                         |
+| **SetAppLostFocusHandler( func )**                   | nil     | 当玩家的应用程序失去操作系统焦点时调用。（不支持iOS）。                                                                                                                      |
+| **SetAppRegainedFocusHandler( func )**               | nil     | 当玩家的应用程序重新获得操作系统焦点时调用。（不支持iOS）。                                                                                                                    |
+| **SetHideHandler( func )**                           | nil     | 当上下文被隐藏时调用。                                                                                                                                        |
+| **SetInitHandler( func )**                           | nil     | 设置一个回调函数，在第一个上下文刚刚完成初始化时调用。当发生热加载时，也会调用回调函数。                                                                                                       |
+| **SetInputHandler( func, isUsingStruct )**           | nil     | func是一个回调函数，其方法签名取决于第二个参数是true还是false。<br>isUsingStruct是一个布尔值，如果为false，则函数预期使用旧的、已弃用的方式接收输入，即3个值。如果为true，则函数将接收一个输入结构对象。有关更多信息，请参阅“LUA输入”。            |
+| **SetPostInit( func )**                              | nil     | 设置一个在C++ Initialize()完成后调用的函数。                                                                                                                     |
+| **SetRefreshHandler( func )**                        | nil     | 设置一个显式的回调函数，在C++ Update()中明确发生一次。当许多值正在变化，但不需要实时更新时使用；通常用于防止重新计算复杂屏幕的子部分。                                                                          |
+| **SetShowHandler( func )**                           | nil     | 当上下文可见时调用。                                                                                                                                         |
+| **SetShowHideHandler( func )**                       | nil     | 已弃用：当上下文显示/隐藏时调用的单个函数。<br> **警告：** 如果使用SetShowHandler或SetHideHandler，此回调函数将不起作用。                                                                            |
+| **SetShutdown( func )**                              | nil     | function，上下文关闭之前的回调函数（例如，在热加载期间发生）。                                                                                                                |
+| **SetUpdate( func )**                                | nil     | **警告：** 尽量避免使用此函数（请参阅上面的刷新处理程序），因为这会在每个C++ Update()中调用，这对于内存碎片化来说真的很糟糕，因为LUA喜欢进行许多小的分配。<br>每帧更新的函数，函数签名为： **function( fdTime )** ，每帧的 **fdTime** 将包含一个表示自上次更新以来的时间的数字。 |
+| **UnifyClickAndTap( isUnified )**                    | nil     | 将鼠标点击和手指轻触视为同一操作。 |
 
 示例：
-
-**ContextPtr:ClearRequestRefresh();**
-
+```lua
+ContextPtr:ClearRequestRefresh();
+```
 * * *
 
 # MakeInstance（生成实例）
 
-**<MakeInstance>**
+**\<MakeInstance\>**
 
 Friday, February 21, 2014
 
@@ -10073,38 +6681,49 @@ Friday, February 21, 2014
 您可以通过设置**ID**属性来定义如何访问**Controls**表中的实例。如果您不设置该属性，将使用实例的**Name**。
 
 **示例：**
-
+```xml
 <Instance Name="MyBarInstance">
-
 <Bar ID="BarControl" Size="10,10" Hidden="1"/>
+<Bar ID="BarControl" Size="10,10" Hidden="1"/>
+
+    <Bar ID="BarControl" Size="10,10" Hidden="1"/>
 
 </Instance>
 
 <Instance Name="MyBoxInstance">
-
 <Box ID="BoxControl" Size="10,10" Hidden="1"/>
+<Box ID="BoxControl" Size="10,10" Hidden="1"/>
+
+    <Box ID="BoxControl" Size="10,10" Hidden="1"/>
 
 </Instance>
 
 <Stack>
-
+<MakeInstance Name="MyBarInstance"/>
 <MakeInstance Name="MyBarInstance"/>
 
+    <MakeInstance Name="MyBarInstance"/>
+
+<MakeInstance Name="MyBoxInstance" ID="MyBoxWithID"/>
 <MakeInstance Name="MyBoxInstance" ID="MyBoxWithID"/>
 
-</Stack>
+    <MakeInstance Name="MyBoxInstance" ID="MyBoxWithID"/>
 
+</Stack>
+```
 \-- 在Lua中：
 
+```lua
 Controls.MyBarInstance.BarControl:SetHide(false);
 
 Controls.MyBoxWithID.BoxControl:SetHide(false);
+```
 
 * * *
 
 # Meter（进度表控件）
 
-**<Meter>**
+**\<Meter\>**
 
 Friday, February 21, 2014
 
@@ -10114,137 +6733,56 @@ Friday, February 21, 2014
 
 **XML**
 
-**属性**
-
-**类型**
-
-**详情**
-
-Color
-
-String
-
-应用于进度表纹理的红色、绿色、蓝色和（可选）透明度值。默认为白色，完全不透明，例如“255,255,255,255”；
-
-CounterClockwise
-
-Bool
-
-如果为true，进度表将逆时针运行。
-
-Follow
-
-Bool
-
-如果为true，纹理将旋转并“跟随”当前已显示的遮罩的百分比。随着遮罩的移动，纹理会逐渐显示更多内容。
-
-HasShadow
-
-Bool
-
-如果为true，将使用纹理的第二个版本，位于主纹理下方。
-
-Percent
-
-Number
-
-进度表的起始值，默认为0。
-
-ShadowAlpha
-
-Number
-
-应用于“阴影”版本的透明度值
-
-Speed
-
-Number
-
-进度表的动画速度。如果为0（默认值），则不使用动画，立即显示。
-
-Texture
-
-String
-
-用于进度表（和可选的“阴影”）的纹理。
+| **属性**               | **类型** | **详情**                                                      |
+|----------------------|--------|-------------------------------------------------------------|
+| **Color**            | String | 应用于进度表纹理的红色、绿色、蓝色和（可选）透明度值。默认为白色，完全不透明，例如“255,255,255,255”； |
+| **CounterClockwise** | Bool   | 如果为true，进度表将逆时针运行。                                          |
+| **Follow**           | Bool   | 如果为true，纹理将旋转并“跟随”当前已显示的遮罩的百分比。随着遮罩的移动，纹理会逐渐显示更多内容。         |
+| **HasShadow**        | Bool   | 如果为true，将使用纹理的第二个版本，位于主纹理下方。                                |
+| **Percent**          | Number | 进度表的起始值，默认为0。                                               |
+| **ShadowAlpha**      | Number | 应用于“阴影”版本的透明度值                                              |
+| **Speed**            | Number | 进度表的动画速度。如果为0（默认值），则不使用动画，立即显示。                             |
+| **Texture**          | String | 用于进度表（和可选的“阴影”）的纹理。                                         |
 
 **LUA函数**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**SetAnimationSpeed**
-
-**n/a**
-
-**float**，动画速度，范围为0到1，其中0表示无动画
-
-**SetCounterClockwise**
-
-**n/a**
-
-**bool**，如果为true，进度表逆时针运行；如果为false，进度表顺时针运行
-
-**SetFollow**
-
-**n/a**
-
-**Bool**，如果为true，纹理将跟随已显示的遮罩的旋转。如果为false，纹理将保持静止，遮罩围绕其旋转，逐渐显示更多内容。
-
-**SetPercent**
-
-**n/a**
-
-**float**，0.0-1.0之间的百分比，表示显示的纹理部分（填充部分）
-
-**SetPercents**
-
-**n/a**
-
-**float**，0.0-1.0之间的百分比，**float**，0.0-1.0之间的百分比，设置主要百分比和“阴影”百分比
-
-**SetShadowColor**
-
-**n/a**
-
-**uint**，ABGR值，设置“阴影”的颜色
-
-**SetShadowPercent**
-
-**n/a**
-
-**float**，0.0-1.0之间的百分比，用作“阴影”的纹理百分比
+| **函数**                  | **返回值** | **参数**                                                         |
+|-------------------------|---------|----------------------------------------------------------------|
+| **SetAnimationSpeed**   | **n/a**     | **float**，动画速度，范围为0到1，其中0表示无动画                                     |
+| **SetCounterClockwise** | **n/a**     | **bool**，如果为true，进度表逆时针运行；如果为false，进度表顺时针运行                        |
+| **SetFollow**           | **n/a**     | **Bool**，如果为true，纹理将跟随已显示的遮罩的旋转。如果为false，纹理将保持静止，遮罩围绕其旋转，逐渐显示更多内容。 |
+| **SetPercent**          | **n/a**     | **float**，0.0-1.0之间的百分比，表示显示的纹理部分（填充部分）                            |
+| **SetPercents**         | **n/a**     | **float**，0.0-1.0之间的百分比，float，0.0-1.0之间的百分比，设置主要百分比和“阴影”百分比        |
+| **SetShadowColor**      | **n/a**     | **uint**，ABGR值，设置“阴影”的颜色                                           |
+| **SetShadowPercent**    | **n/a**     | **floa**t，0.0-1.0之间的百分比，用作“阴影”的纹理百分比                               |
 
 **示例**
 
-![机器生成的替代文本：](Forge UI\Controls\Meter/media/image1.png)
-
+![机器生成的替代文本：](Forge%20UI/Controls\Meter/media/image1.png)
+```xml
 <Meter Size="256,256" Texture="TestImage.dds" Percent="0.65" />
-
-![机器生成的替代文本：](Forge UI\Controls\Meter/media/image2.png)
-
+```
+![机器生成的替代文本：](Forge%20UI/Controls\Meter/media/image2.png)
+```xml
 <Meter Size="256,256" Texture="TestImage.dds" Percent="0.65" **CounterClockwise="1"** />
-
-![机器生成的替代文本：](Forge UI\Controls\Meter/media/image3.png)
-
+```
+![机器生成的替代文本：](Forge%20UI/Controls\Meter/media/image3.png)
+```xml
 <Meter Size="256,256" Texture="TestImage.dds" Percent="0.62" **Follow="1"** />
-
-![机器生成的替代文本：](Forge UI\Controls\Meter/media/image4.png)
-
+```
+![机器生成的替代文本：](Forge%20UI/Controls\Meter/media/image4.png)
+```xml
 <Meter Size="256,256" Texture="TestImage.dds"Percent="0.62" **CounterClockwise="1"** **Follow="1"** />
-
-![机器生成的替代文本：](Forge UI\Controls\Meter/media/image5.png)
-
+```
+![机器生成的替代文本：](Forge%20UI/Controls\Meter/media/image5.png)
+```xml
 <Meter Size="256,256" Texture="TestImage.dds" Percent="0.1" **HasShadow="1"** />
-
+```
 * * *
 
 # Movie（电影控件）
 
-**<Movie>**
+**\<Movie\>**
 
 2014年2月21日，星期五
 
@@ -10254,91 +6792,37 @@ String
 
 **XML**
 
-**属性**
-
-**详情**
-
-**FlipX**
-
-水平翻转图像
-
-**FlipY**
-
-垂直翻转图像
-
-**LoopMovie**
-
-如果指定了电影，则在播放完成后重复播放该电影。
-
-**LoopMoviemask**
-
-如果指定了电影蒙版，则在播放完成后重复播放该蒙版。
-
-**MaskTexture**
-
-用作alpha蒙版的纹理文件名。
-
-**MaskTextureOffset**
-
-蒙版纹理的x、y偏移量（以像素为单位）。
-
-**Movie**
-
-要在图像区域显示的BINK（或其他支持的电影）。
-
-**MovieMask**
-
-用于遮罩显示图像的BINK（或其他支持的电影）。 （电影蒙版可以用于遮罩电影！）
-
-**NormalizedQuad**
-
-程序员标志。表示像素与纹理像素的比例不是1:1。
-
-**PointSample**
-
-所有图像默认使用点采样器，但如果为**False**，则改为使用线性采样。
-
-**Rotate**
-
-旋转四边形上的纹理（度数）。注意：在当前实现中，四边形本身不会旋转，会发生拉伸。
-
-**Scale**
-
-按比例放大纹理。 （例如，“1.5”将使其放大150％。）
-
-**StretchMode**
-
-如何拉伸纹理；以下值之一：
-
-**None**、**Uniform**、**Fill**、**Tile**或**UniformToFill**
-
-**Texture**
-
-要使用的纹理的文件名。
-
-**TextureOffset**
-
-从纹理的哪个位置开始绘制的x、y偏移量（以像素为单位）。
-
-**TextureOffsetUV**
-
-在纹理中的偏移量（使用UV坐标）。
-
-**TextureSizeUV**
-
-以浮点UV纹理坐标表示的大小。
+| **属性**                | **详情**                                             |
+|-----------------------|----------------------------------------------------|
+| **FlipX**             | 水平翻转图像                                             |
+| **FlipY**             | 垂直翻转图像                                             |
+| **LoopMovie**         | 如果指定了电影，则在播放完成后重复播放该电影。                            |
+| **LoopMoviemask**     | 如果指定了电影蒙版，则在播放完成后重复播放该蒙版。                          |
+| **MaskTexture**       | 用作alpha蒙版的纹理文件名。                                   |
+| **MaskTextureOffset** | 蒙版纹理的x、y偏移量（以像素为单位）。                               |
+| **Movie**             | 要在图像区域显示的BINK（或其他支持的电影）。                           |
+| **MovieMask**         | 用于遮罩显示图像的BINK（或其他支持的电影）。 （电影蒙版可以用于遮罩电影！）           |
+| **NormalizedQuad**    | 程序员标志。表示像素与纹理像素的比例不是1:1。                           |
+| **PointSample**       | 所有图像默认使用点采样器，但如果为False，则改为使用线性采样。                  |
+| **Rotate**            | 旋转四边形上的纹理（度数）。注意：在当前实现中，四边形本身不会旋转，会发生拉伸。           |
+| **Scale**             | 按比例放大纹理。 （例如，“1.5”将使其放大150％。）                      |
+| **StretchMode**       | 如何拉伸纹理；以下值之一：<br>**None、Uniform、Fill、Tile或UniformToFill** |
+| **Texture**           | 要使用的纹理的文件名。                                        |
+| **TextureOffset**     | 从纹理的哪个位置开始绘制的x、y偏移量（以像素为单位）。                       |
+| **TextureOffsetUV**   | 在纹理中的偏移量（使用UV坐标）。                                  |
+| **TextureSizeUV**     | 以浮点UV纹理坐标表示的大小。                                    |
 
 **示例：**
-
+```xml
 <Movie Movie="Test.bik" Size="200,200" />
-
-MovieControl（电影控件）
+```
+MovieControl
 
 * * *
 
 # PullDown（下拉菜单控件）
 
-<PullDown>
+**\<PullDown\>**
 
 2014年2月21日，星期五
 
@@ -10348,185 +6832,95 @@ MovieControl（电影控件）
 
 **XML**
 
-**属性**
+| **属性(Attribute)**              | **详情(Details)**                                   |
+|---------------------|------------------------------------------|
+| **AutoFlip**        | 如果下拉菜单在窗口/屏幕区域底部超出范围，则自动将下拉菜单的网格翻转到按钮上方。 |
+| **AutoSizePopUp**   | 指示网格应根据内部按钮的数量自动调整大小的标志。                 |
+| **SpaceForScroll**  | 指示网格应为滚动条保留一些内部空间的标志。                    |
+| **ScrollThreshold** | 在将滚动条添加到列表之前，允许网格增长的大小。                  |
 
-**详情**
 
-**AutoFlip**
-
-如果下拉菜单在窗口/屏幕区域底部超出范围，则自动将下拉菜单的网格翻转到按钮上方。
-
-**AutoSizePopUp**
-
-指示网格应根据内部按钮的数量自动调整大小的标志。
-
-**SpaceForScroll**
-
-指示网格应为滚动条保留一些内部空间的标志。
-
-**ScrollThreshold**
-
-在将滚动条添加到列表之前，允许网格增长的大小。
-
-**子标签**
-
-**详情**
-
-**<ButtonData>**
-
-定义打开下拉菜单的按钮的子控件。其中应立即存在某种类型的**<Button>**。
-
-**<GridData>**
-
-（可选）定义在打开下拉菜单时用于控件后面的格式化网格。
-
-**<ScrollPanelData>**
-
-（可选）包含打开下拉菜单时的子按钮的滚动面板。
-
-**<StackData>**
-
-包含打开下拉菜单时的子按钮的堆栈（对于更改堆栈填充很有用）。
-
-**<InstanceData>**
-
-下拉菜单处于打开状态时，子按钮的模板。
+| **子标签(Child Tag)**                     | **详情(Details)**                                      |
+|-----------------------------|---------------------------------------------|
+| **&lt;ButtonData&gt;**      | 定义打开下拉菜单的按钮的子控件。其中应立即存在某种类型的**&lt;Button&gt;**。 |
+| **&lt;GridData&gt;**        | （可选）定义在打开下拉菜单时用于控件后面的格式化网格。                 |
+| **&lt;ScrollPanelData&gt;** | （可选）包含打开下拉菜单时的子按钮的滚动面板。                     |
+| **&lt;StackData&gt;**       | 包含打开下拉菜单时的子按钮的堆栈（对于更改堆栈填充很有用）。              |
+| **&lt;InstanceData&gt;**    | 下拉菜单处于打开状态时，子按钮的模板。                         |
 
 **LUA方法**
 
-**函数**
+| **函数**                        | **返回值**     | **参数**   | **描述**                  |
+|-------------------------------|-------------|----------|-------------------------|
+| **BuildEntry**                |             |          | 添加一个条目。                 |
+| **CalcuateInternals**         | void        |          | 计算网格、滚动面板和堆栈的大小和内容。     |
+| **ClearEntries**              |             |          | 删除所有条目。                 |
+| **ForceClose**                | void        |          | 隐藏网格及其组件。               |
+| **GetButton**                 | Button      |          | 获取组件部分。                 |
+| **GetGrid**                   | Grid        |          | 获取组件部分。                 |
+| **GetScrollPanel**            | ScrollPanel |          | 获取组件部分。                 |
+| **GetStack**                  | Stack       |          | 获取组件部分。                 |
+| **IsOffBottom**               | bool        |          | 下拉菜单是否由于空间有限而显示在打开按钮上方？ |
+| **IsOpen**                    | bool        |          | 子元素是否正在显示。              |
+| **RegisterSelectionCallback** |             | function | 选择后执行的回调函数。             |
+| **SetDisabled**               | void        | bool     | 启用或禁用控件。                |
 
-**返回值**
-
-**参数**
-
-**描述**
-
-**BuildEntry**
-
- 
-
- 
-
-添加一个条目。
-
-**CalcuateInternals**
-
-void
-
- 
-
-计算网格、滚动面板和堆栈的大小和内容。
-
-**ClearEntries**
-
- 
-
- 
-
-删除所有条目。
-
-**ForceClose**
-
-void
-
- 
-
-隐藏网格及其组件。
-
-**GetButton**
-
-Button
-
- 
-
-获取组件部分。
-
-**GetGrid**
-
-Grid
-
- 
-
-获取组件部分。
-
-**GetScrollPanel**
-
-ScrollPanel
-
- 
-
-获取组件部分。
-
-**GetStack**
-
-Stack
-
- 
-
-获取组件部分。
-
-**IsOffBottom**
-
-bool
-
- 
-
-下拉菜单是否由于空间有限而显示在打开按钮上方？
-
-**IsOpen**
-
-bool
-
- 
-
-子元素是否正在显示。
-
-**RegisterSelectionCallback**
-
- 
-
-function
-
-选择后执行的回调函数。
-
-**SetDisabled**
-
-void
-
-bool
-
-启用或禁用控件。
 
 **示例**
-
+```xml
 <PullDown ID="thePullDown" ConsumeMouse="0" Offset="0,0" Anchor="L,T" Size="200,50" AutoSizePopUp="0" SpaceForScroll="0" ScrollThreshold="200">
-
+<Label Anchor="C,C" String="Click me to open!" ID="theLabel" />
 <Label Anchor="C,C" String="Click me to open!" ID="theLabel" />
 
+    <Label Anchor="C,C" String="Click me to open!" ID="theLabel" />
+
+<ButtonData ID="theButtonData">
 <ButtonData ID="theButtonData">
 
+    <ButtonData ID="theButtonData">
+
+<GridButton ID="theOpenCloseButton" Anchor="L,T" />
 <GridButton ID="theOpenCloseButton" Anchor="L,T" />
 
+        <GridButton ID="theOpenCloseButton" Anchor="L,T" />
+
+</ButtonData>
 </ButtonData>
 
+    </ButtonData>
+
+<StackData ID="theStackData" StackGrowth="Bottom" Padding="0" Size="200,500" Anchor="L,T" />
 <StackData ID="theStackData" StackGrowth="Bottom" Padding="0" Size="200,500" Anchor="L,T" />
 
+    <StackData ID="theStackData" StackGrowth="Bottom" Padding="0" Size="200,500" Anchor="L,T" />
+
+<GridData Anchor="L,T" Offset="0,100" />
 <GridData Anchor="L,T" Offset="0,100" />
 
+    <GridData Anchor="L,T" Offset="0,100" />
+
+<InstanceData Name="PullDownEntry">
 <InstanceData Name="PullDownEntry">
 
+    <InstanceData Name="PullDownEntry">
+
+<GridButton ID="Button" Size="200,100" Anchor="L,T" Style="BaseButton"/>
 <GridButton ID="Button" Size="200,100" Anchor="L,T" Style="BaseButton"/>
 
+        <GridButton ID="Button" Size="200,100" Anchor="L,T" Style="BaseButton"/>
+
+</InstanceData>
 </InstanceData>
 
-</PullDown>
+    </InstanceData>
 
+</PullDown>
+```
 * * *
 
 # RadioButton（单选按钮控件）
 
-<RadioButton>
+**\<RadioButton\>**
 
 Friday, February 21, 2014
 
@@ -10534,143 +6928,41 @@ Friday, February 21, 2014
 
 单选按钮控件与**复选框 (CheckBox)**非常相似，并且共享许多相同的属性。当所选状态与共享相同组的其他单选按钮互斥时，使用单选按钮。可以使用**RadioGroup**参数来指定该组。在此组中，RadioGroup 的名称必须相同。
 
-**属性**
+| **属性**                 | **5** | **F** | **详情**                                      |
+|------------------------|-------|-------|---------------------------------------------|
+| **RadioGroup**         |       |       | 互斥单选按钮组的名称                                  |
+| **BoxOnLeft**          | N     | Y     | 如果为真，则将复选框放置在文本按钮的左侧，而不是右侧（替代 **“TextAnchor”）**。 |
+| **ButtonSize**         |       | Y     | 复选框本身的大小。                                   |
+| **ButtonTexture**      |       | Y     | 用于复选框的纹理。                                   |
+| **CheckOffset**        |       | Y     | 用于定位复选框在按钮上的坐标。                             |
+| **CheckSize**          |       | Y     | 复选框纹理的大小。                                   |
+| **CheckTexture**       |       | Y     | 用作选中标记的纹理。                                  |
+| **CheckTextureOffset** |       | Y     | 选中标记纹理的偏移。                                  |
+| **IsChecked**          |       | Y     | 指示复选框是否应该开始选中的标志。                           |
+| **String**             | Y     | Y     | 设置标签文本。                                     |
+| **TextAnchor**         | Y     |       | 用于文本按钮的锚点标志。                                |
+| **TextAnchorSide**     |       | D     | 已弃用，用于文本按钮的锚点侧面标志。                          |
+| **TextButtonData**     | Y     | Y     | 此处使用文本按钮控件的所有标签来描述复选框的文本按钮部分。               |
+| **TextOffset**         |       | Y     | 文本按钮部分与复选框之间的偏移。                            |
 
-**5**
-
-**F**
-
-**详情**
-
-**RadioGroup**
-
- 
-
- 
-
-互斥单选按钮组的名称
-
-**BoxOnLeft**
-
-N
-
-Y
-
-如果为真，则将复选框放置在文本按钮的左侧，而不是右侧（替代“**TextAnchor**”）。
-
-**ButtonSize**
-
- 
-
-Y
-
-复选框本身的大小。
-
-**ButtonTexture**
-
- 
-
-Y
-
-用于复选框的纹理。
-
-**CheckOffset**
-
- 
-
-Y
-
-用于定位复选框在按钮上的坐标。
-
-**CheckSize**
-
- 
-
-Y
-
-复选框纹理的大小。
-
-**CheckTexture**
-
- 
-
-Y
-
-用作选中标记的纹理。
-
-**CheckTextureOffset**
-
- 
-
-Y
-
-选中标记纹理的偏移。
-
-**IsChecked**
-
- 
-
-Y
-
-指示复选框是否应该开始选中的标志。
-
-**String**
-
-Y
-
-Y
-
-设置标签文本。
-
-**TextAnchor**
-
-Y
-
- 
-
-用于文本按钮的锚点标志。
-
-**TextAnchorSide**
-
- 
-
-D
-
-已弃用，用于文本按钮的锚点侧面标志。
-
-**TextButtonData**
-
-Y
-
-Y
-
-此处使用文本按钮控件的所有标签来描述复选框的文本按钮部分。
-
-**TextOffset**
-
- 
-
-Y
-
-文本按钮部分与复选框之间的偏移。
 
 **XML 示例：**
-
+```xml
 <Stack ID="ListFilters" StackGrowth="Right" AnchorSide="I,O" Anchor ="C,T" Offset="0,0" StackPadding="10">
 
-<CheckBox ID="MilitaryFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Military.dds" CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true"/>
+    <CheckBox ID="MilitaryFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Military.dds" CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true"/>
 
-<CheckBox ID="EconomicFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Economic.dds" CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true" />
+    <CheckBox ID="EconomicFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Economic.dds" CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true" />
 
-<CheckBox ID="DiplomaticFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Diplomatic.dds"CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true" />
+    <CheckBox ID="DiplomaticFilterCheck" RadioGroup="FilterGroup" ButtonTexture="CivicsGrid\_Diplomatic.dds"CheckTexture="MainMenuCheckMark.dds" IsChecked="true" BoxOnLeft="true" />
 
 </Stack>
-
+```
 * * *
 
 # ScrollAnim（滚动动画控件）
 
-<ScrollAnim>
+**\<ScrollAnim\>**
 
 Friday, February 21, 2014
 
@@ -10686,37 +6978,20 @@ Friday, February 21, 2014
 
 **LUA 方法**
 
-**函数**
+| **函数**                | **返回值** | **参数**         |
+|-----------------------|---------|----------------|
+| **SetTexture**        | bool    | string         |
+| **SetMask**           | bool    | string         |
+| **SetTextureAndMask** | bool    | string, string |
 
-**返回值**
 
-**参数**
-
-**SetTexture**
-
-bool
-
-string
-
-**SetMask**
-
-bool
-
-string
-
-**SetTextureAndMask**
-
-bool
-
-string, string
-
-有关常用的 LUA 动画方法，请参见：_LUA 动画方法_
+有关常用的 LUA 动画方法，请参见：_LUA 动画方法(LUA Animation Methods)_ 
 
 * * *
 
 # ScrollPanel（滚动面板控件）
 
-<ScrollPanel>
+**\<ScrollPanel\>**
 
 Friday, February 21, 2014
 
@@ -10736,77 +7011,25 @@ Friday, February 21, 2014
 
 **子控件（Sub-Controls）：**
 
-**<UpButton>** - 定义向上滚动的按钮的子控件
+**\<UpButton\>** - 定义向上滚动的按钮的子控件
 
-**<DownButton>** - 定义向下滚动的按钮的子控件
+**<DownButton\>** - 定义向下滚动的按钮的子控件
 
-**<ScrollBar>** - 定义用于移动面板的滑块的子控件
+**\<ScrollBar\>** - 定义用于移动面板的滑块的子控件
 
 **LUA**
-
-**函数**
-
-**返回值**
-
-**参数**
-
-**CalculateSize**
-
-**void**
-
- 
-
-**CalculateInternalSize**
-
-**void**
-
-**已弃用**
-
-**GetScrollValue**
-
-float
-
-..
-
-**SetScrollValue**
-
-void
-
-Float (0.0-1.0)
-
-**GetUpButton**
-
- 
-
- 
-
-**GetDownButton**
-
- 
-
- 
-
-**GetRatio**
-
- 
-
- 
-
-**RegisterScrollCallback**
-
- 
-
- 
-
-**RegisterUpEndCallback**
-
- 
-
- 
-
-**RegisterDownEndCallback**
-
- 
+| **函数**                    | **返回值** | **参数**          |
+|-----------------------------|---------|-----------------|
+| **CalculateSize**           | **void**    |                 |
+| **CalculateInternalSize**   | **void**    | **已弃用**       |
+| **GetScrollValue**          | **float**   | ..              |
+| **SetScrollValue**          | **void**    | Float (0.0-1.0) |
+| **GetUpButton**             |         |                 |
+| **GetDownButton**           |         |                 |
+| **GetRatio**                |         |                 |
+| **RegisterScrollCallback**  |         |                 |
+| **RegisterUpEndCallback**   |         |                 |
+| **RegisterDownEndCallback** |         |                 |
 
  
 
@@ -10814,7 +7037,7 @@ Float (0.0-1.0)
 
 # SimplePullDown（简易下拉框控件）
 
-<SimplePullDown>
+**\<SimplePullDown\>**
 
 Wednesday, May 18, 2016
 
@@ -10824,161 +7047,36 @@ Wednesday, May 18, 2016
 
 **XML**
 
-**属性**
-
-**详情**
-
-**EntryInstance**
-
-用于构建条目的实例的 ID
+| **属性** | **详情** |
+| -- | -- |
+| **EntryInstance** | 用于构建条目的实例的 ID |
 
 **LUA 方法**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-**描述**
-
-**SetEntries**
-
-void
-
-Table entries,
-
-uint selected
-
-条目表应该是一个包含表的数组。每个表表示下拉框的一个条目，必须包含一个“Text”值。
-
-**ClearEntries**
-
-void
-
- 
-
-移除所有条目
-
-**SetSelectedIndex**
-
-void
-
-uint selected,
-
-bool callback
-
-按索引设置选定的条目。如果将 callback 设置为 true，则在选定的索引发生更改时将调用选定的条目回调。
-
-**GetSelectedIndex**
-
-uint
-
- 
-
- 
-
-**GetSelectedEntry**
-
-Table
-
- 
-
-将返回在 SetEntries 中为选定的条目提供的表
-
-**SetEntrySelectedCallback**
-
-void
-
-function
-
-当选定的条目更改时，将调用选定的条目回调。回调函数将接收在 SetEntries 中为选定的条目提供的表。
-
-**CalcuateInternals**
-
-void
-
- 
-
-计算网格、滚动面板和堆栈的大小和内容。
-
-**ClearEntries**
-
- 
-
- 
-
-移除所有条目
-
-**ForceClose**
-
-void
-
- 
-
-隐藏网格及其组件
-
-**GetButton**
-
-Button
-
- 
-
-获取组件部件
-
-**GetGrid**
-
-Grid
-
- 
-
-获取组件部件
-
-**GetScrollPanel**
-
-ScrollPanel
-
- 
-
-获取组件部件
-
-**GetStack**
-
-Stack
-
- 
-
-获取组件部件
-
-**IsOffBottom**
-
-bool
-
- 
-
-下拉框是否因空间有限而显示在打开按钮上方？
-
-**IsOpen**
-
-bool
-
- 
-
-子元素是否显示。
-
-**SetDisabled**
-
-void
-
-bool
-
-启用或禁用控件
+| **函数**                       | **返回值**     | **参数**                       | **描述**                                                   |
+|------------------------------|-------------|------------------------------|----------------------------------------------------------|
+| **SetEntries**               | void        | Table entries,</br>uint selected | 条目表应该是一个包含表的数组。每个表表示下拉框的一个条目，必须包含一个“Text”值。              |
+| **ClearEntries**             | void        |                              | 移除所有条目                                                   |
+| **SetSelectedIndex**         | void        | uint selected,</br>bool callback | 按索引设置选定的条目。如果将 callback 设置为 true，则在选定的索引发生更改时将调用选定的条目回调。 |
+| **GetSelectedIndex**         | uint        |                              |                                                          |
+| **GetSelectedEntry**         | Table       |                              | 将返回在 SetEntries 中为选定的条目提供的表                              |
+| **SetEntrySelectedCallback** | void        | function                     | 当选定的条目更改时，将调用选定的条目回调。回调函数将接收在 SetEntries 中为选定的条目提供的表。    |
+| **CalcuateInternals**        | void        |                              | 计算网格、滚动面板和堆栈的大小和内容。                                      |
+| **ClearEntries**             |             |                              | 移除所有条目                                                   |
+| **ForceClose**               | void        |                              | 隐藏网格及其组件                                                 |
+| **GetButton**                | Button      |                              | 获取组件部件                                                   |
+| **GetGrid**                  | Grid        |                              | 获取组件部件                                                   |
+| **GetScrollPanel**           | ScrollPanel |                              | 获取组件部件                                                   |
+| **GetStack**                 | Stack       |                              | 获取组件部件                                                   |
+| **IsOffBottom**              | bool        |                              | 下拉框是否因空间有限而显示在打开按钮上方？                                    |
+| **IsOpen**                   | bool        |                              | 子元素是否显示。                                                 |
+| **SetDisabled**              | void        | bool                         | 启用或禁用控件                                                  |
 
 * * *
 
 # SlideAnim（滑动动画控件）
 
-**<SlideAnim>**
+**\<SlideAnim\>**
 
 Friday, February 21, 2014
 
@@ -10994,29 +7092,12 @@ Friday, February 21, 2014
 
 **LUA 方法**
 
-**函数**
+| **函数**               | **返回值** | **参数**           |
+|----------------------|---------|------------------|
+| **SetBeginVal**      | n/a     | **float** x, **float** y |
+| **SetEndVal**        | n/a     | **float** x, **float** y |
+| **SetRealiveEndVal** | n/a     | **float** x, **float** y |
 
-**返回值**
-
-**参数**
-
-**SetBeginVal**
-
-n/a
-
-**float** x, **float** y
-
-**SetEndVal**
-
-n/a
-
-**float** x, **float** y
-
-**SetRealiveEndVal**
-
-n/a
-
-**float** x, **float** y
 
 有关常见的 LUA 动画方法，请参见：_LUA 动画方法_
 
@@ -11024,7 +7105,7 @@ n/a
 
 # Slider（滑块控件）
 
-<Slider>
+**\<Slider\>**
 
 Friday, February 21, 2014
 
@@ -11042,13 +7123,13 @@ Friday, February 21, 2014
 
 **Length** - 滑块的尺寸，根据滑块移动的方向确定
 
-**<Thumb>** - 滑块子控件本身也是一个网格控件，应该使用一个网格样式
+**\<Thumb\>** - 滑块子控件本身也是一个网格控件，应该使用一个网格样式
 
 * * *
 
 # Stack（堆栈控件）
 
-**<Stack>**
+**\<Stack\>**
 
 Friday, February 21, 2014
 
@@ -11056,39 +7137,23 @@ Friday, February 21, 2014
 
 堆栈用于将子元素按行或网格排列。如果子元素的大小发生变化，它们的位置将被正确调整，但堆栈本身的大小不会更新，直到调用 **CalculateSize()** 方法。
 
-**属性**
-
-**说明**
-
-**Padding**
-
-已弃用：请参见“StackPadding”
-
-**StackGrowth**
-
-堆栈增长的方向：“Bottom”、“Down”、“Top”、“Up”、“Left”、“Right”（“底”、“下”、“顶”、“上”、“左”、“右”）
-
-**StackPadding**
-
-在子元素之间插入的像素数（以前称为“Padding”）
-
-**WrapGrowth**
-
-超过换行宽度的项目如何继续堆叠
-
-**WrapWidth**
-
-在将项目放入堆栈之前可以放置的距离（宽度或高度，取决于堆栈增长的方向）
+| **属性**           | **说明**                                                                     |
+|------------------|----------------------------------------------------------------------------|
+| **Padding**      | 已弃用：请参见“StackPadding”                                                      |
+| **StackGrowth**  | 堆栈增长的方向：“Bottom”、“Down”、“Top”、“Up”、“Left”、“Right”（“底”、“下”、“顶”、“上”、“左”、“右”） |
+| **StackPadding** | 在子元素之间插入的像素数（以前称为“Padding”）                                                |
+| **WrapGrowth**   | 超过换行宽度的项目如何继续堆叠                                                            |
+| **WrapWidth**    | 在将项目放入堆栈之前可以放置的距离（宽度或高度，取决于堆栈增长的方向）                                        |
 
 当使用 **WrapGrowth** 和 **WrapWidth** 时，可以在一行堆叠超过一定限制后实现二维布局。
 
-![机器生成的替代文本：L> 设置了换行宽度。在没有换行宽度的情况下，...由于达到了 WrapGrowth，项目被放置在一行中，但实际上...底部，开始了一个新行，位于原始行的下方。](Forge UI\Controls\Stack/media/image1.png)
+![机器生成的替代文本：L> 设置了换行宽度。在没有换行宽度的情况下，...由于达到了 WrapGrowth，项目被放置在一行中，但实际上...底部，开始了一个新行，位于原始行的下方。](Forge%20UI/Controls\Stack/media/image1.png)
 
 * * *
 
 # TabControl（选项卡控件）
 
-<TabControl>
+**\<TabControl\>**
 
 Wednesday, May 18, 2016
 
@@ -11098,77 +7163,28 @@ Wednesday, May 18, 2016
 
 **XML**
 
-**属性**
-
-**说明**
-
-**TabContainer**
-
-包含选项卡页面的控件的ID。默认值为"TabContainer"。该控件的所有子控件都将被视为选项卡页面。选项卡页面可以是任何类型的控件。选项卡页面将根据其ID进行显示和隐藏。选项卡页面将通过其ID进行引用。
-
-**TabButtons**
-
-包含选项卡按钮的控件的ID。默认值为"TabButtons"。在该控件树下的任何具有以"SelectTab\_"开头的ID的按钮都将被视为选项卡按钮。它可以是任何类型的按钮控件。选项卡按钮的ID应该采用"SelectTab\_<选项卡页面ID>"的格式。选项卡按钮的功能将由TabControl自动处理。当选择相应的选项卡页面时，按钮将处于"selected"状态。如果只想从Lua中更改选定的选项卡，则不需要选项卡按钮。
-
-**SelectedTab**
-
-初始选定选项卡页面的ID。如果不使用此属性，默认情况下将选择第一个选项卡页面。
+| **属性**           | **说明**                                                                                                                                                                                                                  |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **TabContainer** | 包含选项卡页面的控件的ID。默认值为"TabContainer"。该控件的所有子控件都将被视为选项卡页面。选项卡页面可以是任何类型的控件。选项卡页面将根据其ID进行显示和隐藏。选项卡页面将通过其ID进行引用。                                                                                                                |
+| **TabButtons**   | 包含选项卡按钮的控件的ID。默认值为"TabButtons"。在该控件树下的任何具有以"SelectTab_"开头的ID的按钮都将被视为选项卡按钮。它可以是任何类型的按钮控件。选项卡按钮的ID应该采用"SelectTab_&lt;选项卡页面ID&gt;"的格式。选项卡按钮的功能将由TabControl自动处理。当选择相应的选项卡页面时，按钮将处于"selected"状态。如果只想从Lua中更改选定的选项卡，则不需要选项卡按钮。 |
+| **SelectedTab**  | 初始选定选项卡页面的ID。如果不使用此属性，默认情况下将选择第一个选项卡页面。 |
 
 **LUA 方法**
 
-**函数**
+| **函数**                     | **返回值**      | **参数**       | **描述**                                            |
+|----------------------------|--------------|--------------|---------------------------------------------------|
+| **SelectTab**              | void         | ControlBase* | 通过传入选项卡页面控件的引用来选择选项卡                              |
+| **SelectTabByID**          | void         | string       | 使用选项卡的ID选择选项卡                                     |
+| **GetSelectedTab**         | ControlBase* |              | 获取选定的选项卡页面的引用                                     |
+| **GetSelectedTabID**       | string       |              | 获取选定的选项卡页面的ID                                     |
+| **SetTabSelectedCallback** | void         | function     | 每当选定的选项卡更改时，将调用选项卡选定回调函数。选项卡页面和选项卡按钮将作为参数提供给回调函数。 |
 
-**返回值**
-
-**参数**
-
-**描述**
-
-**SelectTab**
-
-void
-
-ControlBase\*
-
-通过传入选项卡页面控件的引用来选择选项卡
-
-**SelectTabByID**
-
-void
-
-string
-
-使用选项卡的ID选择选项卡
-
-**GetSelectedTab**
-
-ControlBase\*
-
- 
-
-获取选定的选项卡页面的引用
-
-**GetSelectedTabID**
-
-string
-
- 
-
-获取选定的选项卡页面的ID
-
-**SetTabSelectedCallback**
-
-void
-
-function
-
-每当选定的选项卡更改时，将调用选项卡选定回调函数。选项卡页面和选项卡按钮将作为参数提供给回调函数。
 
 * * *
 
 # TextButton（文本按钮控件）
 
-**<TextButton>**
+**\<TextButton\>**
 
 Friday, February 21, 2014
 
@@ -11178,62 +7194,25 @@ Friday, February 21, 2014
 
 **XML**
 
-**属性**
+| **属性**              | **说明**                                 |
+|---------------------|----------------------------------------|
+| **Style**           | 正常状态下使用的按钮样式。此样式不适用于文本按钮的其他状态！         |
+| **MouseOverStyle**  | 鼠标悬停时使用的样式                             |
+| **ButtonDownStyle** | 按钮被"按下"时使用的样式                          |
+| **DisabledStyle**   | 禁用状态下使用的样式                             |
+| **Font**            | 用于此控件的字体名称                             |
+| **FontSize**        | 要使用的字体大小（磅值）                           |
+| **FontStyle**       | 正常状态下使用的字体样式（"stroke"、"shadow"、"glow"） |
+| **String**          | 作为按钮文本的文本内容                            |
+| **ButtonDownColor** | **已弃用：** 在"按下"状态下使用的颜色集合                    |
+| **DisabledColor**   | **已弃用：** 禁用状态下使用的颜色集合                       |
+| **MouseOverColor**  | **已弃用：** 鼠标悬停时使用的颜色集合                       |
+| **NormalColor**     | **已弃用：** 正常情况下使用的颜色集合                       |
 
-**说明**
-
-**Style**
-
-正常状态下使用的按钮样式。此样式不适用于文本按钮的其他状态！
-
-**MouseOverStyle**
-
-鼠标悬停时使用的样式
-
-**ButtonDownStyle**
-
-按钮被"按下"时使用的样式
-
-**DisabledStyle**
-
-禁用状态下使用的样式
-
-**Font**
-
-用于此控件的字体名称
-
-**FontSize**
-
-要使用的字体大小（磅值）
-
-**FontStyle**
-
-正常状态下使用的字体样式（"stroke"、"shadow"、"glow"）
-
-**String**
-
-作为按钮文本的文本内容
-
-**ButtonDownColor**
-
-**已弃用：**在"按下"状态下使用的颜色集合
-
-**DisabledColor**
-
-**已弃用：**禁用状态下使用的颜色集合
-
-**MouseOverColor**
-
-**已弃用：**鼠标悬停时使用的颜色集合
-
-**NormalColor**
-
-**已弃用：**正常情况下使用的颜色集合
 
 **示例**
-
+```xml
 <!-- 在 styles.xml 中定义 -->
-
 <TestNormal Font="HelveticaNeue.ttf" FontSize="22" Color0="255,0,0,255" Color1="0,99,99,200" FontStyle="Stroke" />
 
 <TestOver Font="HelveticaNeue.ttf" FontSize="26" Color0="255,255,0,255" Color1="9,9,200,255" FontStyle="Shadow" />
@@ -11243,22 +7222,29 @@ Friday, February 21, 2014
 <TestDisabled Font="HelveticaNeue.ttf" FontSize="26" Color0="90,90,90,190" Color1="0,0,0,255" FontStyle="Normal" />
 
 <!-- 在特定屏幕的 .xml 中使用 -->
-
 <TextButton ID="test" Anchor="C,B" Offset="0,0" String="这是一个测试！"
-
+Style="TestNormal"
 Style="TestNormal"
 
+    Style="TestNormal"
+
+MouseOverStyle="TestOver"
 MouseOverStyle="TestOver"
 
+    MouseOverStyle="TestOver"
+
+ButtonDownStyle="TestDown"
 ButtonDownStyle="TestDown"
 
-DisabledStyle="TestDisabled" />
+    ButtonDownStyle="TestDown"
 
+    DisabledStyle="TestDisabled" />
+```
 * * *
 
 # TextureBar（纹理进度条控件）
 
-**<TextureBar>**
+**\<TextureBar\>**
 
 Friday, February 21, 2014
 
@@ -11268,91 +7254,31 @@ Friday, February 21, 2014
 
 **XML**
 
-**属性**
-
-**类型**
-
-**说明**
-
-Color
-
-字符串 (String)
-
-应用于进度条纹理的红色、绿色、蓝色和（可选）透明度值。默认为白色，完全不透明（例如，"255,255,255,255"）。
-
-Direction
-
-字符串 (String)
-
-进度条的填充方向：**"Up" "Down" "Left" "Right"**
-
-Percent
-
-数值 (Number)
-
-进度条的起始值，默认为0。
-
-Sampler
-
-字符串 (String)
-
-采样器类型，默认为线性采样。
-
-ShadowColor
-
-数值 (Number)
-
-纹理的投影版本的颜色“着色”。灰度值效果最佳（例如：112, 112, 112）。
-
-Speed
-
-数值 (Number)
-
-（默认值："**0**"）填充动画的速度。如果为0，则没有动画；立即设置百分比。
-
-Texture
-
-字符串 (String)
-
-用于进度条的纹理文件名。
-
-TextureOffset
-
-字符串 (String)
-
-纹理的像素偏移值“X,Y”。
+| **属性**            | **类型**       | **说明**                                                                      |
+|-------------------|--------------|-----------------------------------------------------------------------------|
+| **Color**         | 字符串 (String) | 应用于进度条纹理的红色、绿色、蓝色和（可选）透明度值。默认为白色，完全不透明（例如，&quot;255,255,255,255&quot;）。     |
+| **Direction**     | 字符串 (String) | 进度条的填充方向：**&quot;Up&quot; &quot;Down&quot; &quot;Left&quot; &quot;Right&quot;** |
+| **Percent**       | 数值 (Number)  | 进度条的起始值，默认为0。                                                               |
+| **Sampler**       | 字符串 (String) | 采样器类型，默认为线性采样。                                                              |
+| **ShadowColor**   | 数值 (Number)  | 纹理的投影版本的颜色“着色”。灰度值效果最佳（例如：112, 112, 112）。                                   |
+| **Speed**         | 数值 (Number)  | （默认值：&quot;0&quot;）填充动画的速度。如果为0，则没有动画；立即设置百分比。                              |
+| **Texture**       | 字符串 (String) | 用于进度条的纹理文件名。                                                                |
+| **TextureOffset** | 字符串 (String) | 纹理的像素偏移值“X,Y”。                                                              |
 
 **LUA 函数**
 
-**函数**
+| **函数**                | **返回值** | **参数**                            |
+|-----------------------|---------|-----------------------------------|
+| **SetPercent**        | **无**       | **浮点数**，0.0 - 1.0，表示显示（填充）的纹理进度条的百分比。 |
+| **SetShadowPercent**  | **无**       | **浮点数**，0.0 - 1.0，表示用作“投影”的纹理的百分比。    |
+| **SetAnimationSpeed** | **无**       | **浮点数**，动画速度，0 表示无动画。                 |
 
-**返回值**
-
-**参数**
-
-**SetPercent**
-
-**无**
-
-**浮点数**，0.0 - 1.0，表示显示（填充）的纹理进度条的百分比。
-
-**SetShadowPercent**
-
-**无**
-
-**浮点数**，0.0 - 1.0，表示用作“投影”的纹理的百分比。
-
-**SetAnimationSpeed**
-
-**无**
-
-**浮点数**，动画速度，0 表示无动画。
 
 * * *
 
 # ToolTipType（工具提示控件）
 
-**<ToolTipType>**
+**\<ToolTipType\>**
 
 Friday, February 21, 2014
 
@@ -11360,91 +7286,91 @@ Friday, February 21, 2014
 
 定义一个自定义工具提示，覆盖默认的工具提示。
 
-**XML**
-
-**属性**
-
-**类型**
-
-**说明**
-
-Name
-
-字符串 (String)
-
-其他组件用来引用此工具提示的工具提示实例名称。
+| **属性**   | **类型**       | **说明**                  |
+|----------|--------------|-------------------------|
+| **Name** | 字符串 (String) | 其他组件用来引用此工具提示的工具提示实例名称。 |
 
 __示例：__
-
+```xml
 <ToolTipType Name="TypeRoundImage">
+    <Image ID="ToolTipFrame" Anchor="L,T" Size="64,64" Offset="20,-32" Texture="64x64FrameButtons.dds" >
 
-<Image ID="ToolTipFrame" Anchor="L,T" Size="64,64" Offset="20,-32" Texture="64x64FrameButtons.dds" >
-
-<Image ID="ToolTipImage" Anchor="C,C" Size="64,64" Texture="UnitPortraitsEarly512.dds" />
+        <Image ID="ToolTipImage" Anchor="C,C" Size="64,64" Texture="UnitPortraitsEarly512.dds" />
 
 </Image>
+</Image>
+
+    </Image>
 
 </ToolTipType>
 
 <!-- 定义使用工具提示 -->
-
 <GridButton        ID="CustomButton" ToolTipType="TypeRoundImage" />
-
+```
 **LUA 函数**
 
-**函数**
-
-**返回值**
-
-**参数**
-
-SetToolTipCallback()
-
-nil
-
-工具提示回调函数。
+| **函数**                   | **返回值** | **参数**    |
+|--------------------------|---------|-----------|
+| **SetToolTipCallback()** | nil     | 工具提示回调函数。 |
 
 __示例：__
-
-\-- 设置工具提示激活时调用的函数
-
+```lua
+-- 设置工具提示激活时调用的函数
 Controls.MyButton:SetToolTipCallback( OnToolTip );
 
-\-- 使用工具提示的控件填充一个表
-
+-- 使用工具提示的控件填充一个表
 local tipControlTable = {};
 
 TTManager:GetTypeControlTable( "TypeRoundImage", tipControlTable );
 
-\-- 回调函数填充元素
-
+-- 回调函数填充元素
 function OnToolTip( control )
+    local id = control:GetVoid1();        
 
-local id = control:GetVoid1();        
-
-local article = m\_categorizedListOfArticles\[(m\_selectedCategory \* MAX\_ENTRIES\_PER\_CATEGORY) + id\];
+    local article = m_categorizedListOfArticles[(m_selectedCategory * MAX_ENTRIES_PER_CATEGORY) + id];
 
 if article and article.tooltipTexture then
+if article and article.tooltipTexture then
+
+    if article and article.tooltipTexture then
 
 tipControlTable.ToolTipImage:SetTexture( article.tooltipTexture );
+tipControlTable.ToolTipImage:SetTexture( article.tooltipTexture );
+
+        tipControlTable.ToolTipImage:SetTexture( article.tooltipTexture );
 
 tipControlTable.ToolTipImage:SetTextureOffset( article.tooltipTextureOffset );
+tipControlTable.ToolTipImage:SetTextureOffset( article.tooltipTextureOffset );
+
+        tipControlTable.ToolTipImage:SetTextureOffset( article.tooltipTextureOffset );
 
 tipControlTable.ToolTipFrame:SetHide( false );
+tipControlTable.ToolTipFrame:SetHide( false );
+
+        tipControlTable.ToolTipFrame:SetHide( false );
 
 else
+else
+
+    else
 
 tipControlTable.ToolTipFrame:SetHide( true );
+tipControlTable.ToolTipFrame:SetHide( true );
+
+        tipControlTable.ToolTipFrame:SetHide( true );
 
 end                
+end                
+
+    end                
 
 end
-
+```
 * * *
 
 # Tutorial（教程控件）
 
-**<Tutorial>**
+**\<Tutorial\>**
 
 Friday, February 21, 2014
 
@@ -11454,76 +7380,75 @@ Friday, February 21, 2014
 
 **XML**
 
-**属性**
+| **属性**         | **类型**       | **说明**                                           |
+|----------------|--------------|--------------------------------------------------|
+| **AlwaysShow** | 布尔值 (Bool)   | 用于实时编辑的调试属性。当为 true 时，控件会忽略来自管理器的显示/隐藏调用，始终显示自身。 |
+| **ID**         | 字符串 (String) | (可选) 教程控件的ID。如果未提供，则将设置包含ID的第一个父控件为触发列表。         |
+| **TriggerBy**  | 字符串 (String) | 逗号分隔的ID列表，表示此教程控件将对其做出反应。（教程的ID会自动添加到触发列表中。）     |
 
-**类型**
-
-**说明**
-
-AlwaysShow
-
-布尔值 (Bool)
-
-用于实时编辑的调试属性。当为 true 时，控件会忽略来自管理器的显示/隐藏调用，始终显示自身。
-
-ID
-
-字符串 (String)
-
-(可选) 教程控件的ID。如果未提供，则将设置包含ID的第一个父控件为触发列表。
-
-TriggerBy
-
-字符串 (String)
-
-逗号分隔的ID列表，表示此教程控件将对其做出反应。（教程的ID会自动添加到触发列表中。）
 
 _示例：_
 
+```xml
 <Box        ID="DoSomethingArea" Color="0,255,128,100" Size="100,100">
-
 <Tutorial>
+<Tutorial>
+
+    <Tutorial>
 
 <BoxButton ID="CloseTutorial" Color="255,0,0,200" Size="50,50" />                        
+<BoxButton ID="CloseTutorial" Color="255,0,0,200" Size="50,50" />                        
 
-</Tutorial>                
+        <BoxButton ID="CloseTutorial" Color="255,0,0,200" Size="50,50" />                        
+
+    </Tutorial>                
 
 <BoxButton ID="DoSomething" Anchor="C,C" Size="25,25" Color="200,200,200,200" />
+<BoxButton ID="DoSomething" Anchor="C,C" Size="25,25" Color="200,200,200,200" />
+
+    <BoxButton ID="DoSomething" Anchor="C,C" Size="25,25" Color="200,200,200,200" />
 
 <Tutorial>
+<Tutorial>
+
+    <Tutorial>
 
 <Box Color="0,0,255,200" Size="50,50" Anchor="R,B" />
+<Box Color="0,0,255,200" Size="50,50" Anchor="R,B" />
+
+        <Box Color="0,0,255,200" Size="50,50" Anchor="R,B" />
 
 </Tutorial>                
+</Tutorial>                
+
+    </Tutorial>                
 
 </Box>
-
-\-- 上述 XML 对应的 LUA 代码：
+```
+```lua
+-- 上述 XML 对应的 LUA 代码：
 
 Controls.DoSomething:RegisterCallback(Mouse.eLClick,function() UITutorialManager:ShowControlsByID("DoSomethingArea"); end);
 
 Controls.CloseTutorial:RegisterCallback(Mouse.eLClick,function() UITutorialManager:HideControlsByID("DoSomethingArea"); end);
-
+```
 **LUA 函数**
 
-**函数**
-
-**返回值**
-
-**参数**
+| **函数** | **返回值** | **参数** |
+|--------|---------|--------|
 
 目前教程控件本身没有特定的函数，除了从 ControlBase 继承的函数。
 
 在使用 Show/Hide 函数时要小心，教程控件应该只通过管理器的调用来显示/隐藏，否则可能导致它们的可见状态与管理器不同步。
 
 教程管理器具有操作教程控件（以及具有匹配ID的其他控件）的函数：
-
+```lua
 UITutorialManager:ShowControlsByID("MyControlIDorTrigger");
 
 UITutorialManager:HideControlsByID("MyControlIDorTrigger");
 
 UITutorialManager:HideAll();
-
+```
 * * *
 
 # 2D Leader Background Mods（2D 领导者背景修改）
@@ -11651,30 +7576,31 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 1.  创建 XML 和 LUA 文件，例如：
 
 `MyNewScreen.xml`
-
+    
+   ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    
+
     <Context Name="MyNewScreen">
-    <Label ID="MyText" Anchor="C,C" Align="Center" Style="HeaderFont" String="My New Screen"/>
+        <Label ID="MyText" Anchor="C,C" Align="Center" Style="HeaderFont" String="My New Screen"/>
     </Context>
-    
+   ```    
 
 `MyNewScreen.lua`：
-
+   ```lua
     -- 通常我们在文件底部定义一个 Initialize 函数并立即调用它。这是我们用来组织代码的约定，完全是可选的。
     function Initialize()
-    Controls.MyText:SetText(Controls.MyText:GetText() .. " is Awesome!");
+        Controls.MyText:SetText(Controls.MyText:GetText() .. " is Awesome!");
     end
     Initialize();
-    
+   ```
 
 3.  在 modinfo 的 `<Files>` 部分中添加对两个文件的引用，使用 `<File>` 标签，例如：
-
+   ```xml
     <Files>
-    <File>UI/MyNewScreen.xml</File>
-    <File>UI/MyNewScreen.lua</File>
+        <File>UI/MyNewScreen.xml</File>
+        <File>UI/MyNewScreen.lua</File>
     </Files>
-    
+   ```
 
 4.  确保 modinfo 定义了 `<InGameActions>` 和 `<Files>` 部分，然后：
     1.  在 `<InGameActions>` 中创建 `<AddUserInteraces>` 部分。
@@ -11688,40 +7614,40 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 以下是一个包含上述所有步骤的简单 modinfo 文件示例：
 
 `MyMod.modinfo`：
-
-    <?xml version="1.0"encoding="utf-8"?>
-    
-    
-    MyMod
-    我的模组很棒
-    我的模组添加了新的界面
-    我
-    1
-    
-    
-    
-    我的新规则！
-    
-    
-    
-    
-    
-    InGame
-    
-    UI/MyNewScreen.xml
-    UI/MyNewScreen.lua
-    
-    
-    UI/MyNewScreen.xml
-    UI/MyNewScreen.lua
-    
-    
-    
-    UI/MyNewScreen.xml
-    UI/MyNewScreen.lua
-    
-    
-    
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" version="1">
+    <Properties>
+        <Name>MyMod</Name>
+        <Teaser>My Mod is Awesome</Teaser>
+        <Description>My Mod adds new UI screens</Description>
+        <Authors>Me</Authors>
+        <EnabledByDefault>1</EnabledByDefault>
+    </Properties>
+    <ActionCriteria>
+        <Criteria id="MyNewMod">
+            <RuleSetInUse>My New Rules!</RuleSetInUse>
+        </Criteria>
+    </ActionCriteria>
+    <InGameActions>
+        <AddUserInterfaces id="MyNewModInGameUI" criteria="MyNewMod">
+            <Properties>
+                <Context>InGame</Context>
+            </Properties>
+            <File>UI/MyNewScreen.xml</File>
+            <File>UI/MyNewScreen.lua</File>
+        </AddUserInterfaces>
+        <ImportFiles id="MyNewModFiles" criteria="MyNewMod">
+            <File>UI/MyNewScreen.xml</File>
+            <File>UI/MyNewScreen.lua</File>
+        </ImportFiles>
+    </InGameActions>
+    <Files>
+        <File>UI/MyNewScreen.xml</File>
+        <File>UI/MyNewScreen.lua</File>
+    </Files>
+</Mod>
+```
 
 // TODO: 解释 id 和 criteria 属性
 
@@ -11767,7 +7693,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret mix( a, b, f );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）可以是任何标量或矢量类型。
 *   _b_（必需）必须与_a_具有相同的类型。
@@ -11827,7 +7753,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret terrain_height( a );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）是一个具有世界坐标（x、y、z）位置的`float3`。
 
@@ -11837,7 +7763,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret terrain_height_grad( a );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）是一个具有世界坐标（x、y、z）位置的`float3`。
 
@@ -11847,7 +7773,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret sample_fow( a );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）是一个具有世界坐标（x、y）位置的`float2`。
 
@@ -11857,7 +7783,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret hash( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）是输入的值。
 
@@ -11867,7 +7793,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret sin( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11877,7 +7803,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret cos( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11887,7 +7813,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret frac( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11897,7 +7823,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret sqrt(_f_);`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11907,7 +7833,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret floor( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11917,7 +7843,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret ceil( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11927,7 +7853,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret abs( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11937,7 +7863,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret min( f, g );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 *   _g_（必需）必须是一个`number`。
@@ -11948,7 +7874,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret max( f, g );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 *   _g_（必需）必须是一个`number`。
@@ -11959,7 +7885,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret log( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11969,7 +7895,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret exp( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11979,7 +7905,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret round( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 
@@ -11989,7 +7915,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret pow( f, e );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个`number`。
 *   _e_（必需）必须是一个`number`。
@@ -12000,7 +7926,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret dot( a, b );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）可以是任意向量类型。
 *   _b_（必需）必须与_a_具有相同的类型。
@@ -12011,7 +7937,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret length( a );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）可以是任意向量类型。
 
@@ -12021,7 +7947,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret distance( a, b );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）可以是任意向量类型。
 *   _b_（必需）必须与_a_具有相同的类型。
@@ -12032,7 +7958,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret normalize( a, b );`
 
-#### 参数
+_参数:_
 
 *   _a_（必需）可以是任意向量类型。
 
@@ -12048,7 +7974,7 @@ _注意：_ `<ReplaceUIScript>` modinfo 元素允许您为 LuaContext 指定不�
 
 `ret srand( f );`
 
-#### 参数
+_参数:_
 
 *   _f_（必需）必须是一个数字。
 
@@ -12110,7 +8036,7 @@ FullFog（全迷雾）：
 *   FullFog\_LineOpacity（全迷雾线条不透明度）：似乎没有起作用。###
 *   FullFog\_LineColor（全迷雾线条颜色）：似乎没有起作用。###
 *   FullFog\_ParchmentRotation（全迷雾羊皮纸旋转）：旋转羊皮纸平铺（全迷雾中的方块）。
-*   FullFog\_DecoJitter（全迷雾装饰物抖动）：影响装饰物精灵放置的随机性。
+*   FullFog\_DecoJitter（全迷雾装饰物抖动）：影响装饰物贴花放置的随机性。
 *   FullFog\_LineThicknessY（全迷雾线条厚度Y）：似乎没有起作用。###
 *   FullFog\_LineIntervalY（全迷雾线条间隔Y）：似乎没有起作用。###
 *   FullFog\_LineIntervalX（全迷雾线条间隔X）：似乎没有起作用。###
@@ -12158,7 +8084,7 @@ CompassLines（指南针线条）：-- 以对角线的形式穿过全迷雾羊�
             *   Rarity：确定小波浪在所有海洋波浪中的频率。
             *   Sprites \[Collection\]：每个条目都有一个名称、分配给它的纹理和一个缩放因子。
     *   FullFogDecotSets（全迷雾装饰物集合）
-        *   Rarity：确定在全迷雾地图羊皮纸上放置装饰物精灵的频率。
+        *   Rarity：确定在全迷雾地图羊皮纸上放置装饰物贴花的频率。
         *   Sprites \[Collection\]：每个条目都有一个名称、分配给它的纹理和一个缩放因子。
     *   ShallowWaveSets（浅水波浪集合）
         *   Rarity：确定浅水波浪在所有浅水波浪集合中的频率。
@@ -12179,7 +8105,7 @@ CompassLines（指南针线条）：-- 以对角线的形式穿过全迷雾羊�
 
 孵化纹理通常是FOWGreyscale纹理，而不是FOW纹理。
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到 文件 -> 新建 -> ArtDef
 2.  将**Art Definition Template**更改为`FOWConfig`。
@@ -12208,7 +8134,7 @@ CompassLines（指南针线条）：-- 以对角线的形式穿过全迷雾羊�
 
 羊皮纹理通常是迷雾（FOW）纹理。
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到 文件 -> 新建 -> ArtDef（File -> New -> ArtDef）
 2.  将**Art Definition Template**更改为`FOWConfig`。
@@ -12227,24 +8153,24 @@ CompassLines（指南针线条）：-- 以对角线的形式穿过全迷雾羊�
 
 * * *
 
-# FoW Sprite Texture Mods（迷雾精灵纹理修改）
+# FoW Sprite Texture Mods（迷雾贴花纹理修改）
 
 #### 创建纹理并将其添加到XLP中
 
 参见：[纹理系统修改](#Modding%5CTexture%20System%20Mods)。将%XLP\_CLASS%替换为`FOWSprite`。 参见：[在Mod Art文件中添加和更新库](#Modding%5CAdd%20and%20Update%20Libraries%20in%20Mod%20Art%20File)。将%LIBRARY\_NAME%替换为`FOWSprite`
 
-精灵纹理属于FOWSprite纹理类。
+贴花纹理属于FOWSprite纹理类。
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到 文件 -> 新建 -> ArtDef（ File -> New -> ArtDef）
 2.  将**Art Definition Template**更改为`FOWConfig`。
 
-#### 选择新的精灵纹理
+#### 选择新的贴花纹理
 
-精灵纹理用于绘制在地图的中雾和全雾区域之上。 海龙和其他幻想生物，浅水和深水中的波纹精灵，以及地图边界都是迷雾精灵（FOWSprites）。
+贴花纹理用于绘制在地图的中雾和全雾区域之上。 海龙和其他幻想生物，浅水和深水中的波纹贴花，以及地图边界都是迷雾贴花（FOWSprites）。
 
-有四个集合可以接受精灵纹理 -> OceanWaveSets、FullFogDecoSets、ShallowWaveSets和MapBorders。每个集合都有一个子元素， 包含一个稀有度和一组精灵。一旦您的纹理存在于FOWSprite XLP中，它们可以添加到相应的Sprites集合中。
+有四个集合可以接受贴花纹理 -> OceanWaveSets、FullFogDecoSets、ShallowWaveSets和MapBorders。每个集合都有一个子元素， 包含一个稀有度和一组贴花。一旦您的纹理存在于FOWSprite XLP中，它们可以添加到相应的Sprites集合中。
 
 #### 将ArtDef添加到游戏中
 
@@ -12278,75 +8204,24 @@ CompassLines（指南针线条）：-- 以对角线的形式穿过全迷雾羊�
 
 以下是一些示例：
 
-数据点
+| **数据点**                      | **对象ID** | **数值**       | **类型**       |
+|------------------------------|----------|--------------|--------------|
+| **PlayerUnitsTrained**       | 5        | 100          |
+| **PlayerUnitsTrainedByType** | 5        | 30           | UNIT_WARRIOR |
+| **FavoriteUnit**             | 5        |  | UNIT_WARRIOR
+| **CityProduction**           | 12       | 500          |
 
-对象ID
-
-数值
-
-类型
-
-PlayerUnitsTrained
-
-5
-
-100
-
-PlayerUnitsTrainedByType
-
-5
-
-30
-
-UNIT\_WARRIOR
-
-FavoriteUnit
-
-5
-
-UNIT\_WARRIOR
-
-CityProduction
-
-12
-
-500
 
 ### Data Sets（数据集）
 
 数据集与数据点类似，但不同之处在于它们的值是X、Y的整数对。这些通常用于跟踪每回合的值或每个时代等。与数据点一样，数据集可以任意命名，并与游戏、对象或类型相关联。然而，与数据点不同的是，只能使用数字值。数据集通常通过图表进行可视化。
 
-数据集
+| **数据集**                   | **对象ID** | **X** | **Y** |
+|---------------------------|----------|-------|-------|
+| **CityProductionPerTurn** | 12       | 1     | 20    |
+| **CityProductionPerTurn** | 12       | 2     | 25    |
+| **CityProductionPerTurn** | 12       | 3     | 30    |
 
-对象ID
-
-X
-
-Y
-
-CityProductionPerTurn
-
-12
-
-1
-
-20
-
-CityProductionPerTurn
-
-12
-
-2
-
-25
-
-CityProductionPerTurn
-
-12
-
-3
-
-30
 
 ## Modding / 向后端提供数据（Modding / Providing Data to the back-end）
 
@@ -12362,35 +8237,13 @@ CityProductionPerTurn
 
 **HallofFame.GetRulesetTypes() -> ruleset\_types:array** 返回一个包含所有记录的规则集类型的数组。结构如下：
 
-字段
+| **字段**   | **类型**   | **描述**                |
+|----------|----------|-----------------------|
+| **Type** | string   | 项目的类型（例如UNIT_WARRIOR） |
+| **Kind** | string   | 项目的种类（例如KIND_UNIT）    |
+| **Name** | string   | 项目的名称                 |
+| **Icon** | [string] | 项目的图标标签               |
 
-类型
-
-描述
-
-Type
-
-string
-
-项目的类型（例如UNIT\_WARRIOR）
-
-Kind
-
-string
-
-项目的种类（例如KIND\_UNIT）
-
-Name
-
-string
-
-项目的名称
-
-Icon
-
-\[string\]
-
-项目的图标标签
 
 **HallofFame.SetRulesetType(type:string, kind:string, name:string, \[icon:string\])** 记录规则集类型的元数据。 如果类型已存在，将用新数据替换它。
 
@@ -12414,99 +8267,30 @@ Icon
 
 **HallofFame.SetDataPoint(data\_point:string, \[object\_id:int\], \[type:string\], value:table) -> result:bool**创建或更新具有指定值的数据点。'value' 的结构如下：
 
-字段
-
-类型
-
-描述
-
-ValueNumeric
-
-\[int\]
-
-与数据点关联的数值。
-
-ValueString
-
-\[string\]
-
-与数据点关联的字符串值。
-
-ValueObjectId
-
-\[int\]
-
-与数据点关联的对象ID。
+| **字段**            | **类型**   | **描述**       |
+|-------------------|----------|--------------|
+| **ValueNumeric**  | [int]    | 与数据点关联的数值。   |
+| **ValueString**   | [string] | 与数据点关联的字符串值。 |
+| **ValueObjectId** | [int]    | 与数据点关联的对象ID。 |
 
 **HallofFame.UpdateDataPoint(lookup\_id:int, value:table) -> result:bool**使用指定的值更新数据点。'value' 的结构如下：
 
-字段
-
-类型
-
-描述
-
-ValueNumeric
-
-\[int\]
-
-与数据点关联的数值。
-
-ValueString
-
-\[string\]
-
-与数据点关联的字符串值。
-
-ValueObjectId
-
-\[int\]
-
-与数据点关联的对象ID。
+| **字段**            | **类型**   | **描述**       |
+|-------------------|----------|--------------|
+| **ValueNumeric**  | [int]    | 与数据点关联的数值。   |
+| **ValueString**   | [string] | 与数据点关联的字符串值。 |
+| **ValueObjectId** | [int]    | 与数据点关联的对象ID。 |
 
 **HallofFame.LookupDataPoint(lookup\_id:int) -> result:int**尝试查找数据点，如果找不到则返回nil。'result' 的结构如下：
 
-字段
-
-类型
-
-描述
-
-DataPoint
-
-string
-
-数据点的标识符。
-
-ObjectId
-
-\[int\]
-
-与数据点关联的对象ID。
-
-Type
-
-\[string\]
-
-与数据点关联的类型。
-
-ValueNumeric
-
-\[int\]
-
-与数据点关联的数值。
-
-ValueString
-
-\[string\]
-
-与数据点关联的字符串值。
-
-ValueObjectId
-
-\[int\]
-
-与数据点关联的对象ID。
+| **字段**            | **类型**   | **描述**       |
+|-------------------|----------|--------------|
+| **DataPoint**     | string   | 数据点的标识符。     |
+| **ObjectId**      | [int]    | 与数据点关联的对象ID。 |
+| **Type**          | [string] | 与数据点关联的类型。   |
+| **ValueNumeric**  | [int]    | 与数据点关联的数值。   |
+| **ValueString**   | [string] | 与数据点关联的字符串值。 |
+| **ValueObjectId** | [int]    | 与数据点关联的对象ID。 |
 
 #### Data Sets(数据集)
 
@@ -12526,29 +8310,12 @@ ValueObjectId
 
 **HallofFame.LookupDataSet(lookup\_id:int) -> result:table\_array**尝试查找特定的数据集，如果不存在则创建一个新的数据集。结果是一个组合的表/数组。结果的数组包含按X排序的X和Y值。表的结构如下：
 
-字段
+| **字段**       | **类型**   | **描述**      |
+|--------------|----------|-------------|
+| **DataSet**  | string   | 数据集ID       |
+| **ObjectId** | [int]    | 与数据集关联的对象ID |
+| **Type**     | [string] | 与数据集关联的类型   |
 
-类型
-
-描述
-
-DataSet
-
-string
-
-数据集ID
-
-ObjectId
-
-\[int\]
-
-与数据集关联的对象ID
-
-Type
-
-\[string\]
-
-与数据集关联的类型
 
 * * *
 
@@ -12586,67 +8353,27 @@ Type
 
 统计数据在数据库中通过表'Statistics'进行指定，具有以下列：
 
-Name（名称）
-
-Description（描述）
-
-DataPoint（数据点）
-
-用于统计数据的数据点。
-
-名称
-
-统计数据的本地化名称（不包括尾随的“:”）。
-
-Icon（图标）
-
-显示在统计数据名称旁边的图标。
-
-ValueIconDefault（值图标默认）
-
-显示在统计数据值旁边的默认图标。
-
-ValueIconOverride（值图标覆盖）
-
-始终显示的图标，即使值是对象或类型。
-
-Annotation（注释）
-
-本地化注释，用于显示统计数据的附加详细信息。
-
-Direction（方向）
-
-介于-1和1之间的整数，表示较大值或较小值哪个“更好”。1表示较大值更好，0表示无差别，-1表示较小值更好。
-
-Category（类别）
-
-统计数据所属的类别ID。
-
-Importance（重要性）
-
-表示统计数据的重要性的整数值。这既用于排序，也用于选择“亮点”。
+| **Name（名称）**                 | **Description（描述）**                                    |
+|------------------------------|--------------------------------------------------------|
+| **DataPoint（数据点）**           | 用于统计数据的数据点。                                            |
+| **名称**                       | 统计数据的本地化名称（不包括尾随的“:”）。                                 |
+| **Icon（图标）**                 | 显示在统计数据名称旁边的图标。                                        |
+| **ValueIconDefault（值图标默认）**  | 显示在统计数据值旁边的默认图标。                                       |
+| **ValueIconOverride（值图标覆盖）** | 始终显示的图标，即使值是对象或类型。                                     |
+| **Annotation（注释）**           | 本地化注释，用于显示统计数据的附加详细信息。                                 |
+| **Direction（方向）**            | 介于-1和1之间的整数，表示较大值或较小值哪个“更好”。1表示较大值更好，0表示无差别，-1表示较小值更好。 |
+| **Category（类别）**             | 统计数据所属的类别ID。                                           |
+| **Importance（重要性）**          | 表示统计数据的重要性的整数值。这既用于排序，也用于选择“亮点”。                       |
 
 类别由表'StatisticCategories'指定，具有以下列：
 
-Name（名称）
+| **Name（名称）**        | **Description（描述）**          |
+|---------------------|------------------------------|
+| **Category（类别）**    | 类别的ID。                       |
+| **名称**              | 类别的本地化名称。                    |
+| **是IsHidden否（隐藏）**  | 类别是否显示。                      |
+| **SortOrder（排序顺序）** | 类别的排序方式（较低的值首先显示，相等的值按名称排序）。 |
 
-Description（描述）
-
-Category（类别）
-
-类别的ID。
-
-名称
-
-类别的本地化名称。
-
-是IsHidden否（隐藏）
-
-类别是否显示。
-
-SortOrder（排序顺序）
-
-类别的排序方式（较低的值首先显示，相等的值按名称排序）。
 
 #### 展示逻辑
 
@@ -12684,119 +8411,43 @@ SortOrder（排序顺序）
 
 ##### 报告（Reports）
 
-Name（名称）
-
-Description（描述）
-
-Report（报告）
-
-报告的字符串标识符。
-
-Scope（范围）
-
-报告的“范围”。有关范围工作原理的描述，请参见下文。
-
-名称
-
-报告的本地化名称。
-
-描述
-
-报告的可选本地化描述。
-
-InitialColumnName（初始列名称）
-
-初始列的本地化名称。
-
-InitialColumnDescription（初始列描述）
-
-鼠标悬停在初始列上时显示的可选本地化描述。
-
-InitialColumnUxHint（初始列UX提示）
-
-提示UI调整初始列的呈现方式。
-
-InitialColumnValueIconDefault（初始列值图标默认）
-
-初始列显示的默认图标。
-
-InitialColumnValueIconOverride（初始列值图标覆盖）
-
-始终显示的初始列图标。
-
-ShowEmptyRows显（示空行）
-
-描述是否显示没有任何主要列具有值的行的布尔字段。
-
-Query（查询）
-
-用于确定将表示列中的行的对象集的查询。
-
-ExtraData（额外数据）
-
-提供给查询的额外数据。
-
-Importance（重要性）
-
-表示报告重要性的整数值。通常用于调整排序顺序。
+| **Name（名称）**                                 | **Description（描述）**        |
+|----------------------------------------------|----------------------------|
+| **Report（报告）**                               | 报告的字符串标识符。                 |
+| **Scope（范围）**                                | 报告的“范围”。有关范围工作原理的描述，请参见下文。 |
+| **名称**                                       | 报告的本地化名称。                  |
+| **描述**                                       | 报告的可选本地化描述。                |
+| **InitialColumnName（初始列名称）**                 | 初始列的本地化名称。                 |
+| **InitialColumnDescription（初始列描述）**          | 鼠标悬停在初始列上时显示的可选本地化描述。      |
+| **InitialColumnUxHint（初始列UX提示）**             | 提示UI调整初始列的呈现方式。            |
+| **InitialColumnValueIconDefault（初始列值图标默认）**  | 初始列显示的默认图标。                |
+| **InitialColumnValueIconOverride（初始列值图标覆盖）** | 始终显示的初始列图标。                |
+| **ShowEmptyRows显（示空行）**                      | 描述是否显示没有任何主要列具有值的行的布尔字段。   |
+| **Query（查询）**                                | 用于确定将表示列中的行的对象集的查询。        |
+| **ExtraData（额外数据）**                          | 提供给查询的额外数据。                |
+| **Importance（重要性）**                          | 表示报告重要性的整数值。通常用于调整排序顺序。    |
 
 ##### 报告列（ReportColumns）
 
-Name（名称）
-
-Description（描述）
-
-报告（Report）
-
-此列所属的报告。
-
-名称
-
-列的本地化名称。
-
-描述
-
-鼠标悬停时显示的可选本地化描述。
-
-SortOrder（排序顺序）
-
-报告中列的排序顺序，从左到右是从低到高。
-
-DataPoint（数据点）
-
-要可视化的数据点标识符。
-
-UxHintUX（提示）
-
-提示UI调整数据的呈现方式。
-
-Minor（次要）
-
-描述列是否为“次要”的布尔字段。只有在存在实际具有值的非次要列时，才会显示报告中的行。
-
-AlwaysShow（始终显示）
-
-描述是否显示列，即使没有行实际上具有值。
-
-ValueIconDefault（值图标默认）
-
-如果单元格的值不包含任何图标，则显示的默认图标。
-
-ValueIconOverride（值图标覆盖）
-
-始终显示的图标。
+| **Name（名称）**                 | **Description（描述）**                         |
+|------------------------------|---------------------------------------------|
+| **报告（Report）**               | 此列所属的报告。                                    |
+| **名称**                       | 列的本地化名称。                                    |
+| **描述**                       | 鼠标悬停时显示的可选本地化描述。                            |
+| **SortOrder（排序顺序）**          | 报告中列的排序顺序，从左到右是从低到高。                        |
+| **DataPoint（数据点）**           | 要可视化的数据点标识符。                                |
+| **UxHintUX（提示）**             | 提示UI调整数据的呈现方式。                              |
+| **Minor（次要）**                | 描述列是否为“次要”的布尔字段。只有在存在实际具有值的非次要列时，才会显示报告中的行。 |
+| **AlwaysShow（始终显示）**         | 描述是否显示列，即使没有行实际上具有值。                        |
+| **ValueIconDefault（值图标默认）**  | 如果单元格的值不包含任何图标，则显示的默认图标。                    |
+| **ValueIconOverride（值图标覆盖）** | 始终显示的图标。                                    |
 
 ##### 报告查询（ReportQueries）
 
-Name（名称）
-
-Description（描述）
-
-Query（查询）
-
-ReportColumns.Query使用的查询的标识符。
-
-SQL
+| **Name（名称）**  | **Description（描述）**           |
+|---------------|-------------------------------|
+| **Query（查询）** | ReportColumns.Query使用的查询的标识符。 |
+| **SQL**       | 查询的实际SQL语句。                   |
 
 查询的实际SQL语句。
 
@@ -12806,39 +8457,19 @@ SQL
 
 查询应返回以下列：
 
-Name（名称）
-
-Description（描述）
-
-ObjectId
-
-用于行的对象ID。如果指定了Type，则可以是可选的。
-
-Type
-
-用于行的规则集类型。如果指定了ObjectId，则可以是可选的。
+| **Name（名称）** | **Description（描述）**              |
+|--------------|----------------------------------|
+| **ObjectId** | 用于行的对象ID。如果指定了Type，则可以是可选的。      |
+| **Type**     | 用于行的规则集类型。如果指定了ObjectId，则可以是可选的。 |
 
 以下参数将传递给查询：
 
-Name（名称）
-
-Description（描述）
-
-@ObjectId
-
-对象ID（通常是玩家对象）
-
-@GameId
-
-游戏ID。
-
-@Ruleset
-
-规则集。
-
-@ExtraData
-
-由'Reports.ExtraData'指定的额外字段。
+| **Name（名称）**   | **Description（描述）**          |
+|----------------|------------------------------|
+| **@ObjectId**  | 对象ID（通常是玩家对象）                |
+| **@GameId**    | 游戏ID。                        |
+| **@Ruleset**   | 规则集。                         |
+| **@ExtraData** | 由'Reports.ExtraData'指定的额外字段。 |
 
 #### 范围
 
@@ -12860,71 +8491,27 @@ Description（描述）
 
 ##### Graphs（图表）
 
-Name（名称）
-
-Description（描述）
-
-Graph（图表）
-
-图表的标识符。
-
-Scope（范围）
-
-图表的“范围”。有关范围如何工作的描述，请参见下文。
-
-Name（名称）
-
-图表的本地化名称。
-
-Description（描述）
-
-图表的可选本地化描述。
-
-Direction（方向）
-
-表示较低或较高更好的整数值。-1表示较低，0表示不关心，1表示较高。
-
-XLabel（X轴标签）
-
-X轴标签的可选本地化字符串。
-
-YLabel（Y轴标签）
-
-Y轴标签的可选本地化字符串。
-
-Query（查询）
-
-用于确定要显示的数据集的查询。
-
-DataSet（数据集）
-
-传递给查询的表示所需数据集标识符的变量。
-
-ExtraData（额外数据）
-
-可以传递给查询的额外数据变量。
-
-Importance（重要性）
-
-表示图表的重要性的整数值。通常用于排序。
-
-UxHint（用户界面提示）
-
-当前未使用的值，提示用户界面如何可视化图表。
+| **Name（名称）**        | **Description（描述）**                |
+|---------------------|------------------------------------|
+| **Graph（图表）**       | 图表的标识符。                            |
+| **Scope（范围）**       | 图表的“范围”。有关范围如何工作的描述，请参见下文。         |
+| **Name（名称）**        | 图表的本地化名称。                          |
+| **Description（描述）** | 图表的可选本地化描述。                        |
+| **Direction（方向）**   | 表示较低或较高更好的整数值。-1表示较低，0表示不关心，1表示较高。 |
+| **XLabel（X轴标签）**    | X轴标签的可选本地化字符串。                     |
+| **YLabel（Y轴标签）**    | Y轴标签的可选本地化字符串。                     |
+| **Query（查询）**       | 用于确定要显示的数据集的查询。                    |
+| **DataSet（数据集）**    | 传递给查询的表示所需数据集标识符的变量。               |
+| **ExtraData（额外数据）** | 可以传递给查询的额外数据变量。                    |
+| **Importance（重要性）** | 表示图表的重要性的整数值。通常用于排序。               |
+| **UxHint（用户界面提示）**  | 当前未使用的值，提示用户界面如何可视化图表。             |
 
 ##### GraphQueries（图表查询）
 
-Name（名称）
-
-Description（描述）
-
-Query（查询）
-
-由Graphs.Query使用的查询的标识符。
-
-SQL（SQL语句）
-
-查询的实际SQL语句。
+| **Name（名称）**   | **Description（描述）**     |
+|----------------|-------------------------|
+| **Query（查询）**  | 由Graphs.Query使用的查询的标识符。 |
+| **SQL（SQL语句）** | 查询的实际SQL语句。             |
 
 有相当多的预定义查询涵盖了大部分情况。
 
@@ -12932,47 +8519,21 @@ SQL（SQL语句）
 
 查询应返回以下列：
 
-Name（名称）
-
-Description（描述）
-
-ObjectId（对象ID）
-
-对象ID引用。如果指定了Type（类型），可以选择省略。
-
-Type（类型）
-
-行的规则集类型。如果指定了ObjectId（对象ID），可以选择省略。
-
-DataSetId（数据集ID）
-
-对DataSets.DataSetId的引用。
+| **Name（名称）**         | **Description（描述）**                 |
+|----------------------|-------------------------------------|
+| **ObjectId（对象ID）**   | 对象ID引用。如果指定了Type（类型），可以选择省略。        |
+| **Type（类型）**         | 行的规则集类型。如果指定了ObjectId（对象ID），可以选择省略。 |
+| **DataSetId（数据集ID）** | 对DataSets.DataSetId的引用。             |
 
 以下参数将传递给查询：
 
-Name（名称）
-
-Description（描述）
-
-@ObjectId（对象ID）
-
-对象ID（通常是玩家对象）
-
-@GameId（游戏ID）
-
-游戏ID。
-
-@Ruleset（规则集）
-
-规则集。
-
-@DataSet（数据集）
-
-由'Graphs.DataSet'指定的字段。
-
-@ExtraData（额外数据）
-
-由'Graphs.ExtraData'指定的额外字段。
+| **Name（名称）**         | **Description（描述）**         |
+|----------------------|-----------------------------|
+| **@ObjectId（对象ID）**  | 对象ID（通常是玩家对象）               |
+| **@GameId（游戏ID）**    | 游戏ID。                       |
+| **@Ruleset（规则集）**    | 规则集。                        |
+| **@DataSet（数据集）**    | 由'Graphs.DataSet'指定的字段。     |
+| **@ExtraData（额外数据）** | 由'Graphs.ExtraData'指定的额外字段。 |
 
 ### 聚合更新(Aggregate Updates)
 
@@ -12984,165 +8545,80 @@ Description（描述）
 
 聚合更新使用了4个表，其中两个用于数据点，另外两个用于数据集。
 
-##### DataPointAggregateUpdates（数据点聚合更新）
+##### DataPointAggregateUpdates（数据 点 聚合更新）
 
-Name（名称）
+| **Name（名称）**                  | **Description（描述）**       |
+|-------------------------------|---------------------------|
+| **AggregateDataPoint（聚合数据点）** | 要写入的数据点的标识符。              |
+| **Scope（范围）**                 | 处理的范围。                    |
+| **Operation（操作）**             | 要使用的操作。有关可用操作的详细信息，请参见下文。 |
+| **Query（查询）**                 | 要使用的查询。                   |
+| **DataPoint（数据点）**            | 源数据点，也是传递给查询的变量。          |
+| **ExtraData（额外数据）**           | 传递给查询的额外数据值。              |
+| **SortIndex（排序索引）**           | 指定执行过程的顺序的排序索引。           |
 
-Description（描述）
 
-AggregateDataPoint（聚合数据点）
+##### DataPointAggregateQueries（数据 点 聚合查询）
 
-要写入的数据点的标识符。
+| **Name（名称）**   | **Description（描述）**                        |
+|----------------|--------------------------------------------|
+| **Query（查询）**  | 由DataPointAggregateUpdates.Query使用的查询的标识符。 |
+| **SQL（SQL语句）** | 查询的实际SQL语句。                                |
 
-Scope（范围）
-
-处理的范围。
-
-Operation（操作）
-
-要使用的操作。有关可用操作的详细信息，请参见下文。
-
-Query（查询）
-
-要使用的查询。
-
-DataPoint（数据点）
-
-源数据点，也是传递给查询的变量。
-
-ExtraData（额外数据）
-
-传递给查询的额外数据值。
-
-SortIndex（排序索引）
-
-指定执行过程的顺序的排序索引。
-
-##### DataPointAggregateQueries（数据点聚合查询）
-
-Name（名称）
-
-Description（描述）
-
-Query（查询）
-
-由DataPointAggregateUpdates.Query使用的查询的标识符。
-
-SQL（SQL语句）
-
-查询的实际SQL语句。
 
 查询应返回以下列：
 
-Name（名称）
 
-Description（描述）
+| **Name（名称）**   | **Description（描述）**                        |
+|----------------|--------------------------------------------|
 
 以下参数将传递给查询：
 
-Name（名称）
+| **Name（名称）**         | **Description（描述）**                            |
+|----------------------|------------------------------------------------|
+| **@ObjectId（对象ID）**  | 对象ID（通常是玩家对象）                                  |
+| **@GameId（游戏ID）**    | 游戏ID。                                          |
+| **@Ruleset（规则集）**    | 规则集。                                           |
+| **@DataPoint（数据点）**  | 由'DataPointAggregateQueries.DataPoint'指定的字段。   |
+| **@ExtraData（额外数据）** | 由'DataPointAggregateQueries.ExtraData'指定的额外字段。 |
 
-Description（描述）
 
-@ObjectId（对象ID）
+##### DatasetAggregateUpdates（数据 集 聚合更新）
 
-对象ID（通常是玩家对象）
+| **Name（名称）**                  | **Description（描述）**       |
+|-------------------------------|---------------------------|
+| **AggregateDataPoint（聚合数据点）** | 要写入的数据点的标识符。              |
+| **Scope（范围）**                 | 处理的范围。                    |
+| **Operation（操作）**             | 要使用的操作。有关可用操作的详细信息，请参见下文。 |
+| **Query（查询）**                 | 要使用的查询。                   |
+| **Dataset（数据集）**              | 源数据集，也是传递给查询的变量。          |
+| **ExtraData（额外数据）**           | 传递给查询的额外数据值。              |
+| **SortIndex（排序索引）**           | 指定执行过程的顺序的排序索引。           |
 
-@GameId（游戏ID）
 
-游戏ID。
+##### DatasetAggregateQueries（数据 集 聚合查询）
 
-@Ruleset（规则集）
+| **Name（名称）**   | **Description（描述）**                        |
+|----------------|--------------------------------------------|
+| **Query（查询）**  | 由DataPointAggregateUpdates.Query使用的查询的标识符。 |
+| **SQL（SQL语句）** | 查询的实际SQL语句。                                |
 
-规则集。
-
-@DataPoint（数据点）
-
-由'DataPointAggregateQueries.DataPoint'指定的字段。
-
-@ExtraData（额外数据）
-
-由'DataPointAggregateQueries.ExtraData'指定的额外字段。
-
-##### DatasetAggregateUpdates（数据集聚合更新）
-
-Name（名称）
-
-Description（描述）
-
-AggregateDataPoint（聚合数据点）
-
-要写入的数据点的标识符。
-
-Scope（范围）
-
-处理的范围。
-
-Operation（操作）
-
-要使用的操作。有关可用操作的详细信息，请参见下文。
-
-Query（查询）
-
-要使用的查询。
-
-Dataset（数据集）
-
-源数据集，也是传递给查询的变量。
-
-ExtraData（额外数据）
-
-传递给查询的额外数据值。
-
-SortIndex（排序索引）
-
-指定执行过程的顺序的排序索引。
-
-##### DatasetAggregateQueries（数据集聚合查询）
-
-Name（名称）
-
-Description（描述）
-
-Query（查询）
-
-由DatasetAggregateUpdates.Query使用的查询的标识符。
-
-SQL（SQL语句）
-
-查询的实际SQL语句。
 
 查询应返回以下列：
 
-Name（名称）
-
-Description（描述）
+| **Name（名称）**   | **Description（描述）**                        |
+|----------------|--------------------------------------------|
 
 以下参数将传递给查询：
 
-Name（名称）
+| **Name（名称）**         | **Description（描述）**                          |
+|----------------------|----------------------------------------------|
+| **@ObjectId（对象ID）**  | 对象ID（通常是玩家对象）                                |
+| **@GameId（游戏ID）**    | 游戏ID。                                        |
+| **@Ruleset（规则集）**    | 规则集。                                         |
+| **@Dataset（数据集）**    | 由'DatasetAggregateUpdates.Dataset'指定的字段。     |
+| **@ExtraData（额外数据）** | 由'DatasetAggregateUpdates.ExtraData'指定的额外字段。 |
 
-Description（描述）
-
-@ObjectId（对象ID）
-
-对象ID（通常是玩家对象）
-
-@GameId（游戏ID）
-
-游戏ID。
-
-@Ruleset（规则集）
-
-规则集。
-
-@Dataset（数据集）
-
-由'DatasetAggregateUpdates.Dataset'指定的字段。
-
-@ExtraData（额外数据）
-
-由'DatasetAggregateUpdates.ExtraData'指定的额外字段。
 
 #### 工作流程
 
@@ -13158,49 +8634,18 @@ Description（描述）
 
 可以使用以下操作：
 
-Name（名称）
+| **Name（名称）**      | **Description（描述）**        |
+|-------------------|----------------------------|
+| **Sum（求和）**       | 累积所有数值并返回总和。               |
+| **Min（最小值）**      | 找到具有最小值的行，并返回该值的对象ID和/或类型。 |
+| **MinSum（最小值总和）** | 找到具有累积最小值的对象ID和/或类型。       |
+| **Max（最大值）**      | 找到具有最大值的行，并返回该值的对象ID和/或类型。 |
+| **MaxSum（最大值总和）** | 找到具有累积最大值的对象ID和/或类型。       |
+| **First（第一行）**    | 写入第一行的值。                   |
+| **Last（最后一行）**    | 写入最后一行的值。                  |
+| **Count（计数）**     | 计算行数。                      | Average（平均值） | 计算每行的数值的平均值。 |
+| **Median（中位数）**   | 找到每行的中位数。                  |
 
-Description（描述）
-
-Sum（求和）
-
-累积所有数值并返回总和。
-
-Min（最小值）
-
-找到具有最小值的行，并返回该值的对象ID和/或类型。
-
-MinSum（最小值总和）
-
-找到具有累积最小值的对象ID和/或类型。
-
-Max（最大值）
-
-找到具有最大值的行，并返回该值的对象ID和/或类型。
-
-MaxSum（最大值总和）
-
-找到具有累积最大值的对象ID和/或类型。
-
-First（第一行）
-
-写入第一行的值。
-
-Last（最后一行）
-
-写入最后一行的值。
-
-Count（计数）
-
-计算行数。
-
-Average（平均值）
-
-计算每行的数值的平均值。
-
-Median（中位数）
-
-找到每行的中位数。
 
 * * *
 
@@ -13252,55 +8697,19 @@ Median（中位数）
 
 ### 推荐的加载顺序数值
 
-数值
+| **数值**   | **描述**                     |
+|----------|----------------------------|
+| **-100** | 模式更改删除数据填充核心数据             |
+| **-75**  | 非官方模式更改                    |
+| **-50**  | 过早的更新需要在通常添加内容之前进行的更新。     |
+| **-25**  | 非官方对过早更新的更改                |
+| **0**    | 标准内容更新大多数操作在此阶段应用。         |
+| **25**   | 非官方对标准更新的更改                |
+| **50**   | 后续更新需要提供大多数内容的更新。          |
+| **75**   | 非官方对后续更新内容的更改              |
+| **100**  | 场景更新通常在所有其他操作之后应用。作为自己的阶段。 |
+| **125**  | 非官方对场景更新的更改。               |
 
-描述
-
-\-100
-
-模式更改  
-删除数据  
-填充核心数据
-
-\-75
-
-非官方模式更改
-
-\-50
-
-过早的更新  
-需要在通常添加内容之前进行的更新。
-
-\-25
-
-非官方对过早更新的更改
-
-0
-
-标准内容更新  
-大多数操作在此阶段应用。
-
-25
-
-非官方对标准更新的更改
-
-50
-
-后续更新  
-需要提供大多数内容的更新。
-
-75
-
-非官方对后续更新内容的更改
-
-100
-
-场景更新  
-通常在所有其他操作之后应用。作为自己的阶段。
-
-125
-
-非官方对场景更新的更改。
 
 * * *
 
@@ -13344,7 +8753,7 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 
 参见：[纹理系统修改](#Modding%5CTexture%20System%20Mods)。将%XLP\_CLASS%替换为`SkyBoxTexture`。 参见：[在Mod Art文件中添加和更新库](#Modding%5CAdd%20and%20Update%20Libraries%20in%20Mod%20Art%20File)。将%LIBRARY\_NAME%替换为`SkyBoxTexture`
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到 文件 -> 新建 -> ArtDef (File -> New -> ArtDef)
 2.  将**Art Definition Template**更改为`SkyBox`。
@@ -13363,13 +8772,13 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 
 * * *
 
-# StrategicView Building Sprite Mods（战略视图建筑精灵修改）
+# StrategicView Building Sprite Mods（战略视图建筑贴花修改）
 
 #### 创建纹理并将其添加到XLP中
 
 参见：[纹理系统修改](#Modding%5CTexture%20System%20Mods)。将%XLP\_CLASS%替换为`StrategicView_Sprite`。 参见：[在Mod Art文件中添加和更新库](#Modding%5CAdd%20and%20Update%20Libraries%20in%20Mod%20Art%20File)。将%LIBRARY\_NAME%替换为`StrategicView_Sprite`
 
-每个建筑精灵有多个不同的建筑状态。
+每个建筑贴花有多个不同的建筑状态。
 
 可见性状态：
 
@@ -13382,7 +8791,7 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 *   被掠夺
 *   正在建造
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到文件 -> 新建 -> ArtDef
 2.  将**Art Definition Template**更改为`StrategicView`。
@@ -13419,9 +8828,9 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 
 * * *
 
-# StrategicView Natural Wonder Sprite Mods（战略视图自然奇观精灵修改）
+# StrategicView Natural Wonder Sprite Mods（战略视图自然奇观贴花修改）
 
-战略视图地形特征精灵包括自然界中出现的元素。
+战略视图地形特征贴花包括自然界中出现的元素。
 
 这包括森林、雨林/丛林、冰、沼泽、绿洲瓷砖、泛滥平原和所有自然奇观。 不包括基本地形类型（沙漠、山脉等）。
 
@@ -13431,14 +8840,14 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 
 参见：[纹理系统修改](#Modding%5CTexture%20System%20Mods)。将%XLP\_CLASS%替换为`StrategicView_Sprite`。 参见：[在Mod Art文件中添加和更新库](#Modding%5CAdd%20and%20Update%20Libraries%20in%20Mod%20Art%20File)。将%LIBRARY\_NAME%替换为`StrategicView_Sprite`
 
-自然奇观精灵有两种可见性状态。
+自然奇观贴花有两种可见性状态。
 
 可见性状态：
 
 *   已揭示
 *   可见
 
-#### 创建ArtDef并引用精灵
+#### 创建ArtDef并引用贴花
 
 1.  转到文件 -> 新建 -> ArtDef
 2.  将**Art Definition Template**更改为`StrategicView`。
@@ -13487,13 +8896,13 @@ SkyBox模板内部有一个名为SkyBox的集合。该集合内部有一个元�
 
 #### PositionSets Collection(位置集合)
 
-位置集合用于确定战略视图图块中精灵的位置。 每个位置集合都有一组位置。每个位置都有一个名称和一个坐标值（\[x，y\]对）。 位置的有效范围是x值从-0.5到0.5，y值从-0.57到0.57，尽管超出+/- 0.3的值非常接近六边形边缘。
+位置集合用于确定战略视图图块中贴花的位置。 每个位置集合都有一组位置。每个位置都有一个名称和一个坐标值（\[x，y\]对）。 位置的有效范围是x值从-0.5到0.5，y值从-0.57到0.57，尽管超出+/- 0.3的值非常接近六边形边缘。
 
-位置集合中的每个条目对应于正在使用它的元素中的一个条目。 当战略视图精灵条目使用PositionSet时，PositionSet需要为每个精灵条目定义至少一个位置。
+位置集合中的每个条目对应于正在使用它的元素中的一个条目。 当战略视图贴花条目使用PositionSet时，PositionSet需要为每个贴花条目定义至少一个位置。
 
 #### PlacementRules Collection(放置规则集合)
 
-这是一个固定的集合，不应进行修改。精灵条目使用它来确定它们在六边形周围的排列方式。
+这是一个固定的集合，不应进行修改。贴花条目使用它来确定它们在六边形周围的排列方式。
 
 AtEdges\_NotScaled -> Centered -> 选择第一个条目，并在六边形的中心显示它。 Centered\_NotScaled -> 选择第一个条目，并在六边形的中心显示它。不进行缩放。 Centered\_NotScaled\_Animate Centered\_Random -> 从集合中随机选择一个条目，并在中心显示它。 GreatWall OneEntryPerTile -> 对于多个图块特征，通知特征每个图块只显示一个条目。
 
@@ -13505,19 +8914,19 @@ AtEdges\_NotScaled -> Centered -> 选择第一个条目，并在六边形的中�
 
 待办事项：
 
-#### TerrainSpriteEntries(地形精灵条目)
+#### TerrainSpriteEntries(地形贴花条目)
 
-定义可能的地形精灵集合。每个条目都有一个名称，一个带有位置偏移的可见XLP条目引用，以及一个带有位置偏移的已揭示XLP条目引用。
+定义可能的地形贴花集合。每个条目都有一个名称，一个带有位置偏移的可见XLP条目引用，以及一个带有位置偏移的已揭示XLP条目引用。
 
-#### TerrainSprites(地形精灵)
+#### TerrainSprites(地形贴花)
 
-定义游戏中将使用的地形精灵集合。 每个元素都有一个名称，位置集合，放置规则，渲染标志以及它所占据的图块数量。此外，这些元素还有引用TerrainSpriteEntries的子集合，这些集合由TerrainSpriteEntries集合中定义的条目引用。
+定义游戏中将使用的地形贴花集合。 每个元素都有一个名称，位置集合，放置规则，渲染标志以及它所占据的图块数量。此外，这些元素还有引用TerrainSpriteEntries的子集合，这些集合由TerrainSpriteEntries集合中定义的条目引用。
 
-当地形精灵中有多个条目，并且选择了“Centered\_Random”放置规则时，战略视图选择要渲染的条目是随机的。每个条目被选择的机会相等。
+当地形贴花中有多个条目，并且选择了“Centered\_Random”放置规则时，战略视图选择要渲染的条目是随机的。每个条目被选择的机会相等。
 
 #### TerrainTypes(地形类型)
 
-为游戏中不同类型的地形分配艺术品。 地形名称基于GameCore名称。 对于任何给定的地形，从地形条目集合中随机选择一个条目。条目将可见纹理和偏移、已揭示纹理和偏移以及可选精灵（用于渲染山丘和山脉，但也可用于其他任何内容）映射到特定类型的地形。每种地形类型（海岸、沙漠、海洋、草地、平原、雪地、苔原）都有自己的条目。此外，任何可以支持山脉或山丘的地形也有额外的条目（例如，雪地、雪地山丘和雪地山脉都是不同的TerrainTypes）。
+为游戏中不同类型的地形分配艺术品。 地形名称基于GameCore名称。 对于任何给定的地形，从地形条目集合中随机选择一个条目。条目将可见纹理和偏移、已揭示纹理和偏移以及可选贴花（用于渲染山丘和山脉，但也可用于其他任何内容）映射到特定类型的地形。每种地形类型（海岸、沙漠、海洋、草地、平原、雪地、苔原）都有自己的条目。此外，任何可以支持山脉或山丘的地形也有额外的条目（例如，雪地、雪地山丘和雪地山脉都是不同的TerrainTypes）。
 
 在TerrainTypes集合中选择的艺术品由上面的TerrainSprites根集合中定义。
 
@@ -13531,7 +8940,7 @@ AtEdges\_NotScaled -> Centered -> 选择第一个条目，并在六边形的中�
 
 特征是自然出现在地形上的，没有玩家干预的任何事物。例如森林、雨林以及所有的自然奇观。
 
-特征集合将特征条目的艺术品分配给游戏中的特征。特征集合中的每个元素都有一个名称 （必须与GameCore名称匹配）、一个位置集合（差异很大）、一个放置规则（也有所不同）、一个渲染标志（如果应该渲染此特征，则为true；否则为false）、一个在地形上渲染地形精灵的标志、一个TileCount字段（必须与GameCore定义的自然奇观所占据的图块数量相匹配）和一个TerrainTypeOverride列表。 TerrainTypeOverride列表允许您指定给定特征（通常是自然奇观）完全覆盖显示在列表中的地形。
+特征集合将特征条目的艺术品分配给游戏中的特征。特征集合中的每个元素都有一个名称 （必须与GameCore名称匹配）、一个位置集合（差异很大）、一个放置规则（也有所不同）、一个渲染标志（如果应该渲染此特征，则为true；否则为false）、一个在地形上渲染地形贴花的标志、一个TileCount字段（必须与GameCore定义的自然奇观所占据的图块数量相匹配）和一个TerrainTypeOverride列表。 TerrainTypeOverride列表允许您指定给定特征（通常是自然奇观）完全覆盖显示在列表中的地形。
 
 每个特征元素还有一个Entries集合，用于将FeatureEntries映射到特征。
 
@@ -13743,113 +9152,3 @@ Civ VI Pantry（存储室）中包含许多可以直接使用的动画，只要�
 资源中行为的顺序很重要。行为从底部到顶部解析，资源（然后是最高列出的行为）具有优先权。如果您将“SingleBiped\_Deaths”行为分配给资源，但希望“DeathBone”附着点引用名为“Head”的骨骼而不是名为“Pelvis”的骨骼，您可以在资源上创建一个具有SingleBiped\_Deaths的附着点，并为其分配所需的特性。当资源被处理时，游戏将看到资源定义的“DeathBone”，而不是行为定义的“DeathBone”。
 
 
-
-
-
-**
-
-**
-
-*   ###### Content Creation（内容创建）
-    
-*   [Animation（动画）](#Animation)
-*   [ArtDefFiles（艺术定义文件）](#ArtDefFiles)
-*   [BuildingsProcess（建筑流程）](#BuildingsProcess)
-*   [颜色键（ColorKey）](#ColorKey)
-*   [DataDocumentation（数据文档）](#DataDocumentation)
-*   [Geometry（几何体）](#Geometry)
-*   [IconXML（图标XML）](#IconXML)
-*   [Iteration（迭代）](#Iteration)
-*   [MappingToGameCore（映射到游戏核心）](#MappingToGameCore)
-*   [PackagingAssets（打包资产）](#PackagingAssets)
-*   [ParticleEffects（粒子效果）](#ParticleEffects)
-*   [ParticleEffectsWorkflow（粒子效果工作流程）](#ParticleEffectsWorkflow)
-*   [TerrainBounceLighting（地形反射光照）](#TerrainBounceLighting)
-*   [TerrainOverview（地形概述）](#TerrainOverview)
-*   [Texture（纹理）](#Texture)
-*   [TextureExportSettings（纹理导出设置）](#TextureExportSettings)
-*   [The Life of a Leader（领导者的生命？）](#The%20Life%20of%20a%20Leader)
-*   [TileBase（瓷砖基础）](#TileBase)
-*   [UnitPreviewingScript（单位预览脚本）](#UnitPreviewingScript)
-*   [World Builder (世界构建器)](#World%20Builder)
-*   ###### FireFX（火焰特效）
-    
-*   [Emitter Properties（发射器属性）](#FireFX%5CEmitter%20Properties)
-*   [FireFX UI Backend（火焰特效UI后端）](#FireFX%5CFireFX%20UI%20Backend)
-*   [Understanding FireFX Scripts（理解 火焰特效 脚本）](#FireFX%5CUnderstanding%20FireFX%20Scripts)
-*   ###### Forge UI（制作UI）
-    
-*   [Debug Features（调试功能）](#Forge%20UI%5CDebug%20Features)
-*   [LUA Conventions（LUA约定）](#Forge%20UI%5CLUA%20Conventions)
-*   [LUA Input（LUA输入）](#Forge%20UI%5CLUA%20Input)
-*   [LUA Reference（LUA参考）](#Forge%20UI%5CLUA%20Reference)
-*   [Reference Guide（参考指南）](#Forge%20UI%5CReference%20Guide)
-*   ###### Forge UI\\Controls（制作UI/控件）
-    
-*   [AlphaAnim（透明度动画控件）](#Forge%20UI%5CControls%5CAlphaAnim)
-*   [Bar（进度条控件）](#Forge%20UI%5CControls%5CBar)
-*   [Box (方框控件)](#Forge%20UI%5CControls%5CBox)
-*   [BoxButton (方框按钮控件)](#Forge%20UI%5CControls%5CBoxButton)
-*   [Button (按钮控件)](#Forge%20UI%5CControls%5CButton)
-*   [CheckBox（复选框控件）](#Forge%20UI%5CControls%5CCheckBox)
-*   [Container（容器控件）](#Forge%20UI%5CControls%5CContainer)
-*   [Context(上下文)](#Forge%20UI%5CControls%5CContext)
-*   [DragPanel(拖动面板控件)](#Forge%20UI%5CControls%5CDragPanel)
-*   [EditBox(编辑框控件)](#Forge%20UI%5CControls%5CEditBox)
-*   [FlipAnim(翻转动画控件)](#Forge%20UI%5CControls%5CFlipAnim)
-*   [Grid(网格控件)](#Forge%20UI%5CControls%5CGrid)
-*   [GridButton(网格按钮控件)](#Forge%20UI%5CControls%5CGridButton)
-*   [Image(图像控件)](#Forge%20UI%5CControls%5CImage)
-*   [Include(包含)](#Forge%20UI%5CControls%5CInclude)
-*   [Instance(实例控件)](#Forge%20UI%5CControls%5CInstance)
-*   [Label(标签控件)](#Forge%20UI%5CControls%5CLabel)
-*   [Line(线段控件)](#Forge%20UI%5CControls%5CLine)
-*   [LuaContext（Lua上下文）](#Forge%20UI%5CControls%5CLuaContext)
-*   [MakeInstance(生成实例)](#Forge%20UI%5CControls%5CMakeInstance)
-*   [Meter（进度表控件）](#Forge%20UI%5CControls%5CMeter)
-*   [Movie（电影控件）](#Forge%20UI%5CControls%5CMovie)
-*   [PullDown（下拉菜单控件）](#Forge%20UI%5CControls%5CPullDown)
-*   [RadioButton(单选按钮控件)](#Forge%20UI%5CControls%5CRadioButton)
-*   [ScrollAnim (滚动动画控件)](#Forge%20UI%5CControls%5CScrollAnim)
-*   [ScrollPanel (滚动面板控件)](#Forge%20UI%5CControls%5CScrollPanel)
-*   [SimplePullDown (简易下拉框控件)](#Forge%20UI%5CControls%5CSimplePullDown)
-*   [SlideAnim (滑动动画控件)](#Forge%20UI%5CControls%5CSlideAnim)
-*   [Slider (滑块控件)](#Forge%20UI%5CControls%5CSlider)
-*   [Stack (堆栈控件)](#Forge%20UI%5CControls%5CStack)
-*   [TabControl (选项卡控件)](#Forge%20UI%5CControls%5CTabControl)
-*   [TextButton (文本按钮控件)](#Forge%20UI%5CControls%5CTextButton)
-*   [TextureBar (纹理进度条控件)](#Forge%20UI%5CControls%5CTextureBar)
-*   [ToolTipType（工具提示控件）](#Forge%20UI%5CControls%5CToolTipType)
-*   [Tutorial (教程控件)](#Forge%20UI%5CControls%5CTutorial)
-*   ###### Modding（修改）
-    
-*   [2D Leader Background Mods (2D 领导者背景修改)](#Modding%5C2D%20Leader%20Background%20Mods)
-*   [Add and Update Consumers in Mod Art File (在 Mod 艺术文件中添加和更新美术配置文件)](#Modding%5CAdd%20and%20Update%20Consumers%20in%20Mod%20Art%20File)
-*   [Add and Update Libraries in Mod Art File (在 Mod 艺术文件中添加和更新库)](#Modding%5CAdd%20and%20Update%20Libraries%20in%20Mod%20Art%20File)
-*   [Adding New Screens (添加新界面)](#Modding%5CAdding%20New%20Screens)
-*   [Adding or Modifying Icons (添加或修改图标)](#Modding%5CAdding%20or%20Modifying%20Icons)
-*   [ColorKey Mods (颜色键修改)](#Modding%5CColorKey%20Mods)
-*   [Cooking Art Files (封装艺术文件)](#Modding%5CCooking%20Art%20Files)
-*   [FireFX Built-In Functions（火焰特效内置函数）](#Modding%5CFireFX%20Built-In%20Functions)
-*   [Fog of War Overview (迷雾效果概述)](#Modding%5CFog%20of%20War%20Overview)
-*   [FoW Hatch Texture Mods（迷雾图案填充纹理修改）](#Modding%5CFoW%20Hatch%20Texture%20Mods)
-*   [FoW Parchment Texture Mods（迷雾羊皮纹理修改）](#Modding%5CFoW%20Parchment%20Texture%20Mods)
-*   [FoW Sprite Texture Mods（迷雾精灵纹理修改）](#Modding%5CFoW%20Sprite%20Texture%20Mods)
-*   [HallofFame\_Backend（名人堂后端）](#Modding%5CHallofFame_Backend)
-*   [HallofFame\_Frontend (名人堂前端)](#Modding%5CHallofFame_Frontend)
-*   [HotLoading（热加载）](#Modding%5CHotLoading)
-*   [LoadOrder(加载顺序)](#Modding%5CLoadOrder)
-*   [Modifying Existing Screens(修改现有界面)](#Modding%5CModifying%20Existing%20Screens)
-*   [Notes shorthand(笔记速记)](#Modding%5CNotes%20shorthand)
-*   [SkyBox Overview(天空盒概述)](#Modding%5CSkyBox%20Overview)
-*   [SkyBox Texture Mods(天空盒纹理修改)](#Modding%5CSkyBox%20Texture%20Mods)
-*   [StrategicView Building Sprite Mods(战略视图建筑精灵修改)](#Modding%5CStrategicView%20Building%20Sprite%20Mods)
-*   [StrategicView Natural Wonder Sprite Mods(战略视图自然奇观精灵修改)](#Modding%5CStrategicView%20Natural%20Wonder%20Sprite%20Mods)
-*   [StrategicView Overview(战略视图概述)](#Modding%5CStrategicView%20Overview)
-*   [Texture System Mods(纹理系统修改)](#Modding%5CTexture%20System%20Mods)
-*   [Understanding modinfo files(理解modinfo文件)](#Modding%5CUnderstanding%20modinfo%20files)
-*   [Unit Mods（单位修改）](#Modding%5CUnit%20Mods)
-
-
-
-**
