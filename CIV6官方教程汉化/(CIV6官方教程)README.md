@@ -4,7 +4,6 @@
 - 官方原教程我这里也有文件打包到：“英文原版html.zip”
 - 为了正常使用html文件记得不要动其他文件夹及里面照片名字，否则html文件或者md文件无法正常显示图片
 - LoadOrder，HallofFame_Frontend，HallofFame_Backend三个html教程官方都全整合到Civ6Docs里了，所以我就不在转为md文件了
-- [官方教程汉化.md版传送门](CIV6官方教程汉化/Civ6Docs.md)
 - [官方教程汉化.md版传送门](Civ6Docs.md)
 
 ## 包含的工具
