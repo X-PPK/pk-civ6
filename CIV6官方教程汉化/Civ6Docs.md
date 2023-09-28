@@ -1,9 +1,9 @@
 # 文明VI 内容创作
-- 建看html版本，md是我直接html转md转来的，UI方面没原html更加好
--（皮凯使用chatGpt辅助翻译完成，还行吧，绝大部分人没问题）
+- 如果这里有错误或者不对翻译一，一切以官方英文html原版本为准，md是我直接html转md转来的，然后修整来的，UI方面应该是比官方html更好，因为我没有修正英文原版，官方原版后面很多表格格式用的是md格式html无法正常显示，同时很多地方示例代码时没有采用代码块格式，以至于HTML上显示的很不好看，无代码高亮，我在汉化的html是有对此优化，这里md更是优化过
+-（皮凯使用chatGpt辅助翻译完成，还行吧，绝大部分没问题）
 
 * * *
-
+## 目录
 * ### Content Creation（内容创建）
 - [Animation（动画）](#animation%E5%8A%A8%E7%94%BB)
 - [ArtDefFiles（艺术定义文件）](#artdeffiles%E8%89%BA%E6%9C%AF%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6)
@@ -25,19 +25,16 @@
 - [TileBase（瓷砖基础）](#tilebase%E7%93%B7%E7%A0%96%E5%9F%BA%E7%A1%80)
 - [UnitPreviewingScript（单位预览脚本）](#unitpreviewingscript%E5%8D%95%E4%BD%8D%E9%A2%84%E8%A7%88%E8%84%9A%E6%9C%AC)
 - [World Builder（世界构建器）](#world-builder%E4%B8%96%E7%95%8C%E6%9E%84%E5%BB%BA%E5%99%A8)
-
 * ### FireFX（火焰特效）
 - [Emitter Properties（发射器属性）](#emitter-properties%E5%8F%91%E5%B0%84%E5%99%A8%E5%B1%9E%E6%80%A7)
 - [FireFX UI Backend（火焰特效后端）](#firefx-ui-backend%E7%81%AB%E7%84%B0%E7%89%B9%E6%95%88%E5%90%8E%E7%AB%AF)
 - [Understanding FireFX Scripts（理解 火焰特效 脚本）](#understanding-firefx-scripts%E7%90%86%E8%A7%A3-%E7%81%AB%E7%84%B0%E7%89%B9%E6%95%88-%E8%84%9A%E6%9C%AC)
-
 * ### Forge UI（制作UI）
 - [Debug Features（调试功能）](#debug-features%E8%B0%83%E8%AF%95%E5%8A%9F%E8%83%BD)
 - [LUA Conventions（LUA公约,约定俗成）](#lua-conventionslua%E5%85%AC%E7%BA%A6%E7%BA%A6%E5%AE%9A%E4%BF%97%E6%88%90)
 - [LUA Input（LUA输入）](#lua-inputlua%E8%BE%93%E5%85%A5)
 - [LUA Reference（LUA参考）](#lua-referencelua%E5%8F%82%E8%80%83)
 - [Reference Guide（参考指南）](#reference-guide%E5%8F%82%E8%80%83%E6%8C%87%E5%8D%97)
-
 * ### Forge UI Controls（制作UI/控件）
 - [AlphaAnim（透明度动画控件）](#alphaanim%E9%80%8F%E6%98%8E%E5%BA%A6%E5%8A%A8%E7%94%BB%E6%8E%A7%E4%BB%B6)
 - [Bar（进度条控件）](#bar%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6)
@@ -74,7 +71,6 @@
 - [TextureBar（纹理进度条控件）](#texturebar%E7%BA%B9%E7%90%86%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6)
 - [ToolTipType（工具提示控件）](#tooltiptype%E5%B7%A5%E5%85%B7%E6%8F%90%E7%A4%BA%E6%8E%A7%E4%BB%B6)
 - [Tutorial（教程控件）](#tutorial%E6%95%99%E7%A8%8B%E6%8E%A7%E4%BB%B6)
-
 * ### Modding（修改）
 - [D Leader Background Mods（2D 领导者背景修改）](#d-leader-background-mods2d-%E9%A2%86%E5%AF%BC%E8%80%85%E8%83%8C%E6%99%AF%E4%BF%AE%E6%94%B9)
 - [Add and Update Consumers in Mod Art File（在 Mod 艺术文件中添加和更新美术配置文件）](#add-and-update-consumers-in-mod-art-file%E5%9C%A8-mod-%E8%89%BA%E6%9C%AF%E6%96%87%E4%BB%B6%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%92%8C%E6%9B%B4%E6%96%B0%E7%BE%8E%E6%9C%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
