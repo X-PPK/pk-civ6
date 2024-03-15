@@ -39,7 +39,8 @@ SQLiteStudio是SQLite数据库可视化工具，
 - 话痨了那么多开始正式实操
 - 好吧懒得一个一个操作截图了，主要代码修改了很多，需要重新按流程截图，重复好多次放弃了
 
-···sql
+```sql
+
 -- Author: 帅气的凯(皮皮凯PiPiKai)
 -- DateCreated: 3/12/2024 18:24:39 PM
 -- 首先是创建表 ，这些元素确定都是反复修改后的
@@ -349,4 +350,4 @@ DROP TABLE LocalizedTextCN
 DROP TABLE EffectsArrange
 -- 实际更快方法直接删除这几个库文件，反正游戏每次新对局都会重新生成
 
-···
+```
