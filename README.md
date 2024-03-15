@@ -51,7 +51,7 @@ English is not my native language, and my English is very poor, so I do not cons
 
 ### 数据库相关教程
 1.  [官方数据库整理](Gameplay数据库/官方数据库整理.md)
-2.  [实战XML/SQL](Gameplay数据库/实战整理.md)（暂未开工）
+2.  [实战XML/SQL](Gameplay数据库/实战整理.md)
 3.  待续
 
 ### lua相关教程
